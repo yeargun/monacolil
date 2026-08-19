@@ -32,6 +32,28 @@ function comparableFile(row) {
   return (row.jsKind ?? "runtime") === "runtime" && row.js
 }
 
+const vscodeCommit = lab.versions?.vscodeCommit ?? "f487add297079a02eb836810185b165e50cadabc"
+const sources = {
+  lilRepo: "https://github.com/yeargun/monacolil",
+  lilBlob: "https://github.com/yeargun/monacolil/blob/main/src/",
+  lilTree: "https://github.com/yeargun/monacolil/tree/main/src/vs/",
+  vscodeBlob: `https://github.com/microsoft/vscode/blob/${vscodeCommit}/src/vs/`,
+}
+
+function lilHref(rel) {
+  if (!rel) return null
+  return `${sources.lilBlob}${rel.replace(/^src\//, "")}`
+}
+
+function folderLilHref(key) {
+  if (key.endsWith(".js")) return lilHref(`vs/${key.replace(/\.js$/, ".lil")}`)
+  return `${sources.lilTree}${key}`
+}
+
+function folderId(key) {
+  return key.replace(/[^\w./-]+/g, "_")
+}
+
 const comparableFiles = (lab.coreComparison?.files ?? []).filter(comparableFile)
 const grouped = new Map()
 for (const row of comparableFiles) {
@@ -75,6 +97,8 @@ const folders = [...grouped.entries()].map(([key, rows]) => {
     ratioOxc: ratio(lilSizes?.brotli, jsLanes.oxc.brotli || js.brotli),
     ratioEsbuild: ratio(lilSizes?.brotli, jsLanes.esbuild.brotli),
     ratioTerser: ratio(lilSizes?.brotli, jsLanes.terser.brotli),
+    lilHref: folderLilHref(key),
+    conversionHref: `#conversion/${folderId(key)}`,
   }
 })
 folders.sort((a, b) => (b.js?.brotli11 ?? 0) - (a.js?.brotli11 ?? 0))
@@ -139,8 +163,36 @@ const pairs = (lab.pairs ?? [])
           terser: laneSizes(row.js.lanes.terser),
         }
       : null,
+    lilHrefs: (row.lilFiles ?? []).map((file) => ({ file, href: lilHref(file) })),
+    monacoHrefs: (row.monacoFiles ?? []).map((file) => ({
+      file,
+      href: `${sources.vscodeBlob}${file}`,
+    })),
   }))
   .sort((a, b) => b.js - a.js)
+
+const conversions = (lab.coreComparison?.files ?? []).map((row) => {
+  const lilRel = row.lilPath || row.lil?.path || null
+  const implRel = row.impl && row.impl !== lilRel ? row.impl : null
+  const jsBrotli = row.jsLanes?.oxc?.brotli ?? row.js?.brotli ?? null
+  const lilBrotli = row.lil && row.lil.unique !== false ? row.lil.brotli : null
+  return {
+    monaco: row.monaco,
+    folder: row.folder,
+    folderId: folderId(row.folder),
+    lil: lilRel ? `src/${lilRel}` : null,
+    impl: implRel ? `src/${implRel}` : null,
+    status: row.status,
+    jsKind: row.jsKind ?? "runtime",
+    jsBrotli,
+    lilBrotli,
+    ratio: ratio(lilBrotli, jsBrotli),
+    lilHref: lilHref(lilRel),
+    implHref: lilHref(implRel),
+    jsHref: `${sources.vscodeBlob}${row.monaco}`,
+  }
+})
+conversions.sort((a, b) => (b.jsBrotli ?? 0) - (a.jsBrotli ?? 0))
 
 const jsLanes = totals?.jsLanes ?? {}
 const lilBrotli = totals?.lil?.brotli ?? 0
@@ -176,7 +228,8 @@ const results = {
     production: "Vite 8 Oxc minify; esbuild and Terser also scored",
     pairs: "Vite 8 Oxc / esbuild / Terser; Lil compiled with the same public-method keepers as the catalog",
   },
-  vscodeCommit: lab.versions?.vscodeCommit,
+  vscodeCommit,
+  sources,
   catalog: lab.catalog,
   headline: {
     key: headline?.key ?? "editor/common",
@@ -210,6 +263,7 @@ const results = {
     jsMinifier: "vite/oxc",
   },
   folders,
+  conversions,
   pairs,
   production: {
     jsMinifier: "vite/oxc",
@@ -252,5 +306,5 @@ const results = {
 
 writeFileSync(resolve(root, "site", "results.json"), `${JSON.stringify(results, null, 2)}\n`)
 console.log(
-  `wrote site/results.json · ${folders.length} folders · headline ${results.headline.key} ${results.headline.ratio?.toFixed(2)}× vite/oxc`,
+  `wrote site/results.json · ${folders.length} folders · ${conversions.length} conversions · headline ${results.headline.key} ${results.headline.ratio?.toFixed(2)}× vite/oxc`,
 )

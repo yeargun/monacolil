@@ -4,7 +4,7 @@
 
 This is **not** the official `monaco-editor` package. It is **not** 100% feature parity. Context menus, some contrib commands, view-zones, and GPU rendering still drift. The TypeScript language service is the official Microsoft worker.
 
-**Site:** [yeargun.github.io/monacolil](https://yeargun.github.io/monacolil/)
+**Site:** [yeargun.github.io/monacolil](https://yeargun.github.io/monacolil/) — every submodule folder links to its `.lil` tree, and every monaco file has a JS → Lil conversion row.
 
 ```sh
 npm install @itslil/monaco-editor

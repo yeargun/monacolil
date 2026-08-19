@@ -134,6 +134,69 @@ tbody td:last-child strong { color: #9cdcfe; }
 .method-note a { color: #9cdcfe; font: 500 11px "DM Mono", monospace; white-space: nowrap; }
 .perf-note { margin-top: 22px; color: var(--muted); font: 500 12px/1.6 "DM Mono", monospace; }
 
+.conversion { padding-block: 88px 40px; }
+.convert-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.convert-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: min(100%, 520px);
+  background: #fff;
+  border: 1px solid var(--ink);
+  border-radius: 12px;
+  padding: 0 4px 0 16px;
+  box-shadow: 0 5px 0 var(--ink);
+}
+.convert-search span {
+  color: var(--muted);
+  font: 500 10px "DM Mono", monospace;
+  text-transform: uppercase;
+}
+.convert-search input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 14px 8px;
+  outline: 0;
+  font: 500 14px "DM Mono", monospace;
+}
+.chip {
+  border: 1px solid var(--ink);
+  background: #9cdcfe;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font: 700 12px "DM Mono", monospace;
+}
+#convert-count { font: 500 12px "DM Mono", monospace; color: var(--muted); }
+.convert-wrap tbody th, .convert-wrap .lil-cell { white-space: normal; text-align: left; }
+.folder-jump { font: 700 13px "Manrope", sans-serif; border-bottom: 2px solid var(--acid); }
+.folder-jump:hover { color: var(--purple); }
+.lil-link {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #9cdcfe;
+  font: 500 10px "DM Mono", monospace;
+  vertical-align: middle;
+}
+.lil-link.loud { margin: 0; background: var(--acid); color: #fff; }
+.lil-link.dim { margin: 8px 0 0; background: #d9e8f1; color: var(--ink); }
+.lil-link:hover { opacity: .82; }
+.js-link { color: var(--purple); font: 500 12px "DM Mono", monospace; }
+.js-link:hover { border-bottom: 1px solid var(--purple); }
+.pair-lils { display: block; margin-top: 6px; }
+.lil-cell { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+
 .closing { padding-block: 130px; text-align: center; }
 .closing h2 { font-size: clamp(60px, 8.5vw, 112px); }
 .install-row.large { margin: 48px auto 0; text-align: left; }

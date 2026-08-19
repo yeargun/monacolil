@@ -18,6 +18,7 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="#submodules">submodules</a>
+        <a href="#conversion">conversions</a>
         <a href="#minifiers">minifiers</a>
         <a href="#modules">modules</a>
         <a href="#lab">editors</a>
@@ -37,7 +38,7 @@
             <button class="copy" data-copy="npm install @itslil/monaco-editor" type="button">copy</button>
           </div>
           <div class="hero-actions">
-            <a class="button primary" href="#submodules">Submodule sizes</a>
+            <a class="button primary" href="#conversion">992 .lil conversions</a>
             <a class="button secondary" href="https://www.npmjs.com/package/@itslil/monaco-editor">npm ↗</a>
           </div>
         </div>
@@ -75,7 +76,7 @@
           <table>
             <thead>
               <tr>
-                <th>Folder</th>
+                <th>Folder · .lil on GitHub</th>
                 <th>Files</th>
                 <th>Vite 8 / Oxc</th>
                 <th>esbuild</th>
@@ -87,7 +88,39 @@
             <tbody id="folders-body"></tbody>
           </table>
         </div>
-        <p class="perf-note">JS columns are the same runtime catalog files. Library retention on both sides. Headline ratio is LilScript Brotli-11 / Vite 8 Oxc Brotli-11.</p>
+        <p class="perf-note">Folder names open the conversion table. The .lil mark opens that folder on GitHub. Headline ratio is LilScript Brotli-11 / Vite 8 Oxc Brotli-11.</p>
+      </section>
+
+      <section class="conversion shell" id="conversion">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Every module, one conversion</p>
+            <h2>JS in,<br />.lil out.</h2>
+          </div>
+          <p>Each monaco-editor-core file has a matching LilScript file in <code>src/</code>. Left side is Microsoft’s JS at the pinned VS Code commit. Right side is the <code>.lil</code> on GitHub. Filter a folder from the table above, or search.</p>
+        </div>
+        <div class="convert-bar">
+          <label class="convert-search">
+            <span>search</span>
+            <input id="convert-query" type="search" placeholder="intervalTree, rowCache, suggest…" autocomplete="off" />
+          </label>
+          <button class="chip" id="convert-clear" type="button">all modules</button>
+          <strong id="convert-count"></strong>
+        </div>
+        <div class="table-wrap light convert-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>JS module · vscode</th>
+                <th>.lil conversion · GitHub</th>
+                <th>Vite 8 / Oxc</th>
+                <th>Lil Brotli</th>
+                <th>Lil / Oxc</th>
+              </tr>
+            </thead>
+            <tbody id="convert-body"></tbody>
+          </table>
+        </div>
       </section>
 
       <section class="apps shell" id="minifiers">
@@ -143,7 +176,7 @@
           <table>
             <thead>
               <tr>
-                <th>File pair</th>
+                <th>File pair · .lil</th>
                 <th>Vite 8 / Oxc</th>
                 <th>esbuild</th>
                 <th>Terser</th>

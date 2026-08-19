@@ -63,13 +63,21 @@ function renderFolderCards() {
     .join("")
 }
 
+function folderId(key) {
+  return key.replace(/[^\w./-]+/g, "_")
+}
+
 function renderFolders() {
   document.querySelector("#folders-body").innerHTML = data.folders
     .map((row) => {
       const lil = row.lil ? bytes(row.lil.brotli11) : "—"
+      const convert = row.conversionHref ?? `#conversion/${folderId(row.key)}`
       return `
     <tr>
-      <th scope="row">${row.key}</th>
+      <th scope="row">
+        <a class="folder-jump" href="${convert}">${row.key}</a>
+        <a class="lil-link" href="${row.lilHref}" target="_blank" rel="noreferrer">.lil ↗</a>
+      </th>
       <td>${bytes(row.files)}</td>
       <td>${bytes(laneBrotli(row.jsLanes, "oxc") ?? row.js?.brotli11)}</td>
       <td>${bytes(laneBrotli(row.jsLanes, "esbuild"))}</td>
@@ -153,9 +161,15 @@ function renderModules() {
       const oxc = laneBrotli(row.jsLanes, "oxc") ?? row.js
       const esbuild = laneBrotli(row.jsLanes, "esbuild")
       const terser = laneBrotli(row.jsLanes, "terser")
+      const lilLinks = (row.lilHrefs ?? [])
+        .map((item) => `<a class="lil-link" href="${item.href}" target="_blank" rel="noreferrer">${item.file} ↗</a>`)
+        .join(" ")
       return `
     <tr>
-      <th scope="row">${row.title}</th>
+      <th scope="row">
+        <span>${row.title}</span>
+        <span class="pair-lils">${lilLinks}</span>
+      </th>
       <td>${bytes(oxc)}</td>
       <td>${bytes(esbuild)}</td>
       <td>${bytes(terser)}</td>
@@ -164,6 +178,72 @@ function renderModules() {
     </tr>`
     })
     .join("")
+}
+
+function conversionState() {
+  const hash = decodeURIComponent(location.hash || "")
+  const match = hash.match(/^#conversion\/(.+)$/)
+  return {
+    folderId: match?.[1] ?? "",
+    query: document.querySelector("#convert-query")?.value.trim().toLowerCase() ?? "",
+  }
+}
+
+function renderConversions() {
+  const body = document.querySelector("#convert-body")
+  const count = document.querySelector("#convert-count")
+  const clear = document.querySelector("#convert-clear")
+  if (!body) return
+  const { folderId: selected, query } = conversionState()
+  const rows = (data.conversions ?? []).filter((row) => {
+    if (selected && row.folderId !== selected) return false
+    if (!query) return true
+    return [row.monaco, row.lil, row.impl, row.folder].some((value) =>
+      String(value ?? "").toLowerCase().includes(query),
+    )
+  })
+  const folderLabel = data.folders.find((row) => folderId(row.key) === selected)?.key
+  clear.hidden = !selected && !query
+  clear.textContent = folderLabel ? `${folderLabel} · clear` : "all modules"
+  count.textContent = `${formatter.format(rows.length)} / ${formatter.format(data.conversions?.length ?? 0)}`
+  body.innerHTML = rows
+    .map((row) => {
+      const impl = row.implHref
+        ? `<a class="lil-link dim" href="${row.implHref}" target="_blank" rel="noreferrer">${row.impl} ↗</a>`
+        : ""
+      return `
+    <tr>
+      <th scope="row">
+        <a class="js-link" href="${row.jsHref}" target="_blank" rel="noreferrer">${row.monaco} ↗</a>
+      </th>
+      <td class="lil-cell">
+        <a class="lil-link loud" href="${row.lilHref}" target="_blank" rel="noreferrer">${row.lil} ↗</a>
+        ${impl}
+      </td>
+      <td>${bytes(row.jsBrotli)}</td>
+      <td>${bytes(row.lilBrotli)}</td>
+      <td><strong>${times(row.ratio)}</strong></td>
+    </tr>`
+    })
+    .join("")
+}
+
+function bindConversion() {
+  const input = document.querySelector("#convert-query")
+  const clear = document.querySelector("#convert-clear")
+  input?.addEventListener("input", () => renderConversions())
+  clear?.addEventListener("click", () => {
+    if (input) input.value = ""
+    history.replaceState(null, "", `${location.pathname}${location.search}#conversion`)
+    renderConversions()
+    document.querySelector("#conversion")?.scrollIntoView({ behavior: "smooth", block: "start" })
+  })
+  window.addEventListener("hashchange", () => {
+    if (location.hash.startsWith("#conversion")) renderConversions()
+  })
+  if (location.hash.startsWith("#conversion/")) {
+    document.querySelector("#conversion")?.scrollIntoView({ behavior: "instant", block: "start" })
+  }
 }
 
 function renderDemos() {
@@ -282,7 +362,9 @@ renderFolderCards()
 renderFolders()
 renderMinifiers()
 renderModules()
+renderConversions()
 renderDemos()
 renderProduction()
+bindConversion()
 bindCopy()
 bindProgress()
