@@ -34,6 +34,7 @@ describe("github pages artifact", () => {
     assert.match(html, /Vite 8 \/ Oxc/)
     assert.match(html, /esbuild/)
     assert.match(html, /Terser/)
+    assert.match(html, /keepers/)
     assert.match(html, /Lil \/ JS/)
     assert.doesNotMatch(html, /suspicious/i)
     assert.doesNotMatch(results, /suspicious/i)

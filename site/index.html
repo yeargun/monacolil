@@ -31,7 +31,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="live-dot"></span> monaco-editor 0.56.0 · LilScript port · not 100% feature parity</p>
           <h1>Monaco,<br /><em>by submodule.</em></h1>
-          <p class="lede">An independent LilScript editor that implements a large slice of <code>monaco-editor@0.56.0</code>. It is <strong>not</strong> 100% feature parity. The fair table is independently compiled modules. Headline JS is <strong>Vite 8 / Oxc</strong> minify. <strong>esbuild</strong> and <strong>Terser</strong> are scored on the same sources. Ratio is LilScript Brotli-11 / JS Brotli-11.</p>
+          <p class="lede">An independent LilScript editor that implements a large slice of <code>monaco-editor@0.56.0</code>. It is <strong>not</strong> 100% feature parity. Size rows are a <strong>library</strong> comparison: JS keeps ESM exports, Lil keepers call public class methods so <code>export class</code> does not DCE to nothing. Headline JS is <strong>Vite 8 / Oxc</strong>. <strong>esbuild</strong> and <strong>Terser</strong> are scored on the same sources. CSS-only monaco files are excluded. Ratio is LilScript Brotli-11 / JS Brotli-11.</p>
           <div class="install-row">
             <code>npm install @itslil/monaco-editor</code>
             <button class="copy" data-copy="npm install @itslil/monaco-editor" type="button">copy</button>
@@ -68,7 +68,7 @@
             <p class="eyebrow">Fair comparison</p>
             <h2>Folders,<br />not the kitchen sink.</h2>
           </div>
-          <p>Each monaco-editor-core file is minified three ways — <strong>Vite 8 / Oxc</strong>, <strong>esbuild</strong>, <strong>Terser</strong> — with other monaco imports left <em>external</em>, then scored with <code>lilscript-codec</code> Brotli-11 against the matching Lil file compiled alone. Folders are listed largest Vite/Oxc Brotli first. Ratio is Lil Brotli / Vite 8 Oxc Brotli. Not the running IDE, and not 100% feature parity.</p>
+          <p>Each <em>runtime</em> monaco-editor-core file is minified three ways — <strong>Vite 8 / Oxc</strong>, <strong>esbuild</strong>, <strong>Terser</strong> — with other monaco imports left <em>external</em>. Lil is compiled as <code>js-module</code> with keepers so public constructors and methods stay live. That is the same retention as an ESM library, not an app tree-shake. CSS-only / re-export JS files are left out. Tiny Lil rows are incomplete ports. Folders are listed largest Vite/Oxc Brotli first. Ratio is Lil Brotli / Vite 8 Oxc Brotli.</p>
         </div>
         <div class="perf-cards" id="folder-cards"></div>
         <div class="table-wrap light">
@@ -87,7 +87,7 @@
             <tbody id="folders-body"></tbody>
           </table>
         </div>
-        <p class="perf-note">JS columns are the same catalog files, remineed. Headline ratio is LilScript Brotli-11 / Vite 8 Oxc Brotli-11.</p>
+        <p class="perf-note">JS columns are the same runtime catalog files. Library retention on both sides. Headline ratio is LilScript Brotli-11 / Vite 8 Oxc Brotli-11.</p>
       </section>
 
       <section class="apps shell" id="minifiers">
@@ -121,7 +121,7 @@
             <p class="eyebrow">nontest-entire-module</p>
             <h2>Independent<br />modules.</h2>
           </div>
-          <p>The catalog sum of those standalone compiles. Headline JS is Vite 8 / Oxc. File pairs below use the same three minifiers on the JS side. Still not the shipped editor, and still not feature parity.</p>
+          <p>The catalog sum of those standalone compiles. File pairs below use the same keepers on Lil and the same three JS minifiers. Still not the shipped editor, and still not feature parity.</p>
         </div>
         <div class="table-wrap light">
           <table>

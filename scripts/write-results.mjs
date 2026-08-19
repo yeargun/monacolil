@@ -16,27 +16,65 @@ function laneSizes(sizes) {
 }
 
 const headlineLane = "oxc"
-const folders = (lab.coreComparison?.folders ?? []).map((row) => {
-  const js = row.jsLanes?.[headlineLane] ?? row.js
-  const lil = row.lil
-  const jsBrotli = js?.brotli ?? js?.brotli11 ?? 0
-  const lilBrotli = lil?.brotli ?? lil?.brotli11 ?? null
+
+function emptyLane() {
+  return { raw: 0, gzip: 0, brotli: 0 }
+}
+
+function addLane(into, sizes) {
+  if (!sizes) return
+  into.raw += sizes.raw ?? 0
+  into.gzip += sizes.gzip ?? sizes.gzip9 ?? 0
+  into.brotli += sizes.brotli ?? sizes.brotli11 ?? 0
+}
+
+function comparableFile(row) {
+  return (row.jsKind ?? "runtime") === "runtime" && row.js
+}
+
+const comparableFiles = (lab.coreComparison?.files ?? []).filter(comparableFile)
+const grouped = new Map()
+for (const row of comparableFiles) {
+  const key = row.folder
+  const list = grouped.get(key) ?? []
+  list.push(row)
+  grouped.set(key, list)
+}
+
+const folders = [...grouped.entries()].map(([key, rows]) => {
+  const js = emptyLane()
+  const lil = emptyLane()
+  const jsLanes = { oxc: emptyLane(), esbuild: emptyLane(), terser: emptyLane() }
+  let scoredLil = 0
+  for (const row of rows) {
+    addLane(js, row.jsLanes?.[headlineLane] ?? row.js)
+    if (row.jsLanes) {
+      addLane(jsLanes.oxc, row.jsLanes.oxc)
+      addLane(jsLanes.esbuild, row.jsLanes.esbuild)
+      addLane(jsLanes.terser, row.jsLanes.terser)
+    }
+    if (row.lil && row.lil.unique !== false) {
+      addLane(lil, row.lil)
+      scoredLil += 1
+    }
+  }
+  const lilSizes = scoredLil ? lil : null
   return {
-    key: row.key,
-    files: row.files,
-    scoredLil: row.scoredLil,
+    key,
+    files: rows.length,
+    scoredLil,
     jsMinifier: "vite/oxc",
     js: laneSizes(js),
-    lil: lil ? laneSizes(lil) : null,
+    lil: lilSizes ? laneSizes(lilSizes) : null,
     jsLanes: {
-      oxc: laneSizes(row.jsLanes?.oxc ?? js),
-      esbuild: laneSizes(row.jsLanes?.esbuild),
-      terser: laneSizes(row.jsLanes?.terser),
+      oxc: laneSizes(jsLanes.oxc),
+      esbuild: laneSizes(jsLanes.esbuild),
+      terser: laneSizes(jsLanes.terser),
     },
-    ratio: ratio(lilBrotli, jsBrotli),
-    ratioOxc: ratio(lilBrotli, row.jsLanes?.oxc?.brotli ?? jsBrotli),
-    ratioEsbuild: ratio(lilBrotli, row.jsLanes?.esbuild?.brotli),
-    ratioTerser: ratio(lilBrotli, row.jsLanes?.terser?.brotli),
+    ratio: ratio(lilSizes?.brotli, js.brotli),
+    ratioOxc: ratio(lilSizes?.brotli, jsLanes.oxc.brotli || js.brotli),
+    ratioEsbuild: ratio(lilSizes?.brotli, jsLanes.esbuild.brotli),
+    ratioTerser: ratio(lilSizes?.brotli, jsLanes.terser.brotli),
   }
 })
 folders.sort((a, b) => (b.js?.brotli11 ?? 0) - (a.js?.brotli11 ?? 0))
@@ -50,7 +88,28 @@ function median(values) {
   return rows.length % 2 ? rows[mid] : (rows[mid - 1] + rows[mid]) / 2
 }
 
-const totals = lab.coreComparison?.totals
+const totalsFromFiles = {
+  files: comparableFiles.length,
+  scoredLil: comparableFiles.filter((row) => row.lil && row.lil.unique !== false).length,
+  jsLanes: { oxc: emptyLane(), esbuild: emptyLane(), terser: emptyLane() },
+  lil: emptyLane(),
+}
+for (const row of comparableFiles) {
+  if (row.jsLanes) {
+    addLane(totalsFromFiles.jsLanes.oxc, row.jsLanes.oxc)
+    addLane(totalsFromFiles.jsLanes.esbuild, row.jsLanes.esbuild)
+    addLane(totalsFromFiles.jsLanes.terser, row.jsLanes.terser)
+  }
+  if (row.lil && row.lil.unique !== false) addLane(totalsFromFiles.lil, row.lil)
+}
+const totals = {
+  ...(lab.coreComparison?.totals ?? {}),
+  files: totalsFromFiles.files,
+  scoredLil: totalsFromFiles.scoredLil,
+  js: totalsFromFiles.jsLanes.oxc,
+  jsLanes: totalsFromFiles.jsLanes,
+  lil: totalsFromFiles.lil,
+}
 const production = lab.production
 const headline = folders.find((row) => row.key === "editor/common")
 const tooling = lab.coreComparison?.tooling ?? lab.tooling ?? {
@@ -108,12 +167,14 @@ const results = {
   featureParity: false,
   codec: "lilscript-codec gzip-9 / brotli-11",
   ratioNote: "ratio = LilScript Brotli-11 / JS Brotli-11",
+  retention:
+    "Library retention on both sides: JS keeps ESM exports; Lil export class is type-only so keepers call public constructors/methods. Unused privates may DCE. CSS-only and re-export JS files are excluded. Tiny Lil rows are incomplete ports, not a different tree-shaker.",
   tooling,
   jsMinifier: {
     headline: "vite/oxc",
     folders: "Vite 8 Oxc minify (default client minifier)",
     production: "Vite 8 Oxc minify; esbuild and Terser also scored",
-    pairs: "Vite 8 Oxc / esbuild / Terser; headline Vite/Oxc",
+    pairs: "Vite 8 Oxc / esbuild / Terser; Lil compiled with the same public-method keepers as the catalog",
   },
   vscodeCommit: lab.versions?.vscodeCommit,
   catalog: lab.catalog,
@@ -124,13 +185,13 @@ const results = {
     lilBrotli: headline?.lil?.brotli11 ?? 0,
     ratio: headline?.ratio ?? null,
     jsMinifier: "vite/oxc",
-    note: "Largest JS folder. Independently compiled modules, other monaco imports left external. Headline JS is Vite 8 Oxc minify. Ratio is Lil Brotli / JS Brotli.",
+    note: "Largest JS folder among runtime JS files (CSS-only / re-export monaco files excluded). JS keeps ESM exports. Lil keepers retain public class methods. Ratio is Lil Brotli / Vite 8 Oxc Brotli.",
   },
   minifiers,
   independentModules: {
     label: "nontest-entire-module",
     jsMinifier: "vite/oxc",
-    note: "Each monaco-editor-core file is minified with Vite 8 Oxc, esbuild, and Terser, other monaco imports external, then scored Brotli-11 against the matching LilScript file compiled alone. Headline JS is Vite/Oxc. Ratio is Lil Brotli / JS Brotli.",
+    note: "Runtime monaco-editor-core files only. JS: other monaco imports external, all ESM exports kept, Vite 8 Oxc / esbuild / Terser. Lil: js-module keepers retain exported class methods whose types are in-file or imported. CSS-only and re-export JS files excluded. Ratio is Lil Brotli / JS Brotli.",
     files: totals?.files ?? 0,
     scoredLil: totals?.scoredLil ?? 0,
     js: laneSizes(jsLanes.oxc ?? totals?.js),
