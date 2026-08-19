@@ -3,6 +3,12 @@
   "package": "@itslil/monaco-editor",
   "featureParity": false,
   "codec": "lilscript-codec gzip-9 / brotli-11",
+  "ratioNote": "ratio = LilScript Brotli-11 / JS Brotli-11",
+  "jsMinifier": {
+    "folders": "esbuild minify",
+    "production": "esbuild minify",
+    "pairs": "esbuild and terser; best Brotli-11"
+  },
   "vscodeCommit": "f487add297079a02eb836810185b165e50cadabc",
   "catalog": {
     "mapped": 994,
@@ -19,12 +25,14 @@
     "files": 219,
     "jsBrotli": 240863,
     "lilBrotli": 163337,
-    "ratio": 1.4746383244457777,
-    "note": "Largest scored folder. Independently compiled modules, other monaco imports left external. Not the running IDE."
+    "ratio": 0.6781323823086153,
+    "jsMinifier": "esbuild",
+    "note": "Largest JS folder. Independently compiled modules, other monaco imports left external. JS minified with esbuild. Ratio is Lil Brotli / JS Brotli."
   },
   "independentModules": {
     "label": "nontest-entire-module",
-    "note": "Each monaco-editor-core file is esbuild-minified with other monaco imports external, then scored Brotli-11 against the matching LilScript file compiled alone (js-module keepers). This is not the shipped editor bundle and not a claim of product parity.",
+    "jsMinifier": "esbuild minify",
+    "note": "Each monaco-editor-core file is esbuild-minified with other monaco imports external, then scored Brotli-11 against the matching LilScript file compiled alone (js-module keepers). Ratio is Lil Brotli / JS Brotli. This is not the shipped editor bundle and not a claim of product parity.",
     "files": 994,
     "scoredLil": 992,
     "js": {
@@ -36,22 +44,21 @@
       "raw": 2132061,
       "gzip9": 717722,
       "brotli11": 624522
-    }
+    },
+    "ratio": 0.49744674241609615
   },
   "folderSummary": {
     "folders": 115,
     "scored": 115,
-    "lilSmaller": 99,
-    "comparable": 38,
-    "suspicious": 64,
-    "medianRatio": 2.628419452887538,
-    "comparableMedian": 1.4873191622228887
+    "medianRatio": 0.3804567794160162,
+    "jsMinifier": "esbuild"
   },
   "folders": [
     {
       "key": "editor/common",
       "files": 219,
       "scoredLil": 219,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 879347,
         "gzip9": 271562,
@@ -62,13 +69,13 @@
         "gzip9": 185888,
         "brotli11": 163337
       },
-      "ratio": 1.4746383244457777,
-      "band": "comparable"
+      "ratio": 0.6781323823086153
     },
     {
       "key": "editor/browser",
       "files": 145,
       "scoredLil": 145,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 735819,
         "gzip9": 227673,
@@ -79,13 +86,13 @@
         "gzip9": 109510,
         "brotli11": 95524
       },
-      "ratio": 2.1072505338972403,
-      "band": "comparable"
+      "ratio": 0.47455202118305156
     },
     {
       "key": "base/browser",
       "files": 90,
       "scoredLil": 89,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 481455,
         "gzip9": 145797,
@@ -96,13 +103,13 @@
         "gzip9": 109841,
         "brotli11": 96230
       },
-      "ratio": 1.345141847656656,
-      "band": "comparable"
+      "ratio": 0.7434160209513068
     },
     {
       "key": "base/common",
       "files": 122,
       "scoredLil": 121,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 385502,
         "gzip9": 138839,
@@ -113,13 +120,13 @@
         "gzip9": 87879,
         "brotli11": 76330
       },
-      "ratio": 1.5490763788811739,
-      "band": "comparable"
+      "ratio": 0.645545961214807
     },
     {
       "key": "editor/contrib/inlineCompletions",
       "files": 55,
       "scoredLil": 55,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 316320,
         "gzip9": 107371,
@@ -130,13 +137,13 @@
         "gzip9": 28980,
         "brotli11": 24958
       },
-      "ratio": 3.832919304431445,
-      "band": "suspicious"
+      "ratio": 0.26089774414082917
     },
     {
       "key": "platform/quickinput",
       "files": 21,
       "scoredLil": 21,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 126223,
         "gzip9": 39811,
@@ -147,13 +154,13 @@
         "gzip9": 5422,
         "brotli11": 4424
       },
-      "ratio": 7.948462929475587,
-      "band": "suspicious"
+      "ratio": 0.12581048799908998
     },
     {
       "key": "editor/standalone",
       "files": 26,
       "scoredLil": 26,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 113359,
         "gzip9": 38172,
@@ -164,13 +171,13 @@
         "gzip9": 10408,
         "brotli11": 8795
       },
-      "ratio": 3.822399090392268,
-      "band": "suspicious"
+      "ratio": 0.2616158010589565
     },
     {
       "key": "editor/contrib/suggest",
       "files": 15,
       "scoredLil": 15,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 103526,
         "gzip9": 33297,
@@ -181,13 +188,13 @@
         "gzip9": 7163,
         "brotli11": 6100
       },
-      "ratio": 4.85327868852459,
-      "band": "suspicious"
+      "ratio": 0.20604627596689748
     },
     {
       "key": "editor/contrib/hover",
       "files": 22,
       "scoredLil": 22,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 84124,
         "gzip9": 28144,
@@ -198,13 +205,13 @@
         "gzip9": 12379,
         "brotli11": 10727
       },
-      "ratio": 2.286380162207514,
-      "band": "comparable"
+      "ratio": 0.43737258419636305
     },
     {
       "key": "editor/contrib/find",
       "files": 10,
       "scoredLil": 10,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 82275,
         "gzip9": 22482,
@@ -215,13 +222,13 @@
         "gzip9": 9958,
         "brotli11": 8750
       },
-      "ratio": 2.257485714285714,
-      "band": "comparable"
+      "ratio": 0.44297068799676
     },
     {
       "key": "editor/contrib/gotoSymbol",
       "files": 9,
       "scoredLil": 9,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 63371,
         "gzip9": 19957,
@@ -232,13 +239,13 @@
         "gzip9": 11106,
         "brotli11": 9279
       },
-      "ratio": 1.8880267270179976,
-      "band": "comparable"
+      "ratio": 0.5296535190364747
     },
     {
       "key": "platform/theme",
       "files": 17,
       "scoredLil": 17,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 72039,
         "gzip9": 19974,
@@ -249,13 +256,13 @@
         "gzip9": 9424,
         "brotli11": 7819
       },
-      "ratio": 2.1919682823890523,
-      "band": "comparable"
+      "ratio": 0.45621098080401423
     },
     {
       "key": "editor/contrib/codeAction",
       "files": 9,
       "scoredLil": 9,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 47717,
         "gzip9": 16440,
@@ -266,13 +273,13 @@
         "gzip9": 6273,
         "brotli11": 5454
       },
-      "ratio": 2.660982764943161,
-      "band": "suspicious"
+      "ratio": 0.3758010059946255
     },
     {
       "key": "editor/contrib/colorPicker",
       "files": 20,
       "scoredLil": 20,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 43369,
         "gzip9": 16628,
@@ -283,13 +290,13 @@
         "gzip9": 17643,
         "brotli11": 15532
       },
-      "ratio": 0.9266031419005923,
-      "band": "comparable"
+      "ratio": 1.0792106725958865
     },
     {
       "key": "editor/contrib/folding",
       "files": 7,
       "scoredLil": 7,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 48439,
         "gzip9": 14250,
@@ -300,13 +307,13 @@
         "gzip9": 7334,
         "brotli11": 6564
       },
-      "ratio": 1.9504875076173065,
-      "band": "comparable"
+      "ratio": 0.5126923377333438
     },
     {
       "key": "platform/actions",
       "files": 5,
       "scoredLil": 5,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 49135,
         "gzip9": 13937,
@@ -317,13 +324,13 @@
         "gzip9": 1320,
         "brotli11": 1106
       },
-      "ratio": 11.21880650994575,
-      "band": "suspicious"
+      "ratio": 0.08913604126370084
     },
     {
       "key": "editor/contrib/snippet",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 41847,
         "gzip9": 12905,
@@ -334,13 +341,13 @@
         "gzip9": 5108,
         "brotli11": 4502
       },
-      "ratio": 2.55752998667259,
-      "band": "suspicious"
+      "ratio": 0.3910022581205489
     },
     {
       "key": "editor/contrib/stickyScroll",
       "files": 7,
       "scoredLil": 7,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 41337,
         "gzip9": 12440,
@@ -351,13 +358,13 @@
         "gzip9": 3143,
         "brotli11": 2793
       },
-      "ratio": 3.9727891156462585,
-      "band": "suspicious"
+      "ratio": 0.2517123287671233
     },
     {
       "key": "editor/contrib/dropOrPasteInto",
       "files": 7,
       "scoredLil": 7,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 31876,
         "gzip9": 11769,
@@ -368,13 +375,13 @@
         "gzip9": 4494,
         "brotli11": 3948
       },
-      "ratio": 2.628419452887538,
-      "band": "suspicious"
+      "ratio": 0.3804567794160162
     },
     {
       "key": "platform/actionWidget",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 37347,
         "gzip9": 10468,
@@ -385,13 +392,13 @@
         "gzip9": 1079,
         "brotli11": 905
       },
-      "ratio": 10.238674033149172,
-      "band": "suspicious"
+      "ratio": 0.09766889704295273
     },
     {
       "key": "platform/hover",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 30576,
         "gzip9": 9938,
@@ -402,13 +409,13 @@
         "gzip9": 1106,
         "brotli11": 878
       },
-      "ratio": 10.053530751708427,
-      "band": "suspicious"
+      "ratio": 0.09946754276651183
     },
     {
       "key": "editor/contrib/inlayHints",
       "files": 5,
       "scoredLil": 5,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 24767,
         "gzip9": 9429,
@@ -419,13 +426,13 @@
         "gzip9": 2495,
         "brotli11": 2160
       },
-      "ratio": 3.8930555555555557,
-      "band": "suspicious"
+      "ratio": 0.2568676418123439
     },
     {
       "key": "platform/contextkey",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 33792,
         "gzip9": 9437,
@@ -436,13 +443,13 @@
         "gzip9": 6878,
         "brotli11": 6140
       },
-      "ratio": 1.3579804560260587,
-      "band": "comparable"
+      "ratio": 0.7363876229311586
     },
     {
       "key": "editor/contrib/rename",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 31873,
         "gzip9": 9360,
@@ -453,13 +460,13 @@
         "gzip9": 1602,
         "brotli11": 1430
       },
-      "ratio": 5.757342657342657,
-      "band": "suspicious"
+      "ratio": 0.17369124256042756
     },
     {
       "key": "editor/contrib/linesOperations",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 31193,
         "gzip9": 8462,
@@ -470,13 +477,13 @@
         "gzip9": 2836,
         "brotli11": 2492
       },
-      "ratio": 3.038523274478331,
-      "band": "suspicious"
+      "ratio": 0.3291072371896461
     },
     {
       "key": "platform/configuration",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 28269,
         "gzip9": 8023,
@@ -487,13 +494,13 @@
         "gzip9": 2172,
         "brotli11": 1860
       },
-      "ratio": 3.877956989247312,
-      "band": "suspicious"
+      "ratio": 0.2578677388049355
     },
     {
       "key": "editor/contrib/gotoError",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 23659,
         "gzip9": 8144,
@@ -504,13 +511,13 @@
         "gzip9": 2432,
         "brotli11": 2112
       },
-      "ratio": 3.397727272727273,
-      "band": "suspicious"
+      "ratio": 0.29431438127090304
     },
     {
       "key": "editor/contrib/codelens",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 19934,
         "gzip9": 6815,
@@ -521,13 +528,13 @@
         "gzip9": 1752,
         "brotli11": 1528
       },
-      "ratio": 3.951570680628272,
-      "band": "suspicious"
+      "ratio": 0.2530639284531302
     },
     {
       "key": "platform/keybinding",
       "files": 7,
       "scoredLil": 7,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 17793,
         "gzip9": 6456,
@@ -538,13 +545,13 @@
         "gzip9": 2883,
         "brotli11": 2458
       },
-      "ratio": 2.2998372660699755,
-      "band": "comparable"
+      "ratio": 0.4348133734300372
     },
     {
       "key": "platform/list",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 27089,
         "gzip9": 6310,
@@ -555,13 +562,13 @@
         "gzip9": 678,
         "brotli11": 593
       },
-      "ratio": 9.21247892074199,
-      "band": "suspicious"
+      "ratio": 0.10854841662090427
     },
     {
       "key": "editor/contrib/quickAccess",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 14859,
         "gzip9": 6156,
@@ -572,13 +579,13 @@
         "gzip9": 4936,
         "brotli11": 4124
       },
-      "ratio": 1.291949563530553,
-      "band": "comparable"
+      "ratio": 0.774024024024024
     },
     {
       "key": "editor/contrib/parameterHints",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 17402,
         "gzip9": 6057,
@@ -589,13 +596,13 @@
         "gzip9": 3423,
         "brotli11": 2981
       },
-      "ratio": 1.7822878228782288,
-      "band": "comparable"
+      "ratio": 0.5610766045548654
     },
     {
       "key": "editor/contrib/wordHighlighter",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 20475,
         "gzip9": 5913,
@@ -606,13 +613,13 @@
         "gzip9": 2097,
         "brotli11": 1851
       },
-      "ratio": 2.7920043219881143,
-      "band": "suspicious"
+      "ratio": 0.35816563467492263
     },
     {
       "key": "editor/contrib/semanticTokens",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 17331,
         "gzip9": 5256,
@@ -623,13 +630,13 @@
         "gzip9": 1888,
         "brotli11": 1596
       },
-      "ratio": 2.9279448621553885,
-      "band": "suspicious"
+      "ratio": 0.34153648619730365
     },
     {
       "key": "editor/contrib/unicodeHighlighter",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 17570,
         "gzip9": 5303,
@@ -640,13 +647,13 @@
         "gzip9": 834,
         "brotli11": 704
       },
-      "ratio": 6.613636363636363,
-      "band": "suspicious"
+      "ratio": 0.15120274914089346
     },
     {
       "key": "editor/contrib/format",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 15447,
         "gzip9": 5154,
@@ -657,13 +664,13 @@
         "gzip9": 1830,
         "brotli11": 1602
       },
-      "ratio": 2.803370786516854,
-      "band": "suspicious"
+      "ratio": 0.35671342685370744
     },
     {
       "key": "platform/undoRedo",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 19329,
         "gzip9": 4895,
@@ -674,13 +681,13 @@
         "gzip9": 1199,
         "brotli11": 1061
       },
-      "ratio": 4.064090480678605,
-      "band": "suspicious"
+      "ratio": 0.24605751391465677
     },
     {
       "key": "editor/contrib/multicursor",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 18529,
         "gzip9": 4740,
@@ -691,13 +698,13 @@
         "gzip9": 553,
         "brotli11": 494
       },
-      "ratio": 8.544534412955466,
-      "band": "suspicious"
+      "ratio": 0.11703387822790808
     },
     {
       "key": "editor/contrib/indentation",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 12531,
         "gzip9": 4183,
@@ -708,13 +715,13 @@
         "gzip9": 1281,
         "brotli11": 1182
       },
-      "ratio": 3.1328257191201354,
-      "band": "suspicious"
+      "ratio": 0.3192006481231434
     },
     {
       "key": "editor/contrib/comment",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 11834,
         "gzip9": 4058,
@@ -725,13 +732,13 @@
         "gzip9": 2961,
         "brotli11": 2574
       },
-      "ratio": 1.4102564102564104,
-      "band": "comparable"
+      "ratio": 0.7090909090909091
     },
     {
       "key": "platform/instantiation",
       "files": 6,
       "scoredLil": 6,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 9367,
         "gzip9": 3967,
@@ -742,13 +749,13 @@
         "gzip9": 2181,
         "brotli11": 1886
       },
-      "ratio": 1.8616118769883352,
-      "band": "comparable"
+      "ratio": 0.5371688977499288
     },
     {
       "key": "editor/contrib/links",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 10770,
         "gzip9": 3925,
@@ -759,13 +766,13 @@
         "gzip9": 1500,
         "brotli11": 1304
       },
-      "ratio": 2.6748466257668713,
-      "band": "suspicious"
+      "ratio": 0.3738532110091743
     },
     {
       "key": "editor/contrib/smartSelect",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 9635,
         "gzip9": 3643,
@@ -776,13 +783,13 @@
         "gzip9": 2046,
         "brotli11": 1773
       },
-      "ratio": 1.8336153412295544,
-      "band": "comparable"
+      "ratio": 0.5453706551830206
     },
     {
       "key": "editor/contrib/linkedEditing",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 9150,
         "gzip9": 3121,
@@ -793,13 +800,13 @@
         "gzip9": 550,
         "brotli11": 490
       },
-      "ratio": 5.648979591836735,
-      "band": "suspicious"
+      "ratio": 0.17702312138728324
     },
     {
       "key": "platform/contextview",
       "files": 4,
       "scoredLil": 4,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 7306,
         "gzip9": 3036,
@@ -810,13 +817,13 @@
         "gzip9": 873,
         "brotli11": 709
       },
-      "ratio": 3.739069111424542,
-      "band": "suspicious"
+      "ratio": 0.26744624669935874
     },
     {
       "key": "editor/contrib/peekView",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 9132,
         "gzip9": 2754,
@@ -827,13 +834,13 @@
         "gzip9": 413,
         "brotli11": 355
       },
-      "ratio": 6.859154929577465,
-      "band": "suspicious"
+      "ratio": 0.1457905544147844
     },
     {
       "key": "editor/contrib/zoneWidget",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 8639,
         "gzip9": 2638,
@@ -844,13 +851,13 @@
         "gzip9": 385,
         "brotli11": 330
       },
-      "ratio": 7.142424242424243,
-      "band": "suspicious"
+      "ratio": 0.14000848536274926
     },
     {
       "key": "platform/markers",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 6681,
         "gzip9": 2502,
@@ -861,13 +868,13 @@
         "gzip9": 651,
         "brotli11": 546
       },
-      "ratio": 4.097069597069597,
-      "band": "suspicious"
+      "ratio": 0.2440768886902101
     },
     {
       "key": "editor/contrib/contextmenu",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 7075,
         "gzip9": 2372,
@@ -878,13 +885,13 @@
         "gzip9": 494,
         "brotli11": 426
       },
-      "ratio": 5.009389671361502,
-      "band": "suspicious"
+      "ratio": 0.19962511715089035
     },
     {
       "key": "editor/contrib/documentSymbols",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 5707,
         "gzip9": 2340,
@@ -895,13 +902,13 @@
         "gzip9": 2468,
         "brotli11": 2062
       },
-      "ratio": 0.992725509214355,
-      "band": "comparable"
+      "ratio": 1.0073277967757694
     },
     {
       "key": "editor/contrib/bracketMatching",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 7207,
         "gzip9": 2302,
@@ -912,13 +919,13 @@
         "gzip9": 638,
         "brotli11": 567
       },
-      "ratio": 3.5908289241622575,
-      "band": "suspicious"
+      "ratio": 0.2784872298624754
     },
     {
       "key": "editor/contrib/clipboard",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 6972,
         "gzip9": 2119,
@@ -929,13 +936,13 @@
         "gzip9": 538,
         "brotli11": 487
       },
-      "ratio": 3.8316221765913756,
-      "band": "suspicious"
+      "ratio": 0.2609860664523044
     },
     {
       "key": "platform/accessibilitySignal",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 12408,
         "gzip9": 2075,
@@ -946,13 +953,13 @@
         "gzip9": 311,
         "brotli11": 257
       },
-      "ratio": 7.0505836575875485,
-      "band": "suspicious"
+      "ratio": 0.14183222958057395
     },
     {
       "key": "platform/log",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 5530,
         "gzip9": 2018,
@@ -963,13 +970,13 @@
         "gzip9": 618,
         "brotli11": 510
       },
-      "ratio": 3.5098039215686274,
-      "band": "suspicious"
+      "ratio": 0.2849162011173184
     },
     {
       "key": "editor/contrib/wordOperations",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 8751,
         "gzip9": 2067,
@@ -980,13 +987,13 @@
         "gzip9": 587,
         "brotli11": 526
       },
-      "ratio": 3.3802281368821294,
-      "band": "suspicious"
+      "ratio": 0.2958380202474691
     },
     {
       "key": "editor/contrib/message",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 4914,
         "gzip9": 1767,
@@ -997,13 +1004,13 @@
         "gzip9": 210,
         "brotli11": 165
       },
-      "ratio": 9.206060606060607,
-      "band": "suspicious"
+      "ratio": 0.10862409479921001
     },
     {
       "key": "editor/contrib/inPlaceReplace",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 4150,
         "gzip9": 1743,
@@ -1014,13 +1021,13 @@
         "gzip9": 434,
         "brotli11": 352
       },
-      "ratio": 4.301136363636363,
-      "band": "suspicious"
+      "ratio": 0.23249669749009247
     },
     {
       "key": "editor/contrib/dnd",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 7116,
         "gzip9": 1725,
@@ -1031,13 +1038,13 @@
         "gzip9": 1284,
         "brotli11": 1128
       },
-      "ratio": 1.3333333333333333,
-      "band": "comparable"
+      "ratio": 0.75
     },
     {
       "key": "platform/clipboard",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 4457,
         "gzip9": 1739,
@@ -1048,13 +1055,13 @@
         "gzip9": 502,
         "brotli11": 417
       },
-      "ratio": 3.5251798561151078,
-      "band": "suspicious"
+      "ratio": 0.2836734693877551
     },
     {
       "key": "platform/webWorker",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3791,
         "gzip9": 1709,
@@ -1065,13 +1072,13 @@
         "gzip9": 623,
         "brotli11": 507
       },
-      "ratio": 2.863905325443787,
-      "band": "suspicious"
+      "ratio": 0.34917355371900827
     },
     {
       "key": "platform/accessibility",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 5686,
         "gzip9": 1719,
@@ -1082,13 +1089,13 @@
         "gzip9": 734,
         "brotli11": 603
       },
-      "ratio": 2.384742951907131,
-      "band": "comparable"
+      "ratio": 0.4193324061196106
     },
     {
       "key": "platform/storage",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 5301,
         "gzip9": 1567,
@@ -1099,13 +1106,13 @@
         "gzip9": 492,
         "brotli11": 428
       },
-      "ratio": 3.175233644859813,
-      "band": "suspicious"
+      "ratio": 0.3149374540103017
     },
     {
       "key": "editor/contrib/floatingMenu",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3257,
         "gzip9": 1539,
@@ -1116,13 +1123,13 @@
         "gzip9": 390,
         "brotli11": 322
       },
-      "ratio": 4.1397515527950315,
-      "band": "suspicious"
+      "ratio": 0.2415603900975244
     },
     {
       "key": "platform/observable",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2908,
         "gzip9": 1534,
@@ -1133,13 +1140,13 @@
         "gzip9": 538,
         "brotli11": 449
       },
-      "ratio": 2.9265033407572383,
-      "band": "suspicious"
+      "ratio": 0.3417047184170472
     },
     {
       "key": "editor/contrib/sectionHeaders",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 4318,
         "gzip9": 1480,
@@ -1150,13 +1157,13 @@
         "gzip9": 333,
         "brotli11": 279
       },
-      "ratio": 4.645161290322581,
-      "band": "suspicious"
+      "ratio": 0.2152777777777778
     },
     {
       "key": "editor/contrib/editorState",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3626,
         "gzip9": 1430,
@@ -1167,13 +1174,13 @@
         "gzip9": 582,
         "brotli11": 488
       },
-      "ratio": 2.5204918032786887,
-      "band": "suspicious"
+      "ratio": 0.3967479674796748
     },
     {
       "key": "editor/contrib/gpu",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3250,
         "gzip9": 1404,
@@ -1184,13 +1191,13 @@
         "gzip9": 126,
         "brotli11": 100
       },
-      "ratio": 12.19,
-      "band": "suspicious"
+      "ratio": 0.08203445447087777
     },
     {
       "key": "editor/contrib/caretOperations",
       "files": 3,
       "scoredLil": 3,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3123,
         "gzip9": 1432,
@@ -1201,13 +1208,13 @@
         "gzip9": 1050,
         "brotli11": 909
       },
-      "ratio": 1.3355335533553356,
-      "band": "comparable"
+      "ratio": 0.7487644151565074
     },
     {
       "key": "platform/opener",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2987,
         "gzip9": 1375,
@@ -1218,13 +1225,13 @@
         "gzip9": 301,
         "brotli11": 230
       },
-      "ratio": 5.182608695652174,
-      "band": "suspicious"
+      "ratio": 0.1929530201342282
     },
     {
       "key": "editor/contrib/inlineProgress",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3292,
         "gzip9": 1385,
@@ -1235,13 +1242,13 @@
         "gzip9": 204,
         "brotli11": 157
       },
-      "ratio": 7.464968152866242,
-      "band": "suspicious"
+      "ratio": 0.13395904436860068
     },
     {
       "key": "editor/contrib/middleScroll",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2809,
         "gzip9": 1317,
@@ -1252,13 +1259,13 @@
         "gzip9": 496,
         "brotli11": 412
       },
-      "ratio": 2.7985436893203883,
-      "band": "suspicious"
+      "ratio": 0.35732870771899394
     },
     {
       "key": "editor/contrib/anchorSelect",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3609,
         "gzip9": 1242,
@@ -1269,13 +1276,13 @@
         "gzip9": 386,
         "brotli11": 349
       },
-      "ratio": 3.0945558739255015,
-      "band": "suspicious"
+      "ratio": 0.32314814814814813
     },
     {
       "key": "platform/history",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2727,
         "gzip9": 1253,
@@ -1286,13 +1293,13 @@
         "gzip9": 391,
         "brotli11": 311
       },
-      "ratio": 3.437299035369775,
-      "band": "suspicious"
+      "ratio": 0.2909260991580917
     },
     {
       "key": "base/parts",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3262,
         "gzip9": 1203,
@@ -1303,13 +1310,13 @@
         "gzip9": 850,
         "brotli11": 743
       },
-      "ratio": 1.386271870794078,
-      "band": "comparable"
+      "ratio": 0.7213592233009709
     },
     {
       "key": "editor/contrib/diffEditorBreadcrumbs",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2799,
         "gzip9": 1141,
@@ -1320,13 +1327,13 @@
         "gzip9": 294,
         "brotli11": 255
       },
-      "ratio": 3.835294117647059,
-      "band": "suspicious"
+      "ratio": 0.2607361963190184
     },
     {
       "key": "platform/workspace",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2469,
         "gzip9": 1095,
@@ -1337,13 +1344,13 @@
         "gzip9": 452,
         "brotli11": 366
       },
-      "ratio": 2.587431693989071,
-      "band": "suspicious"
+      "ratio": 0.3864836325237592
     },
     {
       "key": "editor/contrib/unusualLineTerminators",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2743,
         "gzip9": 1092,
@@ -1354,13 +1361,13 @@
         "gzip9": 417,
         "brotli11": 352
       },
-      "ratio": 2.664772727272727,
-      "band": "suspicious"
+      "ratio": 0.3752665245202559
     },
     {
       "key": "editor/contrib/placeholderText",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2426,
         "gzip9": 1090,
@@ -1371,13 +1378,13 @@
         "gzip9": 366,
         "brotli11": 286
       },
-      "ratio": 3.2482517482517483,
-      "band": "suspicious"
+      "ratio": 0.3078579117330463
     },
     {
       "key": "editor/contrib/symbolIcons",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 7282,
         "gzip9": 1162,
@@ -1388,13 +1395,13 @@
         "gzip9": 293,
         "brotli11": 231
       },
-      "ratio": 3.865800865800866,
-      "band": "suspicious"
+      "ratio": 0.25867861142217247
     },
     {
       "key": "editor/contrib/cursorUndo",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2512,
         "gzip9": 876,
@@ -1405,13 +1412,13 @@
         "gzip9": 452,
         "brotli11": 396
       },
-      "ratio": 1.9646464646464648,
-      "band": "comparable"
+      "ratio": 0.5089974293059126
     },
     {
       "key": "editor/editor.all.js",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 3699,
         "gzip9": 842,
@@ -1422,13 +1429,13 @@
         "gzip9": 1092,
         "brotli11": 942
       },
-      "ratio": 0.778131634819533,
-      "band": "js-smaller"
+      "ratio": 1.2851296043656206
     },
     {
       "key": "platform/markdown",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 1586,
         "gzip9": 790,
@@ -1439,13 +1446,13 @@
         "gzip9": 315,
         "brotli11": 273
       },
-      "ratio": 2.4285714285714284,
-      "band": "comparable"
+      "ratio": 0.4117647058823529
     },
     {
       "key": "platform/dataChannel",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 1365,
         "gzip9": 794,
@@ -1456,13 +1463,13 @@
         "gzip9": 344,
         "brotli11": 261
       },
-      "ratio": 2.5363984674329503,
-      "band": "suspicious"
+      "ratio": 0.3942598187311178
     },
     {
       "key": "platform/userInteraction",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 1585,
         "gzip9": 783,
@@ -1473,13 +1480,13 @@
         "gzip9": 327,
         "brotli11": 261
       },
-      "ratio": 2.524904214559387,
-      "band": "suspicious"
+      "ratio": 0.3960546282245827
     },
     {
       "key": "editor/contrib/insertFinalNewLine",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 1321,
         "gzip9": 739,
@@ -1490,13 +1497,13 @@
         "gzip9": 328,
         "brotli11": 260
       },
-      "ratio": 2.4076923076923076,
-      "band": "comparable"
+      "ratio": 0.41533546325878595
     },
     {
       "key": "editor/contrib/wordPartOperations",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 2500,
         "gzip9": 704,
@@ -1507,13 +1514,13 @@
         "gzip9": 587,
         "brotli11": 526
       },
-      "ratio": 1.1368821292775666,
-      "band": "comparable"
+      "ratio": 0.8795986622073578
     },
     {
       "key": "editor/editor.api.js",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 1576,
         "gzip9": 687,
@@ -1524,13 +1531,13 @@
         "gzip9": 385,
         "brotli11": 321
       },
-      "ratio": 1.8068535825545171,
-      "band": "comparable"
+      "ratio": 0.553448275862069
     },
     {
       "key": "platform/commands",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 1537,
         "gzip9": 658,
@@ -1541,13 +1548,13 @@
         "gzip9": 430,
         "brotli11": 371
       },
-      "ratio": 1.5579514824797844,
-      "band": "comparable"
+      "ratio": 0.6418685121107266
     },
     {
       "key": "platform/product",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 1364,
         "gzip9": 649,
@@ -1558,13 +1565,13 @@
         "gzip9": 192,
         "brotli11": 150
       },
-      "ratio": 3.54,
-      "band": "suspicious"
+      "ratio": 0.2824858757062147
     },
     {
       "key": "nls.js",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 926,
         "gzip9": 523,
@@ -1575,13 +1582,13 @@
         "gzip9": 569,
         "brotli11": 506
       },
-      "ratio": 0.8932806324110671,
-      "band": "comparable"
+      "ratio": 1.1194690265486726
     },
     {
       "key": "editor/contrib/toggleTabFocusMode",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 985,
         "gzip9": 541,
@@ -1592,13 +1599,13 @@
         "gzip9": 142,
         "brotli11": 107
       },
-      "ratio": 4.093457943925234,
-      "band": "suspicious"
+      "ratio": 0.24429223744292236
     },
     {
       "key": "platform/dnd",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 859,
         "gzip9": 504,
@@ -1609,13 +1616,13 @@
         "gzip9": 181,
         "brotli11": 145
       },
-      "ratio": 2.910344827586207,
-      "band": "suspicious"
+      "ratio": 0.34360189573459715
     },
     {
       "key": "editor/contrib/readOnlyMessage",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 918,
         "gzip9": 451,
@@ -1626,13 +1633,13 @@
         "gzip9": 294,
         "brotli11": 255
       },
-      "ratio": 1.4745098039215687,
-      "band": "comparable"
+      "ratio": 0.6781914893617021
     },
     {
       "key": "editor/contrib/lineSelection",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 729,
         "gzip9": 422,
@@ -1643,13 +1650,13 @@
         "gzip9": 292,
         "brotli11": 244
       },
-      "ratio": 1.4139344262295082,
-      "band": "comparable"
+      "ratio": 0.7072463768115942
     },
     {
       "key": "platform/jsonschemas",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 744,
         "gzip9": 402,
@@ -1660,13 +1667,13 @@
         "gzip9": 279,
         "brotli11": 226
       },
-      "ratio": 1.4690265486725664,
-      "band": "comparable"
+      "ratio": 0.6807228915662651
     },
     {
       "key": "platform/window",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 725,
         "gzip9": 365,
@@ -1677,13 +1684,13 @@
         "gzip9": 159,
         "brotli11": 124
       },
-      "ratio": 2.596774193548387,
-      "band": "suspicious"
+      "ratio": 0.38509316770186336
     },
     {
       "key": "editor/editor.worker.start.js",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 509,
         "gzip9": 322,
@@ -1694,13 +1701,13 @@
         "gzip9": 311,
         "brotli11": 271
       },
-      "ratio": 1.0774907749077491,
-      "band": "comparable"
+      "ratio": 0.928082191780822
     },
     {
       "key": "editor/contrib/tokenization",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 569,
         "gzip9": 347,
@@ -1711,13 +1718,13 @@
         "gzip9": 293,
         "brotli11": 235
       },
-      "ratio": 1.2085106382978723,
-      "band": "comparable"
+      "ratio": 0.8274647887323944
     },
     {
       "key": "platform/action",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 446,
         "gzip9": 348,
@@ -1728,13 +1735,13 @@
         "gzip9": 295,
         "brotli11": 233
       },
-      "ratio": 1.1888412017167382,
-      "band": "comparable"
+      "ratio": 0.8411552346570397
     },
     {
       "key": "editor/contrib/fontZoom",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 768,
         "gzip9": 309,
@@ -1745,13 +1752,13 @@
         "gzip9": 148,
         "brotli11": 111
       },
-      "ratio": 2.27027027027027,
-      "band": "comparable"
+      "ratio": 0.44047619047619047
     },
     {
       "key": "editor/contrib/longLinesHelper",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 464,
         "gzip9": 310,
@@ -1762,13 +1769,13 @@
         "gzip9": 117,
         "brotli11": 85
       },
-      "ratio": 2.9411764705882355,
-      "band": "suspicious"
+      "ratio": 0.34
     },
     {
       "key": "amdX.js",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 414,
         "gzip9": 309,
@@ -1779,13 +1786,13 @@
         "gzip9": 543,
         "brotli11": 467
       },
-      "ratio": 0.5224839400428265,
-      "band": "js-smaller"
+      "ratio": 1.9139344262295082
     },
     {
       "key": "platform/registry",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 436,
         "gzip9": 278,
@@ -1796,13 +1803,13 @@
         "gzip9": 356,
         "brotli11": 308
       },
-      "ratio": 0.7402597402597403,
-      "band": "js-smaller"
+      "ratio": 1.3508771929824561
     },
     {
       "key": "platform/progress",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 418,
         "gzip9": 253,
@@ -1813,13 +1820,13 @@
         "gzip9": 246,
         "brotli11": 195
       },
-      "ratio": 1.0461538461538462,
-      "band": "comparable"
+      "ratio": 0.9558823529411765
     },
     {
       "key": "platform/extensions",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 349,
         "gzip9": 216,
@@ -1830,13 +1837,13 @@
         "gzip9": 159,
         "brotli11": 118
       },
-      "ratio": 1.5,
-      "band": "comparable"
+      "ratio": 0.6666666666666666
     },
     {
       "key": "platform/files",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 245,
         "gzip9": 194,
@@ -1847,13 +1854,13 @@
         "gzip9": 390,
         "brotli11": 330
       },
-      "ratio": 0.503030303030303,
-      "band": "js-smaller"
+      "ratio": 1.9879518072289157
     },
     {
       "key": "editor/editor.main.js",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 618,
         "gzip9": 198,
@@ -1864,13 +1871,13 @@
         "gzip9": 418,
         "brotli11": 332
       },
-      "ratio": 0.47289156626506024,
-      "band": "js-smaller"
+      "ratio": 2.1146496815286624
     },
     {
       "key": "platform/notification",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 242,
         "gzip9": 169,
@@ -1881,13 +1888,13 @@
         "gzip9": 269,
         "brotli11": 226
       },
-      "ratio": 0.5973451327433629,
-      "band": "js-smaller"
+      "ratio": 1.674074074074074
     },
     {
       "key": "platform/telemetry",
       "files": 2,
       "scoredLil": 2,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 147,
         "gzip9": 153,
@@ -1898,13 +1905,13 @@
         "gzip9": 400,
         "brotli11": 315
       },
-      "ratio": 0.3873015873015873,
-      "band": "js-smaller"
+      "ratio": 2.581967213114754
     },
     {
       "key": "platform/label",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 130,
         "gzip9": 121,
@@ -1915,13 +1922,13 @@
         "gzip9": 231,
         "brotli11": 187
       },
-      "ratio": 0.5080213903743316,
-      "band": "js-smaller"
+      "ratio": 1.9684210526315788
     },
     {
       "key": "platform/environment",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 142,
         "gzip9": 125,
@@ -1932,13 +1939,13 @@
         "gzip9": 194,
         "brotli11": 147
       },
-      "ratio": 0.6394557823129252,
-      "band": "js-smaller"
+      "ratio": 1.5638297872340425
     },
     {
       "key": "platform/layout",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 132,
         "gzip9": 123,
@@ -1949,13 +1956,13 @@
         "gzip9": 174,
         "brotli11": 134
       },
-      "ratio": 0.7014925373134329,
-      "band": "js-smaller"
+      "ratio": 1.425531914893617
     },
     {
       "key": "platform/defaultAccount",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 148,
         "gzip9": 130,
@@ -1966,13 +1973,13 @@
         "gzip9": 156,
         "brotli11": 116
       },
-      "ratio": 0.7931034482758621,
-      "band": "js-smaller"
+      "ratio": 1.2608695652173914
     },
     {
       "key": "platform/dialogs",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 132,
         "gzip9": 123,
@@ -1983,13 +1990,13 @@
         "gzip9": 268,
         "brotli11": 220
       },
-      "ratio": 0.41363636363636364,
-      "band": "js-smaller"
+      "ratio": 2.4175824175824174
     },
     {
       "key": "platform/editor",
       "files": 1,
       "scoredLil": 1,
+      "jsMinifier": "esbuild",
       "js": {
         "raw": 99,
         "gzip9": 112,
@@ -2000,24 +2007,57 @@
         "gzip9": 197,
         "brotli11": 160
       },
-      "ratio": 0.5625,
-      "band": "js-smaller"
+      "ratio": 1.7777777777777777
     }
   ],
   "pairs": [
     {
-      "id": "position",
-      "title": "Position",
-      "plugged": false,
+      "id": "piece-tree",
+      "title": "PieceTreeBase + rbTreeBase",
+      "plugged": true,
       "monacoFiles": [
-        "editor/common/core/position.js"
+        "editor/common/model/pieceTreeTextBuffer/pieceTreeBase.js",
+        "editor/common/model/pieceTreeTextBuffer/rbTreeBase.js"
       ],
       "lilFiles": [
-        "base/position.lil"
+        "editor/rb-tree.lil",
+        "editor/piece-tree.lil",
+        "layers/piece-tree.lil"
       ],
-      "js": 366,
-      "lil": 289,
-      "ratio": 1.2664359861591696
+      "jsMinifier": "terser",
+      "js": 6581,
+      "lil": 6322,
+      "ratio": 0.9606442789849567
+    },
+    {
+      "id": "monarch",
+      "title": "Monarch compile",
+      "plugged": false,
+      "monacoFiles": [
+        "editor/standalone/common/monarch/monarchCompile.js"
+      ],
+      "lilFiles": [
+        "editor/monarch.lil"
+      ],
+      "jsMinifier": "terser",
+      "js": 2855,
+      "lil": 1433,
+      "ratio": 0.5019264448336253
+    },
+    {
+      "id": "interval-tree",
+      "title": "Decoration interval tree",
+      "plugged": false,
+      "monacoFiles": [
+        "editor/common/model/intervalTree.js"
+      ],
+      "lilFiles": [
+        "editor/interval-tree.lil"
+      ],
+      "jsMinifier": "esbuild",
+      "js": 2574,
+      "lil": 401,
+      "ratio": 0.15578865578865578
     },
     {
       "id": "core-types",
@@ -2034,40 +2074,10 @@
         "base/selection.lil",
         "layers/core-types.lil"
       ],
+      "jsMinifier": "terser",
       "js": 1595,
       "lil": 753,
-      "ratio": 2.1181938911022575
-    },
-    {
-      "id": "piece-tree",
-      "title": "PieceTreeBase + rbTreeBase",
-      "plugged": true,
-      "monacoFiles": [
-        "editor/common/model/pieceTreeTextBuffer/pieceTreeBase.js",
-        "editor/common/model/pieceTreeTextBuffer/rbTreeBase.js"
-      ],
-      "lilFiles": [
-        "editor/rb-tree.lil",
-        "editor/piece-tree.lil",
-        "layers/piece-tree.lil"
-      ],
-      "js": 6581,
-      "lil": 6322,
-      "ratio": 1.0409680480860488
-    },
-    {
-      "id": "interval-tree",
-      "title": "Decoration interval tree",
-      "plugged": false,
-      "monacoFiles": [
-        "editor/common/model/intervalTree.js"
-      ],
-      "lilFiles": [
-        "editor/interval-tree.lil"
-      ],
-      "js": 2574,
-      "lil": 401,
-      "ratio": 6.418952618453865
+      "ratio": 0.47210031347962383
     },
     {
       "id": "myers",
@@ -2079,27 +2089,30 @@
       "lilFiles": [
         "editor/myers.lil"
       ],
+      "jsMinifier": "terser",
       "js": 762,
       "lil": 2032,
-      "ratio": 0.375
+      "ratio": 2.6666666666666665
     },
     {
-      "id": "monarch",
-      "title": "Monarch compile",
+      "id": "position",
+      "title": "Position",
       "plugged": false,
       "monacoFiles": [
-        "editor/standalone/common/monarch/monarchCompile.js"
+        "editor/common/core/position.js"
       ],
       "lilFiles": [
-        "editor/monarch.lil"
+        "base/position.lil"
       ],
-      "js": 2855,
-      "lil": 1433,
-      "ratio": 1.9923237962316818
+      "jsMinifier": "terser",
+      "js": 366,
+      "lil": 289,
+      "ratio": 0.7896174863387978
     }
   ],
   "production": {
-    "note": "Diagnostic only. The Lil page is not a 100% feature-complete monaco-editor. Whole-page Brotli gaps this large are not a fair product claim.",
+    "jsMinifier": "esbuild minify",
+    "note": "Diagnostic only. The Lil page is not a 100% feature-complete monaco-editor. JS side is esbuild minify of monaco-editor ESM. Ratio is Lil Brotli / JS Brotli.",
     "js": {
       "ide": {
         "raw": 4504178,
@@ -2230,7 +2243,7 @@
       "id": "js",
       "title": "npm monaco-editor 0.56",
       "href": "./demos/js/",
-      "blurb": "Stock monaco-editor, same chrome."
+      "blurb": "esbuild-minified monaco-editor, same chrome."
     }
   ]
 }

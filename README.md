@@ -40,41 +40,40 @@ The override will not give you a complete monaco-editor. Treat it as a port, not
 
 ## Why the headline is a folder, not the whole IDE
 
-Whole-page `ide.js` Brotli (npm monaco ~905 kB vs this port ~414 kB) and the summed catalog (~1.26 MB vs ~625 kB) look like a 2× win. Those totals mix complete modules with thin or incomplete ports. A 8–11× folder is usually missing UI, not magic compression. **Do not treat the product total as feature-complete monaco-editor.**
+The fair table is independently compiled **submodules**: each monaco-editor-core file, other monaco imports left external. JS is **esbuild** minify, then the same `lilscript-codec` gzip-9 / Brotli-11. **Ratio is LilScript Brotli / JS Brotli.** Folders are listed largest JS Brotli first. This is not 100% feature parity.
 
-Fair evidence is independently compiled **submodules**: each monaco-editor-core file, other monaco imports left external, same `lilscript-codec` gzip-9 / Brotli-11.
+| Lane | Files | JS minify | JS Brotli-11 | Lil Brotli-11 | Lil / JS |
+| --- | ---: | --- | ---: | ---: | ---: |
+| **`editor/common` (headline)** | 219 | esbuild | 240,863 | 163,337 | **0.68×** |
+| `editor/browser` | 145 | esbuild | 201,293 | 95,524 | 0.47× |
+| `base/browser` | 90 | esbuild | 129,443 | 96,230 | 0.74× |
+| `base/common` | 122 | esbuild | 118,241 | 76,330 | 0.65× |
+| `editor/contrib/find` | 10 | esbuild | 19,753 | 8,750 | 0.44× |
+| `editor/contrib/colorPicker` | 20 | esbuild | 14,392 | 15,532 | 1.08× |
 
-| Lane | Files | JS Brotli-11 | Lil Brotli-11 | JS / Lil |
-| --- | ---: | ---: | ---: | ---: |
-| **`editor/common` (headline)** | 219 | 240,863 | 163,337 | **1.47×** |
-| `base/browser` | 90 | 129,443 | 96,230 | 1.35× |
-| `base/common` | 122 | 118,241 | 76,330 | 1.55× |
-| `editor/browser` | 145 | 201,293 | 95,524 | 2.11× |
-| `editor/contrib/find` | 10 | 19,753 | 8,750 | 2.26× |
-| `editor/contrib/colorPicker` | 20 | 14,392 | 15,532 | 0.93× |
-
-38 of 115 folders land in a comparable band (0.8–2.5×). Median of that band is **1.48×**. Folders far above 2.5× are called out as suspicious on the site.
+Median across 115 folders is on the site. Whole-page `ide.js` is a diagnostic only (JS also esbuild minify).
 
 ### Independent modules (`nontest-entire-module`)
 
-992 Lil modules vs 994 monaco-editor-core files, each compiled alone. Summing those rows is still not a product claim — it is a catalog, not the running editor.
+992 Lil modules vs 994 monaco-editor-core files, each compiled alone. JS minify is esbuild. Summing those rows is a catalog, not the running editor.
 
-| | Raw | gzip-9 | Brotli-11 |
-| --- | ---: | ---: | ---: |
-| monaco-editor-core files (external imports) | 4,466,650 | 1,425,897 | 1,255,455 |
-| Lil modules (keepers, host external) | 2,132,061 | 717,722 | 624,522 |
+| | JS minify | Raw | gzip-9 | Brotli-11 | Lil / JS |
+| --- | --- | ---: | ---: | ---: | ---: |
+| monaco-editor-core files (external imports) | esbuild | 4,466,650 | 1,425,897 | 1,255,455 | 1.00× |
+| Lil modules (keepers, host external) | — | 2,132,061 | 717,722 | 624,522 | **0.50×** |
 
 ### Fair file pairs
 
-| Pair | JS Brotli | Lil Brotli | JS / Lil |
-| --- | ---: | ---: | ---: |
-| Piece tree + rb-tree | 6,581 | 6,322 | 1.04× |
-| Position | 366 | 289 | 1.27× |
-| Position + Range + Selection | 1,595 | 753 | 2.12× |
-| Monarch compile | 2,855 | 1,433 | 1.99× |
-| Myers diff | 762 | 2,032 | 0.38× |
+JS side is the better Brotli of esbuild and Terser. Ratio is Lil / JS.
 
-Myers is larger in Lil. Piece tree is essentially a tie. That is the point of submodule rows.
+| Pair | JS minify | JS Brotli | Lil Brotli | Lil / JS |
+| --- | --- | ---: | ---: | ---: |
+| Piece tree + rb-tree | terser | 6,581 | 6,322 | 0.96× |
+| Monarch compile | terser | 2,855 | 1,433 | 0.50× |
+| Decoration interval tree | esbuild | 2,574 | 401 | 0.16× |
+| Position + Range + Selection | terser | 1,595 | 753 | 0.47× |
+| Myers diff | terser | 762 | 2,032 | 2.67× |
+| Position | terser | 366 | 289 | 0.79× |
 
 ## TypeScript / Solid TSX
 

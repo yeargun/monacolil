@@ -5,33 +5,29 @@ import { fileURLToPath } from "node:url"
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
 const lab = JSON.parse(readFileSync(resolve(root, "reports", "lab-sizes.json"), "utf8"))
 
-function ratio(js, lil) {
-  if (!lil) return null
-  return js / lil
+function ratio(lil, js) {
+  if (lil == null || !js) return null
+  return lil / js
 }
 
 const folders = (lab.coreComparison?.folders ?? []).map((row) => {
   const js = row.js?.brotli ?? 0
   const lil = row.lil?.brotli ?? null
-  const r = ratio(js, lil)
   return {
     key: row.key,
     files: row.files,
     scoredLil: row.scoredLil,
+    jsMinifier: "esbuild",
     js: { raw: row.js.raw, gzip9: row.js.gzip, brotli11: js },
     lil: row.lil
       ? { raw: row.lil.raw, gzip9: row.lil.gzip, brotli11: lil }
       : null,
-    ratio: r,
-    band: r == null ? "unscored" : r < 0.8 ? "js-smaller" : r <= 2.5 ? "comparable" : "suspicious",
+    ratio: ratio(lil, js),
   }
 })
 folders.sort((a, b) => (b.js.brotli11 ?? 0) - (a.js.brotli11 ?? 0))
 
 const scored = folders.filter((row) => row.ratio != null)
-const comparable = scored.filter((row) => row.band === "comparable")
-const suspicious = scored.filter((row) => row.band === "suspicious")
-const smaller = scored.filter((row) => row.lil && row.lil.brotli11 < row.js.brotli11)
 
 function median(values) {
   const rows = [...values].sort((a, b) => a - b)
@@ -52,16 +48,24 @@ const pairs = (lab.pairs ?? [])
     plugged: row.plugged,
     monacoFiles: row.monacoFiles,
     lilFiles: row.lilFiles,
+    jsMinifier: row.js.lane ?? "esbuild",
     js: row.js.sizes.brotli,
     lil: row.lil.sizes.brotli,
-    ratio: row.js.sizes.brotli / row.lil.sizes.brotli,
+    ratio: ratio(row.lil.sizes.brotli, row.js.sizes.brotli),
   }))
+  .sort((a, b) => b.js - a.js)
 
 const results = {
   pin: "monaco-editor@0.56.0",
   package: "@itslil/monaco-editor",
   featureParity: false,
   codec: "lilscript-codec gzip-9 / brotli-11",
+  ratioNote: "ratio = LilScript Brotli-11 / JS Brotli-11",
+  jsMinifier: {
+    folders: "esbuild minify",
+    production: "esbuild minify",
+    pairs: "esbuild and terser; best Brotli-11",
+  },
   vscodeCommit: lab.versions?.vscodeCommit,
   catalog: lab.catalog,
   headline: {
@@ -70,11 +74,13 @@ const results = {
     jsBrotli: headline?.js.brotli11 ?? 0,
     lilBrotli: headline?.lil?.brotli11 ?? 0,
     ratio: headline?.ratio ?? null,
-    note: "Largest scored folder. Independently compiled modules, other monaco imports left external. Not the running IDE.",
+    jsMinifier: "esbuild",
+    note: "Largest JS folder. Independently compiled modules, other monaco imports left external. JS minified with esbuild. Ratio is Lil Brotli / JS Brotli.",
   },
   independentModules: {
     label: "nontest-entire-module",
-    note: "Each monaco-editor-core file is esbuild-minified with other monaco imports external, then scored Brotli-11 against the matching LilScript file compiled alone (js-module keepers). This is not the shipped editor bundle and not a claim of product parity.",
+    jsMinifier: "esbuild minify",
+    note: "Each monaco-editor-core file is esbuild-minified with other monaco imports external, then scored Brotli-11 against the matching LilScript file compiled alone (js-module keepers). Ratio is Lil Brotli / JS Brotli. This is not the shipped editor bundle and not a claim of product parity.",
     files: totals?.files ?? 0,
     scoredLil: totals?.scoredLil ?? 0,
     js: {
@@ -89,20 +95,19 @@ const results = {
           brotli11: totals.lil.brotli,
         }
       : null,
+    ratio: ratio(totals?.lil?.brotli, totals?.js?.brotli),
   },
   folderSummary: {
     folders: folders.length,
     scored: scored.length,
-    lilSmaller: smaller.length,
-    comparable: comparable.length,
-    suspicious: suspicious.length,
     medianRatio: median(scored.map((row) => row.ratio)),
-    comparableMedian: median(comparable.map((row) => row.ratio)),
+    jsMinifier: "esbuild",
   },
   folders,
   pairs,
   production: {
-    note: "Diagnostic only. The Lil page is not a 100% feature-complete monaco-editor. Whole-page Brotli gaps this large are not a fair product claim.",
+    jsMinifier: "esbuild minify",
+    note: "Diagnostic only. The Lil page is not a 100% feature-complete monaco-editor. JS side is esbuild minify of monaco-editor ESM. Ratio is Lil Brotli / JS Brotli.",
     js: {
       ide: production.js.ide,
       workers: production.js.workers,
@@ -133,7 +138,7 @@ const results = {
       id: "js",
       title: "npm monaco-editor 0.56",
       href: "./demos/js/",
-      blurb: "Stock monaco-editor, same chrome.",
+      blurb: "esbuild-minified monaco-editor, same chrome.",
     },
   ],
 }

@@ -86,7 +86,6 @@ h1 em { color: var(--purple); font-style: normal; }
 }
 .perf-card.win { background: #9cdcfe; }
 .perf-card.geo { background: var(--ink); color: #fff; }
-.perf-card.warn { background: #fff3cd; }
 .perf-card strong { display: block; margin: 8px 0 6px; font-size: 26px; letter-spacing: -.05em; }
 .perf-card span { display: block; color: var(--muted); font: 500 10px/1.35 "DM Mono", monospace; text-transform: uppercase; }
 .perf-card.geo span { color: #b7d7e8; }
@@ -128,10 +127,6 @@ thead th { color: #8fb4c6; font-size: 10px; text-transform: uppercase; }
 tbody th { font: 700 13px "Manrope", sans-serif; }
 tbody td:last-child strong { color: #9cdcfe; }
 .table-wrap.light tbody td:last-child strong { color: var(--purple); }
-.band { display: inline-block; padding: 3px 7px; border-radius: 999px; font: 500 10px "DM Mono", monospace; text-transform: uppercase; }
-.band-comparable { background: #d7f3ff; color: #0e639c; }
-.band-suspicious { background: #fff3cd; color: #7a5b00; }
-.band-js-smaller { background: #f3d7d7; color: #8a1f1f; }
 .method-note { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; margin-top: 38px; padding: 24px; border: 1px solid #1d3a4c; }
 .method-note p { max-width: 820px; margin: 0; color: #b7d7e8; line-height: 1.7; font-size: 13px; }
 .method-note strong { color: white; }

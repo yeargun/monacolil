@@ -26,12 +26,16 @@ describe("github pages artifact", () => {
     }
   })
 
-  it("does not headline whole-IDE compression as feature parity", () => {
+  it("states the JS minifier and Lil / JS Brotli ratio", () => {
     const html = readFileSync(resolve(site, "index.html"), "utf8")
+    const results = readFileSync(resolve(site, "results.json"), "utf8")
     assert.match(html, /@itslil\/monaco-editor/)
     assert.match(html, /not 100% feature parity/i)
-    assert.match(html, /submodule/i)
-    assert.doesNotMatch(html, /drop-in replacement of every monaco file/)
+    assert.match(html, /esbuild/)
+    assert.match(html, /Lil \/ JS/)
+    assert.doesNotMatch(html, /suspicious/i)
+    assert.doesNotMatch(results, /suspicious/i)
+    assert.match(results, /LilScript Brotli-11 \/ JS Brotli-11/)
   })
 
   it("keeps official TypeScript worker on the Lil demo", () => {

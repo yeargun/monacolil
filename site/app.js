@@ -16,27 +16,25 @@ function renderHero() {
   document.querySelector("#hero-bytes").textContent =
     `${formatter.format(headline.jsBrotli)} B → ${formatter.format(headline.lilBrotli)} B`
   document.querySelector("#hero-modules").textContent = String(data.catalog.ported)
-  document.querySelector("#hero-comparable").textContent =
-    `${data.folderSummary.comparable}/${data.folderSummary.folders}`
+  document.querySelector("#hero-median").textContent = times(data.folderSummary.medianRatio)
 }
 
 function renderFolderCards() {
   const summary = data.folderSummary
   const cards = [
     {
-      label: "comparable folders",
-      value: `${summary.comparable}/${summary.folders}`,
+      label: "JS minifier",
+      value: "esbuild",
       geo: true,
     },
     {
-      label: "comparable median",
-      value: times(summary.comparableMedian),
+      label: "median Lil / JS",
+      value: times(summary.medianRatio),
       win: true,
     },
     {
-      label: "suspicious folders",
-      value: String(summary.suspicious),
-      warn: true,
+      label: "folders",
+      value: String(summary.folders),
     },
     {
       label: "catalog modules",
@@ -46,20 +44,13 @@ function renderFolderCards() {
   document.querySelector("#folder-cards").innerHTML = cards
     .map(
       (card) => `
-    <article class="perf-card${card.win ? " win" : ""}${card.geo ? " geo" : ""}${card.warn ? " warn" : ""}">
+    <article class="perf-card${card.win ? " win" : ""}${card.geo ? " geo" : ""}">
       <strong>${card.value}</strong>
       <span>${card.label}</span>
     </article>
   `,
     )
     .join("")
-}
-
-function bandLabel(band) {
-  if (band === "comparable") return "comparable"
-  if (band === "suspicious") return "suspicious"
-  if (band === "js-smaller") return "js smaller"
-  return band
 }
 
 function renderFolders() {
@@ -70,10 +61,10 @@ function renderFolders() {
     <tr>
       <th scope="row">${row.key}</th>
       <td>${formatter.format(row.files)}</td>
+      <td>${row.jsMinifier}</td>
       <td>${formatter.format(row.js.brotli11)}</td>
       <td>${lil}</td>
       <td><strong>${times(row.ratio)}</strong></td>
-      <td><span class="band band-${row.band}">${bandLabel(row.band)}</span></td>
     </tr>`
     })
     .join("")
@@ -85,16 +76,20 @@ function renderModules() {
     <tr>
       <th scope="row">monaco-editor-core files (externals)</th>
       <td>${formatter.format(catalog.files)}</td>
+      <td>esbuild</td>
       <td>${formatter.format(catalog.js.raw)}</td>
       <td>${formatter.format(catalog.js.gzip9)}</td>
       <td>${formatter.format(catalog.js.brotli11)}</td>
+      <td><strong>1.00×</strong></td>
     </tr>
     <tr>
       <th scope="row">Lil independent modules</th>
       <td>${formatter.format(catalog.scoredLil)}</td>
+      <td>—</td>
       <td>${formatter.format(catalog.lil.raw)}</td>
       <td>${formatter.format(catalog.lil.gzip9)}</td>
       <td>${formatter.format(catalog.lil.brotli11)}</td>
+      <td><strong>${times(catalog.ratio)}</strong></td>
     </tr>`
 
   document.querySelector("#pairs-body").innerHTML = data.pairs
@@ -102,6 +97,7 @@ function renderModules() {
       (row) => `
     <tr>
       <th scope="row">${row.title}</th>
+      <td>${row.jsMinifier}</td>
       <td>${formatter.format(row.js)}</td>
       <td>${formatter.format(row.lil)}</td>
       <td><strong>${times(row.ratio)}</strong></td>
@@ -121,7 +117,7 @@ function renderDemos() {
           <span class="case-number">${String(index + 1).padStart(2, "0")}</span>
           <h3>${example.title}</h3>
         </div>
-        <strong class="saving">${example.id === "lil" ? "lil" : "js"}</strong>
+        <strong class="saving">${example.id === "lil" ? "lil" : "esbuild"}</strong>
       </header>
       <div class="demo-frame-wrap">
         <iframe
@@ -153,32 +149,35 @@ function renderDemos() {
 function renderProduction() {
   const p = data.production
   const jsTs = p.workers.find((row) => row.name === "ts.worker.js")?.js
+  const lilTs = p.lilWorkers.find((row) => row.name === "ts.worker.js")?.lil
   const rows = [
-    ["ide.js (diagnostic)", p.js.ide, p.lil.ide],
+    ["ide.js (esbuild on JS)", p.js.ide, p.lil.ide],
     ["workers except tsc", {
       raw: p.js.workers.raw - (jsTs?.raw ?? 0),
       brotli: p.js.workers.brotli - (jsTs?.brotli ?? 0),
     }, {
-      raw: p.lil.workers.raw - (p.lilWorkers.find((row) => row.name === "ts.worker.js")?.lil.raw ?? 0),
-      brotli: p.lil.workers.brotli - (p.lilWorkers.find((row) => row.name === "ts.worker.js")?.lil.brotli ?? 0),
+      raw: p.lil.workers.raw - (lilTs?.raw ?? 0),
+      brotli: p.lil.workers.brotli - (lilTs?.brotli ?? 0),
     }],
     ["editor CSS", p.js.css, p.lil.css],
   ]
   document.querySelector("#production-body").innerHTML = rows
-    .map(
-      ([name, js, lil]) => `
+    .map(([name, js, lil]) => {
+      const r = lil.brotli / js.brotli
+      return `
     <tr>
       <th scope="row">${name}</th>
       <td>${formatter.format(js.raw)}</td>
       <td>${formatter.format(js.brotli)}</td>
       <td>${formatter.format(lil.raw)}</td>
       <td>${formatter.format(lil.brotli)}</td>
-    </tr>`,
-    )
+      <td><strong>${times(r)}</strong></td>
+    </tr>`
+    })
     .join("")
 
   const bars = [
-    { name: "JS ide.js Brotli", value: p.js.ide.brotli, primary: false },
+    { name: "JS ide.js Brotli · esbuild", value: p.js.ide.brotli, primary: false },
     { name: "Lil ide.js Brotli", value: p.lil.ide.brotli, primary: true },
   ]
   const max = Math.max(...bars.map((bar) => bar.value))
