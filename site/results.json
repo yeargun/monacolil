@@ -1,0 +1,2236 @@
+{
+  "pin": "monaco-editor@0.56.0",
+  "package": "@itslil/monaco-editor",
+  "featureParity": false,
+  "codec": "lilscript-codec gzip-9 / brotli-11",
+  "vscodeCommit": "f487add297079a02eb836810185b165e50cadabc",
+  "catalog": {
+    "mapped": 994,
+    "ported": 992,
+    "shim": 0,
+    "thin": 0,
+    "stub": 0,
+    "extern": 2,
+    "remaining": 0,
+    "workers": 4
+  },
+  "headline": {
+    "key": "editor/common",
+    "files": 219,
+    "jsBrotli": 240863,
+    "lilBrotli": 163337,
+    "ratio": 1.4746383244457777,
+    "note": "Largest scored folder. Independently compiled modules, other monaco imports left external. Not the running IDE."
+  },
+  "independentModules": {
+    "label": "nontest-entire-module",
+    "note": "Each monaco-editor-core file is esbuild-minified with other monaco imports external, then scored Brotli-11 against the matching LilScript file compiled alone (js-module keepers). This is not the shipped editor bundle and not a claim of product parity.",
+    "files": 994,
+    "scoredLil": 992,
+    "js": {
+      "raw": 4466650,
+      "gzip9": 1425897,
+      "brotli11": 1255455
+    },
+    "lil": {
+      "raw": 2132061,
+      "gzip9": 717722,
+      "brotli11": 624522
+    }
+  },
+  "folderSummary": {
+    "folders": 115,
+    "scored": 115,
+    "lilSmaller": 99,
+    "comparable": 38,
+    "suspicious": 64,
+    "medianRatio": 2.628419452887538,
+    "comparableMedian": 1.4873191622228887
+  },
+  "folders": [
+    {
+      "key": "editor/common",
+      "files": 219,
+      "scoredLil": 219,
+      "js": {
+        "raw": 879347,
+        "gzip9": 271562,
+        "brotli11": 240863
+      },
+      "lil": {
+        "raw": 571446,
+        "gzip9": 185888,
+        "brotli11": 163337
+      },
+      "ratio": 1.4746383244457777,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/browser",
+      "files": 145,
+      "scoredLil": 145,
+      "js": {
+        "raw": 735819,
+        "gzip9": 227673,
+        "brotli11": 201293
+      },
+      "lil": {
+        "raw": 331189,
+        "gzip9": 109510,
+        "brotli11": 95524
+      },
+      "ratio": 2.1072505338972403,
+      "band": "comparable"
+    },
+    {
+      "key": "base/browser",
+      "files": 90,
+      "scoredLil": 89,
+      "js": {
+        "raw": 481455,
+        "gzip9": 145797,
+        "brotli11": 129443
+      },
+      "lil": {
+        "raw": 355429,
+        "gzip9": 109841,
+        "brotli11": 96230
+      },
+      "ratio": 1.345141847656656,
+      "band": "comparable"
+    },
+    {
+      "key": "base/common",
+      "files": 122,
+      "scoredLil": 121,
+      "js": {
+        "raw": 385502,
+        "gzip9": 138839,
+        "brotli11": 118241
+      },
+      "lil": {
+        "raw": 253637,
+        "gzip9": 87879,
+        "brotli11": 76330
+      },
+      "ratio": 1.5490763788811739,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/inlineCompletions",
+      "files": 55,
+      "scoredLil": 55,
+      "js": {
+        "raw": 316320,
+        "gzip9": 107371,
+        "brotli11": 95662
+      },
+      "lil": {
+        "raw": 88171,
+        "gzip9": 28980,
+        "brotli11": 24958
+      },
+      "ratio": 3.832919304431445,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/quickinput",
+      "files": 21,
+      "scoredLil": 21,
+      "js": {
+        "raw": 126223,
+        "gzip9": 39811,
+        "brotli11": 35164
+      },
+      "lil": {
+        "raw": 12319,
+        "gzip9": 5422,
+        "brotli11": 4424
+      },
+      "ratio": 7.948462929475587,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/standalone",
+      "files": 26,
+      "scoredLil": 26,
+      "js": {
+        "raw": 113359,
+        "gzip9": 38172,
+        "brotli11": 33618
+      },
+      "lil": {
+        "raw": 25188,
+        "gzip9": 10408,
+        "brotli11": 8795
+      },
+      "ratio": 3.822399090392268,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/suggest",
+      "files": 15,
+      "scoredLil": 15,
+      "js": {
+        "raw": 103526,
+        "gzip9": 33297,
+        "brotli11": 29605
+      },
+      "lil": {
+        "raw": 18959,
+        "gzip9": 7163,
+        "brotli11": 6100
+      },
+      "ratio": 4.85327868852459,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/hover",
+      "files": 22,
+      "scoredLil": 22,
+      "js": {
+        "raw": 84124,
+        "gzip9": 28144,
+        "brotli11": 24526
+      },
+      "lil": {
+        "raw": 37291,
+        "gzip9": 12379,
+        "brotli11": 10727
+      },
+      "ratio": 2.286380162207514,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/find",
+      "files": 10,
+      "scoredLil": 10,
+      "js": {
+        "raw": 82275,
+        "gzip9": 22482,
+        "brotli11": 19753
+      },
+      "lil": {
+        "raw": 30887,
+        "gzip9": 9958,
+        "brotli11": 8750
+      },
+      "ratio": 2.257485714285714,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/gotoSymbol",
+      "files": 9,
+      "scoredLil": 9,
+      "js": {
+        "raw": 63371,
+        "gzip9": 19957,
+        "brotli11": 17519
+      },
+      "lil": {
+        "raw": 31230,
+        "gzip9": 11106,
+        "brotli11": 9279
+      },
+      "ratio": 1.8880267270179976,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/theme",
+      "files": 17,
+      "scoredLil": 17,
+      "js": {
+        "raw": 72039,
+        "gzip9": 19974,
+        "brotli11": 17139
+      },
+      "lil": {
+        "raw": 24834,
+        "gzip9": 9424,
+        "brotli11": 7819
+      },
+      "ratio": 2.1919682823890523,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/codeAction",
+      "files": 9,
+      "scoredLil": 9,
+      "js": {
+        "raw": 47717,
+        "gzip9": 16440,
+        "brotli11": 14513
+      },
+      "lil": {
+        "raw": 21861,
+        "gzip9": 6273,
+        "brotli11": 5454
+      },
+      "ratio": 2.660982764943161,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/colorPicker",
+      "files": 20,
+      "scoredLil": 20,
+      "js": {
+        "raw": 43369,
+        "gzip9": 16628,
+        "brotli11": 14392
+      },
+      "lil": {
+        "raw": 39116,
+        "gzip9": 17643,
+        "brotli11": 15532
+      },
+      "ratio": 0.9266031419005923,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/folding",
+      "files": 7,
+      "scoredLil": 7,
+      "js": {
+        "raw": 48439,
+        "gzip9": 14250,
+        "brotli11": 12803
+      },
+      "lil": {
+        "raw": 22271,
+        "gzip9": 7334,
+        "brotli11": 6564
+      },
+      "ratio": 1.9504875076173065,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/actions",
+      "files": 5,
+      "scoredLil": 5,
+      "js": {
+        "raw": 49135,
+        "gzip9": 13937,
+        "brotli11": 12408
+      },
+      "lil": {
+        "raw": 2758,
+        "gzip9": 1320,
+        "brotli11": 1106
+      },
+      "ratio": 11.21880650994575,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/snippet",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 41847,
+        "gzip9": 12905,
+        "brotli11": 11514
+      },
+      "lil": {
+        "raw": 15544,
+        "gzip9": 5108,
+        "brotli11": 4502
+      },
+      "ratio": 2.55752998667259,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/stickyScroll",
+      "files": 7,
+      "scoredLil": 7,
+      "js": {
+        "raw": 41337,
+        "gzip9": 12440,
+        "brotli11": 11096
+      },
+      "lil": {
+        "raw": 6377,
+        "gzip9": 3143,
+        "brotli11": 2793
+      },
+      "ratio": 3.9727891156462585,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/dropOrPasteInto",
+      "files": 7,
+      "scoredLil": 7,
+      "js": {
+        "raw": 31876,
+        "gzip9": 11769,
+        "brotli11": 10377
+      },
+      "lil": {
+        "raw": 14329,
+        "gzip9": 4494,
+        "brotli11": 3948
+      },
+      "ratio": 2.628419452887538,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/actionWidget",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 37347,
+        "gzip9": 10468,
+        "brotli11": 9266
+      },
+      "lil": {
+        "raw": 2698,
+        "gzip9": 1079,
+        "brotli11": 905
+      },
+      "ratio": 10.238674033149172,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/hover",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 30576,
+        "gzip9": 9938,
+        "brotli11": 8827
+      },
+      "lil": {
+        "raw": 2341,
+        "gzip9": 1106,
+        "brotli11": 878
+      },
+      "ratio": 10.053530751708427,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/inlayHints",
+      "files": 5,
+      "scoredLil": 5,
+      "js": {
+        "raw": 24767,
+        "gzip9": 9429,
+        "brotli11": 8409
+      },
+      "lil": {
+        "raw": 7360,
+        "gzip9": 2495,
+        "brotli11": 2160
+      },
+      "ratio": 3.8930555555555557,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/contextkey",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 33792,
+        "gzip9": 9437,
+        "brotli11": 8338
+      },
+      "lil": {
+        "raw": 22626,
+        "gzip9": 6878,
+        "brotli11": 6140
+      },
+      "ratio": 1.3579804560260587,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/rename",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 31873,
+        "gzip9": 9360,
+        "brotli11": 8233
+      },
+      "lil": {
+        "raw": 4708,
+        "gzip9": 1602,
+        "brotli11": 1430
+      },
+      "ratio": 5.757342657342657,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/linesOperations",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 31193,
+        "gzip9": 8462,
+        "brotli11": 7572
+      },
+      "lil": {
+        "raw": 7880,
+        "gzip9": 2836,
+        "brotli11": 2492
+      },
+      "ratio": 3.038523274478331,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/configuration",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 28269,
+        "gzip9": 8023,
+        "brotli11": 7213
+      },
+      "lil": {
+        "raw": 6485,
+        "gzip9": 2172,
+        "brotli11": 1860
+      },
+      "ratio": 3.877956989247312,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/gotoError",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 23659,
+        "gzip9": 8144,
+        "brotli11": 7176
+      },
+      "lil": {
+        "raw": 7232,
+        "gzip9": 2432,
+        "brotli11": 2112
+      },
+      "ratio": 3.397727272727273,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/codelens",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 19934,
+        "gzip9": 6815,
+        "brotli11": 6038
+      },
+      "lil": {
+        "raw": 4412,
+        "gzip9": 1752,
+        "brotli11": 1528
+      },
+      "ratio": 3.951570680628272,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/keybinding",
+      "files": 7,
+      "scoredLil": 7,
+      "js": {
+        "raw": 17793,
+        "gzip9": 6456,
+        "brotli11": 5653
+      },
+      "lil": {
+        "raw": 7628,
+        "gzip9": 2883,
+        "brotli11": 2458
+      },
+      "ratio": 2.2998372660699755,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/list",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 27089,
+        "gzip9": 6310,
+        "brotli11": 5463
+      },
+      "lil": {
+        "raw": 1947,
+        "gzip9": 678,
+        "brotli11": 593
+      },
+      "ratio": 9.21247892074199,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/quickAccess",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 14859,
+        "gzip9": 6156,
+        "brotli11": 5328
+      },
+      "lil": {
+        "raw": 13880,
+        "gzip9": 4936,
+        "brotli11": 4124
+      },
+      "ratio": 1.291949563530553,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/parameterHints",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 17402,
+        "gzip9": 6057,
+        "brotli11": 5313
+      },
+      "lil": {
+        "raw": 11211,
+        "gzip9": 3423,
+        "brotli11": 2981
+      },
+      "ratio": 1.7822878228782288,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/wordHighlighter",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 20475,
+        "gzip9": 5913,
+        "brotli11": 5168
+      },
+      "lil": {
+        "raw": 5697,
+        "gzip9": 2097,
+        "brotli11": 1851
+      },
+      "ratio": 2.7920043219881143,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/semanticTokens",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 17331,
+        "gzip9": 5256,
+        "brotli11": 4673
+      },
+      "lil": {
+        "raw": 3916,
+        "gzip9": 1888,
+        "brotli11": 1596
+      },
+      "ratio": 2.9279448621553885,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/unicodeHighlighter",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 17570,
+        "gzip9": 5303,
+        "brotli11": 4656
+      },
+      "lil": {
+        "raw": 1782,
+        "gzip9": 834,
+        "brotli11": 704
+      },
+      "ratio": 6.613636363636363,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/format",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 15447,
+        "gzip9": 5154,
+        "brotli11": 4491
+      },
+      "lil": {
+        "raw": 5097,
+        "gzip9": 1830,
+        "brotli11": 1602
+      },
+      "ratio": 2.803370786516854,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/undoRedo",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 19329,
+        "gzip9": 4895,
+        "brotli11": 4312
+      },
+      "lil": {
+        "raw": 4270,
+        "gzip9": 1199,
+        "brotli11": 1061
+      },
+      "ratio": 4.064090480678605,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/multicursor",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 18529,
+        "gzip9": 4740,
+        "brotli11": 4221
+      },
+      "lil": {
+        "raw": 1752,
+        "gzip9": 553,
+        "brotli11": 494
+      },
+      "ratio": 8.544534412955466,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/indentation",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 12531,
+        "gzip9": 4183,
+        "brotli11": 3703
+      },
+      "lil": {
+        "raw": 2379,
+        "gzip9": 1281,
+        "brotli11": 1182
+      },
+      "ratio": 3.1328257191201354,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/comment",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 11834,
+        "gzip9": 4058,
+        "brotli11": 3630
+      },
+      "lil": {
+        "raw": 8508,
+        "gzip9": 2961,
+        "brotli11": 2574
+      },
+      "ratio": 1.4102564102564104,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/instantiation",
+      "files": 6,
+      "scoredLil": 6,
+      "js": {
+        "raw": 9367,
+        "gzip9": 3967,
+        "brotli11": 3511
+      },
+      "lil": {
+        "raw": 5303,
+        "gzip9": 2181,
+        "brotli11": 1886
+      },
+      "ratio": 1.8616118769883352,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/links",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 10770,
+        "gzip9": 3925,
+        "brotli11": 3488
+      },
+      "lil": {
+        "raw": 4146,
+        "gzip9": 1500,
+        "brotli11": 1304
+      },
+      "ratio": 2.6748466257668713,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/smartSelect",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 9635,
+        "gzip9": 3643,
+        "brotli11": 3251
+      },
+      "lil": {
+        "raw": 6297,
+        "gzip9": 2046,
+        "brotli11": 1773
+      },
+      "ratio": 1.8336153412295544,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/linkedEditing",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 9150,
+        "gzip9": 3121,
+        "brotli11": 2768
+      },
+      "lil": {
+        "raw": 1510,
+        "gzip9": 550,
+        "brotli11": 490
+      },
+      "ratio": 5.648979591836735,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/contextview",
+      "files": 4,
+      "scoredLil": 4,
+      "js": {
+        "raw": 7306,
+        "gzip9": 3036,
+        "brotli11": 2651
+      },
+      "lil": {
+        "raw": 1827,
+        "gzip9": 873,
+        "brotli11": 709
+      },
+      "ratio": 3.739069111424542,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/peekView",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 9132,
+        "gzip9": 2754,
+        "brotli11": 2435
+      },
+      "lil": {
+        "raw": 1256,
+        "gzip9": 413,
+        "brotli11": 355
+      },
+      "ratio": 6.859154929577465,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/zoneWidget",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 8639,
+        "gzip9": 2638,
+        "brotli11": 2357
+      },
+      "lil": {
+        "raw": 1230,
+        "gzip9": 385,
+        "brotli11": 330
+      },
+      "ratio": 7.142424242424243,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/markers",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 6681,
+        "gzip9": 2502,
+        "brotli11": 2237
+      },
+      "lil": {
+        "raw": 1754,
+        "gzip9": 651,
+        "brotli11": 546
+      },
+      "ratio": 4.097069597069597,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/contextmenu",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 7075,
+        "gzip9": 2372,
+        "brotli11": 2134
+      },
+      "lil": {
+        "raw": 1366,
+        "gzip9": 494,
+        "brotli11": 426
+      },
+      "ratio": 5.009389671361502,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/documentSymbols",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 5707,
+        "gzip9": 2340,
+        "brotli11": 2047
+      },
+      "lil": {
+        "raw": 6940,
+        "gzip9": 2468,
+        "brotli11": 2062
+      },
+      "ratio": 0.992725509214355,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/bracketMatching",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 7207,
+        "gzip9": 2302,
+        "brotli11": 2036
+      },
+      "lil": {
+        "raw": 2084,
+        "gzip9": 638,
+        "brotli11": 567
+      },
+      "ratio": 3.5908289241622575,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/clipboard",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 6972,
+        "gzip9": 2119,
+        "brotli11": 1866
+      },
+      "lil": {
+        "raw": 1552,
+        "gzip9": 538,
+        "brotli11": 487
+      },
+      "ratio": 3.8316221765913756,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/accessibilitySignal",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 12408,
+        "gzip9": 2075,
+        "brotli11": 1812
+      },
+      "lil": {
+        "raw": 744,
+        "gzip9": 311,
+        "brotli11": 257
+      },
+      "ratio": 7.0505836575875485,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/log",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 5530,
+        "gzip9": 2018,
+        "brotli11": 1790
+      },
+      "lil": {
+        "raw": 1343,
+        "gzip9": 618,
+        "brotli11": 510
+      },
+      "ratio": 3.5098039215686274,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/wordOperations",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 8751,
+        "gzip9": 2067,
+        "brotli11": 1778
+      },
+      "lil": {
+        "raw": 2045,
+        "gzip9": 587,
+        "brotli11": 526
+      },
+      "ratio": 3.3802281368821294,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/message",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 4914,
+        "gzip9": 1767,
+        "brotli11": 1519
+      },
+      "lil": {
+        "raw": 483,
+        "gzip9": 210,
+        "brotli11": 165
+      },
+      "ratio": 9.206060606060607,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/inPlaceReplace",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 4150,
+        "gzip9": 1743,
+        "brotli11": 1514
+      },
+      "lil": {
+        "raw": 586,
+        "gzip9": 434,
+        "brotli11": 352
+      },
+      "ratio": 4.301136363636363,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/dnd",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 7116,
+        "gzip9": 1725,
+        "brotli11": 1504
+      },
+      "lil": {
+        "raw": 4094,
+        "gzip9": 1284,
+        "brotli11": 1128
+      },
+      "ratio": 1.3333333333333333,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/clipboard",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 4457,
+        "gzip9": 1739,
+        "brotli11": 1470
+      },
+      "lil": {
+        "raw": 1207,
+        "gzip9": 502,
+        "brotli11": 417
+      },
+      "ratio": 3.5251798561151078,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/webWorker",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 3791,
+        "gzip9": 1709,
+        "brotli11": 1452
+      },
+      "lil": {
+        "raw": 1289,
+        "gzip9": 623,
+        "brotli11": 507
+      },
+      "ratio": 2.863905325443787,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/accessibility",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 5686,
+        "gzip9": 1719,
+        "brotli11": 1438
+      },
+      "lil": {
+        "raw": 1637,
+        "gzip9": 734,
+        "brotli11": 603
+      },
+      "ratio": 2.384742951907131,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/storage",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 5301,
+        "gzip9": 1567,
+        "brotli11": 1359
+      },
+      "lil": {
+        "raw": 1151,
+        "gzip9": 492,
+        "brotli11": 428
+      },
+      "ratio": 3.175233644859813,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/floatingMenu",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 3257,
+        "gzip9": 1539,
+        "brotli11": 1333
+      },
+      "lil": {
+        "raw": 794,
+        "gzip9": 390,
+        "brotli11": 322
+      },
+      "ratio": 4.1397515527950315,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/observable",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 2908,
+        "gzip9": 1534,
+        "brotli11": 1314
+      },
+      "lil": {
+        "raw": 1009,
+        "gzip9": 538,
+        "brotli11": 449
+      },
+      "ratio": 2.9265033407572383,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/sectionHeaders",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 4318,
+        "gzip9": 1480,
+        "brotli11": 1296
+      },
+      "lil": {
+        "raw": 689,
+        "gzip9": 333,
+        "brotli11": 279
+      },
+      "ratio": 4.645161290322581,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/editorState",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 3626,
+        "gzip9": 1430,
+        "brotli11": 1230
+      },
+      "lil": {
+        "raw": 1658,
+        "gzip9": 582,
+        "brotli11": 488
+      },
+      "ratio": 2.5204918032786887,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/gpu",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 3250,
+        "gzip9": 1404,
+        "brotli11": 1219
+      },
+      "lil": {
+        "raw": 127,
+        "gzip9": 126,
+        "brotli11": 100
+      },
+      "ratio": 12.19,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/caretOperations",
+      "files": 3,
+      "scoredLil": 3,
+      "js": {
+        "raw": 3123,
+        "gzip9": 1432,
+        "brotli11": 1214
+      },
+      "lil": {
+        "raw": 2949,
+        "gzip9": 1050,
+        "brotli11": 909
+      },
+      "ratio": 1.3355335533553356,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/opener",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 2987,
+        "gzip9": 1375,
+        "brotli11": 1192
+      },
+      "lil": {
+        "raw": 503,
+        "gzip9": 301,
+        "brotli11": 230
+      },
+      "ratio": 5.182608695652174,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/inlineProgress",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 3292,
+        "gzip9": 1385,
+        "brotli11": 1172
+      },
+      "lil": {
+        "raw": 459,
+        "gzip9": 204,
+        "brotli11": 157
+      },
+      "ratio": 7.464968152866242,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/middleScroll",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 2809,
+        "gzip9": 1317,
+        "brotli11": 1153
+      },
+      "lil": {
+        "raw": 1214,
+        "gzip9": 496,
+        "brotli11": 412
+      },
+      "ratio": 2.7985436893203883,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/anchorSelect",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 3609,
+        "gzip9": 1242,
+        "brotli11": 1080
+      },
+      "lil": {
+        "raw": 1304,
+        "gzip9": 386,
+        "brotli11": 349
+      },
+      "ratio": 3.0945558739255015,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/history",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 2727,
+        "gzip9": 1253,
+        "brotli11": 1069
+      },
+      "lil": {
+        "raw": 826,
+        "gzip9": 391,
+        "brotli11": 311
+      },
+      "ratio": 3.437299035369775,
+      "band": "suspicious"
+    },
+    {
+      "key": "base/parts",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 3262,
+        "gzip9": 1203,
+        "brotli11": 1030
+      },
+      "lil": {
+        "raw": 2225,
+        "gzip9": 850,
+        "brotli11": 743
+      },
+      "ratio": 1.386271870794078,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/diffEditorBreadcrumbs",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 2799,
+        "gzip9": 1141,
+        "brotli11": 978
+      },
+      "lil": {
+        "raw": 847,
+        "gzip9": 294,
+        "brotli11": 255
+      },
+      "ratio": 3.835294117647059,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/workspace",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 2469,
+        "gzip9": 1095,
+        "brotli11": 947
+      },
+      "lil": {
+        "raw": 924,
+        "gzip9": 452,
+        "brotli11": 366
+      },
+      "ratio": 2.587431693989071,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/unusualLineTerminators",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 2743,
+        "gzip9": 1092,
+        "brotli11": 938
+      },
+      "lil": {
+        "raw": 891,
+        "gzip9": 417,
+        "brotli11": 352
+      },
+      "ratio": 2.664772727272727,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/placeholderText",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 2426,
+        "gzip9": 1090,
+        "brotli11": 929
+      },
+      "lil": {
+        "raw": 702,
+        "gzip9": 366,
+        "brotli11": 286
+      },
+      "ratio": 3.2482517482517483,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/symbolIcons",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 7282,
+        "gzip9": 1162,
+        "brotli11": 893
+      },
+      "lil": {
+        "raw": 770,
+        "gzip9": 293,
+        "brotli11": 231
+      },
+      "ratio": 3.865800865800866,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/cursorUndo",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 2512,
+        "gzip9": 876,
+        "brotli11": 778
+      },
+      "lil": {
+        "raw": 1368,
+        "gzip9": 452,
+        "brotli11": 396
+      },
+      "ratio": 1.9646464646464648,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/editor.all.js",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 3699,
+        "gzip9": 842,
+        "brotli11": 733
+      },
+      "lil": {
+        "raw": 3696,
+        "gzip9": 1092,
+        "brotli11": 942
+      },
+      "ratio": 0.778131634819533,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/markdown",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 1586,
+        "gzip9": 790,
+        "brotli11": 663
+      },
+      "lil": {
+        "raw": 619,
+        "gzip9": 315,
+        "brotli11": 273
+      },
+      "ratio": 2.4285714285714284,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/dataChannel",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 1365,
+        "gzip9": 794,
+        "brotli11": 662
+      },
+      "lil": {
+        "raw": 584,
+        "gzip9": 344,
+        "brotli11": 261
+      },
+      "ratio": 2.5363984674329503,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/userInteraction",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 1585,
+        "gzip9": 783,
+        "brotli11": 659
+      },
+      "lil": {
+        "raw": 703,
+        "gzip9": 327,
+        "brotli11": 261
+      },
+      "ratio": 2.524904214559387,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/insertFinalNewLine",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 1321,
+        "gzip9": 739,
+        "brotli11": 626
+      },
+      "lil": {
+        "raw": 482,
+        "gzip9": 328,
+        "brotli11": 260
+      },
+      "ratio": 2.4076923076923076,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/wordPartOperations",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 2500,
+        "gzip9": 704,
+        "brotli11": 598
+      },
+      "lil": {
+        "raw": 2045,
+        "gzip9": 587,
+        "brotli11": 526
+      },
+      "ratio": 1.1368821292775666,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/editor.api.js",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 1576,
+        "gzip9": 687,
+        "brotli11": 580
+      },
+      "lil": {
+        "raw": 1173,
+        "gzip9": 385,
+        "brotli11": 321
+      },
+      "ratio": 1.8068535825545171,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/commands",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 1537,
+        "gzip9": 658,
+        "brotli11": 578
+      },
+      "lil": {
+        "raw": 1057,
+        "gzip9": 430,
+        "brotli11": 371
+      },
+      "ratio": 1.5579514824797844,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/product",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 1364,
+        "gzip9": 649,
+        "brotli11": 531
+      },
+      "lil": {
+        "raw": 411,
+        "gzip9": 192,
+        "brotli11": 150
+      },
+      "ratio": 3.54,
+      "band": "suspicious"
+    },
+    {
+      "key": "nls.js",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 926,
+        "gzip9": 523,
+        "brotli11": 452
+      },
+      "lil": {
+        "raw": 1142,
+        "gzip9": 569,
+        "brotli11": 506
+      },
+      "ratio": 0.8932806324110671,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/toggleTabFocusMode",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 985,
+        "gzip9": 541,
+        "brotli11": 438
+      },
+      "lil": {
+        "raw": 245,
+        "gzip9": 142,
+        "brotli11": 107
+      },
+      "ratio": 4.093457943925234,
+      "band": "suspicious"
+    },
+    {
+      "key": "platform/dnd",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 859,
+        "gzip9": 504,
+        "brotli11": 422
+      },
+      "lil": {
+        "raw": 375,
+        "gzip9": 181,
+        "brotli11": 145
+      },
+      "ratio": 2.910344827586207,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/contrib/readOnlyMessage",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 918,
+        "gzip9": 451,
+        "brotli11": 376
+      },
+      "lil": {
+        "raw": 847,
+        "gzip9": 294,
+        "brotli11": 255
+      },
+      "ratio": 1.4745098039215687,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/lineSelection",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 729,
+        "gzip9": 422,
+        "brotli11": 345
+      },
+      "lil": {
+        "raw": 827,
+        "gzip9": 292,
+        "brotli11": 244
+      },
+      "ratio": 1.4139344262295082,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/jsonschemas",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 744,
+        "gzip9": 402,
+        "brotli11": 332
+      },
+      "lil": {
+        "raw": 560,
+        "gzip9": 279,
+        "brotli11": 226
+      },
+      "ratio": 1.4690265486725664,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/window",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 725,
+        "gzip9": 365,
+        "brotli11": 322
+      },
+      "lil": {
+        "raw": 296,
+        "gzip9": 159,
+        "brotli11": 124
+      },
+      "ratio": 2.596774193548387,
+      "band": "suspicious"
+    },
+    {
+      "key": "editor/editor.worker.start.js",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 509,
+        "gzip9": 322,
+        "brotli11": 292
+      },
+      "lil": {
+        "raw": 830,
+        "gzip9": 311,
+        "brotli11": 271
+      },
+      "ratio": 1.0774907749077491,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/tokenization",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 569,
+        "gzip9": 347,
+        "brotli11": 284
+      },
+      "lil": {
+        "raw": 600,
+        "gzip9": 293,
+        "brotli11": 235
+      },
+      "ratio": 1.2085106382978723,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/action",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 446,
+        "gzip9": 348,
+        "brotli11": 277
+      },
+      "lil": {
+        "raw": 541,
+        "gzip9": 295,
+        "brotli11": 233
+      },
+      "ratio": 1.1888412017167382,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/fontZoom",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 768,
+        "gzip9": 309,
+        "brotli11": 252
+      },
+      "lil": {
+        "raw": 156,
+        "gzip9": 148,
+        "brotli11": 111
+      },
+      "ratio": 2.27027027027027,
+      "band": "comparable"
+    },
+    {
+      "key": "editor/contrib/longLinesHelper",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 464,
+        "gzip9": 310,
+        "brotli11": 250
+      },
+      "lil": {
+        "raw": 119,
+        "gzip9": 117,
+        "brotli11": 85
+      },
+      "ratio": 2.9411764705882355,
+      "band": "suspicious"
+    },
+    {
+      "key": "amdX.js",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 414,
+        "gzip9": 309,
+        "brotli11": 244
+      },
+      "lil": {
+        "raw": 1409,
+        "gzip9": 543,
+        "brotli11": 467
+      },
+      "ratio": 0.5224839400428265,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/registry",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 436,
+        "gzip9": 278,
+        "brotli11": 228
+      },
+      "lil": {
+        "raw": 874,
+        "gzip9": 356,
+        "brotli11": 308
+      },
+      "ratio": 0.7402597402597403,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/progress",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 418,
+        "gzip9": 253,
+        "brotli11": 204
+      },
+      "lil": {
+        "raw": 495,
+        "gzip9": 246,
+        "brotli11": 195
+      },
+      "ratio": 1.0461538461538462,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/extensions",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 349,
+        "gzip9": 216,
+        "brotli11": 177
+      },
+      "lil": {
+        "raw": 274,
+        "gzip9": 159,
+        "brotli11": 118
+      },
+      "ratio": 1.5,
+      "band": "comparable"
+    },
+    {
+      "key": "platform/files",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 245,
+        "gzip9": 194,
+        "brotli11": 166
+      },
+      "lil": {
+        "raw": 838,
+        "gzip9": 390,
+        "brotli11": 330
+      },
+      "ratio": 0.503030303030303,
+      "band": "js-smaller"
+    },
+    {
+      "key": "editor/editor.main.js",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 618,
+        "gzip9": 198,
+        "brotli11": 157
+      },
+      "lil": {
+        "raw": 1217,
+        "gzip9": 418,
+        "brotli11": 332
+      },
+      "ratio": 0.47289156626506024,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/notification",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 242,
+        "gzip9": 169,
+        "brotli11": 135
+      },
+      "lil": {
+        "raw": 744,
+        "gzip9": 269,
+        "brotli11": 226
+      },
+      "ratio": 0.5973451327433629,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/telemetry",
+      "files": 2,
+      "scoredLil": 2,
+      "js": {
+        "raw": 147,
+        "gzip9": 153,
+        "brotli11": 122
+      },
+      "lil": {
+        "raw": 699,
+        "gzip9": 400,
+        "brotli11": 315
+      },
+      "ratio": 0.3873015873015873,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/label",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 130,
+        "gzip9": 121,
+        "brotli11": 95
+      },
+      "lil": {
+        "raw": 372,
+        "gzip9": 231,
+        "brotli11": 187
+      },
+      "ratio": 0.5080213903743316,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/environment",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 142,
+        "gzip9": 125,
+        "brotli11": 94
+      },
+      "lil": {
+        "raw": 439,
+        "gzip9": 194,
+        "brotli11": 147
+      },
+      "ratio": 0.6394557823129252,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/layout",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 132,
+        "gzip9": 123,
+        "brotli11": 94
+      },
+      "lil": {
+        "raw": 347,
+        "gzip9": 174,
+        "brotli11": 134
+      },
+      "ratio": 0.7014925373134329,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/defaultAccount",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 148,
+        "gzip9": 130,
+        "brotli11": 92
+      },
+      "lil": {
+        "raw": 251,
+        "gzip9": 156,
+        "brotli11": 116
+      },
+      "ratio": 0.7931034482758621,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/dialogs",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 132,
+        "gzip9": 123,
+        "brotli11": 91
+      },
+      "lil": {
+        "raw": 683,
+        "gzip9": 268,
+        "brotli11": 220
+      },
+      "ratio": 0.41363636363636364,
+      "band": "js-smaller"
+    },
+    {
+      "key": "platform/editor",
+      "files": 1,
+      "scoredLil": 1,
+      "js": {
+        "raw": 99,
+        "gzip9": 112,
+        "brotli11": 90
+      },
+      "lil": {
+        "raw": 363,
+        "gzip9": 197,
+        "brotli11": 160
+      },
+      "ratio": 0.5625,
+      "band": "js-smaller"
+    }
+  ],
+  "pairs": [
+    {
+      "id": "position",
+      "title": "Position",
+      "plugged": false,
+      "monacoFiles": [
+        "editor/common/core/position.js"
+      ],
+      "lilFiles": [
+        "base/position.lil"
+      ],
+      "js": 366,
+      "lil": 289,
+      "ratio": 1.2664359861591696
+    },
+    {
+      "id": "core-types",
+      "title": "Position + Range + Selection",
+      "plugged": false,
+      "monacoFiles": [
+        "editor/common/core/position.js",
+        "editor/common/core/range.js",
+        "editor/common/core/selection.js"
+      ],
+      "lilFiles": [
+        "base/position.lil",
+        "base/range.lil",
+        "base/selection.lil",
+        "layers/core-types.lil"
+      ],
+      "js": 1595,
+      "lil": 753,
+      "ratio": 2.1181938911022575
+    },
+    {
+      "id": "piece-tree",
+      "title": "PieceTreeBase + rbTreeBase",
+      "plugged": true,
+      "monacoFiles": [
+        "editor/common/model/pieceTreeTextBuffer/pieceTreeBase.js",
+        "editor/common/model/pieceTreeTextBuffer/rbTreeBase.js"
+      ],
+      "lilFiles": [
+        "editor/rb-tree.lil",
+        "editor/piece-tree.lil",
+        "layers/piece-tree.lil"
+      ],
+      "js": 6581,
+      "lil": 6322,
+      "ratio": 1.0409680480860488
+    },
+    {
+      "id": "interval-tree",
+      "title": "Decoration interval tree",
+      "plugged": false,
+      "monacoFiles": [
+        "editor/common/model/intervalTree.js"
+      ],
+      "lilFiles": [
+        "editor/interval-tree.lil"
+      ],
+      "js": 2574,
+      "lil": 401,
+      "ratio": 6.418952618453865
+    },
+    {
+      "id": "myers",
+      "title": "Myers diff",
+      "plugged": false,
+      "monacoFiles": [
+        "editor/common/diff/defaultLinesDiffComputer/algorithms/myersDiffAlgorithm.js"
+      ],
+      "lilFiles": [
+        "editor/myers.lil"
+      ],
+      "js": 762,
+      "lil": 2032,
+      "ratio": 0.375
+    },
+    {
+      "id": "monarch",
+      "title": "Monarch compile",
+      "plugged": false,
+      "monacoFiles": [
+        "editor/standalone/common/monarch/monarchCompile.js"
+      ],
+      "lilFiles": [
+        "editor/monarch.lil"
+      ],
+      "js": 2855,
+      "lil": 1433,
+      "ratio": 1.9923237962316818
+    }
+  ],
+  "production": {
+    "note": "Diagnostic only. The Lil page is not a 100% feature-complete monaco-editor. Whole-page Brotli gaps this large are not a fair product claim.",
+    "js": {
+      "ide": {
+        "raw": 4504178,
+        "gzip": 1163660,
+        "brotli": 904810
+      },
+      "workers": {
+        "raw": 9608472,
+        "gzip": 2217030,
+        "brotli": 1640341
+      },
+      "css": {
+        "raw": 350112,
+        "gzip": 117218,
+        "brotli": 99060
+      }
+    },
+    "lil": {
+      "ide": {
+        "raw": 2330203,
+        "gzip": 526268,
+        "brotli": 413607
+      },
+      "workers": {
+        "raw": 3885,
+        "gzip": 2282,
+        "brotli": 1897
+      },
+      "css": {
+        "raw": 1941,
+        "gzip": 749,
+        "brotli": 610
+      }
+    },
+    "workers": [
+      {
+        "name": "editor.worker.js",
+        "js": {
+          "raw": 304417,
+          "gzip": 93802,
+          "brotli": 74863
+        }
+      },
+      {
+        "name": "json.worker.js",
+        "js": {
+          "raw": 434483,
+          "gzip": 131103,
+          "brotli": 105438
+        }
+      },
+      {
+        "name": "css.worker.js",
+        "js": {
+          "raw": 1081695,
+          "gzip": 248558,
+          "brotli": 190154
+        }
+      },
+      {
+        "name": "html.worker.js",
+        "js": {
+          "raw": 752533,
+          "gzip": 198434,
+          "brotli": 158535
+        }
+      },
+      {
+        "name": "ts.worker.js",
+        "js": {
+          "raw": 7035344,
+          "gzip": 1545133,
+          "brotli": 1111351
+        }
+      }
+    ],
+    "lilWorkers": [
+      {
+        "name": "editor.worker.js",
+        "lil": {
+          "raw": 488,
+          "gzip": 294,
+          "brotli": 252
+        }
+      },
+      {
+        "name": "json.worker.js",
+        "lil": {
+          "raw": 839,
+          "gzip": 466,
+          "brotli": 403
+        }
+      },
+      {
+        "name": "css.worker.js",
+        "lil": {
+          "raw": 841,
+          "gzip": 512,
+          "brotli": 400
+        }
+      },
+      {
+        "name": "html.worker.js",
+        "lil": {
+          "raw": 759,
+          "gzip": 457,
+          "brotli": 383
+        }
+      },
+      {
+        "name": "ts.worker.js",
+        "lil": {
+          "raw": 958,
+          "gzip": 553,
+          "brotli": 459
+        }
+      }
+    ]
+  },
+  "examples": [
+    {
+      "id": "lil",
+      "title": "LilScript monaco",
+      "href": "./demos/lil/",
+      "blurb": "Compiled Lil editor + official Microsoft ts.worker."
+    },
+    {
+      "id": "js",
+      "title": "npm monaco-editor 0.56",
+      "href": "./demos/js/",
+      "blurb": "Stock monaco-editor, same chrome."
+    }
+  ]
+}

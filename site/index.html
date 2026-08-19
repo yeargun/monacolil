@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="@itslil/monaco-editor: monaco-editor 0.56.0 reimplemented in LilScript. Not 100% feature parity. Fair evidence is independently compiled submodules, not the whole-IDE Brotli total." />
+    <meta name="theme-color" content="#007acc" />
+    <title>itslil/monaco-editor — monaco 0.56 through LilScript</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="progress" aria-hidden="true"></div>
+    <header class="nav shell">
+      <a class="wordmark" href="#top" aria-label="itslil/monaco-editor home">
+        <span class="mark">m</span>
+        <span>itslil/monaco-editor</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#submodules">submodules</a>
+        <a href="#modules">modules</a>
+        <a href="#lab">editors</a>
+        <a href="#diagnostic">diagnostic</a>
+        <a href="https://github.com/yeargun/monacolil">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> monaco-editor 0.56.0 · LilScript port · not 100% feature parity</p>
+          <h1>Monaco,<br /><em>by submodule.</em></h1>
+          <p class="lede">An independent LilScript editor that implements a large slice of <code>monaco-editor@0.56.0</code>. It is <strong>not</strong> a complete product swap. Whole-IDE Brotli looking ~2× smaller is already suspicious — incomplete folders inflate that gap. The fair table is independently compiled modules.</p>
+          <div class="install-row">
+            <code>npm install @itslil/monaco-editor</code>
+            <button class="copy" data-copy="npm install @itslil/monaco-editor" type="button">copy</button>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="#submodules">Submodule sizes</a>
+            <a class="button secondary" href="https://www.npmjs.com/package/@itslil/monaco-editor">npm ↗</a>
+          </div>
+        </div>
+
+        <div class="scoreboard" aria-label="Fair submodule result">
+          <div class="score-main">
+            <span class="score-label">editor/common · 219 files · Brotli-11</span>
+            <strong id="hero-ratio">—<span>×</span></strong>
+            <p id="hero-bytes"></p>
+          </div>
+          <div class="score-grid">
+            <div><strong id="hero-modules">992</strong><span>modules ported / 994</span></div>
+            <div><strong id="hero-comparable">—</strong><span>folders in 0.8–2.5×</span></div>
+            <div><strong>no</strong><span>100% feature parity</span></div>
+            <div><strong>tsc</strong><span>official Microsoft worker</span></div>
+          </div>
+          <p class="score-note">Headline is the largest independently compiled folder, not ide.js. Folders above 2.5× are marked suspicious — usually a thinner port, not compression.</p>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Ported surfaces">
+        <div>piece tree <span>✦</span> text model <span>✦</span> monarch <span>✦</span> find <span>✦</span> fold <span>✦</span> hover <span>✦</span> suggest <span>✦</span> markers <span>✦</span> official ts.worker <span>✦</span> solid tsx <span>✦</span> not full parity</div>
+      </section>
+
+      <section class="performance shell" id="submodules">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Fair comparison</p>
+            <h2>Folders,<br />not the kitchen sink.</h2>
+          </div>
+          <p>Each monaco-editor-core file is esbuild-minified with other monaco imports left <em>external</em>, then scored with <code>lilscript-codec</code> Brotli-11 against the matching Lil file compiled alone. That is a submodule row. It is not the running IDE and not a claim that every command works.</p>
+        </div>
+        <div class="perf-cards" id="folder-cards"></div>
+        <div class="table-wrap light">
+          <table>
+            <thead>
+              <tr>
+                <th>Folder</th>
+                <th>Files</th>
+                <th>JS Brotli</th>
+                <th>Lil Brotli</th>
+                <th>JS / Lil</th>
+                <th>Band</th>
+              </tr>
+            </thead>
+            <tbody id="folders-body"></tbody>
+          </table>
+        </div>
+        <p class="perf-note">Band <code>comparable</code> is 0.8–2.5×. <code>suspicious</code> is above 2.5× — treat those as incomplete ports. <code>js-smaller</code> means Lil is larger on that folder.</p>
+      </section>
+
+      <section class="apps shell" id="modules">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">nontest-entire-module</p>
+            <h2>Independent<br />modules.</h2>
+          </div>
+          <p>The catalog sum of those standalone compiles. Useful as a stack of parts. Still not the shipped editor, and still not feature parity. File pairs below are the tightest apples-to-apples rows we have.</p>
+        </div>
+        <div class="table-wrap light">
+          <table>
+            <thead>
+              <tr>
+                <th>Lane</th>
+                <th>Files</th>
+                <th>Raw</th>
+                <th>gzip-9</th>
+                <th>Brotli-11</th>
+              </tr>
+            </thead>
+            <tbody id="modules-body"></tbody>
+          </table>
+        </div>
+        <div class="table-wrap light" style="margin-top: 28px">
+          <table>
+            <thead>
+              <tr>
+                <th>File pair</th>
+                <th>JS Brotli</th>
+                <th>Lil Brotli</th>
+                <th>JS / Lil</th>
+              </tr>
+            </thead>
+            <tbody id="pairs-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="lab shell" id="lab">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Same chrome, two editors</p>
+            <h2>Look at<br />the drift.</h2>
+          </div>
+          <p>Open both. Type in <code>src/App.tsx</code> — Solid TSX goes through the official Microsoft TypeScript worker on both pages. Menus, hover, and some commands will not match. That is the current port, not a hidden 2× win.</p>
+        </div>
+        <div class="demo-grid" id="demo-grid"></div>
+      </section>
+
+      <section class="evidence" id="diagnostic">
+        <div class="shell">
+          <div class="section-heading inverse">
+            <div>
+              <p class="eyebrow">Diagnostic · do not headline</p>
+              <h2>Whole IDE<br />bytes.</h2>
+            </div>
+            <p>Production <code>ide.js</code> plus workers. Lil language hosts are tiny; TypeScript is the same Microsoft <code>ts.worker</code> on both pages. The CSS and worker gaps are not a complete style/worker rewrite. Compression this far apart is a warning, not a trophy.</p>
+          </div>
+          <div class="total-bar" id="total-bar"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Artifact</th>
+                  <th>JS raw</th>
+                  <th>JS Brotli</th>
+                  <th>Lil raw</th>
+                  <th>Lil Brotli</th>
+                </tr>
+              </thead>
+              <tbody id="production-body"></tbody>
+            </table>
+          </div>
+          <div class="method-note">
+            <p><strong>Not 100% feature parity.</strong> The Lil editor is a LilScript runtime plus a monaco-editor-core catalog, not monaco-editor with a few files swapped. Official <code>tsc</code> is unchanged. Context-menu items and several contrib surfaces still differ. Use the submodule table above if you want a size argument that can survive scrutiny.</p>
+            <a href="https://github.com/yeargun/monacolil#why-the-headline-is-a-folder-not-the-whole-ide">README ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing shell">
+        <p class="eyebrow">Zero runtime dependencies</p>
+        <h2>Install the<br />current port.</h2>
+        <div class="install-row large">
+          <code>npm install @itslil/monaco-editor</code>
+          <button class="copy" data-copy="npm install @itslil/monaco-editor" type="button">copy</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <span>@itslil/monaco-editor · MIT</span>
+      <span>Independent LilScript reimplementation · not 100% feature parity</span>
+      <a href="https://github.com/yeargun/monacolil">source ↗</a>
+    </footer>
+  </body>
+</html>

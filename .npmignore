@@ -1,0 +1,11 @@
+src
+site
+_site
+examples
+scripts
+test
+reports
+.github
+lilscript.toml
+lilscript.app.toml
+dist/monaco.raw.js

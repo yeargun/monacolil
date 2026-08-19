@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>minimal · @itslil/monaco-editor</title>
+    <link rel="stylesheet" href="../dist/monaco.css" />
+    <style>
+      html, body { height: 100%; margin: 0; background: #1e1e1e; }
+      #editor { height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <script type="module">
+      import monaco, { ready } from "../dist/monaco.esm.js"
+      await ready
+      monaco.editor.create(document.getElementById("editor"), {
+        value: "export function hello(name: string) {\n  return `hi ${name}`\n}\n",
+        language: "typescript",
+        theme: "vs-dark",
+      })
+    </script>
+  </body>
+</html>

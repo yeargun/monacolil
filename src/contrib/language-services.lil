@@ -1,0 +1,43 @@
+import { CodeEditor } from "../editor/standalone";
+import { SuggestItem } from "./popular";
+import { Pos } from "../base/position";
+import { hoverAt } from "./popular";
+import { jsonDocumentKeys, cssPropertyNames, htmlTagNames } from "./language-data";
+
+export string[] jsonDocumentSymbols(CodeEditor editor) {
+  return jsonDocumentKeys(editor.getValue());
+}
+
+export string jsonHover(CodeEditor editor, Pos pos) {
+  return hoverAt(editor, pos);
+}
+
+export SuggestItem[] cssCompletions(string prefix) {
+  SuggestItem[] items = [];
+  string[] cssProperties = cssPropertyNames();
+  int i = 0;
+  while (i < cssProperties.length) {
+    if (prefix.length == 0 || cssProperties[i].indexOf(prefix) == 0) {
+      items.push(new SuggestItem(cssProperties[i], cssProperties[i] + ": "));
+    }
+    i++;
+  }
+  return items;
+}
+
+export SuggestItem[] htmlCompletions(string prefix) {
+  SuggestItem[] items = [];
+  string[] htmlTags = htmlTagNames();
+  int i = 0;
+  while (i < htmlTags.length) {
+    if (prefix.length == 0 || htmlTags[i].indexOf(prefix) == 0) {
+      items.push(new SuggestItem(htmlTags[i], "<" + htmlTags[i] + "></" + htmlTags[i] + ">"));
+    }
+    i++;
+  }
+  return items;
+}
+
+export bool languageServicesWithoutTsc() {
+  return true;
+}
