@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="description" content="@itslil/monaco-editor: monaco-editor 0.56.0 reimplemented in LilScript. Not 100% feature parity. Submodule Brotli is Lil / esbuild-minified JS." />
+      <meta name="description" content="@itslil/monaco-editor: monaco-editor 0.56.0 reimplemented in LilScript. Not 100% feature parity. Submodule Brotli is Lil / Vite 8 Oxc-minified JS. esbuild and Terser are scored beside it." />
     <meta name="theme-color" content="#007acc" />
     <title>itslil/monaco-editor — monaco 0.56 through LilScript</title>
     <link rel="stylesheet" href="./styles.css" />
@@ -18,6 +18,7 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="#submodules">submodules</a>
+        <a href="#minifiers">minifiers</a>
         <a href="#modules">modules</a>
         <a href="#lab">editors</a>
         <a href="#diagnostic">diagnostic</a>
@@ -30,7 +31,7 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="live-dot"></span> monaco-editor 0.56.0 · LilScript port · not 100% feature parity</p>
           <h1>Monaco,<br /><em>by submodule.</em></h1>
-          <p class="lede">An independent LilScript editor that implements a large slice of <code>monaco-editor@0.56.0</code>. It is <strong>not</strong> 100% feature parity. The fair table is independently compiled modules. JS is <strong>esbuild</strong> minify. Ratio is LilScript Brotli-11 / JS Brotli-11.</p>
+          <p class="lede">An independent LilScript editor that implements a large slice of <code>monaco-editor@0.56.0</code>. It is <strong>not</strong> 100% feature parity. The fair table is independently compiled modules. Headline JS is <strong>Vite 8 / Oxc</strong> minify. <strong>esbuild</strong> and <strong>Terser</strong> are scored on the same sources. Ratio is LilScript Brotli-11 / JS Brotli-11.</p>
           <div class="install-row">
             <code>npm install @itslil/monaco-editor</code>
             <button class="copy" data-copy="npm install @itslil/monaco-editor" type="button">copy</button>
@@ -43,17 +44,17 @@
 
         <div class="scoreboard" aria-label="Fair submodule result">
           <div class="score-main">
-            <span class="score-label">editor/common · 219 files · Brotli-11</span>
+            <span class="score-label">editor/common · 219 files · Brotli-11 · Lil / Vite 8 Oxc</span>
             <strong id="hero-ratio">—<span>×</span></strong>
             <p id="hero-bytes"></p>
           </div>
           <div class="score-grid">
             <div><strong id="hero-modules">992</strong><span>modules ported / 994</span></div>
-            <div><strong id="hero-median">—</strong><span>median Lil / JS</span></div>
-            <div><strong>esbuild</strong><span>JS minifier</span></div>
+            <div><strong id="hero-median">—</strong><span>median Lil / Oxc</span></div>
+            <div><strong>Vite 8</strong><span>Oxc minify (headline)</span></div>
             <div><strong>tsc</strong><span>official Microsoft worker</span></div>
           </div>
-          <p class="score-note">Headline is the largest JS folder, independently compiled, other monaco imports external. JS minified with esbuild. Ratio is LilScript Brotli / JS Brotli. Not 100% feature parity.</p>
+          <p class="score-note">Headline is the largest JS folder, independently compiled, other monaco imports external. JS minified with Vite 8 Oxc. esbuild 0.28.1 and Terser 5.50.0 are on the same files. Ratio is LilScript Brotli / JS Brotli. Not 100% feature parity.</p>
         </div>
       </section>
 
@@ -67,7 +68,7 @@
             <p class="eyebrow">Fair comparison</p>
             <h2>Folders,<br />not the kitchen sink.</h2>
           </div>
-          <p>Each monaco-editor-core file is <strong>esbuild</strong>-minified with other monaco imports left <em>external</em>, then scored with <code>lilscript-codec</code> Brotli-11 against the matching Lil file compiled alone. Folders are listed largest JS Brotli first. Ratio is Lil Brotli / JS Brotli. Not the running IDE, and not 100% feature parity.</p>
+          <p>Each monaco-editor-core file is minified three ways — <strong>Vite 8 / Oxc</strong>, <strong>esbuild</strong>, <strong>Terser</strong> — with other monaco imports left <em>external</em>, then scored with <code>lilscript-codec</code> Brotli-11 against the matching Lil file compiled alone. Folders are listed largest Vite/Oxc Brotli first. Ratio is Lil Brotli / Vite 8 Oxc Brotli. Not the running IDE, and not 100% feature parity.</p>
         </div>
         <div class="perf-cards" id="folder-cards"></div>
         <div class="table-wrap light">
@@ -76,16 +77,42 @@
               <tr>
                 <th>Folder</th>
                 <th>Files</th>
-                <th>JS minify</th>
-                <th>JS Brotli</th>
+                <th>Vite 8 / Oxc</th>
+                <th>esbuild</th>
+                <th>Terser</th>
                 <th>Lil Brotli</th>
-                <th>Lil / JS</th>
+                <th>Lil / Oxc</th>
               </tr>
             </thead>
             <tbody id="folders-body"></tbody>
           </table>
         </div>
-        <p class="perf-note">JS column is esbuild minify of that folder’s monaco files. Ratio is LilScript Brotli-11 / JS Brotli-11.</p>
+        <p class="perf-note">JS columns are the same catalog files, remineed. Headline ratio is LilScript Brotli-11 / Vite 8 Oxc Brotli-11.</p>
+      </section>
+
+      <section class="apps shell" id="minifiers">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Same sources, three JS minifiers</p>
+            <h2>Vite 8 Oxc<br />vs the rest.</h2>
+          </div>
+          <p>Latest Vite on npm is 8.2.1. Its default client minify is Oxc (Rolldown 1.2.4). The other two lanes are esbuild 0.28.1 and Terser 5.50.0. Lil is not post-minified with those tools. Ratio is Lil Brotli / that JS lane.</p>
+        </div>
+        <div class="table-wrap light">
+          <table>
+            <thead>
+              <tr>
+                <th>JS minifier</th>
+                <th>Version</th>
+                <th>Raw</th>
+                <th>gzip-9</th>
+                <th>Brotli-11</th>
+                <th>Lil / JS</th>
+              </tr>
+            </thead>
+            <tbody id="minifiers-body"></tbody>
+          </table>
+        </div>
       </section>
 
       <section class="apps shell" id="modules">
@@ -94,7 +121,7 @@
             <p class="eyebrow">nontest-entire-module</p>
             <h2>Independent<br />modules.</h2>
           </div>
-          <p>The catalog sum of those standalone compiles. JS is esbuild minify. Useful as a stack of parts. Still not the shipped editor, and still not feature parity. File pairs below pick the better of esbuild and Terser on the JS side.</p>
+          <p>The catalog sum of those standalone compiles. Headline JS is Vite 8 / Oxc. File pairs below use the same three minifiers on the JS side. Still not the shipped editor, and still not feature parity.</p>
         </div>
         <div class="table-wrap light">
           <table>
@@ -117,10 +144,11 @@
             <thead>
               <tr>
                 <th>File pair</th>
-                <th>JS minify</th>
-                <th>JS Brotli</th>
+                <th>Vite 8 / Oxc</th>
+                <th>esbuild</th>
+                <th>Terser</th>
                 <th>Lil Brotli</th>
-                <th>Lil / JS</th>
+                <th>Lil / Oxc</th>
               </tr>
             </thead>
             <tbody id="pairs-body"></tbody>
@@ -134,7 +162,7 @@
             <p class="eyebrow">Same chrome, two editors</p>
             <h2>Look at<br />the drift.</h2>
           </div>
-          <p>Open both. Type in <code>src/App.tsx</code> — Solid TSX goes through the official Microsoft TypeScript worker on both pages. The JS page is esbuild-minified monaco-editor. Menus and some commands will not match. That is the current port.</p>
+          <p>Open both. Type in <code>src/App.tsx</code> — Solid TSX goes through the official Microsoft TypeScript worker on both pages. Catalog numbers use Vite 8 / Oxc. Menus and some commands will not match. That is the current port.</p>
         </div>
         <div class="demo-grid" id="demo-grid"></div>
       </section>
@@ -146,7 +174,7 @@
               <p class="eyebrow">Diagnostic · do not headline</p>
               <h2>Whole IDE<br />bytes.</h2>
             </div>
-            <p>Production <code>ide.js</code> plus workers. The JS page is <strong>esbuild</strong> minify of monaco-editor ESM. Lil language hosts are compiled LilScript; TypeScript is the same Microsoft <code>ts.worker</code> on both pages. Ratio is Lil Brotli / JS Brotli.</p>
+            <p>Production <code>ide.js</code> plus workers. The JS workbench is scored with <strong>Vite 8 / Oxc</strong>, <strong>esbuild</strong>, and <strong>Terser</strong>. Lil language hosts are compiled LilScript; TypeScript is the same Microsoft <code>ts.worker</code> on both pages. Ratio is Lil Brotli / that JS lane.</p>
           </div>
           <div class="total-bar" id="total-bar"></div>
           <div class="table-wrap">
@@ -165,7 +193,7 @@
             </table>
           </div>
           <div class="method-note">
-            <p><strong>Not 100% feature parity.</strong> The Lil editor is a LilScript runtime plus a monaco-editor-core catalog, not monaco-editor with a few files swapped. Official <code>tsc</code> is unchanged. Context-menu items and several contrib surfaces still differ. Submodule rows above are the size comparison: esbuild on JS, Lil / JS Brotli.</p>
+            <p><strong>Not 100% feature parity.</strong> The Lil editor is a LilScript runtime plus a monaco-editor-core catalog, not monaco-editor with a few files swapped. Official <code>tsc</code> is unchanged. Context-menu items and several contrib surfaces still differ. Submodule rows above are the size comparison: Vite 8 Oxc on JS, with esbuild and Terser beside it. Ratio is Lil / JS Brotli.</p>
             <a href="https://github.com/yeargun/monacolil#why-the-headline-is-a-folder-not-the-whole-ide">README ↗</a>
           </div>
         </div>

@@ -10,6 +10,15 @@ function times(value) {
   return `${value.toFixed(2)}×`
 }
 
+function bytes(value) {
+  if (value == null) return "—"
+  return formatter.format(value)
+}
+
+function laneBrotli(lanes, id) {
+  return lanes?.[id]?.brotli11 ?? lanes?.[id]?.brotli ?? null
+}
+
 function renderHero() {
   const headline = data.headline
   document.querySelector("#hero-ratio").innerHTML = `${headline.ratio.toFixed(2)}<span>×</span>`
@@ -21,20 +30,21 @@ function renderHero() {
 
 function renderFolderCards() {
   const summary = data.folderSummary
+  const vite = data.tooling?.vite ?? "8.2.1"
   const cards = [
     {
-      label: "JS minifier",
-      value: "esbuild",
+      label: "headline JS minify",
+      value: "Vite 8 / Oxc",
       geo: true,
     },
     {
-      label: "median Lil / JS",
+      label: "median Lil / Oxc",
       value: times(summary.medianRatio),
       win: true,
     },
     {
-      label: "folders",
-      value: String(summary.folders),
+      label: "Vite",
+      value: vite,
     },
     {
       label: "catalog modules",
@@ -56,53 +66,103 @@ function renderFolderCards() {
 function renderFolders() {
   document.querySelector("#folders-body").innerHTML = data.folders
     .map((row) => {
-      const lil = row.lil ? formatter.format(row.lil.brotli11) : "—"
+      const lil = row.lil ? bytes(row.lil.brotli11) : "—"
       return `
     <tr>
       <th scope="row">${row.key}</th>
-      <td>${formatter.format(row.files)}</td>
-      <td>${row.jsMinifier}</td>
-      <td>${formatter.format(row.js.brotli11)}</td>
+      <td>${bytes(row.files)}</td>
+      <td>${bytes(laneBrotli(row.jsLanes, "oxc") ?? row.js?.brotli11)}</td>
+      <td>${bytes(laneBrotli(row.jsLanes, "esbuild"))}</td>
+      <td>${bytes(laneBrotli(row.jsLanes, "terser"))}</td>
       <td>${lil}</td>
-      <td><strong>${times(row.ratio)}</strong></td>
+      <td><strong>${times(row.ratioOxc ?? row.ratio)}</strong></td>
     </tr>`
     })
     .join("")
 }
 
+function renderMinifiers() {
+  const lil = data.independentModules.lil
+  const rows = (data.minifiers ?? []).map((row) => {
+    const cls = row.primary ? " primary-lane" : ""
+    return `
+    <tr class="${cls}">
+      <th scope="row">${row.label}</th>
+      <td>${row.version}</td>
+      <td>${bytes(row.js?.raw)}</td>
+      <td>${bytes(row.js?.gzip9)}</td>
+      <td>${bytes(row.js?.brotli11)}</td>
+      <td><strong>${times(row.ratio)}</strong></td>
+    </tr>`
+  })
+  rows.push(`
+    <tr>
+      <th scope="row">Lil independent modules</th>
+      <td>—</td>
+      <td>${bytes(lil.raw)}</td>
+      <td>${bytes(lil.gzip9)}</td>
+      <td>${bytes(lil.brotli11)}</td>
+      <td>—</td>
+    </tr>`)
+  document.querySelector("#minifiers-body").innerHTML = rows.join("")
+}
+
 function renderModules() {
   const catalog = data.independentModules
+  const tooling = data.tooling ?? {}
   document.querySelector("#modules-body").innerHTML = `
-    <tr>
+    <tr class="primary-lane">
       <th scope="row">monaco-editor-core files (externals)</th>
-      <td>${formatter.format(catalog.files)}</td>
-      <td>esbuild</td>
-      <td>${formatter.format(catalog.js.raw)}</td>
-      <td>${formatter.format(catalog.js.gzip9)}</td>
-      <td>${formatter.format(catalog.js.brotli11)}</td>
+      <td>${bytes(catalog.files)}</td>
+      <td>Vite 8 / Oxc · vite@${tooling.vite ?? "8.2.1"}</td>
+      <td>${bytes(catalog.js.raw)}</td>
+      <td>${bytes(catalog.js.gzip9)}</td>
+      <td>${bytes(catalog.js.brotli11)}</td>
       <td><strong>1.00×</strong></td>
     </tr>
     <tr>
+      <th scope="row">same files</th>
+      <td>${bytes(catalog.files)}</td>
+      <td>esbuild@${tooling.esbuild ?? "0.28.1"}</td>
+      <td>${bytes(catalog.jsLanes.esbuild.raw)}</td>
+      <td>${bytes(catalog.jsLanes.esbuild.gzip9)}</td>
+      <td>${bytes(catalog.jsLanes.esbuild.brotli11)}</td>
+      <td><strong>${times(catalog.lil.brotli11 / catalog.jsLanes.esbuild.brotli11)}</strong></td>
+    </tr>
+    <tr>
+      <th scope="row">same files</th>
+      <td>${bytes(catalog.files)}</td>
+      <td>terser@${tooling.terser ?? "5.50.0"}</td>
+      <td>${bytes(catalog.jsLanes.terser.raw)}</td>
+      <td>${bytes(catalog.jsLanes.terser.gzip9)}</td>
+      <td>${bytes(catalog.jsLanes.terser.brotli11)}</td>
+      <td><strong>${times(catalog.lil.brotli11 / catalog.jsLanes.terser.brotli11)}</strong></td>
+    </tr>
+    <tr>
       <th scope="row">Lil independent modules</th>
-      <td>${formatter.format(catalog.scoredLil)}</td>
+      <td>${bytes(catalog.scoredLil)}</td>
       <td>—</td>
-      <td>${formatter.format(catalog.lil.raw)}</td>
-      <td>${formatter.format(catalog.lil.gzip9)}</td>
-      <td>${formatter.format(catalog.lil.brotli11)}</td>
+      <td>${bytes(catalog.lil.raw)}</td>
+      <td>${bytes(catalog.lil.gzip9)}</td>
+      <td>${bytes(catalog.lil.brotli11)}</td>
       <td><strong>${times(catalog.ratio)}</strong></td>
     </tr>`
 
   document.querySelector("#pairs-body").innerHTML = data.pairs
-    .map(
-      (row) => `
+    .map((row) => {
+      const oxc = laneBrotli(row.jsLanes, "oxc") ?? row.js
+      const esbuild = laneBrotli(row.jsLanes, "esbuild")
+      const terser = laneBrotli(row.jsLanes, "terser")
+      return `
     <tr>
       <th scope="row">${row.title}</th>
-      <td>${row.jsMinifier}</td>
-      <td>${formatter.format(row.js)}</td>
-      <td>${formatter.format(row.lil)}</td>
+      <td>${bytes(oxc)}</td>
+      <td>${bytes(esbuild)}</td>
+      <td>${bytes(terser)}</td>
+      <td>${bytes(row.lil)}</td>
       <td><strong>${times(row.ratio)}</strong></td>
-    </tr>`,
-    )
+    </tr>`
+    })
     .join("")
 }
 
@@ -117,7 +177,7 @@ function renderDemos() {
           <span class="case-number">${String(index + 1).padStart(2, "0")}</span>
           <h3>${example.title}</h3>
         </div>
-        <strong class="saving">${example.id === "lil" ? "lil" : "esbuild"}</strong>
+        <strong class="saving">${example.id === "lil" ? "lil" : "vite/oxc"}</strong>
       </header>
       <div class="demo-frame-wrap">
         <iframe
@@ -150,8 +210,11 @@ function renderProduction() {
   const p = data.production
   const jsTs = p.workers.find((row) => row.name === "ts.worker.js")?.js
   const lilTs = p.lilWorkers.find((row) => row.name === "ts.worker.js")?.lil
+  const lanes = p.jsMinifiers ?? {}
   const rows = [
-    ["ide.js (esbuild on JS)", p.js.ide, p.lil.ide],
+    ["ide.js · Vite 8 / Oxc", lanes.oxc ?? p.js.ide, p.lil.ide],
+    ["ide.js · esbuild 0.28.1", lanes.esbuild, p.lil.ide],
+    ["ide.js · Terser 5.50.0", lanes.terser, p.lil.ide],
     ["workers except tsc", {
       raw: p.js.workers.raw - (jsTs?.raw ?? 0),
       brotli: p.js.workers.brotli - (jsTs?.brotli ?? 0),
@@ -160,24 +223,26 @@ function renderProduction() {
       brotli: p.lil.workers.brotli - (lilTs?.brotli ?? 0),
     }],
     ["editor CSS", p.js.css, p.lil.css],
-  ]
+  ].filter(([, js]) => js)
   document.querySelector("#production-body").innerHTML = rows
     .map(([name, js, lil]) => {
       const r = lil.brotli / js.brotli
       return `
     <tr>
       <th scope="row">${name}</th>
-      <td>${formatter.format(js.raw)}</td>
-      <td>${formatter.format(js.brotli)}</td>
-      <td>${formatter.format(lil.raw)}</td>
-      <td>${formatter.format(lil.brotli)}</td>
+      <td>${bytes(js.raw)}</td>
+      <td>${bytes(js.brotli)}</td>
+      <td>${bytes(lil.raw)}</td>
+      <td>${bytes(lil.brotli)}</td>
       <td><strong>${times(r)}</strong></td>
     </tr>`
     })
     .join("")
 
   const bars = [
-    { name: "JS ide.js Brotli · esbuild", value: p.js.ide.brotli, primary: false },
+    { name: "JS ide.js Brotli · Vite 8 / Oxc", value: (lanes.oxc ?? p.js.ide).brotli, primary: false },
+    { name: "JS ide.js Brotli · esbuild", value: lanes.esbuild?.brotli ?? p.js.ide.brotli, primary: false },
+    { name: "JS ide.js Brotli · Terser", value: lanes.terser?.brotli ?? p.js.ide.brotli, primary: false },
     { name: "Lil ide.js Brotli", value: p.lil.ide.brotli, primary: true },
   ]
   const max = Math.max(...bars.map((bar) => bar.value))
@@ -215,6 +280,7 @@ function bindProgress() {
 renderHero()
 renderFolderCards()
 renderFolders()
+renderMinifiers()
 renderModules()
 renderDemos()
 renderProduction()

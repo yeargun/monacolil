@@ -31,11 +31,17 @@ describe("github pages artifact", () => {
     const results = readFileSync(resolve(site, "results.json"), "utf8")
     assert.match(html, /@itslil\/monaco-editor/)
     assert.match(html, /not 100% feature parity/i)
+    assert.match(html, /Vite 8 \/ Oxc/)
     assert.match(html, /esbuild/)
+    assert.match(html, /Terser/)
     assert.match(html, /Lil \/ JS/)
     assert.doesNotMatch(html, /suspicious/i)
     assert.doesNotMatch(results, /suspicious/i)
     assert.match(results, /LilScript Brotli-11 \/ JS Brotli-11/)
+    assert.match(results, /vite\/oxc/)
+    assert.match(results, /"vite": "8.2.1"/)
+    assert.match(results, /"esbuild": "0.28.1"/)
+    assert.match(results, /"terser": "5.50.0"/)
   })
 
   it("keeps official TypeScript worker on the Lil demo", () => {

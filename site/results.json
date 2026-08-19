@@ -4,10 +4,18 @@
   "featureParity": false,
   "codec": "lilscript-codec gzip-9 / brotli-11",
   "ratioNote": "ratio = LilScript Brotli-11 / JS Brotli-11",
+  "tooling": {
+    "vite": "8.2.1",
+    "rolldown": "1.2.4",
+    "esbuild": "0.28.1",
+    "terser": "5.50.0",
+    "oxc": "vite@8.2.1 minify (Oxc, Vite 8 default)"
+  },
   "jsMinifier": {
-    "folders": "esbuild minify",
-    "production": "esbuild minify",
-    "pairs": "esbuild and terser; best Brotli-11"
+    "headline": "vite/oxc",
+    "folders": "Vite 8 Oxc minify (default client minifier)",
+    "production": "Vite 8 Oxc minify; esbuild and Terser also scored",
+    "pairs": "Vite 8 Oxc / esbuild / Terser; headline Vite/Oxc"
   },
   "vscodeCommit": "f487add297079a02eb836810185b165e50cadabc",
   "catalog": {
@@ -23,1218 +31,2653 @@
   "headline": {
     "key": "editor/common",
     "files": 219,
-    "jsBrotli": 240863,
+    "jsBrotli": 235070,
     "lilBrotli": 163337,
-    "ratio": 0.6781323823086153,
-    "jsMinifier": "esbuild",
-    "note": "Largest JS folder. Independently compiled modules, other monaco imports left external. JS minified with esbuild. Ratio is Lil Brotli / JS Brotli."
+    "ratio": 0.6948440889947675,
+    "jsMinifier": "vite/oxc",
+    "note": "Largest JS folder. Independently compiled modules, other monaco imports left external. Headline JS is Vite 8 Oxc minify. Ratio is Lil Brotli / JS Brotli."
   },
+  "minifiers": [
+    {
+      "id": "oxc",
+      "label": "Vite 8 / Oxc",
+      "version": "vite@8.2.1 minify (Oxc, Vite 8 default)",
+      "js": {
+        "raw": 4411598,
+        "gzip9": 1397988,
+        "brotli11": 1228116
+      },
+      "ratio": 0.5085203677828479,
+      "primary": true
+    },
+    {
+      "id": "esbuild",
+      "label": "esbuild",
+      "version": "esbuild@0.28.1",
+      "js": {
+        "raw": 4466389,
+        "gzip9": 1425056,
+        "brotli11": 1255078
+      },
+      "ratio": 0.49759616533793116,
+      "primary": false
+    },
+    {
+      "id": "terser",
+      "label": "Terser",
+      "version": "terser@5.50.0",
+      "js": {
+        "raw": 4441856,
+        "gzip9": 1402098,
+        "brotli11": 1231672
+      },
+      "ratio": 0.5070522022096792,
+      "primary": false
+    }
+  ],
   "independentModules": {
     "label": "nontest-entire-module",
-    "jsMinifier": "esbuild minify",
-    "note": "Each monaco-editor-core file is esbuild-minified with other monaco imports external, then scored Brotli-11 against the matching LilScript file compiled alone (js-module keepers). Ratio is Lil Brotli / JS Brotli. This is not the shipped editor bundle and not a claim of product parity.",
+    "jsMinifier": "vite/oxc",
+    "note": "Each monaco-editor-core file is minified with Vite 8 Oxc, esbuild, and Terser, other monaco imports external, then scored Brotli-11 against the matching LilScript file compiled alone. Headline JS is Vite/Oxc. Ratio is Lil Brotli / JS Brotli.",
     "files": 994,
     "scoredLil": 992,
     "js": {
-      "raw": 4466650,
-      "gzip9": 1425897,
-      "brotli11": 1255455
+      "raw": 4411598,
+      "gzip9": 1397988,
+      "brotli11": 1228116
     },
     "lil": {
       "raw": 2132061,
       "gzip9": 717722,
       "brotli11": 624522
     },
-    "ratio": 0.49744674241609615
+    "jsLanes": {
+      "oxc": {
+        "raw": 4411598,
+        "gzip9": 1397988,
+        "brotli11": 1228116
+      },
+      "esbuild": {
+        "raw": 4466389,
+        "gzip9": 1425056,
+        "brotli11": 1255078
+      },
+      "terser": {
+        "raw": 4441856,
+        "gzip9": 1402098,
+        "brotli11": 1231672
+      }
+    },
+    "ratio": 0.5085203677828479
   },
   "folderSummary": {
     "folders": 115,
     "scored": 115,
-    "medianRatio": 0.3804567794160162,
-    "jsMinifier": "esbuild"
+    "medianRatio": 0.3828711828711829,
+    "jsMinifier": "vite/oxc"
   },
   "folders": [
     {
       "key": "editor/common",
       "files": 219,
       "scoredLil": 219,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 879347,
-        "gzip9": 271562,
-        "brotli11": 240863
+        "raw": 866485,
+        "gzip9": 266283,
+        "brotli11": 235070
       },
       "lil": {
         "raw": 571446,
         "gzip9": 185888,
         "brotli11": 163337
       },
-      "ratio": 0.6781323823086153
+      "jsLanes": {
+        "oxc": {
+          "raw": 866485,
+          "gzip9": 266283,
+          "brotli11": 235070
+        },
+        "esbuild": {
+          "raw": 879293,
+          "gzip9": 271388,
+          "brotli11": 240785
+        },
+        "terser": {
+          "raw": 873989,
+          "gzip9": 268426,
+          "brotli11": 237120
+        }
+      },
+      "ratio": 0.6948440889947675,
+      "ratioOxc": 0.6948440889947675,
+      "ratioEsbuild": 0.6783520568141703,
+      "ratioTerser": 0.6888368758434548
     },
     {
       "key": "editor/browser",
       "files": 145,
       "scoredLil": 145,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 735819,
-        "gzip9": 227673,
-        "brotli11": 201293
+        "raw": 727843,
+        "gzip9": 223312,
+        "brotli11": 197141
       },
       "lil": {
         "raw": 331189,
         "gzip9": 109510,
         "brotli11": 95524
       },
-      "ratio": 0.47455202118305156
+      "jsLanes": {
+        "oxc": {
+          "raw": 727843,
+          "gzip9": 223312,
+          "brotli11": 197141
+        },
+        "esbuild": {
+          "raw": 735765,
+          "gzip9": 227499,
+          "brotli11": 201215
+        },
+        "terser": {
+          "raw": 732561,
+          "gzip9": 223931,
+          "brotli11": 197532
+        }
+      },
+      "ratio": 0.48454659355486684,
+      "ratioOxc": 0.48454659355486684,
+      "ratioEsbuild": 0.47473597892801234,
+      "ratioTerser": 0.4835874693720511
     },
     {
       "key": "base/browser",
       "files": 90,
       "scoredLil": 89,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 481455,
-        "gzip9": 145797,
-        "brotli11": 129443
+        "raw": 474540,
+        "gzip9": 142820,
+        "brotli11": 126687
       },
       "lil": {
         "raw": 355429,
         "gzip9": 109841,
         "brotli11": 96230
       },
-      "ratio": 0.7434160209513068
+      "jsLanes": {
+        "oxc": {
+          "raw": 474540,
+          "gzip9": 142820,
+          "brotli11": 126687
+        },
+        "esbuild": {
+          "raw": 481410,
+          "gzip9": 145652,
+          "brotli11": 129378
+        },
+        "terser": {
+          "raw": 480814,
+          "gzip9": 143615,
+          "brotli11": 127220
+        }
+      },
+      "ratio": 0.7595885923575426,
+      "ratioOxc": 0.7595885923575426,
+      "ratioEsbuild": 0.7437895159918997,
+      "ratioTerser": 0.7564062254362521
     },
     {
       "key": "base/common",
       "files": 122,
       "scoredLil": 121,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 385502,
-        "gzip9": 138839,
-        "brotli11": 118241
+        "raw": 378776,
+        "gzip9": 135392,
+        "brotli11": 114881
       },
       "lil": {
         "raw": 253637,
         "gzip9": 87879,
         "brotli11": 76330
       },
-      "ratio": 0.645545961214807
+      "jsLanes": {
+        "oxc": {
+          "raw": 378776,
+          "gzip9": 135392,
+          "brotli11": 114881
+        },
+        "esbuild": {
+          "raw": 385430,
+          "gzip9": 138607,
+          "brotli11": 118137
+        },
+        "terser": {
+          "raw": 380305,
+          "gzip9": 135892,
+          "brotli11": 115301
+        }
+      },
+      "ratio": 0.6644266675951637,
+      "ratioOxc": 0.6644266675951637,
+      "ratioEsbuild": 0.6461142571759906,
+      "ratioTerser": 0.6620064006383293
     },
     {
       "key": "editor/contrib/inlineCompletions",
       "files": 55,
       "scoredLil": 55,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 316320,
-        "gzip9": 107371,
-        "brotli11": 95662
+        "raw": 311186,
+        "gzip9": 104515,
+        "brotli11": 92985
       },
       "lil": {
         "raw": 88171,
         "gzip9": 28980,
         "brotli11": 24958
       },
-      "ratio": 0.26089774414082917
+      "jsLanes": {
+        "oxc": {
+          "raw": 311186,
+          "gzip9": 104515,
+          "brotli11": 92985
+        },
+        "esbuild": {
+          "raw": 316320,
+          "gzip9": 107371,
+          "brotli11": 95662
+        },
+        "terser": {
+          "raw": 312135,
+          "gzip9": 104380,
+          "brotli11": 92719
+        }
+      },
+      "ratio": 0.2684088831531968,
+      "ratioOxc": 0.2684088831531968,
+      "ratioEsbuild": 0.26089774414082917,
+      "ratioTerser": 0.26917891694259
     },
     {
       "key": "platform/quickinput",
       "files": 21,
       "scoredLil": 21,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 126223,
-        "gzip9": 39811,
-        "brotli11": 35164
+        "raw": 125246,
+        "gzip9": 39203,
+        "brotli11": 34616
       },
       "lil": {
         "raw": 12319,
         "gzip9": 5422,
         "brotli11": 4424
       },
-      "ratio": 0.12581048799908998
+      "jsLanes": {
+        "oxc": {
+          "raw": 125246,
+          "gzip9": 39203,
+          "brotli11": 34616
+        },
+        "esbuild": {
+          "raw": 126223,
+          "gzip9": 39811,
+          "brotli11": 35164
+        },
+        "terser": {
+          "raw": 125821,
+          "gzip9": 39279,
+          "brotli11": 34672
+        }
+      },
+      "ratio": 0.1278021724058239,
+      "ratioOxc": 0.1278021724058239,
+      "ratioEsbuild": 0.12581048799908998,
+      "ratioTerser": 0.1275957544993078
     },
     {
       "key": "editor/standalone",
       "files": 26,
       "scoredLil": 26,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 113359,
-        "gzip9": 38172,
-        "brotli11": 33618
+        "raw": 112314,
+        "gzip9": 37566,
+        "brotli11": 33007
       },
       "lil": {
         "raw": 25188,
         "gzip9": 10408,
         "brotli11": 8795
       },
-      "ratio": 0.2616158010589565
+      "jsLanes": {
+        "oxc": {
+          "raw": 112314,
+          "gzip9": 37566,
+          "brotli11": 33007
+        },
+        "esbuild": {
+          "raw": 113350,
+          "gzip9": 38143,
+          "brotli11": 33605
+        },
+        "terser": {
+          "raw": 112874,
+          "gzip9": 37591,
+          "brotli11": 32974
+        }
+      },
+      "ratio": 0.2664586299875784,
+      "ratioOxc": 0.2664586299875784,
+      "ratioEsbuild": 0.26171700639785744,
+      "ratioTerser": 0.2667252987202038
     },
     {
       "key": "editor/contrib/suggest",
       "files": 15,
       "scoredLil": 15,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 103526,
-        "gzip9": 33297,
-        "brotli11": 29605
+        "raw": 102790,
+        "gzip9": 32801,
+        "brotli11": 29133
       },
       "lil": {
         "raw": 18959,
         "gzip9": 7163,
         "brotli11": 6100
       },
-      "ratio": 0.20604627596689748
+      "jsLanes": {
+        "oxc": {
+          "raw": 102790,
+          "gzip9": 32801,
+          "brotli11": 29133
+        },
+        "esbuild": {
+          "raw": 103526,
+          "gzip9": 33297,
+          "brotli11": 29605
+        },
+        "terser": {
+          "raw": 102991,
+          "gzip9": 32796,
+          "brotli11": 29096
+        }
+      },
+      "ratio": 0.20938454673394433,
+      "ratioOxc": 0.20938454673394433,
+      "ratioEsbuild": 0.20604627596689748,
+      "ratioTerser": 0.20965081110805608
     },
     {
       "key": "editor/contrib/hover",
       "files": 22,
       "scoredLil": 22,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 84124,
-        "gzip9": 28144,
-        "brotli11": 24526
+        "raw": 83373,
+        "gzip9": 27781,
+        "brotli11": 24183
       },
       "lil": {
         "raw": 37291,
         "gzip9": 12379,
         "brotli11": 10727
       },
-      "ratio": 0.43737258419636305
+      "jsLanes": {
+        "oxc": {
+          "raw": 83373,
+          "gzip9": 27781,
+          "brotli11": 24183
+        },
+        "esbuild": {
+          "raw": 84124,
+          "gzip9": 28144,
+          "brotli11": 24526
+        },
+        "terser": {
+          "raw": 83722,
+          "gzip9": 27749,
+          "brotli11": 24209
+        }
+      },
+      "ratio": 0.44357606583136916,
+      "ratioOxc": 0.44357606583136916,
+      "ratioEsbuild": 0.43737258419636305,
+      "ratioTerser": 0.4430996736750795
     },
     {
       "key": "editor/contrib/find",
       "files": 10,
       "scoredLil": 10,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 82275,
-        "gzip9": 22482,
-        "brotli11": 19753
+        "raw": 81546,
+        "gzip9": 22070,
+        "brotli11": 19433
       },
       "lil": {
         "raw": 30887,
         "gzip9": 9958,
         "brotli11": 8750
       },
-      "ratio": 0.44297068799676
+      "jsLanes": {
+        "oxc": {
+          "raw": 81546,
+          "gzip9": 22070,
+          "brotli11": 19433
+        },
+        "esbuild": {
+          "raw": 82275,
+          "gzip9": 22482,
+          "brotli11": 19753
+        },
+        "terser": {
+          "raw": 81964,
+          "gzip9": 22098,
+          "brotli11": 19416
+        }
+      },
+      "ratio": 0.45026501312200895,
+      "ratioOxc": 0.45026501312200895,
+      "ratioEsbuild": 0.44297068799676,
+      "ratioTerser": 0.45065925010300784
     },
     {
       "key": "editor/contrib/gotoSymbol",
       "files": 9,
       "scoredLil": 9,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 63371,
-        "gzip9": 19957,
-        "brotli11": 17519
+        "raw": 62954,
+        "gzip9": 19617,
+        "brotli11": 17251
       },
       "lil": {
         "raw": 31230,
         "gzip9": 11106,
         "brotli11": 9279
       },
-      "ratio": 0.5296535190364747
+      "jsLanes": {
+        "oxc": {
+          "raw": 62954,
+          "gzip9": 19617,
+          "brotli11": 17251
+        },
+        "esbuild": {
+          "raw": 63371,
+          "gzip9": 19957,
+          "brotli11": 17519
+        },
+        "terser": {
+          "raw": 63196,
+          "gzip9": 19606,
+          "brotli11": 17243
+        }
+      },
+      "ratio": 0.537881861921048,
+      "ratioOxc": 0.537881861921048,
+      "ratioEsbuild": 0.5296535190364747,
+      "ratioTerser": 0.5381314156469292
     },
     {
       "key": "platform/theme",
       "files": 17,
       "scoredLil": 17,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 72039,
-        "gzip9": 19974,
-        "brotli11": 17139
+        "raw": 71883,
+        "gzip9": 19867,
+        "brotli11": 17005
       },
       "lil": {
         "raw": 24834,
         "gzip9": 9424,
         "brotli11": 7819
       },
-      "ratio": 0.45621098080401423
-    },
-    {
-      "key": "editor/contrib/codeAction",
-      "files": 9,
-      "scoredLil": 9,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 47717,
-        "gzip9": 16440,
-        "brotli11": 14513
+      "jsLanes": {
+        "oxc": {
+          "raw": 71883,
+          "gzip9": 19867,
+          "brotli11": 17005
+        },
+        "esbuild": {
+          "raw": 72039,
+          "gzip9": 19974,
+          "brotli11": 17139
+        },
+        "terser": {
+          "raw": 71905,
+          "gzip9": 19834,
+          "brotli11": 16986
+        }
       },
-      "lil": {
-        "raw": 21861,
-        "gzip9": 6273,
-        "brotli11": 5454
-      },
-      "ratio": 0.3758010059946255
+      "ratio": 0.45980593942957954,
+      "ratioOxc": 0.45980593942957954,
+      "ratioEsbuild": 0.45621098080401423,
+      "ratioTerser": 0.46032026374661483
     },
     {
       "key": "editor/contrib/colorPicker",
       "files": 20,
       "scoredLil": 20,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 43369,
-        "gzip9": 16628,
-        "brotli11": 14392
+        "raw": 43090,
+        "gzip9": 16504,
+        "brotli11": 14258
       },
       "lil": {
         "raw": 39116,
         "gzip9": 17643,
         "brotli11": 15532
       },
-      "ratio": 1.0792106725958865
+      "jsLanes": {
+        "oxc": {
+          "raw": 43090,
+          "gzip9": 16504,
+          "brotli11": 14258
+        },
+        "esbuild": {
+          "raw": 43369,
+          "gzip9": 16628,
+          "brotli11": 14392
+        },
+        "terser": {
+          "raw": 43275,
+          "gzip9": 16468,
+          "brotli11": 14222
+        }
+      },
+      "ratio": 1.089353345490251,
+      "ratioOxc": 1.089353345490251,
+      "ratioEsbuild": 1.0792106725958865,
+      "ratioTerser": 1.0921108142314724
+    },
+    {
+      "key": "editor/contrib/codeAction",
+      "files": 9,
+      "scoredLil": 9,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 47267,
+        "gzip9": 16154,
+        "brotli11": 14245
+      },
+      "lil": {
+        "raw": 21861,
+        "gzip9": 6273,
+        "brotli11": 5454
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 47267,
+          "gzip9": 16154,
+          "brotli11": 14245
+        },
+        "esbuild": {
+          "raw": 47717,
+          "gzip9": 16440,
+          "brotli11": 14513
+        },
+        "terser": {
+          "raw": 47469,
+          "gzip9": 16129,
+          "brotli11": 14242
+        }
+      },
+      "ratio": 0.3828711828711829,
+      "ratioOxc": 0.3828711828711829,
+      "ratioEsbuild": 0.3758010059946255,
+      "ratioTerser": 0.3829518326077798
     },
     {
       "key": "editor/contrib/folding",
       "files": 7,
       "scoredLil": 7,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 48439,
-        "gzip9": 14250,
-        "brotli11": 12803
+        "raw": 47803,
+        "gzip9": 13922,
+        "brotli11": 12461
       },
       "lil": {
         "raw": 22271,
         "gzip9": 7334,
         "brotli11": 6564
       },
-      "ratio": 0.5126923377333438
+      "jsLanes": {
+        "oxc": {
+          "raw": 47803,
+          "gzip9": 13922,
+          "brotli11": 12461
+        },
+        "esbuild": {
+          "raw": 48439,
+          "gzip9": 14250,
+          "brotli11": 12803
+        },
+        "terser": {
+          "raw": 48276,
+          "gzip9": 13892,
+          "brotli11": 12468
+        }
+      },
+      "ratio": 0.5267635021266351,
+      "ratioOxc": 0.5267635021266351,
+      "ratioEsbuild": 0.5126923377333438,
+      "ratioTerser": 0.5264677574590952
     },
     {
       "key": "platform/actions",
       "files": 5,
       "scoredLil": 5,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 49135,
-        "gzip9": 13937,
-        "brotli11": 12408
+        "raw": 48834,
+        "gzip9": 13759,
+        "brotli11": 12202
       },
       "lil": {
         "raw": 2758,
         "gzip9": 1320,
         "brotli11": 1106
       },
-      "ratio": 0.08913604126370084
+      "jsLanes": {
+        "oxc": {
+          "raw": 48834,
+          "gzip9": 13759,
+          "brotli11": 12202
+        },
+        "esbuild": {
+          "raw": 49135,
+          "gzip9": 13937,
+          "brotli11": 12408
+        },
+        "terser": {
+          "raw": 49059,
+          "gzip9": 13762,
+          "brotli11": 12221
+        }
+      },
+      "ratio": 0.0906408785445009,
+      "ratioOxc": 0.0906408785445009,
+      "ratioEsbuild": 0.08913604126370084,
+      "ratioTerser": 0.09049995908681777
     },
     {
       "key": "editor/contrib/snippet",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 41847,
-        "gzip9": 12905,
-        "brotli11": 11514
+        "raw": 41389,
+        "gzip9": 12591,
+        "brotli11": 11231
       },
       "lil": {
         "raw": 15544,
         "gzip9": 5108,
         "brotli11": 4502
       },
-      "ratio": 0.3910022581205489
+      "jsLanes": {
+        "oxc": {
+          "raw": 41389,
+          "gzip9": 12591,
+          "brotli11": 11231
+        },
+        "esbuild": {
+          "raw": 41847,
+          "gzip9": 12905,
+          "brotli11": 11514
+        },
+        "terser": {
+          "raw": 41603,
+          "gzip9": 12629,
+          "brotli11": 11278
+        }
+      },
+      "ratio": 0.4008547769566379,
+      "ratioOxc": 0.4008547769566379,
+      "ratioEsbuild": 0.3910022581205489,
+      "ratioTerser": 0.3991842525270438
     },
     {
       "key": "editor/contrib/stickyScroll",
       "files": 7,
       "scoredLil": 7,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 41337,
-        "gzip9": 12440,
-        "brotli11": 11096
+        "raw": 41018,
+        "gzip9": 12235,
+        "brotli11": 10863
       },
       "lil": {
         "raw": 6377,
         "gzip9": 3143,
         "brotli11": 2793
       },
-      "ratio": 0.2517123287671233
+      "jsLanes": {
+        "oxc": {
+          "raw": 41018,
+          "gzip9": 12235,
+          "brotli11": 10863
+        },
+        "esbuild": {
+          "raw": 41337,
+          "gzip9": 12440,
+          "brotli11": 11096
+        },
+        "terser": {
+          "raw": 41358,
+          "gzip9": 12289,
+          "brotli11": 10939
+        }
+      },
+      "ratio": 0.2571112952223143,
+      "ratioOxc": 0.2571112952223143,
+      "ratioEsbuild": 0.2517123287671233,
+      "ratioTerser": 0.255324984002194
     },
     {
       "key": "editor/contrib/dropOrPasteInto",
       "files": 7,
       "scoredLil": 7,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 31876,
-        "gzip9": 11769,
-        "brotli11": 10377
+        "raw": 31662,
+        "gzip9": 11607,
+        "brotli11": 10222
       },
       "lil": {
         "raw": 14329,
         "gzip9": 4494,
         "brotli11": 3948
       },
-      "ratio": 0.3804567794160162
+      "jsLanes": {
+        "oxc": {
+          "raw": 31662,
+          "gzip9": 11607,
+          "brotli11": 10222
+        },
+        "esbuild": {
+          "raw": 31876,
+          "gzip9": 11769,
+          "brotli11": 10377
+        },
+        "terser": {
+          "raw": 31880,
+          "gzip9": 11593,
+          "brotli11": 10219
+        }
+      },
+      "ratio": 0.38622578751711995,
+      "ratioOxc": 0.38622578751711995,
+      "ratioEsbuild": 0.3804567794160162,
+      "ratioTerser": 0.3863391721303454
     },
     {
       "key": "platform/actionWidget",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 37347,
-        "gzip9": 10468,
-        "brotli11": 9266
+        "raw": 36907,
+        "gzip9": 10157,
+        "brotli11": 9026
       },
       "lil": {
         "raw": 2698,
         "gzip9": 1079,
         "brotli11": 905
       },
-      "ratio": 0.09766889704295273
+      "jsLanes": {
+        "oxc": {
+          "raw": 36907,
+          "gzip9": 10157,
+          "brotli11": 9026
+        },
+        "esbuild": {
+          "raw": 37338,
+          "gzip9": 10439,
+          "brotli11": 9253
+        },
+        "terser": {
+          "raw": 37118,
+          "gzip9": 10213,
+          "brotli11": 9062
+        }
+      },
+      "ratio": 0.10026589851539995,
+      "ratioOxc": 0.10026589851539995,
+      "ratioEsbuild": 0.09780611693504809,
+      "ratioTerser": 0.09986757890090488
     },
     {
       "key": "platform/hover",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 30576,
-        "gzip9": 9938,
-        "brotli11": 8827
+        "raw": 30219,
+        "gzip9": 9750,
+        "brotli11": 8612
       },
       "lil": {
         "raw": 2341,
         "gzip9": 1106,
         "brotli11": 878
       },
-      "ratio": 0.09946754276651183
-    },
-    {
-      "key": "editor/contrib/inlayHints",
-      "files": 5,
-      "scoredLil": 5,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 24767,
-        "gzip9": 9429,
-        "brotli11": 8409
+      "jsLanes": {
+        "oxc": {
+          "raw": 30219,
+          "gzip9": 9750,
+          "brotli11": 8612
+        },
+        "esbuild": {
+          "raw": 30576,
+          "gzip9": 9938,
+          "brotli11": 8827
+        },
+        "terser": {
+          "raw": 30492,
+          "gzip9": 9745,
+          "brotli11": 8628
+        }
       },
-      "lil": {
-        "raw": 7360,
-        "gzip9": 2495,
-        "brotli11": 2160
-      },
-      "ratio": 0.2568676418123439
-    },
-    {
-      "key": "platform/contextkey",
-      "files": 4,
-      "scoredLil": 4,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 33792,
-        "gzip9": 9437,
-        "brotli11": 8338
-      },
-      "lil": {
-        "raw": 22626,
-        "gzip9": 6878,
-        "brotli11": 6140
-      },
-      "ratio": 0.7363876229311586
+      "ratio": 0.10195076637250348,
+      "ratioOxc": 0.10195076637250348,
+      "ratioEsbuild": 0.09946754276651183,
+      "ratioTerser": 0.10176170607324989
     },
     {
       "key": "editor/contrib/rename",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 31873,
-        "gzip9": 9360,
-        "brotli11": 8233
+        "raw": 31637,
+        "gzip9": 9229,
+        "brotli11": 8149
       },
       "lil": {
         "raw": 4708,
         "gzip9": 1602,
         "brotli11": 1430
       },
-      "ratio": 0.17369124256042756
+      "jsLanes": {
+        "oxc": {
+          "raw": 31637,
+          "gzip9": 9229,
+          "brotli11": 8149
+        },
+        "esbuild": {
+          "raw": 31873,
+          "gzip9": 9360,
+          "brotli11": 8233
+        },
+        "terser": {
+          "raw": 31807,
+          "gzip9": 9265,
+          "brotli11": 8169
+        }
+      },
+      "ratio": 0.17548165419069825,
+      "ratioOxc": 0.17548165419069825,
+      "ratioEsbuild": 0.17369124256042756,
+      "ratioTerser": 0.17505202595176889
+    },
+    {
+      "key": "editor/contrib/inlayHints",
+      "files": 5,
+      "scoredLil": 5,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 24451,
+        "gzip9": 9181,
+        "brotli11": 8133
+      },
+      "lil": {
+        "raw": 7360,
+        "gzip9": 2495,
+        "brotli11": 2160
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 24451,
+          "gzip9": 9181,
+          "brotli11": 8133
+        },
+        "esbuild": {
+          "raw": 24767,
+          "gzip9": 9429,
+          "brotli11": 8409
+        },
+        "terser": {
+          "raw": 24681,
+          "gzip9": 9185,
+          "brotli11": 8154
+        }
+      },
+      "ratio": 0.26558465510881596,
+      "ratioOxc": 0.26558465510881596,
+      "ratioEsbuild": 0.2568676418123439,
+      "ratioTerser": 0.26490066225165565
+    },
+    {
+      "key": "platform/contextkey",
+      "files": 4,
+      "scoredLil": 4,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 33318,
+        "gzip9": 9171,
+        "brotli11": 8091
+      },
+      "lil": {
+        "raw": 22626,
+        "gzip9": 6878,
+        "brotli11": 6140
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 33318,
+          "gzip9": 9171,
+          "brotli11": 8091
+        },
+        "esbuild": {
+          "raw": 33792,
+          "gzip9": 9437,
+          "brotli11": 8338
+        },
+        "terser": {
+          "raw": 33504,
+          "gzip9": 9201,
+          "brotli11": 8114
+        }
+      },
+      "ratio": 0.7588678778890124,
+      "ratioOxc": 0.7588678778890124,
+      "ratioEsbuild": 0.7363876229311586,
+      "ratioTerser": 0.7567167858023169
     },
     {
       "key": "editor/contrib/linesOperations",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 31193,
-        "gzip9": 8462,
-        "brotli11": 7572
+        "raw": 30754,
+        "gzip9": 8124,
+        "brotli11": 7239
       },
       "lil": {
         "raw": 7880,
         "gzip9": 2836,
         "brotli11": 2492
       },
-      "ratio": 0.3291072371896461
-    },
-    {
-      "key": "platform/configuration",
-      "files": 4,
-      "scoredLil": 4,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 28269,
-        "gzip9": 8023,
-        "brotli11": 7213
+      "jsLanes": {
+        "oxc": {
+          "raw": 30754,
+          "gzip9": 8124,
+          "brotli11": 7239
+        },
+        "esbuild": {
+          "raw": 31193,
+          "gzip9": 8462,
+          "brotli11": 7572
+        },
+        "terser": {
+          "raw": 31061,
+          "gzip9": 8157,
+          "brotli11": 7279
+        }
       },
-      "lil": {
-        "raw": 6485,
-        "gzip9": 2172,
-        "brotli11": 1860
-      },
-      "ratio": 0.2578677388049355
+      "ratio": 0.34424644287885064,
+      "ratioOxc": 0.34424644287885064,
+      "ratioEsbuild": 0.3291072371896461,
+      "ratioTerser": 0.34235471905481524
     },
     {
       "key": "editor/contrib/gotoError",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 23659,
-        "gzip9": 8144,
-        "brotli11": 7176
+        "raw": 23514,
+        "gzip9": 8018,
+        "brotli11": 7081
       },
       "lil": {
         "raw": 7232,
         "gzip9": 2432,
         "brotli11": 2112
       },
-      "ratio": 0.29431438127090304
+      "jsLanes": {
+        "oxc": {
+          "raw": 23514,
+          "gzip9": 8018,
+          "brotli11": 7081
+        },
+        "esbuild": {
+          "raw": 23659,
+          "gzip9": 8144,
+          "brotli11": 7176
+        },
+        "terser": {
+          "raw": 23559,
+          "gzip9": 7995,
+          "brotli11": 7049
+        }
+      },
+      "ratio": 0.2982629572094337,
+      "ratioOxc": 0.2982629572094337,
+      "ratioEsbuild": 0.29431438127090304,
+      "ratioTerser": 0.29961696694566603
+    },
+    {
+      "key": "platform/configuration",
+      "files": 4,
+      "scoredLil": 4,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 27871,
+        "gzip9": 7834,
+        "brotli11": 7009
+      },
+      "lil": {
+        "raw": 6485,
+        "gzip9": 2172,
+        "brotli11": 1860
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 27871,
+          "gzip9": 7834,
+          "brotli11": 7009
+        },
+        "esbuild": {
+          "raw": 28269,
+          "gzip9": 8023,
+          "brotli11": 7213
+        },
+        "terser": {
+          "raw": 28208,
+          "gzip9": 7902,
+          "brotli11": 7081
+        }
+      },
+      "ratio": 0.2653730917391925,
+      "ratioOxc": 0.2653730917391925,
+      "ratioEsbuild": 0.2578677388049355,
+      "ratioTerser": 0.2626747634514899
     },
     {
       "key": "editor/contrib/codelens",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 19934,
-        "gzip9": 6815,
-        "brotli11": 6038
+        "raw": 19720,
+        "gzip9": 6665,
+        "brotli11": 5901
       },
       "lil": {
         "raw": 4412,
         "gzip9": 1752,
         "brotli11": 1528
       },
-      "ratio": 0.2530639284531302
+      "jsLanes": {
+        "oxc": {
+          "raw": 19720,
+          "gzip9": 6665,
+          "brotli11": 5901
+        },
+        "esbuild": {
+          "raw": 19934,
+          "gzip9": 6815,
+          "brotli11": 6038
+        },
+        "terser": {
+          "raw": 19899,
+          "gzip9": 6693,
+          "brotli11": 5939
+        }
+      },
+      "ratio": 0.2589391628537536,
+      "ratioOxc": 0.2589391628537536,
+      "ratioEsbuild": 0.2530639284531302,
+      "ratioTerser": 0.2572823707694898
     },
     {
       "key": "platform/keybinding",
       "files": 7,
       "scoredLil": 7,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 17793,
-        "gzip9": 6456,
-        "brotli11": 5653
+        "raw": 17613,
+        "gzip9": 6323,
+        "brotli11": 5524
       },
       "lil": {
         "raw": 7628,
         "gzip9": 2883,
         "brotli11": 2458
       },
-      "ratio": 0.4348133734300372
+      "jsLanes": {
+        "oxc": {
+          "raw": 17613,
+          "gzip9": 6323,
+          "brotli11": 5524
+        },
+        "esbuild": {
+          "raw": 17793,
+          "gzip9": 6456,
+          "brotli11": 5653
+        },
+        "terser": {
+          "raw": 17674,
+          "gzip9": 6340,
+          "brotli11": 5517
+        }
+      },
+      "ratio": 0.44496741491672703,
+      "ratioOxc": 0.44496741491672703,
+      "ratioEsbuild": 0.4348133734300372,
+      "ratioTerser": 0.4455319920246511
     },
     {
       "key": "platform/list",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 27089,
-        "gzip9": 6310,
-        "brotli11": 5463
+        "raw": 26860,
+        "gzip9": 6133,
+        "brotli11": 5345
       },
       "lil": {
         "raw": 1947,
         "gzip9": 678,
         "brotli11": 593
       },
-      "ratio": 0.10854841662090427
+      "jsLanes": {
+        "oxc": {
+          "raw": 26860,
+          "gzip9": 6133,
+          "brotli11": 5345
+        },
+        "esbuild": {
+          "raw": 27089,
+          "gzip9": 6310,
+          "brotli11": 5463
+        },
+        "terser": {
+          "raw": 27259,
+          "gzip9": 6167,
+          "brotli11": 5361
+        }
+      },
+      "ratio": 0.11094480823199251,
+      "ratioOxc": 0.11094480823199251,
+      "ratioEsbuild": 0.10854841662090427,
+      "ratioTerser": 0.110613691475471
     },
     {
       "key": "editor/contrib/quickAccess",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 14859,
-        "gzip9": 6156,
-        "brotli11": 5328
+        "raw": 14696,
+        "gzip9": 6079,
+        "brotli11": 5240
       },
       "lil": {
         "raw": 13880,
         "gzip9": 4936,
         "brotli11": 4124
       },
-      "ratio": 0.774024024024024
+      "jsLanes": {
+        "oxc": {
+          "raw": 14696,
+          "gzip9": 6079,
+          "brotli11": 5240
+        },
+        "esbuild": {
+          "raw": 14859,
+          "gzip9": 6156,
+          "brotli11": 5328
+        },
+        "terser": {
+          "raw": 14829,
+          "gzip9": 6094,
+          "brotli11": 5270
+        }
+      },
+      "ratio": 0.7870229007633588,
+      "ratioOxc": 0.7870229007633588,
+      "ratioEsbuild": 0.774024024024024,
+      "ratioTerser": 0.7825426944971537
     },
     {
       "key": "editor/contrib/parameterHints",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 17402,
-        "gzip9": 6057,
-        "brotli11": 5313
+        "raw": 17285,
+        "gzip9": 5993,
+        "brotli11": 5233
       },
       "lil": {
         "raw": 11211,
         "gzip9": 3423,
         "brotli11": 2981
       },
-      "ratio": 0.5610766045548654
+      "jsLanes": {
+        "oxc": {
+          "raw": 17285,
+          "gzip9": 5993,
+          "brotli11": 5233
+        },
+        "esbuild": {
+          "raw": 17402,
+          "gzip9": 6057,
+          "brotli11": 5313
+        },
+        "terser": {
+          "raw": 17334,
+          "gzip9": 5972,
+          "brotli11": 5206
+        }
+      },
+      "ratio": 0.5696541180966941,
+      "ratioOxc": 0.5696541180966941,
+      "ratioEsbuild": 0.5610766045548654,
+      "ratioTerser": 0.5726085286208221
     },
     {
       "key": "editor/contrib/wordHighlighter",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 20475,
-        "gzip9": 5913,
-        "brotli11": 5168
+        "raw": 20216,
+        "gzip9": 5814,
+        "brotli11": 5072
       },
       "lil": {
         "raw": 5697,
         "gzip9": 2097,
         "brotli11": 1851
       },
-      "ratio": 0.35816563467492263
+      "jsLanes": {
+        "oxc": {
+          "raw": 20216,
+          "gzip9": 5814,
+          "brotli11": 5072
+        },
+        "esbuild": {
+          "raw": 20475,
+          "gzip9": 5913,
+          "brotli11": 5168
+        },
+        "terser": {
+          "raw": 20379,
+          "gzip9": 5821,
+          "brotli11": 5085
+        }
+      },
+      "ratio": 0.3649447949526814,
+      "ratioOxc": 0.3649447949526814,
+      "ratioEsbuild": 0.35816563467492263,
+      "ratioTerser": 0.3640117994100295
     },
     {
       "key": "editor/contrib/semanticTokens",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 17331,
-        "gzip9": 5256,
-        "brotli11": 4673
+        "raw": 17030,
+        "gzip9": 5217,
+        "brotli11": 4618
       },
       "lil": {
         "raw": 3916,
         "gzip9": 1888,
         "brotli11": 1596
       },
-      "ratio": 0.34153648619730365
+      "jsLanes": {
+        "oxc": {
+          "raw": 17030,
+          "gzip9": 5217,
+          "brotli11": 4618
+        },
+        "esbuild": {
+          "raw": 17331,
+          "gzip9": 5256,
+          "brotli11": 4673
+        },
+        "terser": {
+          "raw": 17323,
+          "gzip9": 5242,
+          "brotli11": 4676
+        }
+      },
+      "ratio": 0.3456041576440017,
+      "ratioOxc": 0.3456041576440017,
+      "ratioEsbuild": 0.34153648619730365,
+      "ratioTerser": 0.3413173652694611
     },
     {
       "key": "editor/contrib/unicodeHighlighter",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 17570,
-        "gzip9": 5303,
-        "brotli11": 4656
+        "raw": 17317,
+        "gzip9": 5175,
+        "brotli11": 4534
       },
       "lil": {
         "raw": 1782,
         "gzip9": 834,
         "brotli11": 704
       },
-      "ratio": 0.15120274914089346
+      "jsLanes": {
+        "oxc": {
+          "raw": 17317,
+          "gzip9": 5175,
+          "brotli11": 4534
+        },
+        "esbuild": {
+          "raw": 17570,
+          "gzip9": 5303,
+          "brotli11": 4656
+        },
+        "terser": {
+          "raw": 17455,
+          "gzip9": 5162,
+          "brotli11": 4537
+        }
+      },
+      "ratio": 0.1552712836347596,
+      "ratioOxc": 0.1552712836347596,
+      "ratioEsbuild": 0.15120274914089346,
+      "ratioTerser": 0.1551686136213357
     },
     {
       "key": "editor/contrib/format",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 15447,
-        "gzip9": 5154,
-        "brotli11": 4491
+        "raw": 15312,
+        "gzip9": 5071,
+        "brotli11": 4439
       },
       "lil": {
         "raw": 5097,
         "gzip9": 1830,
         "brotli11": 1602
       },
-      "ratio": 0.35671342685370744
-    },
-    {
-      "key": "platform/undoRedo",
-      "files": 2,
-      "scoredLil": 2,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 19329,
-        "gzip9": 4895,
-        "brotli11": 4312
+      "jsLanes": {
+        "oxc": {
+          "raw": 15312,
+          "gzip9": 5071,
+          "brotli11": 4439
+        },
+        "esbuild": {
+          "raw": 15447,
+          "gzip9": 5154,
+          "brotli11": 4491
+        },
+        "terser": {
+          "raw": 15447,
+          "gzip9": 5082,
+          "brotli11": 4442
+        }
       },
-      "lil": {
-        "raw": 4270,
-        "gzip9": 1199,
-        "brotli11": 1061
-      },
-      "ratio": 0.24605751391465677
+      "ratio": 0.3608920928136968,
+      "ratioOxc": 0.3608920928136968,
+      "ratioEsbuild": 0.35671342685370744,
+      "ratioTerser": 0.3606483565961279
     },
     {
       "key": "editor/contrib/multicursor",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 18529,
-        "gzip9": 4740,
-        "brotli11": 4221
+        "raw": 18302,
+        "gzip9": 4652,
+        "brotli11": 4147
       },
       "lil": {
         "raw": 1752,
         "gzip9": 553,
         "brotli11": 494
       },
-      "ratio": 0.11703387822790808
+      "jsLanes": {
+        "oxc": {
+          "raw": 18302,
+          "gzip9": 4652,
+          "brotli11": 4147
+        },
+        "esbuild": {
+          "raw": 18529,
+          "gzip9": 4740,
+          "brotli11": 4221
+        },
+        "terser": {
+          "raw": 18527,
+          "gzip9": 4656,
+          "brotli11": 4162
+        }
+      },
+      "ratio": 0.11912225705329153,
+      "ratioOxc": 0.11912225705329153,
+      "ratioEsbuild": 0.11703387822790808,
+      "ratioTerser": 0.11869293608841903
     },
     {
-      "key": "editor/contrib/indentation",
-      "files": 3,
-      "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "key": "platform/undoRedo",
+      "files": 2,
+      "scoredLil": 2,
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 12531,
-        "gzip9": 4183,
-        "brotli11": 3703
+        "raw": 18835,
+        "gzip9": 4694,
+        "brotli11": 4139
       },
       "lil": {
-        "raw": 2379,
-        "gzip9": 1281,
-        "brotli11": 1182
+        "raw": 4270,
+        "gzip9": 1199,
+        "brotli11": 1061
       },
-      "ratio": 0.3192006481231434
+      "jsLanes": {
+        "oxc": {
+          "raw": 18835,
+          "gzip9": 4694,
+          "brotli11": 4139
+        },
+        "esbuild": {
+          "raw": 19329,
+          "gzip9": 4895,
+          "brotli11": 4312
+        },
+        "terser": {
+          "raw": 19090,
+          "gzip9": 4728,
+          "brotli11": 4175
+        }
+      },
+      "ratio": 0.25634211162116455,
+      "ratioOxc": 0.25634211162116455,
+      "ratioEsbuild": 0.24605751391465677,
+      "ratioTerser": 0.2541317365269461
     },
     {
       "key": "editor/contrib/comment",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 11834,
-        "gzip9": 4058,
-        "brotli11": 3630
+        "raw": 11698,
+        "gzip9": 4065,
+        "brotli11": 3601
       },
       "lil": {
         "raw": 8508,
         "gzip9": 2961,
         "brotli11": 2574
       },
-      "ratio": 0.7090909090909091
+      "jsLanes": {
+        "oxc": {
+          "raw": 11698,
+          "gzip9": 4065,
+          "brotli11": 3601
+        },
+        "esbuild": {
+          "raw": 11834,
+          "gzip9": 4058,
+          "brotli11": 3630
+        },
+        "terser": {
+          "raw": 11766,
+          "gzip9": 4089,
+          "brotli11": 3641
+        }
+      },
+      "ratio": 0.7148014440433214,
+      "ratioOxc": 0.7148014440433214,
+      "ratioEsbuild": 0.7090909090909091,
+      "ratioTerser": 0.7069486404833837
     },
     {
-      "key": "platform/instantiation",
-      "files": 6,
-      "scoredLil": 6,
-      "jsMinifier": "esbuild",
+      "key": "editor/contrib/indentation",
+      "files": 3,
+      "scoredLil": 3,
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 9367,
-        "gzip9": 3967,
-        "brotli11": 3511
+        "raw": 12348,
+        "gzip9": 4071,
+        "brotli11": 3572
       },
       "lil": {
-        "raw": 5303,
-        "gzip9": 2181,
-        "brotli11": 1886
+        "raw": 2379,
+        "gzip9": 1281,
+        "brotli11": 1182
       },
-      "ratio": 0.5371688977499288
+      "jsLanes": {
+        "oxc": {
+          "raw": 12348,
+          "gzip9": 4071,
+          "brotli11": 3572
+        },
+        "esbuild": {
+          "raw": 12531,
+          "gzip9": 4183,
+          "brotli11": 3703
+        },
+        "terser": {
+          "raw": 12422,
+          "gzip9": 4048,
+          "brotli11": 3575
+        }
+      },
+      "ratio": 0.33090705487122063,
+      "ratioOxc": 0.33090705487122063,
+      "ratioEsbuild": 0.3192006481231434,
+      "ratioTerser": 0.33062937062937064
     },
     {
       "key": "editor/contrib/links",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 10770,
-        "gzip9": 3925,
-        "brotli11": 3488
+        "raw": 10608,
+        "gzip9": 3845,
+        "brotli11": 3406
       },
       "lil": {
         "raw": 4146,
         "gzip9": 1500,
         "brotli11": 1304
       },
-      "ratio": 0.3738532110091743
+      "jsLanes": {
+        "oxc": {
+          "raw": 10608,
+          "gzip9": 3845,
+          "brotli11": 3406
+        },
+        "esbuild": {
+          "raw": 10770,
+          "gzip9": 3925,
+          "brotli11": 3488
+        },
+        "terser": {
+          "raw": 10719,
+          "gzip9": 3827,
+          "brotli11": 3396
+        }
+      },
+      "ratio": 0.3828537874339401,
+      "ratioOxc": 0.3828537874339401,
+      "ratioEsbuild": 0.3738532110091743,
+      "ratioTerser": 0.3839811542991755
+    },
+    {
+      "key": "platform/instantiation",
+      "files": 6,
+      "scoredLil": 6,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 9197,
+        "gzip9": 3847,
+        "brotli11": 3390
+      },
+      "lil": {
+        "raw": 5303,
+        "gzip9": 2181,
+        "brotli11": 1886
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 9197,
+          "gzip9": 3847,
+          "brotli11": 3390
+        },
+        "esbuild": {
+          "raw": 9367,
+          "gzip9": 3967,
+          "brotli11": 3511
+        },
+        "terser": {
+          "raw": 9336,
+          "gzip9": 3887,
+          "brotli11": 3460
+        }
+      },
+      "ratio": 0.5563421828908555,
+      "ratioOxc": 0.5563421828908555,
+      "ratioEsbuild": 0.5371688977499288,
+      "ratioTerser": 0.5450867052023122
     },
     {
       "key": "editor/contrib/smartSelect",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 9635,
-        "gzip9": 3643,
-        "brotli11": 3251
+        "raw": 9511,
+        "gzip9": 3590,
+        "brotli11": 3183
       },
       "lil": {
         "raw": 6297,
         "gzip9": 2046,
         "brotli11": 1773
       },
-      "ratio": 0.5453706551830206
+      "jsLanes": {
+        "oxc": {
+          "raw": 9511,
+          "gzip9": 3590,
+          "brotli11": 3183
+        },
+        "esbuild": {
+          "raw": 9635,
+          "gzip9": 3643,
+          "brotli11": 3251
+        },
+        "terser": {
+          "raw": 9584,
+          "gzip9": 3578,
+          "brotli11": 3185
+        }
+      },
+      "ratio": 0.5570216776625825,
+      "ratioOxc": 0.5570216776625825,
+      "ratioEsbuild": 0.5453706551830206,
+      "ratioTerser": 0.5566718995290424
     },
     {
       "key": "editor/contrib/linkedEditing",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 9150,
-        "gzip9": 3121,
-        "brotli11": 2768
+        "raw": 9093,
+        "gzip9": 3070,
+        "brotli11": 2730
       },
       "lil": {
         "raw": 1510,
         "gzip9": 550,
         "brotli11": 490
       },
-      "ratio": 0.17702312138728324
+      "jsLanes": {
+        "oxc": {
+          "raw": 9093,
+          "gzip9": 3070,
+          "brotli11": 2730
+        },
+        "esbuild": {
+          "raw": 9150,
+          "gzip9": 3121,
+          "brotli11": 2768
+        },
+        "terser": {
+          "raw": 9171,
+          "gzip9": 3056,
+          "brotli11": 2723
+        }
+      },
+      "ratio": 0.1794871794871795,
+      "ratioOxc": 0.1794871794871795,
+      "ratioEsbuild": 0.17702312138728324,
+      "ratioTerser": 0.17994858611825193
     },
     {
       "key": "platform/contextview",
       "files": 4,
       "scoredLil": 4,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 7306,
-        "gzip9": 3036,
-        "brotli11": 2651
+        "raw": 7231,
+        "gzip9": 3006,
+        "brotli11": 2632
       },
       "lil": {
         "raw": 1827,
         "gzip9": 873,
         "brotli11": 709
       },
-      "ratio": 0.26744624669935874
+      "jsLanes": {
+        "oxc": {
+          "raw": 7231,
+          "gzip9": 3006,
+          "brotli11": 2632
+        },
+        "esbuild": {
+          "raw": 7306,
+          "gzip9": 3036,
+          "brotli11": 2651
+        },
+        "terser": {
+          "raw": 7228,
+          "gzip9": 2977,
+          "brotli11": 2594
+        }
+      },
+      "ratio": 0.2693768996960486,
+      "ratioOxc": 0.2693768996960486,
+      "ratioEsbuild": 0.26744624669935874,
+      "ratioTerser": 0.2733230531996916
     },
     {
       "key": "editor/contrib/peekView",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 9132,
-        "gzip9": 2754,
-        "brotli11": 2435
+        "raw": 9098,
+        "gzip9": 2727,
+        "brotli11": 2405
       },
       "lil": {
         "raw": 1256,
         "gzip9": 413,
         "brotli11": 355
       },
-      "ratio": 0.1457905544147844
+      "jsLanes": {
+        "oxc": {
+          "raw": 9098,
+          "gzip9": 2727,
+          "brotli11": 2405
+        },
+        "esbuild": {
+          "raw": 9132,
+          "gzip9": 2754,
+          "brotli11": 2435
+        },
+        "terser": {
+          "raw": 9107,
+          "gzip9": 2733,
+          "brotli11": 2414
+        }
+      },
+      "ratio": 0.14760914760914762,
+      "ratioOxc": 0.14760914760914762,
+      "ratioEsbuild": 0.1457905544147844,
+      "ratioTerser": 0.14705882352941177
     },
     {
       "key": "editor/contrib/zoneWidget",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 8639,
-        "gzip9": 2638,
-        "brotli11": 2357
+        "raw": 8521,
+        "gzip9": 2597,
+        "brotli11": 2322
       },
       "lil": {
         "raw": 1230,
         "gzip9": 385,
         "brotli11": 330
       },
-      "ratio": 0.14000848536274926
+      "jsLanes": {
+        "oxc": {
+          "raw": 8521,
+          "gzip9": 2597,
+          "brotli11": 2322
+        },
+        "esbuild": {
+          "raw": 8639,
+          "gzip9": 2638,
+          "brotli11": 2357
+        },
+        "terser": {
+          "raw": 8614,
+          "gzip9": 2595,
+          "brotli11": 2310
+        }
+      },
+      "ratio": 0.1421188630490956,
+      "ratioOxc": 0.1421188630490956,
+      "ratioEsbuild": 0.14000848536274926,
+      "ratioTerser": 0.14285714285714285
     },
     {
       "key": "platform/markers",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 6681,
-        "gzip9": 2502,
-        "brotli11": 2237
+        "raw": 6570,
+        "gzip9": 2440,
+        "brotli11": 2163
       },
       "lil": {
         "raw": 1754,
         "gzip9": 651,
         "brotli11": 546
       },
-      "ratio": 0.2440768886902101
+      "jsLanes": {
+        "oxc": {
+          "raw": 6570,
+          "gzip9": 2440,
+          "brotli11": 2163
+        },
+        "esbuild": {
+          "raw": 6681,
+          "gzip9": 2502,
+          "brotli11": 2237
+        },
+        "terser": {
+          "raw": 6627,
+          "gzip9": 2449,
+          "brotli11": 2170
+        }
+      },
+      "ratio": 0.2524271844660194,
+      "ratioOxc": 0.2524271844660194,
+      "ratioEsbuild": 0.2440768886902101,
+      "ratioTerser": 0.25161290322580643
     },
     {
       "key": "editor/contrib/contextmenu",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 7075,
-        "gzip9": 2372,
-        "brotli11": 2134
+        "raw": 7016,
+        "gzip9": 2317,
+        "brotli11": 2086
       },
       "lil": {
         "raw": 1366,
         "gzip9": 494,
         "brotli11": 426
       },
-      "ratio": 0.19962511715089035
-    },
-    {
-      "key": "editor/contrib/documentSymbols",
-      "files": 2,
-      "scoredLil": 2,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 5707,
-        "gzip9": 2340,
-        "brotli11": 2047
+      "jsLanes": {
+        "oxc": {
+          "raw": 7016,
+          "gzip9": 2317,
+          "brotli11": 2086
+        },
+        "esbuild": {
+          "raw": 7075,
+          "gzip9": 2372,
+          "brotli11": 2134
+        },
+        "terser": {
+          "raw": 7084,
+          "gzip9": 2316,
+          "brotli11": 2090
+        }
       },
-      "lil": {
-        "raw": 6940,
-        "gzip9": 2468,
-        "brotli11": 2062
-      },
-      "ratio": 1.0073277967757694
+      "ratio": 0.20421860019175456,
+      "ratioOxc": 0.20421860019175456,
+      "ratioEsbuild": 0.19962511715089035,
+      "ratioTerser": 0.20382775119617225
     },
     {
       "key": "editor/contrib/bracketMatching",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 7207,
-        "gzip9": 2302,
-        "brotli11": 2036
+        "raw": 7127,
+        "gzip9": 2270,
+        "brotli11": 2009
       },
       "lil": {
         "raw": 2084,
         "gzip9": 638,
         "brotli11": 567
       },
-      "ratio": 0.2784872298624754
+      "jsLanes": {
+        "oxc": {
+          "raw": 7127,
+          "gzip9": 2270,
+          "brotli11": 2009
+        },
+        "esbuild": {
+          "raw": 7207,
+          "gzip9": 2302,
+          "brotli11": 2036
+        },
+        "terser": {
+          "raw": 7203,
+          "gzip9": 2275,
+          "brotli11": 2015
+        }
+      },
+      "ratio": 0.28222996515679444,
+      "ratioOxc": 0.28222996515679444,
+      "ratioEsbuild": 0.2784872298624754,
+      "ratioTerser": 0.2813895781637717
+    },
+    {
+      "key": "editor/contrib/documentSymbols",
+      "files": 2,
+      "scoredLil": 2,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 5659,
+        "gzip9": 2279,
+        "brotli11": 1986
+      },
+      "lil": {
+        "raw": 6940,
+        "gzip9": 2468,
+        "brotli11": 2062
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 5659,
+          "gzip9": 2279,
+          "brotli11": 1986
+        },
+        "esbuild": {
+          "raw": 5707,
+          "gzip9": 2340,
+          "brotli11": 2047
+        },
+        "terser": {
+          "raw": 5703,
+          "gzip9": 2291,
+          "brotli11": 2005
+        }
+      },
+      "ratio": 1.0382678751258811,
+      "ratioOxc": 1.0382678751258811,
+      "ratioEsbuild": 1.0073277967757694,
+      "ratioTerser": 1.028428927680798
     },
     {
       "key": "editor/contrib/clipboard",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 6972,
-        "gzip9": 2119,
-        "brotli11": 1866
+        "raw": 6936,
+        "gzip9": 2083,
+        "brotli11": 1839
       },
       "lil": {
         "raw": 1552,
         "gzip9": 538,
         "brotli11": 487
       },
-      "ratio": 0.2609860664523044
+      "jsLanes": {
+        "oxc": {
+          "raw": 6936,
+          "gzip9": 2083,
+          "brotli11": 1839
+        },
+        "esbuild": {
+          "raw": 6972,
+          "gzip9": 2119,
+          "brotli11": 1866
+        },
+        "terser": {
+          "raw": 6959,
+          "gzip9": 2076,
+          "brotli11": 1824
+        }
+      },
+      "ratio": 0.26481783578031537,
+      "ratioOxc": 0.26481783578031537,
+      "ratioEsbuild": 0.2609860664523044,
+      "ratioTerser": 0.2669956140350877
     },
     {
       "key": "platform/accessibilitySignal",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 12408,
-        "gzip9": 2075,
-        "brotli11": 1812
+        "raw": 12405,
+        "gzip9": 2066,
+        "brotli11": 1794
       },
       "lil": {
         "raw": 744,
         "gzip9": 311,
         "brotli11": 257
       },
-      "ratio": 0.14183222958057395
-    },
-    {
-      "key": "platform/log",
-      "files": 2,
-      "scoredLil": 2,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 5530,
-        "gzip9": 2018,
-        "brotli11": 1790
+      "jsLanes": {
+        "oxc": {
+          "raw": 12405,
+          "gzip9": 2066,
+          "brotli11": 1794
+        },
+        "esbuild": {
+          "raw": 12408,
+          "gzip9": 2075,
+          "brotli11": 1812
+        },
+        "terser": {
+          "raw": 12407,
+          "gzip9": 2064,
+          "brotli11": 1786
+        }
       },
-      "lil": {
-        "raw": 1343,
-        "gzip9": 618,
-        "brotli11": 510
-      },
-      "ratio": 0.2849162011173184
+      "ratio": 0.14325529542920848,
+      "ratioOxc": 0.14325529542920848,
+      "ratioEsbuild": 0.14183222958057395,
+      "ratioTerser": 0.1438969764837626
     },
     {
       "key": "editor/contrib/wordOperations",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 8751,
-        "gzip9": 2067,
-        "brotli11": 1778
+        "raw": 8706,
+        "gzip9": 2035,
+        "brotli11": 1760
       },
       "lil": {
         "raw": 2045,
         "gzip9": 587,
         "brotli11": 526
       },
-      "ratio": 0.2958380202474691
+      "jsLanes": {
+        "oxc": {
+          "raw": 8706,
+          "gzip9": 2035,
+          "brotli11": 1760
+        },
+        "esbuild": {
+          "raw": 8751,
+          "gzip9": 2067,
+          "brotli11": 1778
+        },
+        "terser": {
+          "raw": 8727,
+          "gzip9": 2030,
+          "brotli11": 1763
+        }
+      },
+      "ratio": 0.2988636363636364,
+      "ratioOxc": 0.2988636363636364,
+      "ratioEsbuild": 0.2958380202474691,
+      "ratioTerser": 0.29835507657402155
+    },
+    {
+      "key": "platform/log",
+      "files": 2,
+      "scoredLil": 2,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 5455,
+        "gzip9": 1978,
+        "brotli11": 1747
+      },
+      "lil": {
+        "raw": 1343,
+        "gzip9": 618,
+        "brotli11": 510
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 5455,
+          "gzip9": 1978,
+          "brotli11": 1747
+        },
+        "esbuild": {
+          "raw": 5530,
+          "gzip9": 2018,
+          "brotli11": 1790
+        },
+        "terser": {
+          "raw": 5482,
+          "gzip9": 1983,
+          "brotli11": 1761
+        }
+      },
+      "ratio": 0.2919290211791643,
+      "ratioOxc": 0.2919290211791643,
+      "ratioEsbuild": 0.2849162011173184,
+      "ratioTerser": 0.28960817717206133
     },
     {
       "key": "editor/contrib/message",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 4914,
-        "gzip9": 1767,
-        "brotli11": 1519
+        "raw": 4903,
+        "gzip9": 1756,
+        "brotli11": 1516
       },
       "lil": {
         "raw": 483,
         "gzip9": 210,
         "brotli11": 165
       },
-      "ratio": 0.10862409479921001
-    },
-    {
-      "key": "editor/contrib/inPlaceReplace",
-      "files": 2,
-      "scoredLil": 2,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 4150,
-        "gzip9": 1743,
-        "brotli11": 1514
+      "jsLanes": {
+        "oxc": {
+          "raw": 4903,
+          "gzip9": 1756,
+          "brotli11": 1516
+        },
+        "esbuild": {
+          "raw": 4914,
+          "gzip9": 1767,
+          "brotli11": 1519
+        },
+        "terser": {
+          "raw": 4902,
+          "gzip9": 1744,
+          "brotli11": 1510
+        }
       },
-      "lil": {
-        "raw": 586,
-        "gzip9": 434,
-        "brotli11": 352
-      },
-      "ratio": 0.23249669749009247
+      "ratio": 0.10883905013192612,
+      "ratioOxc": 0.10883905013192612,
+      "ratioEsbuild": 0.10862409479921001,
+      "ratioTerser": 0.10927152317880795
     },
     {
       "key": "editor/contrib/dnd",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 7116,
-        "gzip9": 1725,
-        "brotli11": 1504
+        "raw": 7002,
+        "gzip9": 1719,
+        "brotli11": 1499
       },
       "lil": {
         "raw": 4094,
         "gzip9": 1284,
         "brotli11": 1128
       },
-      "ratio": 0.75
+      "jsLanes": {
+        "oxc": {
+          "raw": 7002,
+          "gzip9": 1719,
+          "brotli11": 1499
+        },
+        "esbuild": {
+          "raw": 7116,
+          "gzip9": 1725,
+          "brotli11": 1504
+        },
+        "terser": {
+          "raw": 6984,
+          "gzip9": 1705,
+          "brotli11": 1484
+        }
+      },
+      "ratio": 0.752501667778519,
+      "ratioOxc": 0.752501667778519,
+      "ratioEsbuild": 0.75,
+      "ratioTerser": 0.7601078167115903
+    },
+    {
+      "key": "editor/contrib/inPlaceReplace",
+      "files": 2,
+      "scoredLil": 2,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 4116,
+        "gzip9": 1723,
+        "brotli11": 1473
+      },
+      "lil": {
+        "raw": 586,
+        "gzip9": 434,
+        "brotli11": 352
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 4116,
+          "gzip9": 1723,
+          "brotli11": 1473
+        },
+        "esbuild": {
+          "raw": 4150,
+          "gzip9": 1743,
+          "brotli11": 1514
+        },
+        "terser": {
+          "raw": 4133,
+          "gzip9": 1718,
+          "brotli11": 1466
+        }
+      },
+      "ratio": 0.23896809232858113,
+      "ratioOxc": 0.23896809232858113,
+      "ratioEsbuild": 0.23249669749009247,
+      "ratioTerser": 0.24010914051841747
     },
     {
       "key": "platform/clipboard",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 4457,
-        "gzip9": 1739,
-        "brotli11": 1470
+        "raw": 4435,
+        "gzip9": 1733,
+        "brotli11": 1460
       },
       "lil": {
         "raw": 1207,
         "gzip9": 502,
         "brotli11": 417
       },
-      "ratio": 0.2836734693877551
+      "jsLanes": {
+        "oxc": {
+          "raw": 4435,
+          "gzip9": 1733,
+          "brotli11": 1460
+        },
+        "esbuild": {
+          "raw": 4457,
+          "gzip9": 1739,
+          "brotli11": 1470
+        },
+        "terser": {
+          "raw": 4452,
+          "gzip9": 1718,
+          "brotli11": 1467
+        }
+      },
+      "ratio": 0.2856164383561644,
+      "ratioOxc": 0.2856164383561644,
+      "ratioEsbuild": 0.2836734693877551,
+      "ratioTerser": 0.2842535787321063
     },
     {
       "key": "platform/webWorker",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 3791,
-        "gzip9": 1709,
-        "brotli11": 1452
+        "raw": 3756,
+        "gzip9": 1680,
+        "brotli11": 1435
       },
       "lil": {
         "raw": 1289,
         "gzip9": 623,
         "brotli11": 507
       },
-      "ratio": 0.34917355371900827
+      "jsLanes": {
+        "oxc": {
+          "raw": 3756,
+          "gzip9": 1680,
+          "brotli11": 1435
+        },
+        "esbuild": {
+          "raw": 3791,
+          "gzip9": 1709,
+          "brotli11": 1452
+        },
+        "terser": {
+          "raw": 3741,
+          "gzip9": 1678,
+          "brotli11": 1422
+        }
+      },
+      "ratio": 0.3533101045296167,
+      "ratioOxc": 0.3533101045296167,
+      "ratioEsbuild": 0.34917355371900827,
+      "ratioTerser": 0.35654008438818563
     },
     {
       "key": "platform/accessibility",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 5686,
-        "gzip9": 1719,
-        "brotli11": 1438
+        "raw": 5653,
+        "gzip9": 1705,
+        "brotli11": 1430
       },
       "lil": {
         "raw": 1637,
         "gzip9": 734,
         "brotli11": 603
       },
-      "ratio": 0.4193324061196106
+      "jsLanes": {
+        "oxc": {
+          "raw": 5653,
+          "gzip9": 1705,
+          "brotli11": 1430
+        },
+        "esbuild": {
+          "raw": 5686,
+          "gzip9": 1719,
+          "brotli11": 1438
+        },
+        "terser": {
+          "raw": 5676,
+          "gzip9": 1703,
+          "brotli11": 1434
+        }
+      },
+      "ratio": 0.4216783216783217,
+      "ratioOxc": 0.4216783216783217,
+      "ratioEsbuild": 0.4193324061196106,
+      "ratioTerser": 0.4205020920502092
     },
     {
       "key": "platform/storage",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 5301,
-        "gzip9": 1567,
-        "brotli11": 1359
+        "raw": 5156,
+        "gzip9": 1530,
+        "brotli11": 1328
       },
       "lil": {
         "raw": 1151,
         "gzip9": 492,
         "brotli11": 428
       },
-      "ratio": 0.3149374540103017
+      "jsLanes": {
+        "oxc": {
+          "raw": 5156,
+          "gzip9": 1530,
+          "brotli11": 1328
+        },
+        "esbuild": {
+          "raw": 5301,
+          "gzip9": 1567,
+          "brotli11": 1359
+        },
+        "terser": {
+          "raw": 5265,
+          "gzip9": 1538,
+          "brotli11": 1334
+        }
+      },
+      "ratio": 0.32228915662650603,
+      "ratioOxc": 0.32228915662650603,
+      "ratioEsbuild": 0.3149374540103017,
+      "ratioTerser": 0.32083958020989506
     },
     {
       "key": "editor/contrib/floatingMenu",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 3257,
-        "gzip9": 1539,
-        "brotli11": 1333
+        "raw": 3241,
+        "gzip9": 1516,
+        "brotli11": 1310
       },
       "lil": {
         "raw": 794,
         "gzip9": 390,
         "brotli11": 322
       },
-      "ratio": 0.2415603900975244
+      "jsLanes": {
+        "oxc": {
+          "raw": 3241,
+          "gzip9": 1516,
+          "brotli11": 1310
+        },
+        "esbuild": {
+          "raw": 3257,
+          "gzip9": 1539,
+          "brotli11": 1333
+        },
+        "terser": {
+          "raw": 3255,
+          "gzip9": 1518,
+          "brotli11": 1320
+        }
+      },
+      "ratio": 0.24580152671755726,
+      "ratioOxc": 0.24580152671755726,
+      "ratioEsbuild": 0.2415603900975244,
+      "ratioTerser": 0.24393939393939393
     },
     {
       "key": "platform/observable",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2908,
-        "gzip9": 1534,
-        "brotli11": 1314
+        "raw": 2897,
+        "gzip9": 1525,
+        "brotli11": 1298
       },
       "lil": {
         "raw": 1009,
         "gzip9": 538,
         "brotli11": 449
       },
-      "ratio": 0.3417047184170472
+      "jsLanes": {
+        "oxc": {
+          "raw": 2897,
+          "gzip9": 1525,
+          "brotli11": 1298
+        },
+        "esbuild": {
+          "raw": 2908,
+          "gzip9": 1534,
+          "brotli11": 1314
+        },
+        "terser": {
+          "raw": 2841,
+          "gzip9": 1497,
+          "brotli11": 1275
+        }
+      },
+      "ratio": 0.3459167950693374,
+      "ratioOxc": 0.3459167950693374,
+      "ratioEsbuild": 0.3417047184170472,
+      "ratioTerser": 0.35215686274509805
     },
     {
       "key": "editor/contrib/sectionHeaders",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 4318,
-        "gzip9": 1480,
-        "brotli11": 1296
+        "raw": 4278,
+        "gzip9": 1468,
+        "brotli11": 1279
       },
       "lil": {
         "raw": 689,
         "gzip9": 333,
         "brotli11": 279
       },
-      "ratio": 0.2152777777777778
-    },
-    {
-      "key": "editor/contrib/editorState",
-      "files": 2,
-      "scoredLil": 2,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 3626,
-        "gzip9": 1430,
-        "brotli11": 1230
+      "jsLanes": {
+        "oxc": {
+          "raw": 4278,
+          "gzip9": 1468,
+          "brotli11": 1279
+        },
+        "esbuild": {
+          "raw": 4318,
+          "gzip9": 1480,
+          "brotli11": 1296
+        },
+        "terser": {
+          "raw": 4310,
+          "gzip9": 1455,
+          "brotli11": 1268
+        }
       },
-      "lil": {
-        "raw": 1658,
-        "gzip9": 582,
-        "brotli11": 488
-      },
-      "ratio": 0.3967479674796748
-    },
-    {
-      "key": "editor/contrib/gpu",
-      "files": 1,
-      "scoredLil": 1,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 3250,
-        "gzip9": 1404,
-        "brotli11": 1219
-      },
-      "lil": {
-        "raw": 127,
-        "gzip9": 126,
-        "brotli11": 100
-      },
-      "ratio": 0.08203445447087777
+      "ratio": 0.2181391712275215,
+      "ratioOxc": 0.2181391712275215,
+      "ratioEsbuild": 0.2152777777777778,
+      "ratioTerser": 0.2200315457413249
     },
     {
       "key": "editor/contrib/caretOperations",
       "files": 3,
       "scoredLil": 3,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 3123,
-        "gzip9": 1432,
-        "brotli11": 1214
+        "raw": 3096,
+        "gzip9": 1414,
+        "brotli11": 1208
       },
       "lil": {
         "raw": 2949,
         "gzip9": 1050,
         "brotli11": 909
       },
-      "ratio": 0.7487644151565074
+      "jsLanes": {
+        "oxc": {
+          "raw": 3096,
+          "gzip9": 1414,
+          "brotli11": 1208
+        },
+        "esbuild": {
+          "raw": 3123,
+          "gzip9": 1432,
+          "brotli11": 1214
+        },
+        "terser": {
+          "raw": 3102,
+          "gzip9": 1411,
+          "brotli11": 1195
+        }
+      },
+      "ratio": 0.7524834437086093,
+      "ratioOxc": 0.7524834437086093,
+      "ratioEsbuild": 0.7487644151565074,
+      "ratioTerser": 0.7606694560669456
+    },
+    {
+      "key": "editor/contrib/editorState",
+      "files": 2,
+      "scoredLil": 2,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 3542,
+        "gzip9": 1405,
+        "brotli11": 1207
+      },
+      "lil": {
+        "raw": 1658,
+        "gzip9": 582,
+        "brotli11": 488
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 3542,
+          "gzip9": 1405,
+          "brotli11": 1207
+        },
+        "esbuild": {
+          "raw": 3626,
+          "gzip9": 1430,
+          "brotli11": 1230
+        },
+        "terser": {
+          "raw": 3572,
+          "gzip9": 1400,
+          "brotli11": 1202
+        }
+      },
+      "ratio": 0.40430820215410107,
+      "ratioOxc": 0.40430820215410107,
+      "ratioEsbuild": 0.3967479674796748,
+      "ratioTerser": 0.4059900166389351
+    },
+    {
+      "key": "editor/contrib/gpu",
+      "files": 1,
+      "scoredLil": 1,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 3198,
+        "gzip9": 1392,
+        "brotli11": 1203
+      },
+      "lil": {
+        "raw": 127,
+        "gzip9": 126,
+        "brotli11": 100
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 3198,
+          "gzip9": 1392,
+          "brotli11": 1203
+        },
+        "esbuild": {
+          "raw": 3250,
+          "gzip9": 1404,
+          "brotli11": 1219
+        },
+        "terser": {
+          "raw": 3238,
+          "gzip9": 1400,
+          "brotli11": 1208
+        }
+      },
+      "ratio": 0.0831255195344971,
+      "ratioOxc": 0.0831255195344971,
+      "ratioEsbuild": 0.08203445447087777,
+      "ratioTerser": 0.08278145695364239
     },
     {
       "key": "platform/opener",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2987,
-        "gzip9": 1375,
-        "brotli11": 1192
+        "raw": 2975,
+        "gzip9": 1360,
+        "brotli11": 1178
       },
       "lil": {
         "raw": 503,
         "gzip9": 301,
         "brotli11": 230
       },
-      "ratio": 0.1929530201342282
+      "jsLanes": {
+        "oxc": {
+          "raw": 2975,
+          "gzip9": 1360,
+          "brotli11": 1178
+        },
+        "esbuild": {
+          "raw": 2987,
+          "gzip9": 1375,
+          "brotli11": 1192
+        },
+        "terser": {
+          "raw": 2981,
+          "gzip9": 1362,
+          "brotli11": 1180
+        }
+      },
+      "ratio": 0.19524617996604415,
+      "ratioOxc": 0.19524617996604415,
+      "ratioEsbuild": 0.1929530201342282,
+      "ratioTerser": 0.19491525423728814
     },
     {
       "key": "editor/contrib/inlineProgress",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 3292,
-        "gzip9": 1385,
+        "raw": 3281,
+        "gzip9": 1382,
         "brotli11": 1172
       },
       "lil": {
@@ -1242,237 +2685,443 @@
         "gzip9": 204,
         "brotli11": 157
       },
-      "ratio": 0.13395904436860068
+      "jsLanes": {
+        "oxc": {
+          "raw": 3281,
+          "gzip9": 1382,
+          "brotli11": 1172
+        },
+        "esbuild": {
+          "raw": 3292,
+          "gzip9": 1385,
+          "brotli11": 1172
+        },
+        "terser": {
+          "raw": 3264,
+          "gzip9": 1365,
+          "brotli11": 1154
+        }
+      },
+      "ratio": 0.13395904436860068,
+      "ratioOxc": 0.13395904436860068,
+      "ratioEsbuild": 0.13395904436860068,
+      "ratioTerser": 0.1360485268630849
     },
     {
       "key": "editor/contrib/middleScroll",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2809,
-        "gzip9": 1317,
-        "brotli11": 1153
+        "raw": 2772,
+        "gzip9": 1281,
+        "brotli11": 1109
       },
       "lil": {
         "raw": 1214,
         "gzip9": 496,
         "brotli11": 412
       },
-      "ratio": 0.35732870771899394
+      "jsLanes": {
+        "oxc": {
+          "raw": 2772,
+          "gzip9": 1281,
+          "brotli11": 1109
+        },
+        "esbuild": {
+          "raw": 2809,
+          "gzip9": 1317,
+          "brotli11": 1153
+        },
+        "terser": {
+          "raw": 2793,
+          "gzip9": 1281,
+          "brotli11": 1124
+        }
+      },
+      "ratio": 0.3715058611361587,
+      "ratioOxc": 0.3715058611361587,
+      "ratioEsbuild": 0.35732870771899394,
+      "ratioTerser": 0.3665480427046263
     },
     {
       "key": "editor/contrib/anchorSelect",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 3609,
-        "gzip9": 1242,
-        "brotli11": 1080
+        "raw": 3598,
+        "gzip9": 1241,
+        "brotli11": 1081
       },
       "lil": {
         "raw": 1304,
         "gzip9": 386,
         "brotli11": 349
       },
-      "ratio": 0.32314814814814813
+      "jsLanes": {
+        "oxc": {
+          "raw": 3598,
+          "gzip9": 1241,
+          "brotli11": 1081
+        },
+        "esbuild": {
+          "raw": 3609,
+          "gzip9": 1242,
+          "brotli11": 1080
+        },
+        "terser": {
+          "raw": 3561,
+          "gzip9": 1211,
+          "brotli11": 1053
+        }
+      },
+      "ratio": 0.3228492136910268,
+      "ratioOxc": 0.3228492136910268,
+      "ratioEsbuild": 0.32314814814814813,
+      "ratioTerser": 0.33143399810066476
     },
     {
       "key": "platform/history",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2727,
-        "gzip9": 1253,
-        "brotli11": 1069
+        "raw": 2715,
+        "gzip9": 1242,
+        "brotli11": 1044
       },
       "lil": {
         "raw": 826,
         "gzip9": 391,
         "brotli11": 311
       },
-      "ratio": 0.2909260991580917
+      "jsLanes": {
+        "oxc": {
+          "raw": 2715,
+          "gzip9": 1242,
+          "brotli11": 1044
+        },
+        "esbuild": {
+          "raw": 2727,
+          "gzip9": 1253,
+          "brotli11": 1069
+        },
+        "terser": {
+          "raw": 2724,
+          "gzip9": 1240,
+          "brotli11": 1046
+        }
+      },
+      "ratio": 0.2978927203065134,
+      "ratioOxc": 0.2978927203065134,
+      "ratioEsbuild": 0.2909260991580917,
+      "ratioTerser": 0.29732313575525815
     },
     {
       "key": "base/parts",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 3262,
-        "gzip9": 1203,
-        "brotli11": 1030
+        "raw": 3236,
+        "gzip9": 1151,
+        "brotli11": 995
       },
       "lil": {
         "raw": 2225,
         "gzip9": 850,
         "brotli11": 743
       },
-      "ratio": 0.7213592233009709
+      "jsLanes": {
+        "oxc": {
+          "raw": 3236,
+          "gzip9": 1151,
+          "brotli11": 995
+        },
+        "esbuild": {
+          "raw": 3253,
+          "gzip9": 1174,
+          "brotli11": 1017
+        },
+        "terser": {
+          "raw": 3232,
+          "gzip9": 1161,
+          "brotli11": 1006
+        }
+      },
+      "ratio": 0.7467336683417085,
+      "ratioOxc": 0.7467336683417085,
+      "ratioEsbuild": 0.7305801376597837,
+      "ratioTerser": 0.7385685884691849
     },
     {
       "key": "editor/contrib/diffEditorBreadcrumbs",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2799,
-        "gzip9": 1141,
-        "brotli11": 978
+        "raw": 2782,
+        "gzip9": 1131,
+        "brotli11": 964
       },
       "lil": {
         "raw": 847,
         "gzip9": 294,
         "brotli11": 255
       },
-      "ratio": 0.2607361963190184
-    },
-    {
-      "key": "platform/workspace",
-      "files": 2,
-      "scoredLil": 2,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 2469,
-        "gzip9": 1095,
-        "brotli11": 947
+      "jsLanes": {
+        "oxc": {
+          "raw": 2782,
+          "gzip9": 1131,
+          "brotli11": 964
+        },
+        "esbuild": {
+          "raw": 2799,
+          "gzip9": 1141,
+          "brotli11": 978
+        },
+        "terser": {
+          "raw": 2786,
+          "gzip9": 1125,
+          "brotli11": 962
+        }
       },
-      "lil": {
-        "raw": 924,
-        "gzip9": 452,
-        "brotli11": 366
-      },
-      "ratio": 0.3864836325237592
+      "ratio": 0.2645228215767635,
+      "ratioOxc": 0.2645228215767635,
+      "ratioEsbuild": 0.2607361963190184,
+      "ratioTerser": 0.26507276507276506
     },
     {
       "key": "editor/contrib/unusualLineTerminators",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2743,
-        "gzip9": 1092,
-        "brotli11": 938
+        "raw": 2740,
+        "gzip9": 1084,
+        "brotli11": 928
       },
       "lil": {
         "raw": 891,
         "gzip9": 417,
         "brotli11": 352
       },
-      "ratio": 0.3752665245202559
+      "jsLanes": {
+        "oxc": {
+          "raw": 2740,
+          "gzip9": 1084,
+          "brotli11": 928
+        },
+        "esbuild": {
+          "raw": 2743,
+          "gzip9": 1092,
+          "brotli11": 938
+        },
+        "terser": {
+          "raw": 2753,
+          "gzip9": 1065,
+          "brotli11": 903
+        }
+      },
+      "ratio": 0.3793103448275862,
+      "ratioOxc": 0.3793103448275862,
+      "ratioEsbuild": 0.3752665245202559,
+      "ratioTerser": 0.38981173864894797
+    },
+    {
+      "key": "platform/workspace",
+      "files": 2,
+      "scoredLil": 2,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 2457,
+        "gzip9": 1091,
+        "brotli11": 928
+      },
+      "lil": {
+        "raw": 924,
+        "gzip9": 452,
+        "brotli11": 366
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 2457,
+          "gzip9": 1091,
+          "brotli11": 928
+        },
+        "esbuild": {
+          "raw": 2469,
+          "gzip9": 1095,
+          "brotli11": 947
+        },
+        "terser": {
+          "raw": 2471,
+          "gzip9": 1090,
+          "brotli11": 927
+        }
+      },
+      "ratio": 0.39439655172413796,
+      "ratioOxc": 0.39439655172413796,
+      "ratioEsbuild": 0.3864836325237592,
+      "ratioTerser": 0.3948220064724919
     },
     {
       "key": "editor/contrib/placeholderText",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2426,
-        "gzip9": 1090,
-        "brotli11": 929
+        "raw": 2414,
+        "gzip9": 1078,
+        "brotli11": 908
       },
       "lil": {
         "raw": 702,
         "gzip9": 366,
         "brotli11": 286
       },
-      "ratio": 0.3078579117330463
+      "jsLanes": {
+        "oxc": {
+          "raw": 2414,
+          "gzip9": 1078,
+          "brotli11": 908
+        },
+        "esbuild": {
+          "raw": 2426,
+          "gzip9": 1090,
+          "brotli11": 929
+        },
+        "terser": {
+          "raw": 2404,
+          "gzip9": 1073,
+          "brotli11": 911
+        }
+      },
+      "ratio": 0.31497797356828194,
+      "ratioOxc": 0.31497797356828194,
+      "ratioEsbuild": 0.3078579117330463,
+      "ratioTerser": 0.31394072447859495
     },
     {
       "key": "editor/contrib/symbolIcons",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 7282,
-        "gzip9": 1162,
-        "brotli11": 893
+        "raw": 7281,
+        "gzip9": 1160,
+        "brotli11": 885
       },
       "lil": {
         "raw": 770,
         "gzip9": 293,
         "brotli11": 231
       },
-      "ratio": 0.25867861142217247
+      "jsLanes": {
+        "oxc": {
+          "raw": 7281,
+          "gzip9": 1160,
+          "brotli11": 885
+        },
+        "esbuild": {
+          "raw": 7282,
+          "gzip9": 1162,
+          "brotli11": 893
+        },
+        "terser": {
+          "raw": 7281,
+          "gzip9": 1160,
+          "brotli11": 888
+        }
+      },
+      "ratio": 0.26101694915254237,
+      "ratioOxc": 0.26101694915254237,
+      "ratioEsbuild": 0.25867861142217247,
+      "ratioTerser": 0.26013513513513514
     },
     {
       "key": "editor/contrib/cursorUndo",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2512,
-        "gzip9": 876,
-        "brotli11": 778
+        "raw": 2503,
+        "gzip9": 867,
+        "brotli11": 775
       },
       "lil": {
         "raw": 1368,
         "gzip9": 452,
         "brotli11": 396
       },
-      "ratio": 0.5089974293059126
+      "jsLanes": {
+        "oxc": {
+          "raw": 2503,
+          "gzip9": 867,
+          "brotli11": 775
+        },
+        "esbuild": {
+          "raw": 2512,
+          "gzip9": 876,
+          "brotli11": 778
+        },
+        "terser": {
+          "raw": 2523,
+          "gzip9": 870,
+          "brotli11": 780
+        }
+      },
+      "ratio": 0.5109677419354839,
+      "ratioOxc": 0.5109677419354839,
+      "ratioEsbuild": 0.5089974293059126,
+      "ratioTerser": 0.5076923076923077
     },
     {
       "key": "editor/editor.all.js",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 3699,
-        "gzip9": 842,
-        "brotli11": 733
+        "raw": 3698,
+        "gzip9": 840,
+        "brotli11": 725
       },
       "lil": {
         "raw": 3696,
         "gzip9": 1092,
         "brotli11": 942
       },
-      "ratio": 1.2851296043656206
-    },
-    {
-      "key": "platform/markdown",
-      "files": 1,
-      "scoredLil": 1,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 1586,
-        "gzip9": 790,
-        "brotli11": 663
+      "jsLanes": {
+        "oxc": {
+          "raw": 3698,
+          "gzip9": 840,
+          "brotli11": 725
+        },
+        "esbuild": {
+          "raw": 3699,
+          "gzip9": 842,
+          "brotli11": 733
+        },
+        "terser": {
+          "raw": 3698,
+          "gzip9": 840,
+          "brotli11": 725
+        }
       },
-      "lil": {
-        "raw": 619,
-        "gzip9": 315,
-        "brotli11": 273
-      },
-      "ratio": 0.4117647058823529
-    },
-    {
-      "key": "platform/dataChannel",
-      "files": 2,
-      "scoredLil": 2,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 1365,
-        "gzip9": 794,
-        "brotli11": 662
-      },
-      "lil": {
-        "raw": 584,
-        "gzip9": 344,
-        "brotli11": 261
-      },
-      "ratio": 0.3942598187311178
+      "ratio": 1.2993103448275862,
+      "ratioOxc": 1.2993103448275862,
+      "ratioEsbuild": 1.2851296043656206,
+      "ratioTerser": 1.2993103448275862
     },
     {
       "key": "platform/userInteraction",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 1585,
-        "gzip9": 783,
+        "raw": 1569,
+        "gzip9": 776,
         "brotli11": 659
       },
       "lil": {
@@ -1480,152 +3129,406 @@
         "gzip9": 327,
         "brotli11": 261
       },
-      "ratio": 0.3960546282245827
+      "jsLanes": {
+        "oxc": {
+          "raw": 1569,
+          "gzip9": 776,
+          "brotli11": 659
+        },
+        "esbuild": {
+          "raw": 1585,
+          "gzip9": 783,
+          "brotli11": 659
+        },
+        "terser": {
+          "raw": 1583,
+          "gzip9": 777,
+          "brotli11": 658
+        }
+      },
+      "ratio": 0.3960546282245827,
+      "ratioOxc": 0.3960546282245827,
+      "ratioEsbuild": 0.3960546282245827,
+      "ratioTerser": 0.3966565349544073
+    },
+    {
+      "key": "platform/dataChannel",
+      "files": 2,
+      "scoredLil": 2,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 1361,
+        "gzip9": 783,
+        "brotli11": 655
+      },
+      "lil": {
+        "raw": 584,
+        "gzip9": 344,
+        "brotli11": 261
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 1361,
+          "gzip9": 783,
+          "brotli11": 655
+        },
+        "esbuild": {
+          "raw": 1365,
+          "gzip9": 794,
+          "brotli11": 662
+        },
+        "terser": {
+          "raw": 1365,
+          "gzip9": 781,
+          "brotli11": 661
+        }
+      },
+      "ratio": 0.3984732824427481,
+      "ratioOxc": 0.3984732824427481,
+      "ratioEsbuild": 0.3942598187311178,
+      "ratioTerser": 0.394856278366112
+    },
+    {
+      "key": "platform/markdown",
+      "files": 1,
+      "scoredLil": 1,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 1543,
+        "gzip9": 775,
+        "brotli11": 651
+      },
+      "lil": {
+        "raw": 619,
+        "gzip9": 315,
+        "brotli11": 273
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 1543,
+          "gzip9": 775,
+          "brotli11": 651
+        },
+        "esbuild": {
+          "raw": 1586,
+          "gzip9": 790,
+          "brotli11": 663
+        },
+        "terser": {
+          "raw": 1556,
+          "gzip9": 770,
+          "brotli11": 666
+        }
+      },
+      "ratio": 0.41935483870967744,
+      "ratioOxc": 0.41935483870967744,
+      "ratioEsbuild": 0.4117647058823529,
+      "ratioTerser": 0.4099099099099099
     },
     {
       "key": "editor/contrib/insertFinalNewLine",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 1321,
-        "gzip9": 739,
-        "brotli11": 626
+        "raw": 1311,
+        "gzip9": 730,
+        "brotli11": 620
       },
       "lil": {
         "raw": 482,
         "gzip9": 328,
         "brotli11": 260
       },
-      "ratio": 0.41533546325878595
+      "jsLanes": {
+        "oxc": {
+          "raw": 1311,
+          "gzip9": 730,
+          "brotli11": 620
+        },
+        "esbuild": {
+          "raw": 1321,
+          "gzip9": 739,
+          "brotli11": 626
+        },
+        "terser": {
+          "raw": 1316,
+          "gzip9": 731,
+          "brotli11": 607
+        }
+      },
+      "ratio": 0.41935483870967744,
+      "ratioOxc": 0.41935483870967744,
+      "ratioEsbuild": 0.41533546325878595,
+      "ratioTerser": 0.42833607907743
     },
     {
       "key": "editor/contrib/wordPartOperations",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 2500,
+        "raw": 2485,
         "gzip9": 704,
-        "brotli11": 598
+        "brotli11": 596
       },
       "lil": {
         "raw": 2045,
         "gzip9": 587,
         "brotli11": 526
       },
-      "ratio": 0.8795986622073578
+      "jsLanes": {
+        "oxc": {
+          "raw": 2485,
+          "gzip9": 704,
+          "brotli11": 596
+        },
+        "esbuild": {
+          "raw": 2500,
+          "gzip9": 704,
+          "brotli11": 598
+        },
+        "terser": {
+          "raw": 2489,
+          "gzip9": 704,
+          "brotli11": 592
+        }
+      },
+      "ratio": 0.8825503355704698,
+      "ratioOxc": 0.8825503355704698,
+      "ratioEsbuild": 0.8795986622073578,
+      "ratioTerser": 0.8885135135135135
     },
     {
       "key": "editor/editor.api.js",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 1576,
-        "gzip9": 687,
-        "brotli11": 580
+        "raw": 1573,
+        "gzip9": 692,
+        "brotli11": 584
       },
       "lil": {
         "raw": 1173,
         "gzip9": 385,
         "brotli11": 321
       },
-      "ratio": 0.553448275862069
+      "jsLanes": {
+        "oxc": {
+          "raw": 1573,
+          "gzip9": 692,
+          "brotli11": 584
+        },
+        "esbuild": {
+          "raw": 1576,
+          "gzip9": 687,
+          "brotli11": 580
+        },
+        "terser": {
+          "raw": 1573,
+          "gzip9": 691,
+          "brotli11": 582
+        }
+      },
+      "ratio": 0.5496575342465754,
+      "ratioOxc": 0.5496575342465754,
+      "ratioEsbuild": 0.553448275862069,
+      "ratioTerser": 0.5515463917525774
     },
     {
       "key": "platform/commands",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 1537,
-        "gzip9": 658,
-        "brotli11": 578
+        "raw": 1506,
+        "gzip9": 643,
+        "brotli11": 562
       },
       "lil": {
         "raw": 1057,
         "gzip9": 430,
         "brotli11": 371
       },
-      "ratio": 0.6418685121107266
+      "jsLanes": {
+        "oxc": {
+          "raw": 1506,
+          "gzip9": 643,
+          "brotli11": 562
+        },
+        "esbuild": {
+          "raw": 1537,
+          "gzip9": 658,
+          "brotli11": 578
+        },
+        "terser": {
+          "raw": 1543,
+          "gzip9": 648,
+          "brotli11": 566
+        }
+      },
+      "ratio": 0.6601423487544484,
+      "ratioOxc": 0.6601423487544484,
+      "ratioEsbuild": 0.6418685121107266,
+      "ratioTerser": 0.6554770318021201
     },
     {
       "key": "platform/product",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 1364,
-        "gzip9": 649,
-        "brotli11": 531
+        "raw": 1351,
+        "gzip9": 632,
+        "brotli11": 523
       },
       "lil": {
         "raw": 411,
         "gzip9": 192,
         "brotli11": 150
       },
-      "ratio": 0.2824858757062147
-    },
-    {
-      "key": "nls.js",
-      "files": 1,
-      "scoredLil": 1,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 926,
-        "gzip9": 523,
-        "brotli11": 452
+      "jsLanes": {
+        "oxc": {
+          "raw": 1351,
+          "gzip9": 632,
+          "brotli11": 523
+        },
+        "esbuild": {
+          "raw": 1364,
+          "gzip9": 649,
+          "brotli11": 531
+        },
+        "terser": {
+          "raw": 1355,
+          "gzip9": 641,
+          "brotli11": 529
+        }
       },
-      "lil": {
-        "raw": 1142,
-        "gzip9": 569,
-        "brotli11": 506
-      },
-      "ratio": 1.1194690265486726
+      "ratio": 0.28680688336520077,
+      "ratioOxc": 0.28680688336520077,
+      "ratioEsbuild": 0.2824858757062147,
+      "ratioTerser": 0.2835538752362949
     },
     {
       "key": "editor/contrib/toggleTabFocusMode",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 985,
-        "gzip9": 541,
-        "brotli11": 438
+        "raw": 979,
+        "gzip9": 537,
+        "brotli11": 442
       },
       "lil": {
         "raw": 245,
         "gzip9": 142,
         "brotli11": 107
       },
-      "ratio": 0.24429223744292236
+      "jsLanes": {
+        "oxc": {
+          "raw": 979,
+          "gzip9": 537,
+          "brotli11": 442
+        },
+        "esbuild": {
+          "raw": 985,
+          "gzip9": 541,
+          "brotli11": 438
+        },
+        "terser": {
+          "raw": 981,
+          "gzip9": 537,
+          "brotli11": 438
+        }
+      },
+      "ratio": 0.2420814479638009,
+      "ratioOxc": 0.2420814479638009,
+      "ratioEsbuild": 0.24429223744292236,
+      "ratioTerser": 0.24429223744292236
+    },
+    {
+      "key": "nls.js",
+      "files": 1,
+      "scoredLil": 1,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 884,
+        "gzip9": 494,
+        "brotli11": 429
+      },
+      "lil": {
+        "raw": 1142,
+        "gzip9": 569,
+        "brotli11": 506
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 884,
+          "gzip9": 494,
+          "brotli11": 429
+        },
+        "esbuild": {
+          "raw": 926,
+          "gzip9": 523,
+          "brotli11": 452
+        },
+        "terser": {
+          "raw": 908,
+          "gzip9": 513,
+          "brotli11": 434
+        }
+      },
+      "ratio": 1.1794871794871795,
+      "ratioOxc": 1.1794871794871795,
+      "ratioEsbuild": 1.1194690265486726,
+      "ratioTerser": 1.1658986175115207
     },
     {
       "key": "platform/dnd",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 859,
-        "gzip9": 504,
-        "brotli11": 422
+        "raw": 858,
+        "gzip9": 501,
+        "brotli11": 414
       },
       "lil": {
         "raw": 375,
         "gzip9": 181,
         "brotli11": 145
       },
-      "ratio": 0.34360189573459715
+      "jsLanes": {
+        "oxc": {
+          "raw": 858,
+          "gzip9": 501,
+          "brotli11": 414
+        },
+        "esbuild": {
+          "raw": 859,
+          "gzip9": 504,
+          "brotli11": 422
+        },
+        "terser": {
+          "raw": 854,
+          "gzip9": 497,
+          "brotli11": 410
+        }
+      },
+      "ratio": 0.3502415458937198,
+      "ratioOxc": 0.3502415458937198,
+      "ratioEsbuild": 0.34360189573459715,
+      "ratioTerser": 0.35365853658536583
     },
     {
       "key": "editor/contrib/readOnlyMessage",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 918,
-        "gzip9": 451,
+        "raw": 910,
+        "gzip9": 444,
         "brotli11": 376
       },
       "lil": {
@@ -1633,84 +3536,147 @@
         "gzip9": 294,
         "brotli11": 255
       },
-      "ratio": 0.6781914893617021
+      "jsLanes": {
+        "oxc": {
+          "raw": 910,
+          "gzip9": 444,
+          "brotli11": 376
+        },
+        "esbuild": {
+          "raw": 918,
+          "gzip9": 451,
+          "brotli11": 376
+        },
+        "terser": {
+          "raw": 915,
+          "gzip9": 446,
+          "brotli11": 373
+        }
+      },
+      "ratio": 0.6781914893617021,
+      "ratioOxc": 0.6781914893617021,
+      "ratioEsbuild": 0.6781914893617021,
+      "ratioTerser": 0.6836461126005362
     },
     {
       "key": "editor/contrib/lineSelection",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 729,
-        "gzip9": 422,
-        "brotli11": 345
+        "raw": 725,
+        "gzip9": 418,
+        "brotli11": 344
       },
       "lil": {
         "raw": 827,
         "gzip9": 292,
         "brotli11": 244
       },
-      "ratio": 0.7072463768115942
+      "jsLanes": {
+        "oxc": {
+          "raw": 725,
+          "gzip9": 418,
+          "brotli11": 344
+        },
+        "esbuild": {
+          "raw": 729,
+          "gzip9": 422,
+          "brotli11": 345
+        },
+        "terser": {
+          "raw": 728,
+          "gzip9": 418,
+          "brotli11": 342
+        }
+      },
+      "ratio": 0.7093023255813954,
+      "ratioOxc": 0.7093023255813954,
+      "ratioEsbuild": 0.7072463768115942,
+      "ratioTerser": 0.7134502923976608
     },
     {
       "key": "platform/jsonschemas",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 744,
-        "gzip9": 402,
-        "brotli11": 332
+        "raw": 737,
+        "gzip9": 399,
+        "brotli11": 328
       },
       "lil": {
         "raw": 560,
         "gzip9": 279,
         "brotli11": 226
       },
-      "ratio": 0.6807228915662651
+      "jsLanes": {
+        "oxc": {
+          "raw": 737,
+          "gzip9": 399,
+          "brotli11": 328
+        },
+        "esbuild": {
+          "raw": 744,
+          "gzip9": 402,
+          "brotli11": 332
+        },
+        "terser": {
+          "raw": 719,
+          "gzip9": 385,
+          "brotli11": 325
+        }
+      },
+      "ratio": 0.6890243902439024,
+      "ratioOxc": 0.6890243902439024,
+      "ratioEsbuild": 0.6807228915662651,
+      "ratioTerser": 0.6953846153846154
     },
     {
       "key": "platform/window",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 725,
-        "gzip9": 365,
-        "brotli11": 322
+        "raw": 711,
+        "gzip9": 363,
+        "brotli11": 324
       },
       "lil": {
         "raw": 296,
         "gzip9": 159,
         "brotli11": 124
       },
-      "ratio": 0.38509316770186336
-    },
-    {
-      "key": "editor/editor.worker.start.js",
-      "files": 1,
-      "scoredLil": 1,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 509,
-        "gzip9": 322,
-        "brotli11": 292
+      "jsLanes": {
+        "oxc": {
+          "raw": 711,
+          "gzip9": 363,
+          "brotli11": 324
+        },
+        "esbuild": {
+          "raw": 725,
+          "gzip9": 365,
+          "brotli11": 322
+        },
+        "terser": {
+          "raw": 741,
+          "gzip9": 367,
+          "brotli11": 328
+        }
       },
-      "lil": {
-        "raw": 830,
-        "gzip9": 311,
-        "brotli11": 271
-      },
-      "ratio": 0.928082191780822
+      "ratio": 0.38271604938271603,
+      "ratioOxc": 0.38271604938271603,
+      "ratioEsbuild": 0.38509316770186336,
+      "ratioTerser": 0.3780487804878049
     },
     {
       "key": "editor/contrib/tokenization",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 569,
-        "gzip9": 347,
+        "raw": 556,
+        "gzip9": 340,
         "brotli11": 284
       },
       "lil": {
@@ -1718,254 +3684,554 @@
         "gzip9": 293,
         "brotli11": 235
       },
-      "ratio": 0.8274647887323944
+      "jsLanes": {
+        "oxc": {
+          "raw": 556,
+          "gzip9": 340,
+          "brotli11": 284
+        },
+        "esbuild": {
+          "raw": 569,
+          "gzip9": 347,
+          "brotli11": 284
+        },
+        "terser": {
+          "raw": 560,
+          "gzip9": 340,
+          "brotli11": 280
+        }
+      },
+      "ratio": 0.8274647887323944,
+      "ratioOxc": 0.8274647887323944,
+      "ratioEsbuild": 0.8274647887323944,
+      "ratioTerser": 0.8392857142857143
+    },
+    {
+      "key": "editor/editor.worker.start.js",
+      "files": 1,
+      "scoredLil": 1,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 492,
+        "gzip9": 309,
+        "brotli11": 260
+      },
+      "lil": {
+        "raw": 830,
+        "gzip9": 311,
+        "brotli11": 271
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 492,
+          "gzip9": 309,
+          "brotli11": 260
+        },
+        "esbuild": {
+          "raw": 509,
+          "gzip9": 322,
+          "brotli11": 292
+        },
+        "terser": {
+          "raw": 508,
+          "gzip9": 316,
+          "brotli11": 267
+        }
+      },
+      "ratio": 1.0423076923076924,
+      "ratioOxc": 1.0423076923076924,
+      "ratioEsbuild": 0.928082191780822,
+      "ratioTerser": 1.0149812734082397
     },
     {
       "key": "platform/action",
       "files": 2,
       "scoredLil": 2,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 446,
-        "gzip9": 348,
-        "brotli11": 277
+        "raw": 444,
+        "gzip9": 345,
+        "brotli11": 256
       },
       "lil": {
         "raw": 541,
         "gzip9": 295,
         "brotli11": 233
       },
-      "ratio": 0.8411552346570397
-    },
-    {
-      "key": "editor/contrib/fontZoom",
-      "files": 1,
-      "scoredLil": 1,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 768,
-        "gzip9": 309,
-        "brotli11": 252
+      "jsLanes": {
+        "oxc": {
+          "raw": 444,
+          "gzip9": 345,
+          "brotli11": 256
+        },
+        "esbuild": {
+          "raw": 446,
+          "gzip9": 348,
+          "brotli11": 277
+        },
+        "terser": {
+          "raw": 443,
+          "gzip9": 338,
+          "brotli11": 250
+        }
       },
-      "lil": {
-        "raw": 156,
-        "gzip9": 148,
-        "brotli11": 111
-      },
-      "ratio": 0.44047619047619047
+      "ratio": 0.91015625,
+      "ratioOxc": 0.91015625,
+      "ratioEsbuild": 0.8411552346570397,
+      "ratioTerser": 0.932
     },
     {
       "key": "editor/contrib/longLinesHelper",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 464,
-        "gzip9": 310,
-        "brotli11": 250
+        "raw": 461,
+        "gzip9": 307,
+        "brotli11": 249
       },
       "lil": {
         "raw": 119,
         "gzip9": 117,
         "brotli11": 85
       },
-      "ratio": 0.34
+      "jsLanes": {
+        "oxc": {
+          "raw": 461,
+          "gzip9": 307,
+          "brotli11": 249
+        },
+        "esbuild": {
+          "raw": 464,
+          "gzip9": 310,
+          "brotli11": 250
+        },
+        "terser": {
+          "raw": 463,
+          "gzip9": 308,
+          "brotli11": 247
+        }
+      },
+      "ratio": 0.3413654618473896,
+      "ratioOxc": 0.3413654618473896,
+      "ratioEsbuild": 0.34,
+      "ratioTerser": 0.3441295546558704
+    },
+    {
+      "key": "editor/contrib/fontZoom",
+      "files": 1,
+      "scoredLil": 1,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 767,
+        "gzip9": 308,
+        "brotli11": 248
+      },
+      "lil": {
+        "raw": 156,
+        "gzip9": 148,
+        "brotli11": 111
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 767,
+          "gzip9": 308,
+          "brotli11": 248
+        },
+        "esbuild": {
+          "raw": 768,
+          "gzip9": 309,
+          "brotli11": 252
+        },
+        "terser": {
+          "raw": 751,
+          "gzip9": 292,
+          "brotli11": 238
+        }
+      },
+      "ratio": 0.4475806451612903,
+      "ratioOxc": 0.4475806451612903,
+      "ratioEsbuild": 0.44047619047619047,
+      "ratioTerser": 0.46638655462184875
     },
     {
       "key": "amdX.js",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 414,
-        "gzip9": 309,
-        "brotli11": 244
+        "raw": 411,
+        "gzip9": 307,
+        "brotli11": 238
       },
       "lil": {
         "raw": 1409,
         "gzip9": 543,
         "brotli11": 467
       },
-      "ratio": 1.9139344262295082
+      "jsLanes": {
+        "oxc": {
+          "raw": 411,
+          "gzip9": 307,
+          "brotli11": 238
+        },
+        "esbuild": {
+          "raw": 414,
+          "gzip9": 309,
+          "brotli11": 244
+        },
+        "terser": {
+          "raw": 394,
+          "gzip9": 292,
+          "brotli11": 227
+        }
+      },
+      "ratio": 1.9621848739495797,
+      "ratioOxc": 1.9621848739495797,
+      "ratioEsbuild": 1.9139344262295082,
+      "ratioTerser": 2.05726872246696
     },
     {
       "key": "platform/registry",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 436,
-        "gzip9": 278,
-        "brotli11": 228
+        "raw": 431,
+        "gzip9": 276,
+        "brotli11": 220
       },
       "lil": {
         "raw": 874,
         "gzip9": 356,
         "brotli11": 308
       },
-      "ratio": 1.3508771929824561
+      "jsLanes": {
+        "oxc": {
+          "raw": 431,
+          "gzip9": 276,
+          "brotli11": 220
+        },
+        "esbuild": {
+          "raw": 436,
+          "gzip9": 278,
+          "brotli11": 228
+        },
+        "terser": {
+          "raw": 431,
+          "gzip9": 275,
+          "brotli11": 215
+        }
+      },
+      "ratio": 1.4,
+      "ratioOxc": 1.4,
+      "ratioEsbuild": 1.3508771929824561,
+      "ratioTerser": 1.4325581395348836
     },
     {
       "key": "platform/progress",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 418,
-        "gzip9": 253,
-        "brotli11": 204
+        "raw": 417,
+        "gzip9": 252,
+        "brotli11": 196
       },
       "lil": {
         "raw": 495,
         "gzip9": 246,
         "brotli11": 195
       },
-      "ratio": 0.9558823529411765
+      "jsLanes": {
+        "oxc": {
+          "raw": 417,
+          "gzip9": 252,
+          "brotli11": 196
+        },
+        "esbuild": {
+          "raw": 418,
+          "gzip9": 253,
+          "brotli11": 204
+        },
+        "terser": {
+          "raw": 417,
+          "gzip9": 251,
+          "brotli11": 195
+        }
+      },
+      "ratio": 0.9948979591836735,
+      "ratioOxc": 0.9948979591836735,
+      "ratioEsbuild": 0.9558823529411765,
+      "ratioTerser": 1
     },
     {
       "key": "platform/extensions",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 349,
-        "gzip9": 216,
-        "brotli11": 177
+        "raw": 346,
+        "gzip9": 211,
+        "brotli11": 174
       },
       "lil": {
         "raw": 274,
         "gzip9": 159,
         "brotli11": 118
       },
-      "ratio": 0.6666666666666666
+      "jsLanes": {
+        "oxc": {
+          "raw": 346,
+          "gzip9": 211,
+          "brotli11": 174
+        },
+        "esbuild": {
+          "raw": 349,
+          "gzip9": 216,
+          "brotli11": 177
+        },
+        "terser": {
+          "raw": 347,
+          "gzip9": 213,
+          "brotli11": 175
+        }
+      },
+      "ratio": 0.6781609195402298,
+      "ratioOxc": 0.6781609195402298,
+      "ratioEsbuild": 0.6666666666666666,
+      "ratioTerser": 0.6742857142857143
     },
     {
       "key": "platform/files",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 245,
-        "gzip9": 194,
-        "brotli11": 166
+        "raw": 241,
+        "gzip9": 191,
+        "brotli11": 161
       },
       "lil": {
         "raw": 838,
         "gzip9": 390,
         "brotli11": 330
       },
-      "ratio": 1.9879518072289157
+      "jsLanes": {
+        "oxc": {
+          "raw": 241,
+          "gzip9": 191,
+          "brotli11": 161
+        },
+        "esbuild": {
+          "raw": 245,
+          "gzip9": 194,
+          "brotli11": 166
+        },
+        "terser": {
+          "raw": 232,
+          "gzip9": 184,
+          "brotli11": 160
+        }
+      },
+      "ratio": 2.049689440993789,
+      "ratioOxc": 2.049689440993789,
+      "ratioEsbuild": 1.9879518072289157,
+      "ratioTerser": 2.0625
     },
     {
       "key": "editor/editor.main.js",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 618,
-        "gzip9": 198,
-        "brotli11": 157
+        "raw": 617,
+        "gzip9": 195,
+        "brotli11": 159
       },
       "lil": {
         "raw": 1217,
         "gzip9": 418,
         "brotli11": 332
       },
-      "ratio": 2.1146496815286624
+      "jsLanes": {
+        "oxc": {
+          "raw": 617,
+          "gzip9": 195,
+          "brotli11": 159
+        },
+        "esbuild": {
+          "raw": 618,
+          "gzip9": 198,
+          "brotli11": 157
+        },
+        "terser": {
+          "raw": 617,
+          "gzip9": 195,
+          "brotli11": 159
+        }
+      },
+      "ratio": 2.088050314465409,
+      "ratioOxc": 2.088050314465409,
+      "ratioEsbuild": 2.1146496815286624,
+      "ratioTerser": 2.088050314465409
     },
     {
       "key": "platform/notification",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 242,
-        "gzip9": 169,
-        "brotli11": 135
+        "raw": 241,
+        "gzip9": 167,
+        "brotli11": 132
       },
       "lil": {
         "raw": 744,
         "gzip9": 269,
         "brotli11": 226
       },
-      "ratio": 1.674074074074074
-    },
-    {
-      "key": "platform/telemetry",
-      "files": 2,
-      "scoredLil": 2,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 147,
-        "gzip9": 153,
-        "brotli11": 122
+      "jsLanes": {
+        "oxc": {
+          "raw": 241,
+          "gzip9": 167,
+          "brotli11": 132
+        },
+        "esbuild": {
+          "raw": 242,
+          "gzip9": 169,
+          "brotli11": 135
+        },
+        "terser": {
+          "raw": 241,
+          "gzip9": 167,
+          "brotli11": 133
+        }
       },
-      "lil": {
-        "raw": 699,
-        "gzip9": 400,
-        "brotli11": 315
-      },
-      "ratio": 2.581967213114754
-    },
-    {
-      "key": "platform/label",
-      "files": 1,
-      "scoredLil": 1,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 130,
-        "gzip9": 121,
-        "brotli11": 95
-      },
-      "lil": {
-        "raw": 372,
-        "gzip9": 231,
-        "brotli11": 187
-      },
-      "ratio": 1.9684210526315788
-    },
-    {
-      "key": "platform/environment",
-      "files": 1,
-      "scoredLil": 1,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 142,
-        "gzip9": 125,
-        "brotli11": 94
-      },
-      "lil": {
-        "raw": 439,
-        "gzip9": 194,
-        "brotli11": 147
-      },
-      "ratio": 1.5638297872340425
+      "ratio": 1.7121212121212122,
+      "ratioOxc": 1.7121212121212122,
+      "ratioEsbuild": 1.674074074074074,
+      "ratioTerser": 1.699248120300752
     },
     {
       "key": "platform/layout",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 132,
-        "gzip9": 123,
-        "brotli11": 94
+        "raw": 131,
+        "gzip9": 122,
+        "brotli11": 100
       },
       "lil": {
         "raw": 347,
         "gzip9": 174,
         "brotli11": 134
       },
-      "ratio": 1.425531914893617
+      "jsLanes": {
+        "oxc": {
+          "raw": 131,
+          "gzip9": 122,
+          "brotli11": 100
+        },
+        "esbuild": {
+          "raw": 132,
+          "gzip9": 123,
+          "brotli11": 94
+        },
+        "terser": {
+          "raw": 131,
+          "gzip9": 122,
+          "brotli11": 99
+        }
+      },
+      "ratio": 1.34,
+      "ratioOxc": 1.34,
+      "ratioEsbuild": 1.425531914893617,
+      "ratioTerser": 1.3535353535353536
+    },
+    {
+      "key": "platform/telemetry",
+      "files": 2,
+      "scoredLil": 2,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 137,
+        "gzip9": 124,
+        "brotli11": 99
+      },
+      "lil": {
+        "raw": 699,
+        "gzip9": 400,
+        "brotli11": 315
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 137,
+          "gzip9": 124,
+          "brotli11": 99
+        },
+        "esbuild": {
+          "raw": 138,
+          "gzip9": 124,
+          "brotli11": 109
+        },
+        "terser": {
+          "raw": 137,
+          "gzip9": 123,
+          "brotli11": 115
+        }
+      },
+      "ratio": 3.1818181818181817,
+      "ratioOxc": 3.1818181818181817,
+      "ratioEsbuild": 2.889908256880734,
+      "ratioTerser": 2.739130434782609
+    },
+    {
+      "key": "platform/dialogs",
+      "files": 1,
+      "scoredLil": 1,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 131,
+        "gzip9": 121,
+        "brotli11": 96
+      },
+      "lil": {
+        "raw": 683,
+        "gzip9": 268,
+        "brotli11": 220
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 131,
+          "gzip9": 121,
+          "brotli11": 96
+        },
+        "esbuild": {
+          "raw": 132,
+          "gzip9": 123,
+          "brotli11": 91
+        },
+        "terser": {
+          "raw": 131,
+          "gzip9": 122,
+          "brotli11": 90
+        }
+      },
+      "ratio": 2.2916666666666665,
+      "ratioOxc": 2.2916666666666665,
+      "ratioEsbuild": 2.4175824175824174,
+      "ratioTerser": 2.4444444444444446
     },
     {
       "key": "platform/defaultAccount",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 148,
-        "gzip9": 130,
+        "raw": 147,
+        "gzip9": 129,
         "brotli11": 92
       },
       "lil": {
@@ -1973,41 +4239,138 @@
         "gzip9": 156,
         "brotli11": 116
       },
-      "ratio": 1.2608695652173914
-    },
-    {
-      "key": "platform/dialogs",
-      "files": 1,
-      "scoredLil": 1,
-      "jsMinifier": "esbuild",
-      "js": {
-        "raw": 132,
-        "gzip9": 123,
-        "brotli11": 91
+      "jsLanes": {
+        "oxc": {
+          "raw": 147,
+          "gzip9": 129,
+          "brotli11": 92
+        },
+        "esbuild": {
+          "raw": 148,
+          "gzip9": 130,
+          "brotli11": 92
+        },
+        "terser": {
+          "raw": 147,
+          "gzip9": 129,
+          "brotli11": 91
+        }
       },
-      "lil": {
-        "raw": 683,
-        "gzip9": 268,
-        "brotli11": 220
-      },
-      "ratio": 2.4175824175824174
+      "ratio": 1.2608695652173914,
+      "ratioOxc": 1.2608695652173914,
+      "ratioEsbuild": 1.2608695652173914,
+      "ratioTerser": 1.2747252747252746
     },
     {
       "key": "platform/editor",
       "files": 1,
       "scoredLil": 1,
-      "jsMinifier": "esbuild",
+      "jsMinifier": "vite/oxc",
       "js": {
-        "raw": 99,
-        "gzip9": 112,
-        "brotli11": 90
+        "raw": 95,
+        "gzip9": 108,
+        "brotli11": 92
       },
       "lil": {
         "raw": 363,
         "gzip9": 197,
         "brotli11": 160
       },
-      "ratio": 1.7777777777777777
+      "jsLanes": {
+        "oxc": {
+          "raw": 95,
+          "gzip9": 108,
+          "brotli11": 92
+        },
+        "esbuild": {
+          "raw": 99,
+          "gzip9": 112,
+          "brotli11": 90
+        },
+        "terser": {
+          "raw": 86,
+          "gzip9": 100,
+          "brotli11": 90
+        }
+      },
+      "ratio": 1.7391304347826086,
+      "ratioOxc": 1.7391304347826086,
+      "ratioEsbuild": 1.7777777777777777,
+      "ratioTerser": 1.7777777777777777
+    },
+    {
+      "key": "platform/environment",
+      "files": 1,
+      "scoredLil": 1,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 141,
+        "gzip9": 125,
+        "brotli11": 92
+      },
+      "lil": {
+        "raw": 439,
+        "gzip9": 194,
+        "brotli11": 147
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 141,
+          "gzip9": 125,
+          "brotli11": 92
+        },
+        "esbuild": {
+          "raw": 142,
+          "gzip9": 125,
+          "brotli11": 94
+        },
+        "terser": {
+          "raw": 141,
+          "gzip9": 124,
+          "brotli11": 99
+        }
+      },
+      "ratio": 1.5978260869565217,
+      "ratioOxc": 1.5978260869565217,
+      "ratioEsbuild": 1.5638297872340425,
+      "ratioTerser": 1.4848484848484849
+    },
+    {
+      "key": "platform/label",
+      "files": 1,
+      "scoredLil": 1,
+      "jsMinifier": "vite/oxc",
+      "js": {
+        "raw": 129,
+        "gzip9": 121,
+        "brotli11": 92
+      },
+      "lil": {
+        "raw": 372,
+        "gzip9": 231,
+        "brotli11": 187
+      },
+      "jsLanes": {
+        "oxc": {
+          "raw": 129,
+          "gzip9": 121,
+          "brotli11": 92
+        },
+        "esbuild": {
+          "raw": 130,
+          "gzip9": 121,
+          "brotli11": 95
+        },
+        "terser": {
+          "raw": 129,
+          "gzip9": 120,
+          "brotli11": 92
+        }
+      },
+      "ratio": 2.032608695652174,
+      "ratioOxc": 2.032608695652174,
+      "ratioEsbuild": 1.9684210526315788,
+      "ratioTerser": 2.032608695652174
     }
   ],
   "pairs": [
@@ -2024,10 +4387,27 @@
         "editor/piece-tree.lil",
         "layers/piece-tree.lil"
       ],
-      "jsMinifier": "terser",
-      "js": 6581,
+      "jsMinifier": "vite/oxc",
+      "js": 6463,
       "lil": 6322,
-      "ratio": 0.9606442789849567
+      "ratio": 0.9781835061117128,
+      "jsLanes": {
+        "oxc": {
+          "raw": 27895,
+          "gzip9": 7095,
+          "brotli11": 6463
+        },
+        "esbuild": {
+          "raw": 28343,
+          "gzip9": 7306,
+          "brotli11": 6685
+        },
+        "terser": {
+          "raw": 28195,
+          "gzip9": 7213,
+          "brotli11": 6581
+        }
+      }
     },
     {
       "id": "monarch",
@@ -2039,10 +4419,27 @@
       "lilFiles": [
         "editor/monarch.lil"
       ],
-      "jsMinifier": "terser",
-      "js": 2855,
+      "jsMinifier": "vite/oxc",
+      "js": 2836,
       "lil": 1433,
-      "ratio": 0.5019264448336253
+      "ratio": 0.5052891396332864,
+      "jsLanes": {
+        "oxc": {
+          "raw": 8554,
+          "gzip9": 3146,
+          "brotli11": 2836
+        },
+        "esbuild": {
+          "raw": 8675,
+          "gzip9": 3219,
+          "brotli11": 2906
+        },
+        "terser": {
+          "raw": 8635,
+          "gzip9": 3163,
+          "brotli11": 2855
+        }
+      }
     },
     {
       "id": "interval-tree",
@@ -2054,10 +4451,27 @@
       "lilFiles": [
         "editor/interval-tree.lil"
       ],
-      "jsMinifier": "esbuild",
-      "js": 2574,
+      "jsMinifier": "vite/oxc",
+      "js": 2583,
       "lil": 401,
-      "ratio": 0.15578865578865578
+      "ratio": 0.15524583817266743,
+      "jsLanes": {
+        "oxc": {
+          "raw": 9551,
+          "gzip9": 2948,
+          "brotli11": 2583
+        },
+        "esbuild": {
+          "raw": 9707,
+          "gzip9": 2938,
+          "brotli11": 2574
+        },
+        "terser": {
+          "raw": 9464,
+          "gzip9": 2970,
+          "brotli11": 2613
+        }
+      }
     },
     {
       "id": "core-types",
@@ -2074,10 +4488,27 @@
         "base/selection.lil",
         "layers/core-types.lil"
       ],
-      "jsMinifier": "terser",
-      "js": 1595,
+      "jsMinifier": "vite/oxc",
+      "js": 1587,
       "lil": 753,
-      "ratio": 0.47210031347962383
+      "ratio": 0.47448015122873344,
+      "jsLanes": {
+        "oxc": {
+          "raw": 8411,
+          "gzip9": 1764,
+          "brotli11": 1587
+        },
+        "esbuild": {
+          "raw": 8479,
+          "gzip9": 1787,
+          "brotli11": 1621
+        },
+        "terser": {
+          "raw": 8430,
+          "gzip9": 1768,
+          "brotli11": 1595
+        }
+      }
     },
     {
       "id": "myers",
@@ -2089,10 +4520,27 @@
       "lilFiles": [
         "editor/myers.lil"
       ],
-      "jsMinifier": "terser",
-      "js": 762,
+      "jsMinifier": "vite/oxc",
+      "js": 753,
       "lil": 2032,
-      "ratio": 2.6666666666666665
+      "ratio": 2.698539176626826,
+      "jsLanes": {
+        "oxc": {
+          "raw": 1894,
+          "gzip9": 829,
+          "brotli11": 753
+        },
+        "esbuild": {
+          "raw": 1929,
+          "gzip9": 846,
+          "brotli11": 774
+        },
+        "terser": {
+          "raw": 1926,
+          "gzip9": 831,
+          "brotli11": 762
+        }
+      }
     },
     {
       "id": "position",
@@ -2104,20 +4552,37 @@
       "lilFiles": [
         "base/position.lil"
       ],
-      "jsMinifier": "terser",
-      "js": 366,
+      "jsMinifier": "vite/oxc",
+      "js": 368,
       "lil": 289,
-      "ratio": 0.7896174863387978
+      "ratio": 0.7853260869565217,
+      "jsLanes": {
+        "oxc": {
+          "raw": 1118,
+          "gzip9": 420,
+          "brotli11": 368
+        },
+        "esbuild": {
+          "raw": 1144,
+          "gzip9": 436,
+          "brotli11": 389
+        },
+        "terser": {
+          "raw": 1118,
+          "gzip9": 422,
+          "brotli11": 366
+        }
+      }
     }
   ],
   "production": {
-    "jsMinifier": "esbuild minify",
-    "note": "Diagnostic only. The Lil page is not a 100% feature-complete monaco-editor. JS side is esbuild minify of monaco-editor ESM. Ratio is Lil Brotli / JS Brotli.",
+    "jsMinifier": "vite/oxc",
+    "note": "Diagnostic only. JS ide.js is Vite 8 Oxc minify of monaco-editor ESM; esbuild and Terser lanes are also scored. Ratio is Lil Brotli / JS Brotli.",
     "js": {
       "ide": {
-        "raw": 4504178,
-        "gzip": 1163660,
-        "brotli": 904810
+        "raw": 4542583,
+        "gzip": 1148595,
+        "brotli": 887420
       },
       "workers": {
         "raw": 9608472,
@@ -2145,6 +4610,23 @@
         "raw": 1941,
         "gzip": 749,
         "brotli": 610
+      }
+    },
+    "jsMinifiers": {
+      "esbuild": {
+        "raw": 4620595,
+        "gzip": 1183330,
+        "brotli": 920358
+      },
+      "terser": {
+        "raw": 4606838,
+        "gzip": 1155296,
+        "brotli": 886920
+      },
+      "oxc": {
+        "raw": 4542583,
+        "gzip": 1148595,
+        "brotli": 887420
       }
     },
     "workers": [
@@ -2243,7 +4725,7 @@
       "id": "js",
       "title": "npm monaco-editor 0.56",
       "href": "./demos/js/",
-      "blurb": "esbuild-minified monaco-editor, same chrome."
+      "blurb": "monaco-editor workbench. Catalog JS is Vite 8 / Oxc."
     }
   ]
 }

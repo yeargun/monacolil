@@ -40,40 +40,44 @@ The override will not give you a complete monaco-editor. Treat it as a port, not
 
 ## Why the headline is a folder, not the whole IDE
 
-The fair table is independently compiled **submodules**: each monaco-editor-core file, other monaco imports left external. JS is **esbuild** minify, then the same `lilscript-codec` gzip-9 / Brotli-11. **Ratio is LilScript Brotli / JS Brotli.** Folders are listed largest JS Brotli first. This is not 100% feature parity.
+The fair table is independently compiled **submodules**: each monaco-editor-core file, other monaco imports left external. Headline JS is **Vite 8 / Oxc** minify (`vite@8.2.1`, Rolldown 1.2.4, Vite’s default client minifier). The same sources are also scored with **esbuild 0.28.1** and **Terser 5.50.0**, then the same `lilscript-codec` gzip-9 / Brotli-11. **Ratio is LilScript Brotli / JS Brotli.** Folders are listed largest Vite/Oxc Brotli first. This is not 100% feature parity.
 
-| Lane | Files | JS minify | JS Brotli-11 | Lil Brotli-11 | Lil / JS |
-| --- | ---: | --- | ---: | ---: | ---: |
-| **`editor/common` (headline)** | 219 | esbuild | 240,863 | 163,337 | **0.68×** |
-| `editor/browser` | 145 | esbuild | 201,293 | 95,524 | 0.47× |
-| `base/browser` | 90 | esbuild | 129,443 | 96,230 | 0.74× |
-| `base/common` | 122 | esbuild | 118,241 | 76,330 | 0.65× |
-| `editor/contrib/find` | 10 | esbuild | 19,753 | 8,750 | 0.44× |
-| `editor/contrib/colorPicker` | 20 | esbuild | 14,392 | 15,532 | 1.08× |
+| Lane | Files | Vite 8 / Oxc | esbuild | Terser | Lil Brotli-11 | Lil / Oxc |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| **`editor/common` (headline)** | 219 | 235,070 | 240,785 | 237,120 | 163,337 | **0.69×** |
+| `editor/browser` | 145 | 197,141 | 201,215 | 197,532 | 95,524 | 0.48× |
+| `base/browser` | 90 | 126,687 | 129,378 | 127,220 | 96,230 | 0.76× |
+| `base/common` | 122 | 114,881 | 118,137 | 115,301 | 76,330 | 0.66× |
+| `editor/contrib/find` | 10 | 19,433 | 19,753 | 19,416 | 8,750 | 0.45× |
+| `editor/contrib/colorPicker` | 20 | 14,258 | 14,392 | 14,222 | 15,532 | 1.09× |
 
-Median across 115 folders is on the site. Whole-page `ide.js` is a diagnostic only (JS also esbuild minify).
+Median across folders is on the site. Whole-page `ide.js` is a diagnostic only (JS scored with all three minifiers).
 
-### Independent modules (`nontest-entire-module`)
+### JS minifiers on the catalog
 
-992 Lil modules vs 994 monaco-editor-core files, each compiled alone. JS minify is esbuild. Summing those rows is a catalog, not the running editor.
+992 Lil modules vs 994 monaco-editor-core files, each compiled alone. Same files, three JS minifiers.
 
-| | JS minify | Raw | gzip-9 | Brotli-11 | Lil / JS |
+| JS minifier | Version | Raw | gzip-9 | Brotli-11 | Lil / JS |
 | --- | --- | ---: | ---: | ---: | ---: |
-| monaco-editor-core files (external imports) | esbuild | 4,466,650 | 1,425,897 | 1,255,455 | 1.00× |
-| Lil modules (keepers, host external) | — | 2,132,061 | 717,722 | 624,522 | **0.50×** |
+| **Vite 8 / Oxc (headline)** | vite@8.2.1 | 4,411,598 | 1,397,988 | 1,228,116 | **0.51×** |
+| esbuild | 0.28.1 | 4,466,389 | 1,425,056 | 1,255,078 | 0.50× |
+| Terser | 5.50.0 | 4,441,856 | 1,402,098 | 1,231,672 | 0.51× |
+| Lil modules (keepers, host external) | — | 2,132,061 | 717,722 | 624,522 | — |
+
+Oxc is smaller than esbuild on this catalog. Terser lands between them.
 
 ### Fair file pairs
 
-JS side is the better Brotli of esbuild and Terser. Ratio is Lil / JS.
+Same three JS minifiers. Ratio is Lil / Vite 8 Oxc.
 
-| Pair | JS minify | JS Brotli | Lil Brotli | Lil / JS |
-| --- | --- | ---: | ---: | ---: |
-| Piece tree + rb-tree | terser | 6,581 | 6,322 | 0.96× |
-| Monarch compile | terser | 2,855 | 1,433 | 0.50× |
-| Decoration interval tree | esbuild | 2,574 | 401 | 0.16× |
-| Position + Range + Selection | terser | 1,595 | 753 | 0.47× |
-| Myers diff | terser | 762 | 2,032 | 2.67× |
-| Position | terser | 366 | 289 | 0.79× |
+| Pair | Vite 8 / Oxc | esbuild | Terser | Lil Brotli | Lil / Oxc |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Piece tree + rb-tree | 6,463 | 6,685 | 6,581 | 6,322 | 0.98× |
+| Monarch compile | 2,836 | 2,906 | 2,855 | 1,433 | 0.51× |
+| Decoration interval tree | 2,583 | 2,574 | 2,613 | 401 | 0.16× |
+| Position + Range + Selection | 1,587 | 1,621 | 1,595 | 753 | 0.47× |
+| Myers diff | 753 | 774 | 762 | 2,032 | 2.70× |
+| Position | 368 | 389 | 366 | 289 | 0.79× |
 
 ## TypeScript / Solid TSX
 
