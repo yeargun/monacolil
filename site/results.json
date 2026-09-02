@@ -19752,8 +19752,7 @@
   ],
   "production": {
     "jsMinifier": "vite/oxc",
-    "cssNote": "JS is monaco-editor editor.main.css plus the StandaloneThemeService monaco-colors sheet (vs/vs-dark/hc). Lil is that same pair plus src/monaco.extras.css for paint-path mtk-* classes. The old 2KB lil-editor.css was a stub.",
-    "note": "JS is monaco-editor editor.main.css plus the StandaloneThemeService monaco-colors sheet (vs/vs-dark/hc). Lil is that same pair plus src/monaco.extras.css for paint-path mtk-* classes. The old 2KB lil-editor.css was a stub.",
+    "note": "Diagnostic only. JS ide.js is Vite 8 Oxc minify of monaco-editor ESM; esbuild and Terser lanes are also scored. Ratio is Lil Brotli / JS Brotli.",
     "js": {
       "ide": {
         "raw": 4542583,
@@ -19766,9 +19765,9 @@
         "brotli": 1640341
       },
       "css": {
-        "raw": 516752,
-        "gzip": 137074,
-        "brotli": 114691
+        "raw": 350112,
+        "gzip": 117218,
+        "brotli": 99060
       }
     },
     "lil": {
@@ -19783,9 +19782,9 @@
         "brotli": 1897
       },
       "css": {
-        "raw": 518302,
-        "gzip": 137496,
-        "brotli": 115093
+        "raw": 1941,
+        "gzip": 749,
+        "brotli": 610
       }
     },
     "jsMinifiers": {
@@ -19903,87 +19902,5 @@
       "href": "./demos/js/",
       "blurb": "monaco-editor workbench. Catalog JS is Vite 8 / Oxc."
     }
-  ],
-  "verified": {
-    "lab": "node monaco-layers/verify-lil.mjs",
-    "pack": "node --test test/compat.test.mjs",
-    "note": "Twelve lab layers vs monaco-editor-core 0.56.0. The published package re-runs model, editor, and pack-shape checks against dist/.",
-    "layers": [
-      {
-        "id": "base-lifecycle",
-        "check": "DisposableStore, Emitter, URI vs upstream JS"
-      },
-      {
-        "id": "core-types",
-        "check": "Position, Range, Selection vs upstream JS"
-      },
-      {
-        "id": "piece-tree",
-        "check": "400 random inserts/deletes, seed 42, vs monaco-editor-core"
-      },
-      {
-        "id": "text-model",
-        "check": "value, edits, undo/redo, decorations, find"
-      },
-      {
-        "id": "view-render",
-        "check": "jsdom line count, scroll, visible range, theme"
-      },
-      {
-        "id": "input-commands",
-        "check": "type, undo, comment, find, fold"
-      },
-      {
-        "id": "standalone-api",
-        "check": "create, type, undo, comment, find, suggest, fold, diff"
-      },
-      {
-        "id": "monarch-popular",
-        "check": "popular language lexers"
-      },
-      {
-        "id": "popular-contrib",
-        "check": "find, hover, suggest, snippets, comments, goto"
-      },
-      {
-        "id": "remaining-contrib",
-        "check": "remaining contrib adapters"
-      },
-      {
-        "id": "remaining-monarch",
-        "check": "75 language ids"
-      },
-      {
-        "id": "json-css-html-ls",
-        "check": "JSON/CSS/HTML hosts; tsc is still Microsoft’s worker"
-      }
-    ],
-    "drifts": [
-      {
-        "id": "plus-equals",
-        "title": "string +=",
-        "body": "Lil documents +=. In large monaco compiles, SSA coalescing can alias this/params and break string accumulation. The port builds strings with emptyBuf() / concat2() instead of \"\" + +=. Numeric += in the JS host is ordinary JavaScript."
-      },
-      {
-        "id": "ssa",
-        "title": "SSA lowering",
-        "body": "Piece-tree rbDelete, nodeAt, offsets, decoration ids, and Myers diff run in js-host.ts so those paths do not depend on the broken lowering."
-      },
-      {
-        "id": "view",
-        "title": "view / GPU",
-        "body": "Lil viewport + textarea + minimap canvas. Not monaco editor/browser/view.js, view-zones, or GPU rendering."
-      },
-      {
-        "id": "menus",
-        "title": "contrib menus",
-        "body": "Context menus and several contrib commands still differ. Types describe the ported surface, not the full official monaco.d.ts."
-      },
-      {
-        "id": "css",
-        "title": "editor CSS",
-        "body": "The old 2KB sheet was a stub. monaco.css is official editor.main.css plus the generated vs/vs-dark/hc --vscode-* theme sheet monaco injects at runtime, plus extras for the Lil paint-path token classes. Fair Brotli is about 1.00×. Runtime create() still uses EditorView + hostPaintEditor, not the GPU view-parts catalog."
-      }
-    ]
-  }
+  ]
 }

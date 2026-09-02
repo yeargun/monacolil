@@ -1,6 +1,6 @@
 {
   "name": "@itslil/monaco-editor",
-  "version": "0.56.0",
+  "version": "0.56.1",
   "description": "monaco-editor 0.56.0 reimplemented in LilScript. Independent editor runtime plus the official Microsoft TypeScript worker. Not 100% feature parity.",
   "keywords": [
     "monaco",
