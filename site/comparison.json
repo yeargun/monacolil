@@ -1,53 +1,138 @@
 {
-  "schemaVersion": 1,
-  "measuredAt": "2026-09-10T13:48:28Z",
+  "schemaVersion": 2,
+  "measuredAt": "2026-09-10T21:03:57Z",
   "name": "monacolil",
   "compiler": {
-    "commit": "63c2896a71e60cbcca7870fe979f9d6ecaff3452",
-    "sha256": "2319462ef7d858c8e2a5a767260aa4f80d325e0045afa0cc86cc122d1299b059",
-    "profile": "release",
-    "dirty": false
+    "commit": "4dc4e3337d9ffd758d65e3852682d6e13d9331c1",
+    "sha256": "0616048498eb9eb2e4bd75b39e8e6a083733ada647e16108edfee30ad183beeb"
   },
   "upstream": {
     "package": "monaco-editor",
-    "version": "0.56.0"
+    "version": "0.56.0",
+    "repository": "https://github.com/microsoft/monaco-editor.git",
+    "commit": "13f0c872dcf352815cc28d92dfff496c9839ea5c"
   },
-  "scope": "Public ESM entries. The LilScript implementation is partial; full API parity is not established.",
-  "compatibility": "Compatibility checks are incomplete.",
+  "scope": "Public ESM entries. The LilScript implementation is partial; full API parity is not established.. Original ESM assembled from the pinned Git source build.",
+  "compatibility": "The compiler did not complete this package build.",
   "tests": null,
-  "buildComplete": true,
+  "buildComplete": false,
   "machine": {
+    "provider": "Azure",
+    "instanceClass": "Standard_D16als_v7",
     "cpu": "AMD EPYC 9V45 96-Core Processor",
     "logicalCpus": 16,
-    "memoryBytes": 33648431104,
+    "memoryBytes": 33648427008,
     "os": "Ubuntu 24.04.4 LTS",
-    "node": "v22.23.2",
-    "rayonThreads": 16,
-    "provider": "Azure",
-    "instanceClass": "Standard_D16als_v7"
+    "kernel": "6.17.0-1022-azure",
+    "node": "v24.11.1",
+    "rayonThreads": 8,
+    "loadAtStart": [
+      0.0,
+      0.54833984375,
+      1.4716796875
+    ],
+    "loadAtEnd": [
+      1.3642578125,
+      1.3876953125,
+      1.595703125
+    ]
   },
   "build": {
-    "compilerSeconds": 18.432148933410645,
-    "packageSeconds": 18.55340615099999,
-    "originalSeconds": 20.654414412999998,
-    "packageScope": "node scripts/build.mjs --compile --force; 1 successful compiler invocations plus package generation.",
-    "originalScope": "monaco-editor@0.56.0 public ESM runtime graph; dependency installation excluded; this is a comparison bundle build, not the upstream vendor release pipeline",
-    "protocol": "Same shared worker for both lanes; one fresh LilScript package build; median of three sequential upstream ESM builds (PlayCanvas records one native reference build). Outside compiler jobs were observed in the pool, so contention is not excluded. Dependencies, tests and compression measurement are outside these build times."
+    "compilerSeconds": null,
+    "packageSeconds": 17.694211988999996,
+    "originalSeconds": 64.24930807100009,
+    "originalEsmSeconds": 18.727765084999998,
+    "packageScope": "node scripts/build.mjs --compile --force",
+    "originalScope": "bash -c npm run build --prefix monaco-lsp-client && npm run build-monaco-editor",
+    "protocol": {
+      "repetitions": 3,
+      "cleanOutputs": true,
+      "dependencyInstallationTimedSeparately": true,
+      "sourceArchives": "Pinned Git checkouts; original repository package build commands, followed by production ESM assembly.",
+      "workerUse": "Both implementations use the same machine and Node version. This shared build pool also runs unrelated jobs; timings are contextual wall times, with CPU time recorded separately."
+    }
   },
   "esm": {
-    "lilscript": {
-      "raw": 190220,
-      "gzip9": 55259,
-      "brotli11": 47687,
-      "sha256": "1899dc5a2a31f0bc2ff39f0e5f6a8a040f65a2eab8846d6f0609ce7c0e87b5d8",
-      "file": "./esm-comparison/lilscript.js"
-    },
+    "lilscript": null,
     "original": {
-      "raw": 4589890,
-      "gzip9": 1148922,
-      "brotli11": 881665,
-      "sha256": "4de97d3c5d2389f49e635b9485f18b1514751070b99c97bf9086a2f36ddde13b",
+      "raw": 4579585,
+      "gzip9": 1148620,
+      "brotli11": 881758,
+      "sha256": "df6fcdd99463b8f3da7d417a699fb63bef616b362002ffb5f0986f949410bb11",
       "file": "./esm-comparison/original.js"
     }
+  },
+  "sourceBuild": {
+    "original": {
+      "complete": true,
+      "medianSeconds": 64.24930807100009,
+      "minimumSeconds": 64.1449042510003,
+      "maximumSeconds": 64.84366630600016,
+      "samples": [
+        {
+          "command": [
+            "bash",
+            "-c",
+            "npm run build --prefix monaco-lsp-client && npm run build-monaco-editor"
+          ],
+          "wallSeconds": 64.84366630600016,
+          "cpuSeconds": 102.90323500000001,
+          "exitCode": 0,
+          "timedOut": false,
+          "log": "original-build-1.log",
+          "logSha256": "a39f20e8e50c6ced9657ffe651119e5890e7992b66ee21992f80d535d5dcce09"
+        },
+        {
+          "command": [
+            "bash",
+            "-c",
+            "npm run build --prefix monaco-lsp-client && npm run build-monaco-editor"
+          ],
+          "wallSeconds": 64.24930807100009,
+          "cpuSeconds": 101.936334,
+          "exitCode": 0,
+          "timedOut": false,
+          "log": "original-build-2.log",
+          "logSha256": "551c0d8eb7b7399d50460e52ad67ac7128a0c5d0e4441b916e288312001ea6cc"
+        },
+        {
+          "command": [
+            "bash",
+            "-c",
+            "npm run build --prefix monaco-lsp-client && npm run build-monaco-editor"
+          ],
+          "wallSeconds": 64.1449042510003,
+          "cpuSeconds": 100.70497799999998,
+          "exitCode": 0,
+          "timedOut": false,
+          "log": "original-build-3.log",
+          "logSha256": "f57b7839887650d0128657f3454b63e1453e3e0844602021fcc70e95856b9b68"
+        }
+      ]
+    },
+    "lilscript": {
+      "complete": false,
+      "medianSeconds": null,
+      "minimumSeconds": null,
+      "maximumSeconds": null,
+      "samples": [
+        {
+          "command": [
+            "bash",
+            "-c",
+            "node scripts/build.mjs --compile --force"
+          ],
+          "wallSeconds": 17.694211988999996,
+          "cpuSeconds": 24.430165999999993,
+          "exitCode": 1,
+          "timedOut": false,
+          "log": "lilscript-build-1.log",
+          "logSha256": "56d007c38497a8dc9295cb81b5932ae9d5883dde10824caaf5700adbae3fd801"
+        }
+      ]
+    },
+    "scopeNote": "Both timings cover each repository\u2019s package build command; their output formats and build checks can differ.",
+    "cleanOutputs": true,
+    "installationExcluded": true
   }
 }

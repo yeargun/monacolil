@@ -1,0 +1,1 @@
+{"args": ["/home/lilfarm/source-perf-20260910/ports/monacolil/src/entry.lil", "--target", "js-module", "--config", "/home/lilfarm/source-perf-20260910/ports/monacolil/lilscript.toml", "-o", "/home/lilfarm/source-perf-20260910/ports/monacolil/dist/monaco.raw.js"], "startedAt": 1789073994.8769433, "wallSeconds": 17.630115270614624, "exitCode": 1}

@@ -22,6 +22,13 @@ function laneBrotli(lanes, id) {
 
 function renderHero() {
   const {lilscript,original}=esmComparison.esm
+  if (!lilscript) {
+    document.querySelector("#hero-ratio").textContent="Unavailable"
+    document.querySelector("#hero-bytes").textContent="The LilScript ESM build did not complete."
+    document.querySelector("#hero-modules").textContent=String(data.catalog.ported)
+    document.querySelector("#hero-median").textContent=`${formatter.format(original.brotli11)} B`
+    return
+  }
   document.querySelector("#hero-ratio").innerHTML=`${(lilscript.brotli11/original.brotli11).toFixed(2)}<span>×</span>`
   document.querySelector("#hero-bytes").textContent=`${formatter.format(lilscript.brotli11)} B LilScript / ${formatter.format(original.brotli11)} B original`
   document.querySelector("#hero-modules").textContent=String(data.catalog.ported)
@@ -288,6 +295,11 @@ function renderDemos() {
 
 function renderProduction() {
   const {lilscript,original}=esmComparison.esm
+  if (!lilscript) {
+    document.querySelector("#production-body").innerHTML=`<tr><th scope="row">Public ESM</th><td>${bytes(original.raw)}</td><td>${bytes(original.brotli11)}</td><td colspan="3">LilScript build unavailable</td></tr>`
+    document.querySelector("#total-bar").innerHTML=`<div class="bar-official" style="width:100%"><span>Original ESM</span><strong>${bytes(original.brotli11)} B</strong></div>`
+    return
+  }
   document.querySelector("#production-body").innerHTML=`<tr><th scope="row">Public ESM · partial LilScript implementation</th><td>${bytes(original.raw)}</td><td>${bytes(original.brotli11)}</td><td>${bytes(lilscript.raw)}</td><td>${bytes(lilscript.brotli11)}</td><td><strong>${times(lilscript.brotli11/original.brotli11)}</strong></td></tr>`
   const max=Math.max(original.brotli11,lilscript.brotli11)
   document.querySelector("#total-bar").innerHTML=[["Original ESM",original,"bar-official"],["LilScript ESM",lilscript,"bar-lil"]].map(([label,lane,cls])=>`<div class="${cls}" style="width:${Math.max(18,lane.brotli11/max*100)}%"><span>${label}</span><strong>${bytes(lane.brotli11)} B</strong></div>`).join("")

@@ -1,0 +1,51 @@
+{
+  "source": {
+    "repository": "https://github.com/microsoft/monaco-editor.git",
+    "commit": "13f0c872dcf352815cc28d92dfff496c9839ea5c",
+    "package": "monaco-editor",
+    "version": "0.56.0",
+    "directory": "."
+  },
+  "portSource": {
+    "commit": "e7d810ba65940d55aabd659f5d7bb08eb97cc52b"
+  },
+  "compilerCommit": "4dc4e3337d9ffd758d65e3852682d6e13d9331c1",
+  "install": [
+    "npm",
+    "ci",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund"
+  ],
+  "setup": [
+    [
+      "npm",
+      "ci",
+      "--prefix",
+      "monaco-lsp-client",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund"
+    ],
+    [
+      "npm",
+      "run",
+      "postinstall"
+    ]
+  ],
+  "build": [
+    "bash",
+    "-c",
+    "npm run build --prefix monaco-lsp-client && npm run build-monaco-editor"
+  ],
+  "clean": [
+    "out/monaco-editor",
+    "monaco-lsp-client/out"
+  ],
+  "entry": "out/monaco-editor/esm/vs/index.js",
+  "defaultExport": false,
+  "external": [],
+  "esmScope": "monaco-editor@0.56.0 public ESM runtime graph; dependency installation excluded; this is a comparison bundle build, not the upstream vendor release pipeline",
+  "lilscriptBuild": "node scripts/build.mjs --compile --force",
+  "test": null
+}

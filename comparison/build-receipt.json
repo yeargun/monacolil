@@ -190,12 +190,34 @@
   "publicationSourceFingerprint": "a8e65aada11259937b26be331d0badb498a5e3f9cf75560856578baa17fd327c",
   "comparisonArtifacts": [
     {
-      "path": "site/esm-comparison/lilscript.js",
-      "sha256": "1899dc5a2a31f0bc2ff39f0e5f6a8a040f65a2eab8846d6f0609ce7c0e87b5d8"
+      "path": "site/esm-comparison/original.js",
+      "sha256": "df6fcdd99463b8f3da7d417a699fb63bef616b362002ffb5f0986f949410bb11"
     },
     {
-      "path": "site/esm-comparison/original.js",
-      "sha256": "4de97d3c5d2389f49e635b9485f18b1514751070b99c97bf9086a2f36ddde13b"
+      "path": "site/source-build.json",
+      "sha256": "15e7eabf5a12ca3c2a6861769298e210129fe9c776af31bff6a7a33cfed63906"
+    },
+    {
+      "path": "site/comparison.json",
+      "sha256": "e7462064c2dbe45df1ff388c002f996ce38c48cc944d79abd28ffeecca4e01e3"
     }
-  ]
+  ],
+  "sourceBuildReceipt": "comparison/source-build/result.json",
+  "currentMeasurement": {
+    "compiler": {
+      "commit": "4dc4e3337d9ffd758d65e3852682d6e13d9331c1",
+      "sha256": "0616048498eb9eb2e4bd75b39e8e6a083733ada647e16108edfee30ad183beeb"
+    },
+    "source": {
+      "commit": "e7d810ba65940d55aabd659f5d7bb08eb97cc52b"
+    },
+    "upstream": {
+      "repository": "https://github.com/microsoft/monaco-editor.git",
+      "commit": "13f0c872dcf352815cc28d92dfff496c9839ea5c",
+      "package": "monaco-editor",
+      "version": "0.56.0",
+      "directory": "."
+    },
+    "compatibility": "The compiler did not complete this package build."
+  }
 }
