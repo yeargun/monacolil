@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "name": "monacolil",
+  "measuredAt": "2026-09-10T13:48:28Z",
+  "status": "build-only",
+  "buildPassed": true,
+  "summary": "The newly measured artifact remains diagnostic until its behavior gate is satisfied; the previously published runtime is retained.",
+  "sourceCommit": "e7d810ba65940d55aabd659f5d7bb08eb97cc52b",
+  "previousPublicCommit": "e7d810ba65940d55aabd659f5d7bb08eb97cc52b",
+  "compiler": {
+    "commit": "63c2896a71e60cbcca7870fe979f9d6ecaff3452",
+    "sha256": "2319462ef7d858c8e2a5a767260aa4f80d325e0045afa0cc86cc122d1299b059",
+    "profile": "release",
+    "dirty": false
+  },
+  "machine": {
+    "cpu": "AMD EPYC 9V45 96-Core Processor",
+    "logicalCpus": 16,
+    "affinityCpus": 16,
+    "memoryBytes": 33648431104,
+    "os": "Ubuntu 24.04.4 LTS",
+    "kernel": "6.17.0-1022-azure",
+    "architecture": "x86_64",
+    "node": "v22.23.2",
+    "rayonThreads": 16,
+    "provider": "Azure",
+    "instanceClass": "Standard_D16als_v7",
+    "parallelPortBuildsOnMachine": 1,
+    "loadAtStart": [
+      1.0654296875,
+      3.1845703125,
+      1.984375
+    ],
+    "loadAtEnd": [
+      1.61669921875,
+      2.896484375,
+      1.9951171875
+    ],
+    "concurrencyNote": "The audit scheduled one port per worker, but this is a shared pool. Outside compiler jobs were observed during the run; timings are contextual wall times, not controlled speedup benchmarks."
+  },
+  "upstream": {
+    "name": "monacolil",
+    "package": "monaco-editor",
+    "pinned": "0.56.0",
+    "latest": "0.56.0",
+    "source": "https://www.npmjs.com/package/monaco-editor"
+  },
+  "comparisonScope": "monaco-editor@0.56.0 public ESM runtime graph; dependency installation excluded; this is a comparison bundle build, not the upstream vendor release pipeline Sizes use canonical zlib 1.3.1 gzip-9 and Google Brotli 1.1.0 quality 11. This is diagnostic: full-library feature/API equivalence is not established, so no full-library size-win claim is eligible.",
+  "sizes": {
+    "previous": null,
+    "current": {
+      "path": "dist/monaco.esm.js",
+      "raw": 190220,
+      "gzip9": 55259,
+      "brotli11": 47687,
+      "sha256": "1899dc5a2a31f0bc2ff39f0e5f6a8a040f65a2eab8846d6f0609ce7c0e87b5d8"
+    },
+    "upstream": {
+      "path": ".page-audit/upstream/official.esm.js",
+      "raw": 4589890,
+      "gzip9": 1148922,
+      "brotli11": 881665,
+      "sha256": "4de97d3c5d2389f49e635b9485f18b1514751070b99c97bf9086a2f36ddde13b"
+    }
+  },
+  "officialArtifacts": [
+    {
+      "path": ".page-audit/upstream/official.esm.js",
+      "raw": 4589890,
+      "gzip9": 1148922,
+      "brotli11": 881665,
+      "sha256": "4de97d3c5d2389f49e635b9485f18b1514751070b99c97bf9086a2f36ddde13b"
+    },
+    {
+      "path": ".page-audit/upstream/official.unminified.js",
+      "raw": 9773387,
+      "gzip9": 1684107,
+      "brotli11": 1231643,
+      "sha256": "bfa60450bc6c9ebcfe261d3c58f331cb0e666bb9114aa4b42ac201fd67ad1faa"
+    }
+  ],
+  "candidateArtifacts": [
+    {
+      "path": "dist/monaco.raw.js",
+      "raw": 142248,
+      "gzip9": 38240,
+      "brotli11": 32742,
+      "sha256": "afbb966364e9c1b51e017f3d17b669f45591cff729ef9e89c7727593a3d7af4e"
+    },
+    {
+      "path": "dist/monaco.cjs",
+      "raw": 190594,
+      "gzip9": 55412,
+      "brotli11": 47787,
+      "sha256": "31b3d7dc7c3dbc29b5f6616ad11e2e6703f850c6c00a0558d3f9a359ad2f464a"
+    },
+    {
+      "path": "dist/monaco.esm.js",
+      "raw": 190220,
+      "gzip9": 55259,
+      "brotli11": 47687,
+      "sha256": "1899dc5a2a31f0bc2ff39f0e5f6a8a040f65a2eab8846d6f0609ce7c0e87b5d8"
+    },
+    {
+      "path": ".page-audit/upstream/official.esm.js",
+      "raw": 4589890,
+      "gzip9": 1148922,
+      "brotli11": 881665,
+      "sha256": "4de97d3c5d2389f49e635b9485f18b1514751070b99c97bf9086a2f36ddde13b"
+    }
+  ],
+  "timing": {
+    "primaryCompilerSeconds": 18.432148933410645,
+    "primaryScope": "One real compiler process, including code generation and codec-guided search; excludes subsequent package wrapping.",
+    "packageSeconds": 18.55340615099999,
+    "packageScope": "node scripts/build.mjs --compile --force; 1 successful compiler invocations plus package generation.",
+    "upstreamSeconds": 20.654414412999998,
+    "upstreamScope": "monaco-editor@0.56.0 public ESM runtime graph; dependency installation excluded; this is a comparison bundle build, not the upstream vendor release pipeline",
+    "protocol": "Same shared worker for both lanes; one fresh LilScript package build; median of three sequential upstream ESM builds (PlayCanvas records one native reference build). Outside compiler jobs were observed in the pool, so contention is not excluded. Dependencies, tests and compression measurement are outside these build times.",
+    "upstreamSamples": [
+      {
+        "bundleSeconds": 0.175898061,
+        "wallSeconds": 20.613759352000002
+      },
+      {
+        "bundleSeconds": 0.1672674760000009,
+        "wallSeconds": 20.654414412999998
+      },
+      {
+        "bundleSeconds": 0.16357843400000274,
+        "wallSeconds": 21.514762627000003
+      }
+    ]
+  },
+  "behavior": {
+    "command": null,
+    "summary": "No repository behavior gate was available.",
+    "before": {},
+    "after": {}
+  },
+  "findings": [],
+  "primaryArtifact": "dist/monaco.esm.js",
+  "beforePage": {
+    "url": "https://yeargun.github.io/monacolil/",
+    "status": 200,
+    "sha256": "3f45a27b29e0027c82db97a3fbc2e9e457b63a7464a0ae20d7e3e5cee5c6b45d",
+    "lastModified": "Wed, 02 Sep 2026 15:24:59 GMT"
+  },
+  "codecSha256": "9257fd055728895c11b9c4b0d882895d7d11bb3dd3495f560123879ca2bc3cd6",
+  "publicationArtifacts": [],
+  "publicationPolicy": "Retain previous public distribution; publish the diagnostic audit",
+  "publicationBase": "e7d810ba65940d55aabd659f5d7bb08eb97cc52b",
+  "publicationSourceFingerprint": "a8e65aada11259937b26be331d0badb498a5e3f9cf75560856578baa17fd327c"
+}
