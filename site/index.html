@@ -31,8 +31,8 @@
       <section class="hero shell">
         <div class="hero-copy">
           <p class="eyebrow"><span class="live-dot"></span> monaco-editor 0.56.0 · LilScript port · not 100% feature parity</p>
-          <h1>Monaco,<br /><em>by submodule.</em></h1>
-          <p class="lede">An independent LilScript editor that implements a large slice of <code>monaco-editor@0.56.0</code>. It is <strong>not</strong> 100% feature parity. Size rows are a <strong>library</strong> comparison: JS keeps ESM exports, Lil keepers call public class methods so <code>export class</code> does not DCE to nothing. Headline JS is <strong>Vite 8 / Oxc</strong>. <strong>esbuild</strong> and <strong>Terser</strong> are scored on the same sources. CSS-only monaco files are excluded. Ratio is LilScript Brotli-11 / JS Brotli-11.</p>
+          <h1>Monaco,<br /><em>compiled.</em></h1>
+          <p class="lede">An independent LilScript implementation of <code>monaco-editor@0.56.0</code>. The headline compares the current public ESM entries, with all exported code retained. The LilScript implementation covers part of Monaco’s API; full feature parity is not established. The source catalog below shows the ported modules.</p>
           <div class="install-row">
             <code>npm install @itslil/monaco-editor</code>
             <button class="copy" data-copy="npm install @itslil/monaco-editor" type="button">copy</button>
@@ -45,25 +45,23 @@
 
         <div class="scoreboard" aria-label="Fair submodule result">
           <div class="score-main">
-            <span class="score-label">editor/common · 219 files · Brotli-11 · Lil / Vite 8 Oxc</span>
+            <span class="score-label">Public ESM · partial implementation · Lil / original</span>
             <strong id="hero-ratio">—<span>×</span></strong>
             <p id="hero-bytes"></p>
           </div>
           <div class="score-grid">
             <div><strong id="hero-modules">992</strong><span>modules ported / 994</span></div>
-            <div><strong id="hero-median">—</strong><span>median Lil / Oxc</span></div>
-            <div><strong>Vite 8</strong><span>Oxc minify (headline)</span></div>
+            <div><strong id="hero-median">—</strong><span>original ESM Brotli</span></div>
+            <div><strong>ESM</strong><span>complete entry graphs</span></div>
             <div><strong>tsc</strong><span>official Microsoft worker</span></div>
           </div>
-          <p class="score-note">Headline is the largest JS folder, independently compiled, other monaco imports external. JS minified with Vite 8 Oxc. esbuild 0.28.1 and Terser 5.50.0 are on the same files. Ratio is LilScript Brotli / JS Brotli. Not 100% feature parity.</p>
+          <p class="score-note">Current ESM output compared with the original ESM graph. The API coverage differs, so the byte ratio does not establish a feature-equivalent size win. Compatibility checks are incomplete.</p>
         </div>
       </section>
 
       <section class="ticker" aria-label="Ported surfaces">
         <div>piece tree <span>✦</span> text model <span>✦</span> monarch <span>✦</span> find <span>✦</span> fold <span>✦</span> hover <span>✦</span> suggest <span>✦</span> markers <span>✦</span> official ts.worker <span>✦</span> solid tsx <span>✦</span> not full parity</div>
       </section>
-
-      <p data-audit-history="2026-09-10" style="max-width:1160px;margin:18px auto;padding:12px 20px;font:14px/1.6 system-ui;color:#344b54;background:#edf3f4">The build audit above records the current compiler check. The earlier public runtime and its historical measurements are retained while the fresh candidate remains unverified.</p>
 <section class="performance shell" id="submodules">
         <div class="section-heading">
           <div>
@@ -205,10 +203,10 @@
         <div class="shell">
           <div class="section-heading inverse">
             <div>
-              <p class="eyebrow">Diagnostic · do not headline</p>
-              <h2>Whole IDE<br />bytes.</h2>
+              <p class="eyebrow">Public ESM comparison</p>
+              <h2>Current ESM<br />bytes.</h2>
             </div>
-            <p>Production <code>ide.js</code> plus workers. The JS workbench is scored with <strong>Vite 8 / Oxc</strong>, <strong>esbuild</strong>, and <strong>Terser</strong>. Lil language hosts are compiled LilScript; TypeScript is the same Microsoft <code>ts.worker</code> on both pages. Ratio is Lil Brotli / that JS lane.</p>
+            <p>The current public ESM entry and original Monaco ESM graph, measured as JavaScript. CSS and workers are separate assets. The LilScript implementation has partial API coverage.</p>
           </div>
           <div class="total-bar" id="total-bar"></div>
           <div class="table-wrap">

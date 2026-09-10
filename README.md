@@ -1,7 +1,5 @@
 # @itslil/monaco-editor
 
-<!-- current-build-audit -->
-**Build audit, 2026-09-10:** [build-only; compiler, machine, build times, version gaps and behavior checks](https://yeargun.github.io/monacolil/#build-audit). The [JSON receipt](site/build-audit.json) records the current comparison; older benchmark prose retains its original scope.
 
 
 [monaco-editor 0.56.0](https://github.com/microsoft/monaco-editor), reimplemented in [LilScript](https://github.com/yeargun/lilscript) and published as a dependency-free editor runtime.

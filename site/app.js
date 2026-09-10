@@ -1,3 +1,4 @@
+const esmComparison = await fetch("./comparison.json").then(response => response.json())
 const data = await fetch("./results.json").then((response) => {
   if (!response.ok) throw new Error(`Unable to load results: ${response.status}`)
   return response.json()
@@ -20,12 +21,11 @@ function laneBrotli(lanes, id) {
 }
 
 function renderHero() {
-  const headline = data.headline
-  document.querySelector("#hero-ratio").innerHTML = `${headline.ratio.toFixed(2)}<span>×</span>`
-  document.querySelector("#hero-bytes").textContent =
-    `${formatter.format(headline.jsBrotli)} B → ${formatter.format(headline.lilBrotli)} B`
-  document.querySelector("#hero-modules").textContent = String(data.catalog.ported)
-  document.querySelector("#hero-median").textContent = times(data.folderSummary.medianRatio)
+  const {lilscript,original}=esmComparison.esm
+  document.querySelector("#hero-ratio").innerHTML=`${(lilscript.brotli11/original.brotli11).toFixed(2)}<span>×</span>`
+  document.querySelector("#hero-bytes").textContent=`${formatter.format(lilscript.brotli11)} B LilScript / ${formatter.format(original.brotli11)} B original`
+  document.querySelector("#hero-modules").textContent=String(data.catalog.ported)
+  document.querySelector("#hero-median").textContent=`${formatter.format(original.brotli11)} B`
 }
 
 function renderFolderCards() {
@@ -287,52 +287,10 @@ function renderDemos() {
 }
 
 function renderProduction() {
-  const p = data.production
-  const jsTs = p.workers.find((row) => row.name === "ts.worker.js")?.js
-  const lilTs = p.lilWorkers.find((row) => row.name === "ts.worker.js")?.lil
-  const lanes = p.jsMinifiers ?? {}
-  const rows = [
-    ["ide.js · Vite 8 / Oxc", lanes.oxc ?? p.js.ide, p.lil.ide],
-    ["ide.js · esbuild 0.28.1", lanes.esbuild, p.lil.ide],
-    ["ide.js · Terser 5.50.0", lanes.terser, p.lil.ide],
-    ["workers except tsc", {
-      raw: p.js.workers.raw - (jsTs?.raw ?? 0),
-      brotli: p.js.workers.brotli - (jsTs?.brotli ?? 0),
-    }, {
-      raw: p.lil.workers.raw - (lilTs?.raw ?? 0),
-      brotli: p.lil.workers.brotli - (lilTs?.brotli ?? 0),
-    }],
-    ["editor CSS", p.js.css, p.lil.css],
-  ].filter(([, js]) => js)
-  document.querySelector("#production-body").innerHTML = rows
-    .map(([name, js, lil]) => {
-      const r = lil.brotli / js.brotli
-      return `
-    <tr>
-      <th scope="row">${name}</th>
-      <td>${bytes(js.raw)}</td>
-      <td>${bytes(js.brotli)}</td>
-      <td>${bytes(lil.raw)}</td>
-      <td>${bytes(lil.brotli)}</td>
-      <td><strong>${times(r)}</strong></td>
-    </tr>`
-    })
-    .join("")
-
-  const bars = [
-    { name: "JS ide.js Brotli · Vite 8 / Oxc", value: (lanes.oxc ?? p.js.ide).brotli, primary: false },
-    { name: "JS ide.js Brotli · esbuild", value: lanes.esbuild?.brotli ?? p.js.ide.brotli, primary: false },
-    { name: "JS ide.js Brotli · Terser", value: lanes.terser?.brotli ?? p.js.ide.brotli, primary: false },
-    { name: "Lil ide.js Brotli", value: p.lil.ide.brotli, primary: true },
-  ]
-  const max = Math.max(...bars.map((bar) => bar.value))
-  document.querySelector("#total-bar").innerHTML = bars
-    .map((bar) => {
-      const width = Math.max(18, (bar.value / max) * 100)
-      const cls = bar.primary ? "bar-lil" : "bar-official"
-      return `<div class="${cls}" style="width:${width}%"><span>${bar.name}</span><strong>${formatter.format(bar.value)} B</strong></div>`
-    })
-    .join("")
+  const {lilscript,original}=esmComparison.esm
+  document.querySelector("#production-body").innerHTML=`<tr><th scope="row">Public ESM · partial LilScript implementation</th><td>${bytes(original.raw)}</td><td>${bytes(original.brotli11)}</td><td>${bytes(lilscript.raw)}</td><td>${bytes(lilscript.brotli11)}</td><td><strong>${times(lilscript.brotli11/original.brotli11)}</strong></td></tr>`
+  const max=Math.max(original.brotli11,lilscript.brotli11)
+  document.querySelector("#total-bar").innerHTML=[["Original ESM",original,"bar-official"],["LilScript ESM",lilscript,"bar-lil"]].map(([label,lane,cls])=>`<div class="${cls}" style="width:${Math.max(18,lane.brotli11/max*100)}%"><span>${label}</span><strong>${bytes(lane.brotli11)} B</strong></div>`).join("")
 }
 
 function bindCopy() {
