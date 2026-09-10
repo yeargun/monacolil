@@ -147,7 +147,44 @@
     "lastModified": "Wed, 02 Sep 2026 15:24:59 GMT"
   },
   "codecSha256": "9257fd055728895c11b9c4b0d882895d7d11bb3dd3495f560123879ca2bc3cd6",
-  "publicationArtifacts": [],
+  "publicationArtifacts": [
+    {
+      "path": "dist/monaco.cjs",
+      "sha256": "b45484024afbdcbaeaa19abc0f9e925d34e8d4c74deb8758a0709f42eb581e1e"
+    },
+    {
+      "path": "dist/monaco.esm.js",
+      "sha256": "3f4ea4d2d0174931a497cfe632d2f88bbec7810fb93cac7f2a618f03a2a8149c"
+    },
+    {
+      "path": "dist/monaco.raw.js",
+      "sha256": "c2cc90c989bfa870626d5244956e4c921bbe91a8795591be23b3b99dd199ca76"
+    },
+    {
+      "path": "dist/monaco.umd.js",
+      "sha256": "282ff5084ad950c35404cf0002f3d1f1a21d734a0da7c8e31da37529db5cdbc0"
+    },
+    {
+      "path": "dist/workers/css.worker.js",
+      "sha256": "f33b031fbf75dca8e091428693866013b303f5b2e56eaa7072d17875d53f1cd6"
+    },
+    {
+      "path": "dist/workers/editor.worker.js",
+      "sha256": "536e8086788de4cc8176ff8362b75c46be92ce1a568fbc01638eb252aa2e3a01"
+    },
+    {
+      "path": "dist/workers/html.worker.js",
+      "sha256": "882f7b4a3ce7d623b80bfdc84d4ecc375d28f2351b67a8a65bb605226984a702"
+    },
+    {
+      "path": "dist/workers/json.worker.js",
+      "sha256": "c61fbec0f135bf7c41bac365654c4d0efca9315a44e5298d7d1a9bd2ac076dda"
+    },
+    {
+      "path": "dist/workers/ts.worker.js",
+      "sha256": "1f1cc0ef48f66145343f8bd8854f9db7d19fe6802cf3e9dc788c08b9936c8bc1"
+    }
+  ],
   "publicationPolicy": "Retain previous public distribution; publish the diagnostic audit",
   "publicationBase": "e7d810ba65940d55aabd659f5d7bb08eb97cc52b",
   "publicationSourceFingerprint": "a8e65aada11259937b26be331d0badb498a5e3f9cf75560856578baa17fd327c"
