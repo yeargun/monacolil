@@ -1,0 +1,5 @@
+import extern "../js-host.ts";
+import extern {installWorker} from "./boot.mjs";
+extern void installWorker(func(string,string,string)->string handler);
+import {handleJsonWorker} from "./json.worker.lil";
+installWorker(handleJsonWorker);

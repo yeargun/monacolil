@@ -1,0 +1,28 @@
+{
+  "package": "monaco-editor",
+  "version": "0.56.0",
+  "license": "MIT",
+  "sources": {
+    "register.js": "207cac5b97aa6582079e0ddc7c056fd001a0c6e0c8165116ef95e34d5ebe8209",
+    "languageFeatures.js": "024a1666fddf3d2109cde8eac331f7034764ae617b73203edc7a31d40dd46580",
+    "workerManager.js": "a357c11acbff2ce86e4eaadecd94d202117fe9c54f3e73b14d4d023bee5760cc",
+    "tsMode.js": "c1d53788b12144356ac23160cbc9dbc331cc7f05bcbe2787b7cd67562cd1bb69",
+    "lib/lib.index.js": "0504251bc95b1ed7c1b79811d6ea59d8567ced6b761a7935a50f2e65b1be7ee0",
+    "lib/typescriptServicesMetadata.js": "8b583b4b417838cf5ace82929098962546f48a3f51c1d16bcea9f3dfb714c597"
+  },
+  "adaptations": [
+    "Replace module imports with explicit factory arguments; preserve original method/function bodies and exports.",
+    "Keep registration and language-mode initialization lazy, once, and cache their rejection.",
+    "Pass the delivered package URL to the worker fallback and resolve workers/ts.worker.js beside the package.",
+    "Retain the existing LilScript editor and worker-client shims instead of importing the upstream editor runtime."
+  ],
+  "derived": {
+    "typescriptServicesMetadata.mjs": "8b583b4b417838cf5ace82929098962546f48a3f51c1d16bcea9f3dfb714c597",
+    "index.mjs": "8948ae7cd6974d7b3307c18a3da571ce9621d2bce8cb8b7a26cfbb89083097db",
+    "languageFeatures.mjs": "53822102d4a1b576f5bb67345235c07eeab708d1eefce718a700338f4560504f",
+    "workerManager.mjs": "3bb62e9281403c5bdba44db7eeaf6ef9adb0b15fa20e06c410123708af473592",
+    "tsMode.mjs": "7ae1344a41af2168640d02c8407145a0b8359db8258fd4ab24fca0bcf0cd0cb1",
+    "register.mjs": "f121aa1d5273c6d41bae6f2a5b45dc5f51def49b2f081e4dbf59dbb51ccd853a",
+    "lib.index.mjs": "0504251bc95b1ed7c1b79811d6ea59d8567ced6b761a7935a50f2e65b1be7ee0"
+  }
+}

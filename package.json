@@ -48,9 +48,14 @@
     "README.md"
   ],
   "sideEffects": [
-    "./dist/monaco.esm.js",
     "./dist/monaco.cjs",
-    "./dist/monaco.css"
+    "./dist/monaco.css",
+    "./dist/monaco.esm.js",
+    "./dist/monaco.raw.js",
+    "./dist/workers/css.worker.js",
+    "./dist/workers/editor.worker.js",
+    "./dist/workers/html.worker.js",
+    "./dist/workers/json.worker.js"
   ],
   "engines": {
     "node": ">=18"

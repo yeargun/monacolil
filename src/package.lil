@@ -1,0 +1,12 @@
+import extern "./js-host.ts";
+import extern {createPackage} from "./package-factory.mjs";
+extern JsValue createPackage;
+import {bootMonaco} from "./entry.lil";
+JsValue api=JS.call(createPackage,JS.undefined(),bootMonaco,JS.moduleUrl());
+export JsValue monaco=api["monaco"];
+export JsValue default=monaco;
+export JsValue ready=api["ready"];
+export JsValue attachTypescript=api["attachTypescript"];
+export JsValue createMonaco=api["createMonaco"];
+export JsValue configureWorkers=api["configureWorkers"];
+export {bootMonaco};
