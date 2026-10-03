@@ -1,62 +1,33 @@
-import assert from "node:assert/strict"
-import { existsSync, readFileSync } from "node:fs"
-import { describe, it } from "node:test"
-import { dirname, resolve } from "node:path"
-import { fileURLToPath } from "node:url"
-
-const root = resolve(dirname(fileURLToPath(import.meta.url)), "..")
-const site = resolve(root, "_site")
-
-describe("github pages artifact", () => {
-  it("ships the landing page, results, and paired editors", () => {
-    for (const path of [
-      "index.html",
-      "styles.css",
-      "app.js",
-      "results.json",
-      ".nojekyll",
-      "demos/lil/index.html",
-      "demos/js/index.html",
-      "demos/lil/ide.js",
-      "demos/js/ide.js",
-      "demos/lil/ts.worker.js",
-      "demos/js/ts.worker.js",
-    ]) {
-      assert.equal(existsSync(resolve(site, path)), true, path)
-    }
-  })
-
-  it("states the JS minifier and Lil / JS Brotli ratio", () => {
-    const html = readFileSync(resolve(site, "index.html"), "utf8")
-    const results = readFileSync(resolve(site, "results.json"), "utf8")
-    assert.match(html, /@itslil\/monaco-editor/)
-    assert.match(html, /not 100% feature parity/i)
-    assert.match(html, /Vite 8 \/ Oxc/)
-    assert.match(html, /esbuild/)
-    assert.match(html, /Terser/)
-    assert.match(html, /keepers/)
-    assert.match(html, /Lil \/ JS/)
-    assert.match(html, /#conversion/)
-    assert.match(results, /github\.com\/yeargun\/monacolil\/blob\/main\/src\//)
-    assert.match(results, /vs\/base\/browser\/ui\/list\/rowCache\.lil/)
-    const parsed = JSON.parse(results)
-    assert.ok(parsed.conversions.length > 900)
-    assert.ok(parsed.folders.every((row) => typeof row.lilHref === "string"))
-    assert.doesNotMatch(html, /suspicious/i)
-    assert.doesNotMatch(results, /suspicious/i)
-    assert.match(results, /LilScript Brotli-11 \/ JS Brotli-11/)
-    assert.match(results, /vite\/oxc/)
-    assert.match(results, /"vite": "8.2.1"/)
-    assert.match(results, /"esbuild": "0.28.1"/)
-    assert.match(results, /"terser": "5.50.0"/)
-  })
-
-  it("keeps official TypeScript worker on the Lil demo", () => {
-    const env = readFileSync(resolve(site, "demos/lil/monaco-env.js"), "utf8")
-    assert.match(env, /ts\.worker\.js/)
-    const lilTs = readFileSync(resolve(site, "demos/lil/ts.worker.js"))
-    const jsTs = readFileSync(resolve(site, "demos/js/ts.worker.js"))
-    assert.equal(lilTs.equals(jsTs), true)
-    assert.ok(lilTs.byteLength > 1_000_000)
-  })
-})
+import assert from 'node:assert/strict';
+import {test} from 'node:test';
+import {readFileSync,existsSync} from 'node:fs';
+import {dirname,resolve,join} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {verifyComparison} from '../scripts/build-comparison.mjs';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+test('three independently targeted builds have current artifact and config hashes',()=>{
+ const data=verifyComparison(root);
+ assert.deepEqual(data.objectives.map(row=>row.objective),['raw','gzip','brotli']);
+ for(const row of data.objectives){
+  assert.equal(row.metric,{raw:'raw',gzip:'gzip9',brotli:'brotli11'}[row.objective]);
+  assert.equal(row.ratio,row.lilscript.sizes[row.metric]/row.original.sizes[row.metric]);
+  assert.equal(row.original.sizes[row.metric],Math.min(...data.minifiers.map(m=>m.sizes[row.metric])));
+  assert.ok(row.lilscript.buildSeconds>0);assert.ok(row.original.buildSeconds>0);
+ }
+});
+test('public comparison describes current versus original and distinguishes build stages',()=>{
+ const html=readFileSync(join(root,'site/index.html'),'utf8');
+ const module=readFileSync(join(root,'site/objective-comparison.js'),'utf8');
+ assert.match(html,/id="compression-comparison"/);assert.match(html,/id="objective-build-times"/);
+ assert.match(module,/separate compilation targeting/);assert.match(module,/upstream package from its original TypeScript sources/);
+ assert.doesNotMatch(html,/previous release|previous version|old compiler|earlier compiler|last release/i);
+ const data=JSON.parse(readFileSync(join(root,'site/comparison.json'),'utf8'));
+ assert.equal(data.schemaVersion,4);assert.ok(data.validation.checks>0);
+ assert.ok(data.upstream.sharedExports.length>0);assert.ok(data.minifiers.length>=2);
+});
+test('built Pages artifact contains the current data and measured downloads',()=>{
+ const data=JSON.parse(readFileSync(join(root,'site/comparison.json'),'utf8'));
+ assert.equal(readFileSync(join(root,'_site/comparison.json'),'utf8'),readFileSync(join(root,'site/comparison.json'),'utf8'));
+ for(const row of data.objectives)for(const item of [row.lilscript,row.original])assert.ok(existsSync(join(root,'_site',item.artifact)));
+ for(const file of ['app.js','styles.css','objective-comparison.js','objective-comparison.css','.nojekyll'])assert.ok(existsSync(join(root,'_site',file)),file);
+});

@@ -1,0 +1,9 @@
+
+# Preserve generated JavaScript bytes, including whitespace inside embedded sources.
+site/demos/js/*.worker.js -whitespace linguist-generated
+site/demos/js/ide.js -whitespace linguist-generated
+
+# Compiler artifacts retain their exact recorded bytes.
+dist/** -whitespace linguist-generated
+site/comparison-artifacts/*.mjs -whitespace linguist-generated
+site/official.js -whitespace linguist-generated

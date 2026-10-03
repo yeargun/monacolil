@@ -1,0 +1,671 @@
+{
+  "version": 3,
+  "codec": "brotli",
+  "outputs": [
+    {
+      "mode": "single",
+      "format": "iife",
+      "entries": [
+        {
+          "name": "worker",
+          "file": "workers/html.worker.js",
+          "dynamic": false,
+          "closure": [
+            "workers/html.worker.js"
+          ],
+          "row": 12335,
+          "raw_row": 51246
+        }
+      ],
+      "files": [
+        {
+          "file": "workers/html.worker.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "worker"
+          ],
+          "modules": [
+            "html.entry.lil",
+            "html.worker.lil",
+            "module-4",
+            "module-5",
+            "module-6"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 51246,
+          "codec_bytes": 12335,
+          "sha256": "1584f3e8ad536fdd7e4cc4c22995517ac2a24767e0315fea6bb77b8bfa1bfe43"
+        }
+      ],
+      "side_effects": [
+        "workers/html.worker.js"
+      ],
+      "codec_total": 12335,
+      "rows_total": 12335,
+      "setters": 0,
+      "output": "primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        168,
+        130,
+        89,
+        220,
+        5,
+        25,
+        4,
+        83,
+        10,
+        5,
+        28,
+        213,
+        188,
+        252,
+        70,
+        92,
+        254,
+        159,
+        229,
+        178,
+        221,
+        152,
+        80,
+        69,
+        73,
+        227,
+        225,
+        196,
+        61,
+        145,
+        16,
+        126
+      ]
+    }
+  ],
+  "source_sha256": "8cd4a58165272325300de63c09b1811489376d09d0a2952343ce69ba609c5833",
+  "inputs": {
+    "root": 0,
+    "entries": [
+      {
+        "name": "worker",
+        "module": 0
+      }
+    ],
+    "modules": [
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/workers/html.entry.lil",
+        "bytes": 236,
+        "sha256": "5302e67cdfbf11b8906561977af9bf17624b48d9ca7b51f6bb51692cdc079438",
+        "dependencies": [
+          1
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/workers/html.worker.lil",
+        "bytes": 864,
+        "sha256": "13ac1c30a5217c40d424eef1ab6828ad475f2abba198064a35a73ef93a0382ce",
+        "dependencies": [
+          2,
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/contrib/language-data.lil",
+        "bytes": 1682,
+        "sha256": "cb0746ab5da96c5cb3d84ebaba18e1ab5be55d7149b18cb1375e567725bd328a",
+        "dependencies": [
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/js-host.lil",
+        "bytes": 7560,
+        "sha256": "2c960812bf197f91390a42d28316e81c8d8dad9e112b95e0253be8814e2b8b50",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      }
+    ],
+    "host_modules": [
+      {
+        "specifier": "../js-host-paint.ts",
+        "stem": "js-host-paint",
+        "delivered_bytes": 21558,
+        "sha256": "04bd222ac778e4f7ab3a1fad6a98c4c48daa53cadc892b90a192622a645f58e9",
+        "exports": [
+          [
+            "hostPaintEditor",
+            "hostPaintEditor"
+          ],
+          [
+            "hostCoordsToPosition",
+            "hostCoordsToPosition"
+          ],
+          [
+            "eventIsComposing",
+            "eventIsComposing"
+          ],
+          [
+            "eventDeltaY",
+            "eventDeltaY"
+          ],
+          [
+            "hostStyleFindWidget",
+            "hostStyleFindWidget"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../js-host.ts",
+        "stem": "js-host",
+        "delivered_bytes": 21690,
+        "sha256": "4688818ea3799022dedc1b1e0f430cd62bfd241a97b8d3a5cc16e4c45fbc7789",
+        "exports": [
+          [
+            "stringSlice",
+            "stringSlice"
+          ],
+          [
+            "stringReplace",
+            "stringReplace"
+          ],
+          [
+            "stringSplit",
+            "stringSplit"
+          ],
+          [
+            "stringFromCharCode1",
+            "stringFromCharCode1"
+          ],
+          [
+            "newRegexp",
+            "newRegexp"
+          ],
+          [
+            "regexTest",
+            "regexTest"
+          ],
+          [
+            "regexExec",
+            "regexExec"
+          ],
+          [
+            "regexLastIndex",
+            "regexLastIndex"
+          ],
+          [
+            "regexSetLastIndex",
+            "regexSetLastIndex"
+          ],
+          [
+            "dateNow",
+            "dateNow"
+          ],
+          [
+            "mathRandom",
+            "mathRandom"
+          ],
+          [
+            "scheduleTimeoutMs",
+            "scheduleTimeoutMs"
+          ],
+          [
+            "clearTimeoutId",
+            "clearTimeoutId"
+          ],
+          [
+            "requestAnimationFrameOrNull",
+            "requestAnimationFrameOrNull"
+          ],
+          [
+            "createElement",
+            "createElement"
+          ],
+          [
+            "domCreateElement",
+            "domCreateElement"
+          ],
+          [
+            "createTextNode",
+            "createTextNode"
+          ],
+          [
+            "appendChild",
+            "appendChild"
+          ],
+          [
+            "removeChild",
+            "removeChild"
+          ],
+          [
+            "setTextContent",
+            "setTextContent"
+          ],
+          [
+            "getTextContent",
+            "getTextContent"
+          ],
+          [
+            "setInnerHTML",
+            "setInnerHTML"
+          ],
+          [
+            "getInnerHTML",
+            "getInnerHTML"
+          ],
+          [
+            "setClassName",
+            "setClassName"
+          ],
+          [
+            "setStyle",
+            "setStyle"
+          ],
+          [
+            "setAttribute",
+            "setAttribute"
+          ],
+          [
+            "addEventListener",
+            "addEventListener"
+          ],
+          [
+            "removeEventListener",
+            "removeEventListener"
+          ],
+          [
+            "focusElement",
+            "focusElement"
+          ],
+          [
+            "getClientWidth",
+            "getClientWidth"
+          ],
+          [
+            "getClientHeight",
+            "getClientHeight"
+          ],
+          [
+            "getScrollTop",
+            "getScrollTop"
+          ],
+          [
+            "setScrollTop",
+            "setScrollTop"
+          ],
+          [
+            "getScrollHeight",
+            "getScrollHeight"
+          ],
+          [
+            "preventDefault",
+            "preventDefault"
+          ],
+          [
+            "stopPropagation",
+            "stopPropagation"
+          ],
+          [
+            "eventKey",
+            "eventKey"
+          ],
+          [
+            "eventCode",
+            "eventCode"
+          ],
+          [
+            "eventKeyCode",
+            "eventKeyCode"
+          ],
+          [
+            "eventCtrlKey",
+            "eventCtrlKey"
+          ],
+          [
+            "eventShiftKey",
+            "eventShiftKey"
+          ],
+          [
+            "eventAltKey",
+            "eventAltKey"
+          ],
+          [
+            "eventInputValue",
+            "eventInputValue"
+          ],
+          [
+            "inputSetValue",
+            "inputSetValue"
+          ],
+          [
+            "inputGetValue",
+            "inputGetValue"
+          ],
+          [
+            "canvasGetContext2d",
+            "canvasGetContext2d"
+          ],
+          [
+            "canvasSetSize",
+            "canvasSetSize"
+          ],
+          [
+            "canvasFillRect",
+            "canvasFillRect"
+          ],
+          [
+            "clearChildren",
+            "clearChildren"
+          ],
+          [
+            "setTabIndex",
+            "setTabIndex"
+          ],
+          [
+            "getClipboardText",
+            "getClipboardText"
+          ],
+          [
+            "setClipboardText",
+            "setClipboardText"
+          ],
+          [
+            "clipboardRead",
+            "clipboardRead"
+          ],
+          [
+            "clipboardWrite",
+            "clipboardWrite"
+          ],
+          [
+            "clipboardReadEvent",
+            "clipboardReadEvent"
+          ],
+          [
+            "clipboardWriteEvent",
+            "clipboardWriteEvent"
+          ],
+          [
+            "eventClientX",
+            "eventClientX"
+          ],
+          [
+            "eventClientY",
+            "eventClientY"
+          ],
+          [
+            "eventButton",
+            "eventButton"
+          ],
+          [
+            "eventDetail",
+            "eventDetail"
+          ],
+          [
+            "rectLeft",
+            "rectLeft"
+          ],
+          [
+            "rectTop",
+            "rectTop"
+          ],
+          [
+            "getScrollLeft",
+            "getScrollLeft"
+          ],
+          [
+            "setScrollLeft",
+            "setScrollLeft"
+          ],
+          [
+            "blurElement",
+            "blurElement"
+          ],
+          [
+            "setPlaceholder",
+            "setPlaceholder"
+          ],
+          [
+            "setDisplay",
+            "setDisplay"
+          ],
+          [
+            "classListAdd",
+            "classListAdd"
+          ],
+          [
+            "classListRemove",
+            "classListRemove"
+          ],
+          [
+            "hostCall",
+            "hostCall"
+          ],
+          [
+            "hostThen",
+            "hostThen"
+          ],
+          [
+            "jsArrayLen",
+            "jsArrayLen"
+          ],
+          [
+            "jsArrayAt",
+            "jsArrayAt"
+          ],
+          [
+            "jsPropString",
+            "jsPropString"
+          ],
+          [
+            "jsPropInt",
+            "jsPropInt"
+          ],
+          [
+            "emptyBuf",
+            "emptyBuf"
+          ],
+          [
+            "beginIdList",
+            "beginIdList"
+          ],
+          [
+            "pushId",
+            "pushId"
+          ],
+          [
+            "takeIdList",
+            "takeIdList"
+          ],
+          [
+            "concat2",
+            "concat2"
+          ],
+          [
+            "pushNewBuffer",
+            "pushNewBuffer"
+          ],
+          [
+            "makeNodePos",
+            "makeNodePos"
+          ],
+          [
+            "nodeAtStash",
+            "nodeAtStash"
+          ],
+          [
+            "nodeAt2Stash",
+            "nodeAt2Stash"
+          ],
+          [
+            "stashNode",
+            "stashNode"
+          ],
+          [
+            "stashRem",
+            "stashRem"
+          ],
+          [
+            "stashStart",
+            "stashStart"
+          ],
+          [
+            "hostGetOffsetAt",
+            "hostGetOffsetAt"
+          ],
+          [
+            "hostGetPositionAt",
+            "hostGetPositionAt"
+          ],
+          [
+            "rbDeleteTree",
+            "rbDeleteTree"
+          ],
+          [
+            "hostComputeLineDiff",
+            "hostComputeLineDiff"
+          ],
+          [
+            "hostWorkbenchCommand",
+            "hostWorkbenchCommand"
+          ],
+          [
+            "jsUndefined",
+            "jsUndefined"
+          ],
+          [
+            "windowSelf",
+            "windowSelf"
+          ],
+          [
+            "throwError",
+            "throwError"
+          ],
+          [
+            "hostPaintEditor",
+            "__lil_host_export_0"
+          ],
+          [
+            "hostCoordsToPosition",
+            "__lil_host_export_1"
+          ],
+          [
+            "hostStyleFindWidget",
+            "__lil_host_export_2"
+          ],
+          [
+            "eventIsComposing",
+            "__lil_host_export_3"
+          ],
+          [
+            "eventDeltaY",
+            "__lil_host_export_4"
+          ]
+        ],
+        "imports": [
+          [
+            0,
+            []
+          ],
+          [
+            0,
+            [
+              [
+                "hostPaintEditor",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "hostCoordsToPosition",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "hostStyleFindWidget",
+                "__lil_host_export_2"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "eventIsComposing",
+                "__lil_host_export_3"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "eventDeltaY",
+                "__lil_host_export_4"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "./boot.mjs",
+        "stem": "boot",
+        "delivered_bytes": 366,
+        "sha256": "7ada398cd66b89e60536bd670630a865bf2b97ec1391b6e1299aeb8873928cab",
+        "exports": [
+          [
+            "installWorker",
+            "installWorker"
+          ]
+        ],
+        "imports": []
+      }
+    ],
+    "host_reserved": [
+      "Array",
+      "Boolean",
+      "CustomEvent",
+      "Date",
+      "Error",
+      "Math",
+      "Number",
+      "Promise",
+      "RegExp",
+      "Set",
+      "String",
+      "WeakMap",
+      "clearTimeout",
+      "console",
+      "document",
+      "globalThis",
+      "navigator",
+      "self",
+      "setTimeout",
+      "undefined",
+      "window"
+    ]
+  }
+}

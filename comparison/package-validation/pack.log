@@ -1,0 +1,5 @@
+
+> @itslil/monaco-editor@0.56.1 check:pack
+> node scripts/check-pack.mjs
+
+npm pack: 13 files, 1862352 bytes packed, 8248922 bytes unpacked

@@ -1,138 +1,262 @@
 {
-  "schemaVersion": 2,
-  "measuredAt": "2026-09-10T21:03:57Z",
+  "schemaVersion": 4,
   "name": "monacolil",
+  "package": "@itslil/monaco-editor",
+  "measuredAt": "2026-10-03T18:02:15.706768+03:00",
   "compiler": {
-    "commit": "4dc4e3337d9ffd758d65e3852682d6e13d9331c1",
-    "sha256": "0616048498eb9eb2e4bd75b39e8e6a083733ada647e16108edfee30ad183beeb"
+    "baseRevision": "f7d29bd9",
+    "binarySha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
+    "hasLocalSourceChanges": true
   },
   "upstream": {
     "package": "monaco-editor",
     "version": "0.56.0",
-    "repository": "https://github.com/microsoft/monaco-editor.git",
-    "commit": "13f0c872dcf352815cc28d92dfff496c9839ea5c"
-  },
-  "scope": "Public ESM entries. The LilScript implementation is partial; full API parity is not established.. Original ESM assembled from the pinned Git source build.",
-  "compatibility": "The compiler did not complete this package build.",
-  "tests": null,
-  "buildComplete": false,
-  "machine": {
-    "provider": "Azure",
-    "instanceClass": "Standard_D16als_v7",
-    "cpu": "AMD EPYC 9V45 96-Core Processor",
-    "logicalCpus": 16,
-    "memoryBytes": 33648427008,
-    "os": "Ubuntu 24.04.4 LTS",
-    "kernel": "6.17.0-1022-azure",
-    "node": "v24.11.1",
-    "rayonThreads": 8,
-    "loadAtStart": [
-      0.0,
-      0.54833984375,
-      1.4716796875
+    "external": [],
+    "sharedExports": [
+      "default",
+      "monaco"
     ],
-    "loadAtEnd": [
-      1.3642578125,
-      1.3876953125,
-      1.595703125
+    "excludedExports": [],
+    "additionalExports": [
+      "attachTypescript",
+      "bootMonaco",
+      "configureWorkers",
+      "createMonaco",
+      "ready"
+    ],
+    "resolution": {
+      "platform": "neutral",
+      "conditions": [
+        "production"
+      ],
+      "mainFields": [
+        "module",
+        "main"
+      ],
+      "target": "es2020",
+      "defines": {
+        "process.env.NODE_ENV": "production"
+      },
+      "css": "excluded; measured JavaScript only"
+    }
+  },
+  "scope": "Partial Monaco editor namespace versus the original Monaco 0.56.0 namespace. CSS and all workers are excluded from both JavaScript sizes. This implementation is not a complete Monaco replacement, so the difference combines feature scope and compiler output. Download the checked package for CSS, LilScript workers and the upstream TypeScript worker.",
+  "machine": {
+    "cpu": "AMD EPYC 7763 64-Core Processor",
+    "logicalCpus": 8,
+    "memoryGiB": 15.6,
+    "os": "Linux-7.0.0-1014-azure-x86_64-with-glibc2.39",
+    "node": "v20.19.0"
+  },
+  "objectives": [
+    {
+      "objective": "raw",
+      "metric": "raw",
+      "lilscript": {
+        "artifact": "./comparison-artifacts/lilscript-raw.mjs",
+        "sizes": {
+          "raw": 228019,
+          "gzip9": 62227,
+          "brotli11": 54237
+        },
+        "sha256": "f947c7221df7bfee7eff803ef73b0b4d3efc7a31ea7dfea27ad3fb2edbcedcc7",
+        "buildSeconds": 35.75230108600226,
+        "config": "./comparison-artifacts/lilscript-raw.toml",
+        "configSha256": "ec761b582f0186801596ec52e2e9110ea89ae18a4e37b215be223e1d45827454"
+      },
+      "original": {
+        "tool": "Oxc",
+        "version": "via Vite 8.2.1",
+        "artifact": "./comparison-artifacts/original-oxc.mjs",
+        "sizes": {
+          "raw": 4528715,
+          "gzip9": 1143993,
+          "brotli11": 884429
+        },
+        "sha256": "6fd5cc77b25b49a91dcce69944e69674b48bba531714a6592fa9feb971f6a76a",
+        "buildSeconds": 1.400366461999998
+      },
+      "ratio": 0.050349602481056986
+    },
+    {
+      "objective": "gzip",
+      "metric": "gzip9",
+      "lilscript": {
+        "artifact": "./comparison-artifacts/lilscript-gzip.mjs",
+        "sizes": {
+          "raw": 239124,
+          "gzip9": 62291,
+          "brotli11": 54264
+        },
+        "sha256": "379e1f8d970e00696ac6c4fda3b7f64a454df7a28400f71cae3d61a53f918163",
+        "buildSeconds": 27.322437348004314,
+        "config": "./comparison-artifacts/lilscript-gzip.toml",
+        "configSha256": "fc2fad3abcab5d38b339dc86b05133e91f11af98645a0fca113fd37eb324e593"
+      },
+      "original": {
+        "tool": "Oxc",
+        "version": "via Vite 8.2.1",
+        "artifact": "./comparison-artifacts/original-oxc.mjs",
+        "sizes": {
+          "raw": 4528715,
+          "gzip9": 1143993,
+          "brotli11": 884429
+        },
+        "sha256": "6fd5cc77b25b49a91dcce69944e69674b48bba531714a6592fa9feb971f6a76a",
+        "buildSeconds": 1.400366461999998
+      },
+      "ratio": 0.05445050800136015
+    },
+    {
+      "objective": "brotli",
+      "metric": "brotli11",
+      "lilscript": {
+        "artifact": "./comparison-artifacts/lilscript-brotli.mjs",
+        "sizes": {
+          "raw": 239220,
+          "gzip9": 62334,
+          "brotli11": 54211
+        },
+        "sha256": "6c6a77f574e5910c98141c090541f7ecb5225c93368ed1e82193ee72593d5ca2",
+        "buildSeconds": 81.8255137570086,
+        "config": "./comparison-artifacts/lilscript-brotli.toml",
+        "configSha256": "02f2be2825a00e477b8b39d1d1395e78c187bc3781cc5e68f608d25b1234b349"
+      },
+      "original": {
+        "tool": "Terser",
+        "version": "5.51.2",
+        "artifact": "./comparison-artifacts/original-terser.mjs",
+        "sizes": {
+          "raw": 4593511,
+          "gzip9": 1150598,
+          "brotli11": 883285
+        },
+        "sha256": "ceb163c2ea9d5684dea79412091e9280a70fc306a345ef0fb9f17c4adacbab5c",
+        "buildSeconds": 48.329026118
+      },
+      "ratio": 0.061374301612729755
+    }
+  ],
+  "minifiers": [
+    {
+      "tool": "Terser",
+      "version": "5.51.2",
+      "artifact": "./comparison-artifacts/original-terser.mjs",
+      "sizes": {
+        "raw": 4593511,
+        "gzip9": 1150598,
+        "brotli11": 883285
+      },
+      "sha256": "ceb163c2ea9d5684dea79412091e9280a70fc306a345ef0fb9f17c4adacbab5c",
+      "buildSeconds": 48.329026118
+    },
+    {
+      "tool": "esbuild",
+      "version": "0.28.1",
+      "artifact": "./comparison-artifacts/original-esbuild.mjs",
+      "sizes": {
+        "raw": 4606540,
+        "gzip9": 1178646,
+        "brotli11": 916548
+      },
+      "sha256": "6949814e814beb23c72b29c86dc0fdc2cf2a132c7f3d0a185efacbee326692be",
+      "buildSeconds": 1.1630809509999962
+    },
+    {
+      "tool": "Oxc",
+      "version": "via Vite 8.2.1",
+      "artifact": "./comparison-artifacts/original-oxc.mjs",
+      "sizes": {
+        "raw": 4528715,
+        "gzip9": 1143993,
+        "brotli11": 884429
+      },
+      "sha256": "6fd5cc77b25b49a91dcce69944e69674b48bba531714a6592fa9feb971f6a76a",
+      "buildSeconds": 1.400366461999998
+    }
+  ],
+  "validation": {
+    "checks": 18,
+    "runs": [
+      {
+        "objective": "raw",
+        "suite": "extra",
+        "checks": 6,
+        "command": [
+          "/home/azureuser/.nvm/versions/node/v24.11.1/bin/node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/extra-checks.mjs",
+          "monacolil",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/raw/monacolil/dist/index.mjs"
+        ],
+        "artifact": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/raw/monacolil/dist/index.mjs",
+        "ok": true
+      },
+      {
+        "objective": "gzip",
+        "suite": "extra",
+        "checks": 6,
+        "command": [
+          "/home/azureuser/.nvm/versions/node/v24.11.1/bin/node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/extra-checks.mjs",
+          "monacolil",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/gzip/monacolil/dist/index.mjs"
+        ],
+        "artifact": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/gzip/monacolil/dist/index.mjs",
+        "ok": true
+      },
+      {
+        "objective": "brotli",
+        "suite": "extra",
+        "checks": 6,
+        "command": [
+          "/home/azureuser/.nvm/versions/node/v24.11.1/bin/node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/extra-checks.mjs",
+          "monacolil",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/brotli/monacolil/dist/index.mjs"
+        ],
+        "artifact": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/brotli/monacolil/dist/index.mjs",
+        "ok": true
+      }
+    ],
+    "ok": true,
+    "scope": "Current independent main-entry builds; package-format tests are recorded separately."
+  },
+  "originalValidation": {
+    "checks": 9,
+    "runs": [
+      {
+        "minifier": "terser",
+        "checks": 3,
+        "ok": true,
+        "command": [
+          "node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/upstream-smoke.mjs",
+          "monacolil",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/original-terser/monacolil/dist/index.mjs"
+        ]
+      },
+      {
+        "minifier": "esbuild",
+        "checks": 3,
+        "ok": true,
+        "command": [
+          "node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/upstream-smoke.mjs",
+          "monacolil",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/original-esbuild/monacolil/dist/index.mjs"
+        ]
+      },
+      {
+        "minifier": "oxc",
+        "checks": 3,
+        "ok": true,
+        "command": [
+          "node",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/upstream-smoke.mjs",
+          "monacolil",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/validation/original-oxc/monacolil/dist/index.mjs"
+        ]
+      }
     ]
-  },
-  "build": {
-    "compilerSeconds": null,
-    "packageSeconds": 17.694211988999996,
-    "originalSeconds": 64.24930807100009,
-    "originalEsmSeconds": 18.727765084999998,
-    "packageScope": "node scripts/build.mjs --compile --force",
-    "originalScope": "bash -c npm run build --prefix monaco-lsp-client && npm run build-monaco-editor",
-    "protocol": {
-      "repetitions": 3,
-      "cleanOutputs": true,
-      "dependencyInstallationTimedSeparately": true,
-      "sourceArchives": "Pinned Git checkouts; original repository package build commands, followed by production ESM assembly.",
-      "workerUse": "Both implementations use the same machine and Node version. This shared build pool also runs unrelated jobs; timings are contextual wall times, with CPU time recorded separately."
-    }
-  },
-  "esm": {
-    "lilscript": null,
-    "original": {
-      "raw": 4579585,
-      "gzip9": 1148620,
-      "brotli11": 881758,
-      "sha256": "df6fcdd99463b8f3da7d417a699fb63bef616b362002ffb5f0986f949410bb11",
-      "file": "./esm-comparison/original.js"
-    }
-  },
-  "sourceBuild": {
-    "original": {
-      "complete": true,
-      "medianSeconds": 64.24930807100009,
-      "minimumSeconds": 64.1449042510003,
-      "maximumSeconds": 64.84366630600016,
-      "samples": [
-        {
-          "command": [
-            "bash",
-            "-c",
-            "npm run build --prefix monaco-lsp-client && npm run build-monaco-editor"
-          ],
-          "wallSeconds": 64.84366630600016,
-          "cpuSeconds": 102.90323500000001,
-          "exitCode": 0,
-          "timedOut": false,
-          "log": "original-build-1.log",
-          "logSha256": "a39f20e8e50c6ced9657ffe651119e5890e7992b66ee21992f80d535d5dcce09"
-        },
-        {
-          "command": [
-            "bash",
-            "-c",
-            "npm run build --prefix monaco-lsp-client && npm run build-monaco-editor"
-          ],
-          "wallSeconds": 64.24930807100009,
-          "cpuSeconds": 101.936334,
-          "exitCode": 0,
-          "timedOut": false,
-          "log": "original-build-2.log",
-          "logSha256": "551c0d8eb7b7399d50460e52ad67ac7128a0c5d0e4441b916e288312001ea6cc"
-        },
-        {
-          "command": [
-            "bash",
-            "-c",
-            "npm run build --prefix monaco-lsp-client && npm run build-monaco-editor"
-          ],
-          "wallSeconds": 64.1449042510003,
-          "cpuSeconds": 100.70497799999998,
-          "exitCode": 0,
-          "timedOut": false,
-          "log": "original-build-3.log",
-          "logSha256": "f57b7839887650d0128657f3454b63e1453e3e0844602021fcc70e95856b9b68"
-        }
-      ]
-    },
-    "lilscript": {
-      "complete": false,
-      "medianSeconds": null,
-      "minimumSeconds": null,
-      "maximumSeconds": null,
-      "samples": [
-        {
-          "command": [
-            "bash",
-            "-c",
-            "node scripts/build.mjs --compile --force"
-          ],
-          "wallSeconds": 17.694211988999996,
-          "cpuSeconds": 24.430165999999993,
-          "exitCode": 1,
-          "timedOut": false,
-          "log": "lilscript-build-1.log",
-          "logSha256": "56d007c38497a8dc9295cb81b5932ae9d5883dde10824caaf5700adbae3fd801"
-        }
-      ]
-    },
-    "scopeNote": "Both timings cover each repository\u2019s package build command; their output formats and build checks can differ.",
-    "cleanOutputs": true,
-    "installationExcluded": true
   }
 }

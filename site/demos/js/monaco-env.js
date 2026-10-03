@@ -1,7 +1,10 @@
+export function configureOriginalWorkers() {
 self.MonacoEnvironment = {
   getWorker(_id, label) {
     const file =
-      label === "json"
+      label === "editorWorkerService"
+        ? "editor-main.worker.js"
+        : label === "json"
         ? "json.worker.js"
         : label === "css" || label === "scss" || label === "less"
           ? "css.worker.js"
@@ -13,3 +16,5 @@ self.MonacoEnvironment = {
     return new Worker(file, { name: label });
   },
 };
+
+}

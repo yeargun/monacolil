@@ -1,7 +1,8 @@
-import "./monaco-env.js";
+import { configureOriginalWorkers } from "./monaco-env.js";
 import * as monaco from "monaco-editor";
 import { mountIde } from "../workbench.js";
 
+configureOriginalWorkers();
 globalThis.monaco = monaco;
 
 mountIde(monaco, {
@@ -10,5 +11,5 @@ mountIde(monaco, {
   otherLabel: "← LilScript",
   languageFeatures: true,
   banner:
-    "Production monaco-editor 0.56 (esbuild minify, Brotli on the wire). This is the npm JavaScript editor. The other page is the LilScript port of the same product.",
+    "Original monaco-editor 0.56.0. The paired LilScript implementation has a smaller feature scope; library comparisons disclose that boundary.",
 });

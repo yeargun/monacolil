@@ -1,38 +1,48 @@
+# Compiler-owned delivery; no JavaScript post-minifier or export rewriting.
+[policy]
+version = 3
 [javascript]
 priority = "size-first"
-optimization_level = 15
-cost_model = "brotli"
+# Assumes unpatched platform builtins; disable when consumers replace them.
 assume_pristine_builtins = true
-strip_console = true
-local_name_reserve = 8
-candidate_search = "off"
-function_spelling = "function"
-compression = [
-  "identifier-mangling",
-  "entropy-aware-mangling",
-  "quote-style-selection",
-  "property-mangling",
-  "string-pooling",
-  "size-aware-inlining",
-  "compact-boolean-literals",
-  "standard-grammar-elision",
-  "structured-closure-inlining",
-  "pure-helper-inlining",
-  "dense-string-return-tables",
-  "host-alias-spelling",
-  "string-array-packing",
-  "regex-literals",
-  "unused-catch-binding-elision",
-  "compact-generator-star",
-  "callee-default-arguments",
-  "scalar-phi-copies",
-  "phi-affinity-coalescing",
-  "loop-spelling-selection",
-  "mutation-spelling-selection",
-  "joint-representation-search",
-]
+# Remove debugLog instrumentation; ordinary print and host console effects remain.
+strip_debug = true
+compression = ["identifier-mangling", "property-mangling", "string-pooling", "string-array-packing"]
 
+# Preserved effort setting. 13 favors size; 14/15 allow more expensive marginal searches.
+[effort]
+level = 15
+
+# Optimize the delivered files for this codec, independently of raw/gzip objectives.
+[objective]
+codecs = "brotli"
 [mangle]
 identifiers = true
 properties = true
-exports = false
+
+[delivery]
+mode = "single"
+directory = "."
+host_modules = "embed"
+select = ["index"]
+entry_names = "monaco.esm.js"
+[delivery.entries]
+index = "src/package.lil"
+raw = "src/entry.lil"
+
+[[delivery.also]]
+name = "cjs"
+format = "cjs"
+entries = ["index"]
+entry_names = "monaco.cjs"
+
+[[delivery.also]]
+name = "raw-core"
+entries = ["raw"]
+entry_names = "monaco.raw.js"
+
+[policy.resources]
+logical_work = 2000000000
+
+[execution]
+jobs = 1

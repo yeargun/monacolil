@@ -1,0 +1,4457 @@
+{
+  "schemaVersion": 1,
+  "package": "@itslil/monaco-editor",
+  "version": "0.56.1",
+  "checkedAt": "2026-10-03T15:05:12.970321+00:00",
+  "compilerSha256": "8ff44fabb92c949e68240ce6541038fd52e2f3c04d1a9ac470031e4238541c3a",
+  "buildReport": "./comparison/package-build-report.json",
+  "packageBuildSeconds": 35.185,
+  "validation": {
+    "ok": true,
+    "checks": [
+      {
+        "suite": "test",
+        "command": [
+          "node",
+          "--test",
+          "--test-concurrency=1",
+          "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/test/delivery.test.mjs"
+        ],
+        "returncode": 0,
+        "log": "./comparison/package-validation/test.log",
+        "logSha256": "dd6e8405a2ddfa39d9211cd0bd3cce8b21438694fc6ad7ac9de423e3c84b4323"
+      },
+      {
+        "suite": "pack",
+        "command": [
+          "npm",
+          "run",
+          "check:pack"
+        ],
+        "returncode": 0,
+        "log": "./comparison/package-validation/pack.log",
+        "logSha256": "00e3e2dfd2a6e29410ad9645e7122b6139c2a9df2dc19950efebdbd8a3edfdfc"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "src/STATUS.md",
+      "sha256": "83cea1af314492b29648401afa1e190348a99640ae5cee67feff6ab7b9195296"
+    },
+    {
+      "path": "src/base/keycodes.lil",
+      "sha256": "12f0102df552ba7ff90b76c57414458dee42c76ee87dd8e07e6fadd48a22b6d8"
+    },
+    {
+      "path": "src/base/lifecycle.lil",
+      "sha256": "419ffb7b9ca1dd2f7b5eb068e3b349deff4b5b98721c997406dc6ca61a844a9b"
+    },
+    {
+      "path": "src/base/nls.lil",
+      "sha256": "4e56d76ee4d194fe9a18da0c30b0057ae6441e2707a87fef17bf2abefb695646"
+    },
+    {
+      "path": "src/base/position.lil",
+      "sha256": "a54765d340279595ee3b47600da0692d0590e6029172dfdc9140cac8c53e54ea"
+    },
+    {
+      "path": "src/base/range.lil",
+      "sha256": "f8a75cf726cc5c960a6a2287384a044013c6a13e7cf6c6cce169b919cdbce238"
+    },
+    {
+      "path": "src/base/selection.lil",
+      "sha256": "638af0a9685f1bd143360e1ef866e27f4093f4aad6923d2aa15485093e60cda6"
+    },
+    {
+      "path": "src/base/uri.lil",
+      "sha256": "526a64c86354587d929994a4db1009f1aeb4ca6148cd87045f52f7a148b255e6"
+    },
+    {
+      "path": "src/contrib/engine.lil",
+      "sha256": "d21cdbec6c7f426147adff0a5b2357348f8ae4271b3cc10f19fd93fcb3bf5f38"
+    },
+    {
+      "path": "src/contrib/language-data.lil",
+      "sha256": "cb0746ab5da96c5cb3d84ebaba18e1ab5be55d7149b18cb1375e567725bd328a"
+    },
+    {
+      "path": "src/contrib/language-services.lil",
+      "sha256": "4c5288642bbf31930038f26ee8170e753dab38904c54ccb439c503dc720182eb"
+    },
+    {
+      "path": "src/contrib/popular.lil",
+      "sha256": "f395d067a07a5b508967a95f8cb894289f7c9ca006c500daaf8190f7c6bbf64f"
+    },
+    {
+      "path": "src/contrib/remaining.lil",
+      "sha256": "9f83d67d4f90a22085e0f8c4818d2a74ce5856bd068bd4216d6e5f4f84e3f1ca"
+    },
+    {
+      "path": "src/contrib/runtime.lil",
+      "sha256": "146191ecff82a9c0c1e34f89acb1375983cafb997fc0eedccf73ee5373baf8df"
+    },
+    {
+      "path": "src/demo-entry.lil",
+      "sha256": "3557725b2c1454eb2201a33ebd76e25cde83104dec607de00a6f5c3a8999fe05"
+    },
+    {
+      "path": "src/editor/commands.lil",
+      "sha256": "09abe2c8447153f2255faade42a39ba3d3224ad7e6bca27b87bdf138dc6190ca"
+    },
+    {
+      "path": "src/editor/edit-stack.lil",
+      "sha256": "0c5521678e1df90506e5489be67f11a468c076a63bacb2463a63665a87f73e8a"
+    },
+    {
+      "path": "src/editor/interval-tree.lil",
+      "sha256": "90fee08dd5d6fae36a50c81bde505bf18ed2ca285765f5d199385d4de5954ff0"
+    },
+    {
+      "path": "src/editor/markers.lil",
+      "sha256": "c1b6401cc1e99d18e37834930c74287dbcdac9bbe10b683f86cbcd371cb3be0f"
+    },
+    {
+      "path": "src/editor/monaco-api.lil",
+      "sha256": "3dbc574b1f5b720f3fcec9419ead98740ef20a04639514fa4c050e5580e43beb"
+    },
+    {
+      "path": "src/editor/monarch-lexer.lil",
+      "sha256": "c6fc6bc1a74f25c3c4c1a79e0e0db30169653875188257ef6e9d4d2076fab0e3"
+    },
+    {
+      "path": "src/editor/monarch.lil",
+      "sha256": "b960b6fca9fd6344ef162608dfca317f63e2aaf67b95601cdfcbac2ccdde4250"
+    },
+    {
+      "path": "src/editor/myers.lil",
+      "sha256": "76f5b1f7a6be6889f62a533f788762e692569cec1b26ee507796ddc03dd80d26"
+    },
+    {
+      "path": "src/editor/piece-tree-buffer.lil",
+      "sha256": "cae3e39fa8c3d31a28e957bd0b32b999124d474013db7e63e2d62116bc780757"
+    },
+    {
+      "path": "src/editor/piece-tree-builder.lil",
+      "sha256": "0f711ee03949f9b776304c302bd77c034e992ab55a23ba8dda22d4b213d841b3"
+    },
+    {
+      "path": "src/editor/piece-tree.lil",
+      "sha256": "4442cb4ef113b3ff3002717839c55ab5922b284016ba406db55fae546a91ed22"
+    },
+    {
+      "path": "src/editor/prefix-sum.lil",
+      "sha256": "e331c7b122c07dabcb52424af151b7a86cd88344fa37899061b81d231bc79908"
+    },
+    {
+      "path": "src/editor/rb-tree.lil",
+      "sha256": "6406b2aad955bb7b8f85ff54ea8c7bbe60721a0dffc5094c252cf979db788574"
+    },
+    {
+      "path": "src/editor/search.lil",
+      "sha256": "4256dca99b1286298a277e256a34d90d9faa175ec231d08c219c279c4e1861af"
+    },
+    {
+      "path": "src/editor/standalone-enums.lil",
+      "sha256": "fe3a8545c1472f46d5d9c2ef0121dfcaec6a84841634b9c746b56c2bc48b7284"
+    },
+    {
+      "path": "src/editor/standalone.lil",
+      "sha256": "795715370fb71be4ab1b0d44d8e843f6668d456fdc5663cf75f1224bee23ad5a"
+    },
+    {
+      "path": "src/editor/text-model.lil",
+      "sha256": "66c56393f0729fb6c6ce5513e52b3375bcd2789cd481cf0a3afbb892dfa20aa3"
+    },
+    {
+      "path": "src/editor/view.lil",
+      "sha256": "eabdb66c40ca1740235d583defdf12be6a76609f9697492e0f89c51455f1d6b3"
+    },
+    {
+      "path": "src/editor/word.lil",
+      "sha256": "a225c6bd45e426ef0c8a8f05229a5a1950cb69663d5f477f0f0e66a32274b0c3"
+    },
+    {
+      "path": "src/entry.lil",
+      "sha256": "256b7b8d8cbdced7450df44fd51336ae68f2d0c5726e12809bd150fdc2f7b5f6"
+    },
+    {
+      "path": "src/js-host-paint.ts",
+      "sha256": "5804f3be5f66ea4fd5f6038222df60c4343a54262eda2c978798d40a7c861b45"
+    },
+    {
+      "path": "src/js-host.lil",
+      "sha256": "2c960812bf197f91390a42d28316e81c8d8dad9e112b95e0253be8814e2b8b50"
+    },
+    {
+      "path": "src/js-host.ts",
+      "sha256": "1e5f133aca0cd01e40043b849653991d91cbe7c35290b2562ed4fc44b3661fe5"
+    },
+    {
+      "path": "src/languages/popular.lil",
+      "sha256": "33ad28b5f25655b3a962dbd91b1c231e3be31c019c310e5a43ea75178ba4a334"
+    },
+    {
+      "path": "src/languages/providers.lil",
+      "sha256": "9a107ae948fb4dadd1f33e4925216767eb02da3060583987497f800aec4ab5c5"
+    },
+    {
+      "path": "src/languages/registry.lil",
+      "sha256": "53d5a593e3e1acbc8a663bcaaa7dd442e345dc699502a4324325db9cd54bd402"
+    },
+    {
+      "path": "src/languages/remaining.lil",
+      "sha256": "eb059f36a81d6a522f46f24b8885de70f9813330300baa2cb956b4ac435457ad"
+    },
+    {
+      "path": "src/layers/base-lifecycle.lil",
+      "sha256": "4e7b8dcf667827d368e2e0d671c0dfe2f8720f1875f49ebd5632374f4a134064"
+    },
+    {
+      "path": "src/layers/core-types.lil",
+      "sha256": "ffc6530c597e97a3c008a9d2ef5db658432e08fe6fbd9e074850788f42f2aa06"
+    },
+    {
+      "path": "src/layers/input-commands.lil",
+      "sha256": "e4bdc162f697ff73101fc7977675360b1c6d533f83bbc999b06650fbaf7e0fa0"
+    },
+    {
+      "path": "src/layers/json-css-html-ls.lil",
+      "sha256": "5e55b963e249865cf7c6ca1e75c7921c8761dd9578cda500a687b099ad7b688e"
+    },
+    {
+      "path": "src/layers/monarch-popular.lil",
+      "sha256": "cce43f42a1bcd6ad23f4950a860318443ab7059bf6e3b296d59bdf1983ee4523"
+    },
+    {
+      "path": "src/layers/piece-tree.lil",
+      "sha256": "bd913631ba602d9244c218c6f4fef8c0f183d436b3985f1e752c2e4e4e63fffe"
+    },
+    {
+      "path": "src/layers/popular-contrib.lil",
+      "sha256": "72b8d6e3057359f65296dbc6abbe0e00f956f8f862c45c301a772d7dd2b9d252"
+    },
+    {
+      "path": "src/layers/remaining-contrib.lil",
+      "sha256": "29331edce84227c8751629b6959fb330400c7d94a0ea59279f00a50daa469ce7"
+    },
+    {
+      "path": "src/layers/remaining-monarch.lil",
+      "sha256": "33c18ee926e9e942d5aaa6793611050d7eae87d70cdb2b16134fa848c90c71a6"
+    },
+    {
+      "path": "src/layers/standalone-api.lil",
+      "sha256": "8d7a3a13e1480e4716189c975ae74dcf638e1b311755fb640271af04ac014a3e"
+    },
+    {
+      "path": "src/layers/text-model.lil",
+      "sha256": "5d69e9ddf87f0fcb0e8216923cabcf7f898232e39d426256f27e3d471977698d"
+    },
+    {
+      "path": "src/layers/view-render.lil",
+      "sha256": "08d8139ee9e4b0b4e5dfceb9c689d46a7ad18357756361321c579c9eed1a9741"
+    },
+    {
+      "path": "src/lilscript.app.toml",
+      "sha256": "1421bbb21dfcf34409752554f9ce99820658a0d17c3f17832990a723924db5ef"
+    },
+    {
+      "path": "src/lilscript.toml",
+      "sha256": "e4de13f4e34438461efd96e3ec1995634c77bc1e1cd14887b8576dfb2891b1de"
+    },
+    {
+      "path": "src/monaco-api.ts",
+      "sha256": "3bf1608f29b2ead8cfb1242c6085007d1f15ebdc0dec52b05ccf55102b5adfd7"
+    },
+    {
+      "path": "src/package-factory.mjs",
+      "sha256": "3de6a4b3e2fbe6baaf8beb36a62b17c6e83728ca99e0ba4ff4ead458632f4024"
+    },
+    {
+      "path": "src/package.lil",
+      "sha256": "1cedd578c7231583bdffc64459bdaf8107d8ae949f4d1690087514d651d1ea1a"
+    },
+    {
+      "path": "src/plug/piece-tree-base.js",
+      "sha256": "7fb6cc68d07de774b0c05dee79a79c1b54c2810124fa5cc68c2289ab88ff5979"
+    },
+    {
+      "path": "src/ts-language/attach-factory.mjs",
+      "sha256": "406dfbe941e36e8c9759704467b6c2f322e9990edfd62f952b7e2cd472b9c845"
+    },
+    {
+      "path": "src/ts-language/attach-typescript.js",
+      "sha256": "ad2444e6279743d817836447729a242c335487cee8416600f8de9af241a433e3"
+    },
+    {
+      "path": "src/ts-language/monaco-api-shim.js",
+      "sha256": "5136fb4831aaa8c898ac871958b1d3932880c9f63f1a51556e1538a149ea7e55"
+    },
+    {
+      "path": "src/ts-language/provider/index.mjs",
+      "sha256": "8948ae7cd6974d7b3307c18a3da571ce9621d2bce8cb8b7a26cfbb89083097db"
+    },
+    {
+      "path": "src/ts-language/provider/languageFeatures.mjs",
+      "sha256": "53822102d4a1b576f5bb67345235c07eeab708d1eefce718a700338f4560504f"
+    },
+    {
+      "path": "src/ts-language/provider/lib.index.mjs",
+      "sha256": "0504251bc95b1ed7c1b79811d6ea59d8567ced6b761a7935a50f2e65b1be7ee0"
+    },
+    {
+      "path": "src/ts-language/provider/provenance.json",
+      "sha256": "85345499e741c6ecc4c4a89d76490593f2d7c7e98c20bc29074fd12d7e9ac7d2"
+    },
+    {
+      "path": "src/ts-language/provider/register.mjs",
+      "sha256": "f121aa1d5273c6d41bae6f2a5b45dc5f51def49b2f081e4dbf59dbb51ccd853a"
+    },
+    {
+      "path": "src/ts-language/provider/tsMode.mjs",
+      "sha256": "7ae1344a41af2168640d02c8407145a0b8359db8258fd4ab24fca0bcf0cd0cb1"
+    },
+    {
+      "path": "src/ts-language/provider/typescriptServicesMetadata.mjs",
+      "sha256": "8b583b4b417838cf5ace82929098962546f48a3f51c1d16bcea9f3dfb714c597"
+    },
+    {
+      "path": "src/ts-language/provider/workerManager.mjs",
+      "sha256": "3bb62e9281403c5bdba44db7eeaf6ef9adb0b15fa20e06c410123708af473592"
+    },
+    {
+      "path": "src/ts-language/worker-client.js",
+      "sha256": "283e549008a59b1fb971c0ec9ba7dff31539ec9a70e2b50834f386f1a6e04570"
+    },
+    {
+      "path": "src/vs/amdX.lil",
+      "sha256": "1daf5f4148778d6d14a425b5144949bef2b50958d0d645a020eff48745b30582"
+    },
+    {
+      "path": "src/vs/base/browser/animatedValue.lil",
+      "sha256": "44272c68725e83d989d5aceb883eb99e13d5834c2a5252e7645bd591958da320"
+    },
+    {
+      "path": "src/vs/base/browser/browser.lil",
+      "sha256": "1efc7412d842eab9d88c0d770d9dcbff44e2e5599bede61d3dbdf571203e708b"
+    },
+    {
+      "path": "src/vs/base/browser/canIUse.lil",
+      "sha256": "ceccbe1a3ee0d3b93d429bfdb5136de9edc0195796048d25e476852f88227fe3"
+    },
+    {
+      "path": "src/vs/base/browser/contextmenu.lil",
+      "sha256": "b398211b7349d6f50bb32f04054285372dfa65af3e17e916c8aa5aa78d163b56"
+    },
+    {
+      "path": "src/vs/base/browser/cssValue.lil",
+      "sha256": "d5ea08e31c4611462c3a7c5e74bd0019746401857558b4f92f4d9126e81dd782"
+    },
+    {
+      "path": "src/vs/base/browser/dnd.lil",
+      "sha256": "92dc1680d034c37adff71171ffc93ade7672169ae955a15b58032dec37182e63"
+    },
+    {
+      "path": "src/vs/base/browser/dom.lil",
+      "sha256": "9bd5177ab8f66a7c660236dfce033afcf8d4ad0edabb27b0fd899d0745084794"
+    },
+    {
+      "path": "src/vs/base/browser/domSanitize.lil",
+      "sha256": "5cdf74242458db97a067dbf2b2db41cf9c0c49ea014254469ad3d7eb10cf7e10"
+    },
+    {
+      "path": "src/vs/base/browser/domStylesheets.lil",
+      "sha256": "45701961776e01fd41d38f05b41ed3983ad212b9a614e3fcb364265570f19c14"
+    },
+    {
+      "path": "src/vs/base/browser/dompurify/dompurify.lil",
+      "sha256": "e47f339f5cfbed4791bef7e1b50615369f217b85d6fb3895bcd0f799d35c4eb1"
+    },
+    {
+      "path": "src/vs/base/browser/event.lil",
+      "sha256": "5881764269f8703cd5c59e715de8a8d52fe3b9f2854d6eeff45acf05df58c087"
+    },
+    {
+      "path": "src/vs/base/browser/fastDomNode.lil",
+      "sha256": "a7e39ae07f5e68d6cb9e0272d3cc88fc2d2b93444d4af173bf697a76b794813e"
+    },
+    {
+      "path": "src/vs/base/browser/fonts.lil",
+      "sha256": "c25c4d7c45e96bc83e90242a0b8c21f692f038313981b98935ff64b6b8a9a2b4"
+    },
+    {
+      "path": "src/vs/base/browser/formattedTextRenderer.lil",
+      "sha256": "95c636a389d6065bc0740a0353d363b784d68f1bfac8a5a60f0efcfac8b4eb06"
+    },
+    {
+      "path": "src/vs/base/browser/globalPointerMoveMonitor.lil",
+      "sha256": "9957d3c500ed0ba2c1d5945861c0c2330c2444c6d12d1d8536b6e9c4050ed92e"
+    },
+    {
+      "path": "src/vs/base/browser/history.lil",
+      "sha256": "11d7371b87b8d5e47a32b9a0cda9ab8934bbe1659d347e965465667660bb6e03"
+    },
+    {
+      "path": "src/vs/base/browser/iframe.lil",
+      "sha256": "438bd6b2d34b22d5e360c973393ba17ce3f60197a1d219e029b54644c90a8914"
+    },
+    {
+      "path": "src/vs/base/browser/keyboardEvent.lil",
+      "sha256": "6604a2079c8812ebd7d4cee8073014aaecdaa51464dd7309a05e499c6e6ca0d6"
+    },
+    {
+      "path": "src/vs/base/browser/markdownRenderer.lil",
+      "sha256": "cc4eee188944eab096550731baed535ab9389f5563d14b3baccd0198b492f24f"
+    },
+    {
+      "path": "src/vs/base/browser/mouseEvent.lil",
+      "sha256": "35ed65b766f131fbe19029ce5e3c65adbd6571e008238136c294d2a49634fc58"
+    },
+    {
+      "path": "src/vs/base/browser/performance.lil",
+      "sha256": "3a50e1175a475e99ff0c188143b0576e80056049b064c04f1f56a1f0f5272cce"
+    },
+    {
+      "path": "src/vs/base/browser/pixelRatio.lil",
+      "sha256": "bfa28a1ea7d5b27541bcb2094c46eebdb0482316b96b99dc66b993ab58f2fa33"
+    },
+    {
+      "path": "src/vs/base/browser/touch.lil",
+      "sha256": "8c87f4f2e1c6bd2a17e5c4dea4bab8df84c02c7be5f27cb1d771710f944d72d3"
+    },
+    {
+      "path": "src/vs/base/browser/trustedTypes.lil",
+      "sha256": "524b09a3424f3db57ab060a7e895f17b42ecd08240887c13af8008896f2400ba"
+    },
+    {
+      "path": "src/vs/base/browser/ui/actionbar/actionViewItems.lil",
+      "sha256": "633b08fdd257cc25cc59bd5cc7ff05bcb98607a4ae59f4063a05436a2eec0e03"
+    },
+    {
+      "path": "src/vs/base/browser/ui/actionbar/actionbar.lil",
+      "sha256": "31a742d44bf1a0472c3c1f76afd92eae4ba73b37d2b3bd43902cc648bff6b330"
+    },
+    {
+      "path": "src/vs/base/browser/ui/animations/animations.lil",
+      "sha256": "cc7a41e57e61df7f344d7a712ae4a81152bd2a943b2ebf0d64833b12ff77bf4a"
+    },
+    {
+      "path": "src/vs/base/browser/ui/aria/aria.lil",
+      "sha256": "dd8ba81ca09d2b0941713884c4100679cd974b0689d1b2ec89feec015a43d036"
+    },
+    {
+      "path": "src/vs/base/browser/ui/breadcrumbs/breadcrumbsWidget.lil",
+      "sha256": "fe68f1a44d923ab6cb2a4bf077c64e5317ecdcd91be237585f8cecf18d7582d8"
+    },
+    {
+      "path": "src/vs/base/browser/ui/button/button.lil",
+      "sha256": "6300d17bf6fec56e04cc92d75295921b220427fde8acd8b6b6984b781a5d6d2d"
+    },
+    {
+      "path": "src/vs/base/browser/ui/codicons/codiconStyles.lil",
+      "sha256": "74f99e7ea5996a8997a58d376be0531786f8643c697eb22c13a954c8fbecc84e"
+    },
+    {
+      "path": "src/vs/base/browser/ui/contextview/contextview.lil",
+      "sha256": "fc94e30668ab7b7a615b0b0ea6c3f0c6e20df8a41fd68e03b018eddaa8f80005"
+    },
+    {
+      "path": "src/vs/base/browser/ui/countBadge/countBadge.lil",
+      "sha256": "a665db47b0d60fe288311ddf2046cd63b12794bff64a98eedf4244e696deba28"
+    },
+    {
+      "path": "src/vs/base/browser/ui/dialog/dialog.lil",
+      "sha256": "ef3dd738e2761c261f764bec160d29c8c486fa3690e6896c3f866e236f517b6a"
+    },
+    {
+      "path": "src/vs/base/browser/ui/dnd/dnd.lil",
+      "sha256": "4e6a50e57b3c99f8e84b9e3962238f71cdfdcaf0827e5681f1ec838573df0971"
+    },
+    {
+      "path": "src/vs/base/browser/ui/dropdown/dropdown.lil",
+      "sha256": "338c65eed20146334ccf18c81f4c6ff553b4be1f5296b0731ad24dffd6a17d03"
+    },
+    {
+      "path": "src/vs/base/browser/ui/dropdown/dropdownActionViewItem.lil",
+      "sha256": "f9641548961ad8505267dc1a349126686811bba649570fa5edd88c853f59e550"
+    },
+    {
+      "path": "src/vs/base/browser/ui/findinput/findInput.lil",
+      "sha256": "88672d947a2b1213c58fe39c3da06ec847ff73cfa82562f3b26b7fa90b754062"
+    },
+    {
+      "path": "src/vs/base/browser/ui/findinput/findInputToggles.lil",
+      "sha256": "6a637a25f096f58c85f903c91db8063893b513a089cbaae32c4eb3461e568f10"
+    },
+    {
+      "path": "src/vs/base/browser/ui/findinput/replaceInput.lil",
+      "sha256": "c214fbfd5d7ac731bee073ea2a17324e0719b79dd6b9dc9c6a6e52ffcf2972da"
+    },
+    {
+      "path": "src/vs/base/browser/ui/highlightedlabel/highlightedLabel.lil",
+      "sha256": "10b9942caeac2b8c456e62436dfa3e739a422be2ccac17888edddd09ec6b326d"
+    },
+    {
+      "path": "src/vs/base/browser/ui/hover/hover.lil",
+      "sha256": "2a4f1f22b4a478540e18841c555fce04987bba46673eee8a400378324a72c5ec"
+    },
+    {
+      "path": "src/vs/base/browser/ui/hover/hoverDelegate.lil",
+      "sha256": "b7aad3bd2e1330e9c1445c9e58f0ccd2a1c94636e729ac25a8becb348aba7869"
+    },
+    {
+      "path": "src/vs/base/browser/ui/hover/hoverDelegate2.lil",
+      "sha256": "04f41c76d94bc59afd100c507f14537ba335956454a790371c8dd5ccd493c603"
+    },
+    {
+      "path": "src/vs/base/browser/ui/hover/hoverDelegateFactory.lil",
+      "sha256": "032c0afd7f73dce23eac28a1706dd8a2da674f44e8e1e7349ad7612e7bbc2909"
+    },
+    {
+      "path": "src/vs/base/browser/ui/hover/hoverWidget.lil",
+      "sha256": "1b487304e8aeb12fc4ef88dd5a169e7eef2c1a1cb24665177c7bab287a8dc37d"
+    },
+    {
+      "path": "src/vs/base/browser/ui/iconLabel/iconLabel.lil",
+      "sha256": "b62ca87e39ac2bd6510d63561f01f131012c6a0a778578738b13889479891c42"
+    },
+    {
+      "path": "src/vs/base/browser/ui/iconLabel/iconLabels.lil",
+      "sha256": "91682d01001580abc188141210c52d4ca208a35b03b160c336c6be26719aa9de"
+    },
+    {
+      "path": "src/vs/base/browser/ui/inputbox/inputBox.lil",
+      "sha256": "623c14f259d59f73645584c5e8454a1be33218a862267d8464dcb0da78250073"
+    },
+    {
+      "path": "src/vs/base/browser/ui/keybindingLabel/keybindingLabel.lil",
+      "sha256": "5063d9306ff537109af239562a0fa8c376611c5d9981b0934f96be07e81b18ee"
+    },
+    {
+      "path": "src/vs/base/browser/ui/list/list.lil",
+      "sha256": "679a7c8557890dc66aaae549ccf8f808daad2895490f1cab7353e0569075166a"
+    },
+    {
+      "path": "src/vs/base/browser/ui/list/listPaging.lil",
+      "sha256": "93a11af7bb070c0176b6a4b85c766396511b91cffe8c3b5f9cc2c83120cb1b5f"
+    },
+    {
+      "path": "src/vs/base/browser/ui/list/listView.lil",
+      "sha256": "16cf36ea5a5735c6fac4ae43ee41feeaecb29eba9ea671da477994cc100d1a28"
+    },
+    {
+      "path": "src/vs/base/browser/ui/list/listWidget.lil",
+      "sha256": "322244782545bc010c9e328193f1111f745d834372a0026a3010d174ac7142d9"
+    },
+    {
+      "path": "src/vs/base/browser/ui/list/rangeMap.lil",
+      "sha256": "7a601b272e1c6c4987aa6a5b9df98781895c438234a0014588bf8ebbfc320dc5"
+    },
+    {
+      "path": "src/vs/base/browser/ui/list/rowCache.lil",
+      "sha256": "8d064aea153445a4dcea5fa2fb4240913461ecd592d20fd8ed3ec0f0a3f23ec7"
+    },
+    {
+      "path": "src/vs/base/browser/ui/list/splice.lil",
+      "sha256": "d8ad0eac47bb5252d7e4a9fe325ffd93557c79c315a3205ea96815eb7371175e"
+    },
+    {
+      "path": "src/vs/base/browser/ui/menu/menu.lil",
+      "sha256": "fdcef50cbbae6060cb832be2200c38d2ef0096bc995457f22dfe122b09b6b88b"
+    },
+    {
+      "path": "src/vs/base/browser/ui/mouseCursor/mouseCursor.lil",
+      "sha256": "97df03e538b10d3f1feb03cd12676892591fe4845da34649fb57656fa83f4e58"
+    },
+    {
+      "path": "src/vs/base/browser/ui/progressbar/progressbar.lil",
+      "sha256": "789fbdc7982a40042b57eefdae937a5d24303af7a66fbc9620f4cc70819ae3b6"
+    },
+    {
+      "path": "src/vs/base/browser/ui/radio/radio.lil",
+      "sha256": "9e3219d9b03fe7e45ea6323fca89c4107f48d944d3d02b5d2443ec4d5a017c22"
+    },
+    {
+      "path": "src/vs/base/browser/ui/resizable/resizable.lil",
+      "sha256": "d178d2b311a0540487ae7d1b4810e9cd81ce5ec3a6981042b8cc6c20eb747119"
+    },
+    {
+      "path": "src/vs/base/browser/ui/sash/sash.lil",
+      "sha256": "1f968de8b7bf10115575ef1789f1a48ed983e1dec419816a20461f6d35adaef9"
+    },
+    {
+      "path": "src/vs/base/browser/ui/scrollbar/abstractScrollbar.lil",
+      "sha256": "8eb98dde1f50c388aabeadaaa2a6e6f1e5fa36b0a69d41911c6fd1f7c0f6f678"
+    },
+    {
+      "path": "src/vs/base/browser/ui/scrollbar/horizontalScrollbar.lil",
+      "sha256": "525a801dba932260294b5e4c6105948c58909c3a78a1168116920a42d835397a"
+    },
+    {
+      "path": "src/vs/base/browser/ui/scrollbar/scrollableElement.lil",
+      "sha256": "1e1fa05a51e17598729d1b3387c641347568b0c263c4e7e736e2c904a6714f0c"
+    },
+    {
+      "path": "src/vs/base/browser/ui/scrollbar/scrollableElementOptions.lil",
+      "sha256": "7a0c7f7d5ba3443c9b5bc9fb81141bb79a0a1da6835a2aca7b4177fd4a0a391a"
+    },
+    {
+      "path": "src/vs/base/browser/ui/scrollbar/scrollbarArrow.lil",
+      "sha256": "e9fffccfb7866c38dfac0b04da51de0f23e3193abb2c52890f326e594dc6b58d"
+    },
+    {
+      "path": "src/vs/base/browser/ui/scrollbar/scrollbarState.lil",
+      "sha256": "e0a53fbd5de14629e28debba854fc6e18b4e0c41adfa1ded42e14b23edbc7391"
+    },
+    {
+      "path": "src/vs/base/browser/ui/scrollbar/scrollbarVisibilityController.lil",
+      "sha256": "218a521ef2c00b490e54c4c424c8b618bad68ed98ca7ebb82f84b15c7bfe1777"
+    },
+    {
+      "path": "src/vs/base/browser/ui/scrollbar/verticalScrollbar.lil",
+      "sha256": "20532ad05075025a3b1973f94a313f3bfb4dce88d324228059e10326066a8397"
+    },
+    {
+      "path": "src/vs/base/browser/ui/selectBox/selectBox.lil",
+      "sha256": "5293ff143b01897603dedf265f241288886b6d0dbca7147512a217a8bbcfab3c"
+    },
+    {
+      "path": "src/vs/base/browser/ui/selectBox/selectBoxCustom.lil",
+      "sha256": "be87e6a25f2e5e52725ea7dfbc634127fd7b8f165061feb13ead0170872643a6"
+    },
+    {
+      "path": "src/vs/base/browser/ui/selectBox/selectBoxNative.lil",
+      "sha256": "3c83d935b09cf6581e9d611e5503cafba7b18f7b296d1b79dd1adc89345178cb"
+    },
+    {
+      "path": "src/vs/base/browser/ui/severityIcon/severityIcon.lil",
+      "sha256": "33a4c99acb297fb647c9a7e2942fecdbd130c9f097b39fa1e56854718859aab8"
+    },
+    {
+      "path": "src/vs/base/browser/ui/splitview/splitview.lil",
+      "sha256": "cb3947a725334a1f625308db2f1c5fbaebcb4c458ea5858e827e712f50c23f03"
+    },
+    {
+      "path": "src/vs/base/browser/ui/table/table.lil",
+      "sha256": "7bc2fe3a7288e39dc636447cff748d2aeec17e2d4fac292c8a1f80c6fbddee2b"
+    },
+    {
+      "path": "src/vs/base/browser/ui/table/tableWidget.lil",
+      "sha256": "be667950e35397d7cb485faf3ac54157f691756639c0a6e5082f8c0b52451065"
+    },
+    {
+      "path": "src/vs/base/browser/ui/toggle/toggle.lil",
+      "sha256": "27bca4a1996aaeb4eeca034b46920c6118196543312d9bb947e007c506e30883"
+    },
+    {
+      "path": "src/vs/base/browser/ui/toolbar/toolbar.lil",
+      "sha256": "89c65c7ef974ee4ac49dd355ce6c7f1564aba16149259a465b87e6121c0ae5d8"
+    },
+    {
+      "path": "src/vs/base/browser/ui/tree/abstractTree.lil",
+      "sha256": "841540fe17b3f793ade129c7ed15fd8f8a0e9e6d313518407331c4d2de90b19e"
+    },
+    {
+      "path": "src/vs/base/browser/ui/tree/asyncDataTree.lil",
+      "sha256": "0bc1e9ca113fe0a13fbb978b5d6141d471e649b254f78297f37febf0e62714ec"
+    },
+    {
+      "path": "src/vs/base/browser/ui/tree/compressedObjectTreeModel.lil",
+      "sha256": "efe0f75e7d42ba6721a877c25efdc52bfe2fd1bff572d47c277bd21f6f7f4c35"
+    },
+    {
+      "path": "src/vs/base/browser/ui/tree/dataTree.lil",
+      "sha256": "9c2d8a2712f5f8c172ecacaf5051ea8c7b8d9ab9079228176a72a33f5f1d3d88"
+    },
+    {
+      "path": "src/vs/base/browser/ui/tree/indexTreeModel.lil",
+      "sha256": "967ff46c25372760ebd075d73720b05cc3edd8f10e9f6265ab2442b557102ca1"
+    },
+    {
+      "path": "src/vs/base/browser/ui/tree/objectTree.lil",
+      "sha256": "ebb47e48ba2c518eb8de66081277a2e0fb91282ec35b5e283303b9195c7741e3"
+    },
+    {
+      "path": "src/vs/base/browser/ui/tree/objectTreeModel.lil",
+      "sha256": "ab394a71c359e29feb047065c5939007e6806a1337d20bb2908f02984f4974a8"
+    },
+    {
+      "path": "src/vs/base/browser/ui/tree/tree.lil",
+      "sha256": "4dc9299070c4a569947893071889956de190bf9253ffb4ddaacc2ff8f594b8e9"
+    },
+    {
+      "path": "src/vs/base/browser/ui/widget.lil",
+      "sha256": "a9e6652a08bd9dba5caa8049650cdd45e685de9b953f779698718d31bf7d656f"
+    },
+    {
+      "path": "src/vs/base/browser/window.lil",
+      "sha256": "2bada4f1ebe5f2f221469c3d25bad32df2364028b92865ffcbfe1812227f2388"
+    },
+    {
+      "path": "src/vs/base/common/actions.lil",
+      "sha256": "51a8926e59129f51679ba103f7a1d72a21d7791bfb24e69feaddc510649c3531"
+    },
+    {
+      "path": "src/vs/base/common/arrays.lil",
+      "sha256": "0c5fcfd04b352a54cfa25013efce8bb77f75141bb48005339dc7df12f2d50ee3"
+    },
+    {
+      "path": "src/vs/base/common/arraysFind.lil",
+      "sha256": "49e5a6c3b76f129820a7096af7c2e8ac30c370a23768501c19727f8e67e199bd"
+    },
+    {
+      "path": "src/vs/base/common/assert.lil",
+      "sha256": "f4068f3d765cdc3de8e3b59b9d823234eeefc2ddf28c6144598e8222b03888ef"
+    },
+    {
+      "path": "src/vs/base/common/async.lil",
+      "sha256": "c1902c26f8cb24e64bae359da3727de33dde9996b6f49706a222798195525d15"
+    },
+    {
+      "path": "src/vs/base/common/buffer.lil",
+      "sha256": "b849fca5d0aad25fd3ec305dc7a15597a871a3c3a7ed8dc6e9d6d46bdfe2f74c"
+    },
+    {
+      "path": "src/vs/base/common/cache.lil",
+      "sha256": "9ae5ab49b688bd3ab67810363aa91647653037eb981f004d81a0b619cc4c5b06"
+    },
+    {
+      "path": "src/vs/base/common/cancellation.lil",
+      "sha256": "1fc8109d2fde5170eefeab2c571bd9dc1020fc4f9dff95c8f81f34078d81fdb3"
+    },
+    {
+      "path": "src/vs/base/common/charCode.lil",
+      "sha256": "119d558d816f73736b2121fd5693c7a8bb4186c82fb16842c85390cc55d9c01d"
+    },
+    {
+      "path": "src/vs/base/common/codicons.lil",
+      "sha256": "b35e665eff727acb76cce20e7aee375bcaf174701158f59859a7ff7a30e3e7cc"
+    },
+    {
+      "path": "src/vs/base/common/codiconsLibrary.lil",
+      "sha256": "430ce0c5bcf00dbae34f71deb91d4b67c972613eb0cd241ddbfb6ad34e6c01d6"
+    },
+    {
+      "path": "src/vs/base/common/codiconsUtil.lil",
+      "sha256": "32030e51b6ed0203d63e460183f3ffaf23489baa1ad79c6bb8233b3803d3513b"
+    },
+    {
+      "path": "src/vs/base/common/collections.lil",
+      "sha256": "bd0e552658e97fab4b71710739434c5c1760ec2e4a28f39849099c9465a7888f"
+    },
+    {
+      "path": "src/vs/base/common/color.lil",
+      "sha256": "cbc97fdbf87bd5bb1f1cc9b0215c641cf853626759cfc415c7346925fedadce5"
+    },
+    {
+      "path": "src/vs/base/common/comparers.lil",
+      "sha256": "a1fce6f649c3a93c9a85ce4c6f18288047d631ddcf702ade0ec108db705c29a2"
+    },
+    {
+      "path": "src/vs/base/common/dataTransfer.lil",
+      "sha256": "57710103d676340961b3bc56cc4bc56afd302f92abf7e3dff604fb9e5f602414"
+    },
+    {
+      "path": "src/vs/base/common/date.lil",
+      "sha256": "e937f7b0974333a1062243c4bb0dfa615bc7ee3301400b1f1bb0681e8ace30f3"
+    },
+    {
+      "path": "src/vs/base/common/decorators.lil",
+      "sha256": "24a12bd7cec1d8c1fb8f80f9a9f48c731a456147b1407da9ac687a28a33e291e"
+    },
+    {
+      "path": "src/vs/base/common/defaultAccount.lil",
+      "sha256": "b5ba9365a347a3e6738ea5d57ce4bad1214158c46731a18fbff4ec5584f64236"
+    },
+    {
+      "path": "src/vs/base/common/diff/diff.lil",
+      "sha256": "2274b9a73c12ab5660636b615a3228e557cb7d5de05429fe60c03c3738d3e330"
+    },
+    {
+      "path": "src/vs/base/common/diff/diffChange.lil",
+      "sha256": "c1b72bcbe5f0e4f3f96ca4d4767479c291566790432f8a4e529562eb19798ba3"
+    },
+    {
+      "path": "src/vs/base/common/equals.lil",
+      "sha256": "7df1e4839ed8714b98d0ce51494d264521471dc89309fff19c605c4837b32af8"
+    },
+    {
+      "path": "src/vs/base/common/errorMessage.lil",
+      "sha256": "3429e6d30744f34b560183e9411a5eae903af1a7fed36669b2d76321dc91a5e1"
+    },
+    {
+      "path": "src/vs/base/common/errors.lil",
+      "sha256": "20127bcf8393c3d93abffa29ff0446d11aa2f795b476330b1376dfe75a061b0f"
+    },
+    {
+      "path": "src/vs/base/common/event.lil",
+      "sha256": "718f0a2bad28c61622ec476d4378076f091a6059819de2663d6d2c7d0862da13"
+    },
+    {
+      "path": "src/vs/base/common/extpath.lil",
+      "sha256": "68e0a63d07caec8b41c12997db178a89ab26faabfcea7467f08c6152f9d43c36"
+    },
+    {
+      "path": "src/vs/base/common/filters.lil",
+      "sha256": "78c3dbfd20cd97734ef54a4278f444d67ef1cb1592c9fe10958365f92d3b41e4"
+    },
+    {
+      "path": "src/vs/base/common/functional.lil",
+      "sha256": "114e54b99df55d36fd9867828b841285434d77b9adb9619cb7ae8f7b8e6f9da7"
+    },
+    {
+      "path": "src/vs/base/common/fuzzyScorer.lil",
+      "sha256": "289952330be91f1635cf61e9392131910230b10427bdd47a0fab1adaf24d6089"
+    },
+    {
+      "path": "src/vs/base/common/glob.lil",
+      "sha256": "cf2a2e9268d8e5e35e38586f7a204b0ce19231cd8352b69b765fa9252069fff6"
+    },
+    {
+      "path": "src/vs/base/common/hash.lil",
+      "sha256": "30a4de5cb7ae4c83ad66bc7ebcbe5cbf1165674ecf53fc2b617ac6557cea2710"
+    },
+    {
+      "path": "src/vs/base/common/hierarchicalKind.lil",
+      "sha256": "ff45587c6febfe32e9b2dcf1a7a11b64bf5a7b4f79d376417d1c6f2b4ef418c4"
+    },
+    {
+      "path": "src/vs/base/common/history.lil",
+      "sha256": "9ae5351e7ad5cb68b8a21f639f070759caf2931aabbc7c7a24111787f626a6af"
+    },
+    {
+      "path": "src/vs/base/common/hotReload.lil",
+      "sha256": "5d2a0baa8b51e5c32c8b1cf3b3c508b80771c6bcfede156a50acfa9fe86278cb"
+    },
+    {
+      "path": "src/vs/base/common/hotReloadHelpers.lil",
+      "sha256": "1d8f727f5cfedcffb14b16a8183babafad075557feed515a557edca05e44145c"
+    },
+    {
+      "path": "src/vs/base/common/htmlContent.lil",
+      "sha256": "4febf794b77e1b02db7f2a5e1b3c082463ea851454907c6a02dd25975c9fb20e"
+    },
+    {
+      "path": "src/vs/base/common/iconLabels.lil",
+      "sha256": "2ea9b20cb643dfc8b53206a4516628b17e0d590e133eab56f151e00b1a61666e"
+    },
+    {
+      "path": "src/vs/base/common/idGenerator.lil",
+      "sha256": "c1a8b002a5f6d3fd9f62ef6adacc3776acbb82aa674ca424f7e34142563e7f91"
+    },
+    {
+      "path": "src/vs/base/common/ime.lil",
+      "sha256": "5fda2b54465a203e8e0fd775a86357b761a5db584521240cadf74fae2f8d1012"
+    },
+    {
+      "path": "src/vs/base/common/iterator.lil",
+      "sha256": "c6205be6bdaabe61c9da6d37908ec53b0cceb5f6739baa5ef95db2dc16992f5e"
+    },
+    {
+      "path": "src/vs/base/common/jsonSchema.lil",
+      "sha256": "ed199a7c6e9b7b0b81cc8abc5b402f43519f60bd9bba791572c49a1b973b18c6"
+    },
+    {
+      "path": "src/vs/base/common/keyCodes.lil",
+      "sha256": "15622bb2a3e981be87706c2335e3df77dcc8acecbbfb951f92895857d4156032"
+    },
+    {
+      "path": "src/vs/base/common/keybindingLabels.lil",
+      "sha256": "db840191aec5c1d5564919e5a333eb23595e105e8c4a4d5e58c6fb077ccc9e58"
+    },
+    {
+      "path": "src/vs/base/common/keybindings.lil",
+      "sha256": "770072b147de6372880510c32ce6358168d3bbc182081e058f882fc1098fc7c3"
+    },
+    {
+      "path": "src/vs/base/common/labels.lil",
+      "sha256": "f28effe4dfceb36ffa2b9b3ed5dbfae266bdc4e9d576299b2bc8bd5609373002"
+    },
+    {
+      "path": "src/vs/base/common/layout.lil",
+      "sha256": "1aa85935727593550875facd7b182d943b01702a73b31d4d52fd65cf344d7c8d"
+    },
+    {
+      "path": "src/vs/base/common/lazy.lil",
+      "sha256": "4e5d9f76f37612c0f18cd4fc01d1650e2fa1d04692c6c2da3d182d4f80593cf8"
+    },
+    {
+      "path": "src/vs/base/common/lifecycle.lil",
+      "sha256": "0ff1a13925cbbaa0f28d2b50581391f2cea903c483f3e16d64388fb833dd71f9"
+    },
+    {
+      "path": "src/vs/base/common/linkedList.lil",
+      "sha256": "892725b981ef34f4d2c2922b97bd7bfe33ef42dfc419f150ad41c19df527ab49"
+    },
+    {
+      "path": "src/vs/base/common/linkedText.lil",
+      "sha256": "75e57046a7f0894ec289371c048cf54f474dba399fde1c36da35b0057ddbee36"
+    },
+    {
+      "path": "src/vs/base/common/map.lil",
+      "sha256": "bb4003c25b7ff338ba338f5a3e1acb210f40b1574f359aecb56e9b6804be51e1"
+    },
+    {
+      "path": "src/vs/base/common/marked/marked.lil",
+      "sha256": "397734a73e95375f1c56d9436e25b33901bdc6e8d5e9b3390ed249d4b31d212e"
+    },
+    {
+      "path": "src/vs/base/common/marshalling.lil",
+      "sha256": "1409b162cff74195059401ea8ed5dc9492ec6868650061ddf59e93b54e767333"
+    },
+    {
+      "path": "src/vs/base/common/marshallingIds.lil",
+      "sha256": "4e54f7efe681006ea93c660f2879c0e1ae1e60556392b62ec69a1340cf5877a5"
+    },
+    {
+      "path": "src/vs/base/common/mime.lil",
+      "sha256": "a360f25d83c46d77784067e6ea921adf3a7549be0240feb8734636d9ab88c2f4"
+    },
+    {
+      "path": "src/vs/base/common/naturalLanguage/korean.lil",
+      "sha256": "5f390b535d87788e5b3287059925dc4e932fcd33b66c4ab042f5341652649068"
+    },
+    {
+      "path": "src/vs/base/common/navigator.lil",
+      "sha256": "369a10697be06a3e6ef951955bef2043a211134a9790e8faa2b92b597afc7440"
+    },
+    {
+      "path": "src/vs/base/common/network.lil",
+      "sha256": "f7c70068d8dc5b1bc1769598bbb9c853563f9cad5e47fa2972d7445ed43259ac"
+    },
+    {
+      "path": "src/vs/base/common/normalization.lil",
+      "sha256": "a931033890331733bd5fc6b11b34c86b09b0eb0c10d252473d65e57c153c95ef"
+    },
+    {
+      "path": "src/vs/base/common/numbers.lil",
+      "sha256": "3514a68990e5e2a7b3fc95c508e023a1b60c7a8051b7555eef952c63a008f5f1"
+    },
+    {
+      "path": "src/vs/base/common/objects.lil",
+      "sha256": "d1bbcff2e9efb1c15dc8a92d162ebe338581db3df6fbe1a378362012ee2e3768"
+    },
+    {
+      "path": "src/vs/base/common/observable.lil",
+      "sha256": "09d2567baddcf70e1b219951d9968bb85335445a6d86579f93607ac16e5c5f35"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/base.lil",
+      "sha256": "7c1ba04e60440f30ef06cc237df82ab0d0fb4836331108d5d49abf0161a6045a"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/changeTracker.lil",
+      "sha256": "8507b7e59bd02fd0f2192e3a560b97f54e097a6d0ec5856c30c1951fa4844e9b"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/commonFacade/cancellation.lil",
+      "sha256": "abc5f09f2b60b12824aa06fd0c535f8db7cfcd54685941da82f4bed6903c5294"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/commonFacade/deps.lil",
+      "sha256": "2e4c4374ccec09a86fff7ce37c8259a1ccfb907e524ec10465d1e5350da1f6d2"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/debugLocation.lil",
+      "sha256": "82acb6f8c434e9a2a8f1fc2e804918df4e5030e023b68ab0b20a589498525cd1"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/debugName.lil",
+      "sha256": "efdc5295ed782b6c4842ce763e2dbbd75385b201ae8819a8cc432f9c7f4a16d7"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/experimental/reducer.lil",
+      "sha256": "873c8231986279afcab05255f6331a301b924381eac14fc96ce6a5dd0437ea3e"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/experimental/utils.lil",
+      "sha256": "5813f864ccc5d87b056b1ca7a826631776f6da87dd2c31ac5fcb02cf42afce30"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/index.lil",
+      "sha256": "c7938cee12b900b4dd40df0c384d00e100db792804fcd037537795d82cd5da14"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/logging/consoleObservableLogger.lil",
+      "sha256": "fa3698dded361dee56fc556b65b0399015b27f2e38e0149bb805969bd07bb71b"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/logging/debugGetDependencyGraph.lil",
+      "sha256": "9f8ee7f36938c98e98ae377670e609a763a30823c7ec5eb7bda57a97d5683254"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/logging/debugger/debuggerRpc.lil",
+      "sha256": "ec626586284d6ca57c9a091c03f8d54a134e96db1d44d9f14b2992c73dc70903"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/logging/debugger/devToolsLogger.lil",
+      "sha256": "bfc1cb6adef8239fe538e7ff80f9daf1978c9981f6c83ca2b76162cfd535e81d"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/logging/debugger/rpc.lil",
+      "sha256": "610f3e8373f1d6edab1917f767a2794f784a797eaf72ff48469e2c57928e1c3e"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/logging/debugger/utils.lil",
+      "sha256": "d8ab9050331adeed346618025166b8dce75a96fef34c20f290bc80bc10e3c6ba"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/logging/logging.lil",
+      "sha256": "154d29f3e7a19562b371bcbbf7f2d203612a6f77996e3179efb26a911d8eb62c"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/baseObservable.lil",
+      "sha256": "3dd75aa05f04587ede62a729c479503d23ba92ee7c0dae39cb67b6d341711b04"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/constObservable.lil",
+      "sha256": "d5169b2a8b5e68a10338b9bc0fc4ed34f3d268b648a3416bd78af5eb83377c74"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/derived.lil",
+      "sha256": "0a97ba27b3daac579197177b11f4f78a6e154e57813a00e9a68e3e84e93c11d9"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/derivedImpl.lil",
+      "sha256": "31d616fcb70abd19fdee17f301a95438529c1130aeb64b689f64381449ef1ec1"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/lazyObservableValue.lil",
+      "sha256": "6bb9d95e0c4e1786f9087493256189d4c7ff32424bffd15fb106c77573ba0b73"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/observableFromEvent.lil",
+      "sha256": "513b6da8b684a154277bc4db304ebe07d5f52a5d3f3f8ceed7ce3b3d08a33d79"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/observableSignal.lil",
+      "sha256": "7b029813c87644bda792c70a3a2891b4bb2e68951f2de920cd7ee815c4645616"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/observableSignalFromEvent.lil",
+      "sha256": "15c23cf27be45f89aefb2a72c2c9285db274dcbf62d3f140743191d6a7a6cf3f"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/observableValue.lil",
+      "sha256": "3a5ee7890fbe3bb266f9339bb6a6a49622be36ac66a42279ef8a02b69e2df735"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/observables/observableValueOpts.lil",
+      "sha256": "3a5d216cbb2dc1207688026ddf00a9ef5a1fc13394991a78152480c686c11f5d"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/reactions/autorun.lil",
+      "sha256": "a463215c4ef7050111b4c32e683bb733e420dfef36f84578bfcb4232d72f2b76"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/reactions/autorunImpl.lil",
+      "sha256": "d576a545a4b3c48340797b92748e297aba057b8e34392532e28fbf2f59a8321c"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/transaction.lil",
+      "sha256": "b1f61c774ca57f94ad7dc8aff233eaae7768d4acc87dfe06a5b2c6c36929ea14"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/utils/promise.lil",
+      "sha256": "8933c9e5d27c17e59efc7b15786660bc8e252e54aa243d0074908eeb59a56241"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/utils/runOnChange.lil",
+      "sha256": "0a7865fb7c20e4d18c92010f244a656cebe2314fa4f20d9b43a2a45acfdc5cb4"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/utils/utils.lil",
+      "sha256": "752cb13654c90c04d7986acaa30affd2e699019b6b90961d91fb4914e4dbd11f"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/utils/utilsCancellation.lil",
+      "sha256": "80b325836074c0abf7588c3c878371362cab076316cb913b0ce4830ac3223822"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/utils/valueWithChangeEvent.lil",
+      "sha256": "ae65faea748837d7b95e681776fb5a2f47bd380aa78216f5e04e17aa63184442"
+    },
+    {
+      "path": "src/vs/base/common/paging.lil",
+      "sha256": "a790d923fa417f3f189ddf08488dfbd411508548b769528e3671eca991cce6aa"
+    },
+    {
+      "path": "src/vs/base/common/path.lil",
+      "sha256": "b6dd3a64bfd794c14ff840dc01f5b4ad57606a2205730096960b16673bbd4796"
+    },
+    {
+      "path": "src/vs/base/common/platform.lil",
+      "sha256": "b40dfa8c3fd03380f8fd833196eaac897667cc32aaa8c63211bd0f13589d9cfb"
+    },
+    {
+      "path": "src/vs/base/common/policy.lil",
+      "sha256": "213c2bb3b3c0f4d9dacf902e46409627db946b8fbb442adc4590ecbabb039b57"
+    },
+    {
+      "path": "src/vs/base/common/process.lil",
+      "sha256": "57a1aaf2cd82ea62f0137455e5357003b576d682af4ec8b7b35964f376a760d8"
+    },
+    {
+      "path": "src/vs/base/common/product.lil",
+      "sha256": "81d7f7a16f4ac3c360c242a46189bc3d5bbefd314a924bf9970582cda00e150f"
+    },
+    {
+      "path": "src/vs/base/common/range.lil",
+      "sha256": "c3cbb1613b8e16f9c7ec8630eb324911a8b063250184c91dff3dcce6547eae12"
+    },
+    {
+      "path": "src/vs/base/common/resources.lil",
+      "sha256": "e51216afb1a6f6ca9c0bb3c02c047f2780f2f81986cf6a061d2d44523bda9139"
+    },
+    {
+      "path": "src/vs/base/common/scrollable.lil",
+      "sha256": "bab11aeafaaa296d4ba110f6b3a021ceea00f1ba0a104e7018a33962f0089bb3"
+    },
+    {
+      "path": "src/vs/base/common/search.lil",
+      "sha256": "eb71bd47fe8d214ad738c8dc0cec29e967563c48f082d712a8a976aeb88d9640"
+    },
+    {
+      "path": "src/vs/base/common/sequence.lil",
+      "sha256": "9391cf6e7631fcdd25aa5a50607e983f45e0b34ed9d411dd06c4f95b2f717e77"
+    },
+    {
+      "path": "src/vs/base/common/severity.lil",
+      "sha256": "7f9979ec1861ac7f04d7b3bd9baea5491dbbb04534077db0b41bf3a6e795b3dd"
+    },
+    {
+      "path": "src/vs/base/common/stopwatch.lil",
+      "sha256": "6c5591383fc3dec233051868f1041425c443623be24e73af439d1c7809bb341e"
+    },
+    {
+      "path": "src/vs/base/common/stream.lil",
+      "sha256": "c3bedb7b249be2c5f8057515a23888716752e838efbde2a0459ba7daf63f706e"
+    },
+    {
+      "path": "src/vs/base/common/strings.lil",
+      "sha256": "f67414e742803bef516b26163131782ec4bb7582de6c2183a68423764d7f8f35"
+    },
+    {
+      "path": "src/vs/base/common/symbols.lil",
+      "sha256": "29d74e9021976804838c653071ab278b7f1574464c860e6e750ed18dce075f4a"
+    },
+    {
+      "path": "src/vs/base/common/ternarySearchTree.lil",
+      "sha256": "43726463b73e5d78d5e78e7a58fc8769c2062e7da40d8d41617e7ea8fd55d627"
+    },
+    {
+      "path": "src/vs/base/common/tfIdf.lil",
+      "sha256": "44be538a98e44a7848b1871217918e08ff11f420f88e3b8841cb7506c879495d"
+    },
+    {
+      "path": "src/vs/base/common/themables.lil",
+      "sha256": "1dd641952fcb6c53202f52aa5c76689245aaaf7b500663c092f447f326db774f"
+    },
+    {
+      "path": "src/vs/base/common/types.lil",
+      "sha256": "ffd8c5c606830052c9f9eb36b369a7c530d1e5fef4f8a33bccd96cdda90c5f08"
+    },
+    {
+      "path": "src/vs/base/common/uint.lil",
+      "sha256": "4746a612a41d3552cfae040aa1efbc333951dc340e6522493aae37877597f6f2"
+    },
+    {
+      "path": "src/vs/base/common/uri.lil",
+      "sha256": "32540c393f96c994d21e236ff1acf5c13638dda68fa18e8ae54b8b929206c962"
+    },
+    {
+      "path": "src/vs/base/common/uuid.lil",
+      "sha256": "c3fa4eb293133bb950ebb2b27747904d446e69c1cf597db0b47bbb485c530c6b"
+    },
+    {
+      "path": "src/vs/base/common/validation.lil",
+      "sha256": "5eb65c7505308841f0e96ebd264997b65f7129faa2d6885f8afedea928c8d796"
+    },
+    {
+      "path": "src/vs/base/common/worker/webWorker.lil",
+      "sha256": "7129dba477af71d6c5498dad3ab3816166d855dbab11233457835d063059f482"
+    },
+    {
+      "path": "src/vs/base/common/worker/webWorkerBootstrap.lil",
+      "sha256": "0d5b0a331aad1b86e1403560e56d5d1db9652c0d678d2250f15801b5cab2546c"
+    },
+    {
+      "path": "src/vs/base/parts/sandbox/common/sandboxTypes.lil",
+      "sha256": "c8dd11f28e43b3414d7368f4784cafeac2706838b7b090073d0eac1fce2c1759"
+    },
+    {
+      "path": "src/vs/base/parts/storage/common/storage.lil",
+      "sha256": "d6d45bcf888f76f0e4b36d2d31854a6016878989e446915f1d9af9df19bfd410"
+    },
+    {
+      "path": "src/vs/catalog.json",
+      "sha256": "1368cb74243c647f62456dab6f8f8feef332b4b467b093846e545afd7ebce822"
+    },
+    {
+      "path": "src/vs/editor/browser/config/charWidthReader.lil",
+      "sha256": "7819b0f60b86e994aa480504055d4131184f5da605bb4e715e0ee6cb7db5fb66"
+    },
+    {
+      "path": "src/vs/editor/browser/config/domFontInfo.lil",
+      "sha256": "12fcd22c1a15ac7ac53b754d4c0747cfa4d447888408e96fba2ea7c872ba5c51"
+    },
+    {
+      "path": "src/vs/editor/browser/config/editorConfiguration.lil",
+      "sha256": "f44a6918ab6e5c90dbc7c2f983b7a68b269f2cb64d2730a00706f8b21c674672"
+    },
+    {
+      "path": "src/vs/editor/browser/config/elementSizeObserver.lil",
+      "sha256": "2a06642313eb2849f12aea5bb68e6a7049f2bc42063c1fe2c015b7de43a8ca32"
+    },
+    {
+      "path": "src/vs/editor/browser/config/fontMeasurements.lil",
+      "sha256": "a7c66e7da78fda21d57102cdf52de83da2738b454ef3da9a4eb7be351728530a"
+    },
+    {
+      "path": "src/vs/editor/browser/config/migrateOptions.lil",
+      "sha256": "4d4f088470e8ffaad0e903fa702e30b77ef5c83de4abb5a770e948a0ded2d483"
+    },
+    {
+      "path": "src/vs/editor/browser/config/tabFocus.lil",
+      "sha256": "eab81fa1cc9d0e623c3bbfbced798562a070d32b2f1599b2e74b996a6e920617"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/dragScrolling.lil",
+      "sha256": "bccf6f49a0745f28a344ebd5c334e0b0922b948b69a178b70357209e239fdbae"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/clipboardUtils.lil",
+      "sha256": "ebd16d4f3fee4ca7d1df9bfebd9fb78ef9fb94d6cf2e20c53139d9955ba18cfa"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/editContext.lil",
+      "sha256": "60752e90f20dc364f62cc1c375050c518fc57ec877ed396058ab52369b3583a9"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/native/editContextFactory.lil",
+      "sha256": "754744187dd1f1f08675822e1ce9d24a549bfb17a8833db229342540bff78bd2"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/native/nativeEditContext.lil",
+      "sha256": "a1d31a5c5c3ed3ea893c9a3e3da7f1de54478fe550b8d13be5b4371694727bf6"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/native/nativeEditContextRegistry.lil",
+      "sha256": "62d03089c1d30c59d4f99fe79eb3c8e6e0360a702ef9f5ef148cfa7c6a42f956"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/native/nativeEditContextUtils.lil",
+      "sha256": "36e749c017cd16bc160ba9ac00184f3222dccf48c955005b5407993319858733"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/native/screenReaderContentRich.lil",
+      "sha256": "861fc921318d41db3fc34ad2af0fee6a1c966534cd827b6e8de453c46a7aedc6"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/native/screenReaderContentSimple.lil",
+      "sha256": "b7f3ec56aa568523faa7f245c9776308042bb439f663f7054f98ee23a5605edf"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/native/screenReaderSupport.lil",
+      "sha256": "63e50ff6810d58d3cb5d64972dc23bf063f016567b5355feb6847f0d19ba0979"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/native/screenReaderUtils.lil",
+      "sha256": "4d616eb8045b2012771f919399cdc73aa62d0587240a42866f0382cd2e0fdb76"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/screenReaderUtils.lil",
+      "sha256": "423333146d0fe23271b84ede47552cfb7c0595dbfa96e188df1c6a15886413f8"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/textArea/textAreaEditContext.lil",
+      "sha256": "2b2b0666a4558d1553a5c22b1c064b14ef3636750d2521ef23b2c2f9fd48c181"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/textArea/textAreaEditContextInput.lil",
+      "sha256": "dace05d85ef48b0fc838eb4efa760a94fc15c957bfb0f3fc978db05389cbc162"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/textArea/textAreaEditContextRegistry.lil",
+      "sha256": "504eee182128be21b3c03d59b2c5ecc3ceec54e5ea81bbed67673122dcbe31b6"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/editContext/textArea/textAreaEditContextState.lil",
+      "sha256": "686ee3eb6e82799c8fa7d1289d041a0b57c7fb8b446d515c69003d027a1bc85a"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/mouseHandler.lil",
+      "sha256": "087c0bb92971c0e454044f6f7bdfd73cdae8efdad25ead35495f8bb478bd75b3"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/mouseTarget.lil",
+      "sha256": "6d5875eaa72b09f920cde396cc5c2a5f2fe0806b74e635152e965d20459cfcb7"
+    },
+    {
+      "path": "src/vs/editor/browser/controller/pointerHandler.lil",
+      "sha256": "2369481e181e276b91c1202c4c7c53e28ce2ec5444351eb37698f258201b6582"
+    },
+    {
+      "path": "src/vs/editor/browser/coreCommands.lil",
+      "sha256": "870acc7b488afe8b80288ac84aaad4ba7bac84d7c7dcd250c71e379c659460db"
+    },
+    {
+      "path": "src/vs/editor/browser/dataTransfer.lil",
+      "sha256": "7d2b55b45ddb9a14ad0779dcd1ca110063460c5b619a51cf522d0d1906746281"
+    },
+    {
+      "path": "src/vs/editor/browser/editorBrowser.lil",
+      "sha256": "d442b69420babfd774e3f717d6a0221ab379a0f51e515d4ecbac08b242dc9b7b"
+    },
+    {
+      "path": "src/vs/editor/browser/editorDom.lil",
+      "sha256": "97c5045661256f2ced71bbb7f3fc8d0a66623317f822cc15a2dbb4cdf573093d"
+    },
+    {
+      "path": "src/vs/editor/browser/editorExtensions.lil",
+      "sha256": "6330579198f30f4a5a0a3555405a984c2ad02a992551adbeab46d2d20e02156f"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/atlas/atlas.lil",
+      "sha256": "7aaa9843afc9ba36c27c281019e3c6dbcf3d9ef56e9683178134be51b6fe63cc"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/atlas/textureAtlas.lil",
+      "sha256": "4d96a3f5c5e47102337d8a6c2b63875f3d8eb4cd47adbefafc5ea3bdf9120491"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/atlas/textureAtlasPage.lil",
+      "sha256": "ff22f4def9fc1481ae3b691c54263746923255100a304d44d10de7b437572d9e"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/atlas/textureAtlasShelfAllocator.lil",
+      "sha256": "1ec3ac5feb334cb0e03423f1c250547e2834f0029c9a385681857e6cde601ca0"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/atlas/textureAtlasSlabAllocator.lil",
+      "sha256": "4bbcd5426db90386eb57bb0d8933680798e5bce2a763f1a120b579a65d49f2c5"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/bufferDirtyTracker.lil",
+      "sha256": "241bde19d2fe61e8b001e596b2ed0e3f13bd0a771e696457347999c73e7c58c5"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/contentSegmenter.lil",
+      "sha256": "77c8730d33731168e3dc6c6c8855ee5fb657fcbd4a7408a4e203d11b80648823"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/css/decorationCssRuleExtractor.lil",
+      "sha256": "3910bbf7ae949e0fa67c957cafd1af26f5ca8fd59f3bc5fecfb8fc52b9c4d0d1"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/css/decorationStyleCache.lil",
+      "sha256": "e88f01747fb324229888dc066f3980fb6cf7465fe35d41cea215d3ad9f2b5bb2"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/gpu.lil",
+      "sha256": "45993638def6ebc30e040754ebf07590f6bebc948d8c297cef477b28947b729d"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/gpuDisposable.lil",
+      "sha256": "e48721f1a35aeed165ce4e0d223f212ac3ff4343c28ba8a39de82765bf108462"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/gpuUtils.lil",
+      "sha256": "03b9e88350e42c8f05c43829d80cabf08ea5c68e3a115a5cc42035da3d2386d2"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/objectCollectionBuffer.lil",
+      "sha256": "5e430e454abe2f48bc050c3a79bfd5529066e03fc8e58d96234646cdbaf1c210"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/raster/glyphRasterizer.lil",
+      "sha256": "133415f5fa46b5207e424c9d093ecc74eb94a10207651f9105eb15ad9f8ce8e0"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/raster/raster.lil",
+      "sha256": "de7e3d0f52fe13798b230c2f33853e895bfc5dea0ec40b9a42e28779931ca5c4"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/rectangleRenderer.lil",
+      "sha256": "4d1c2f5a46817a8bdb718c67e8b8df35836310d56a4fdb113b676e77eb2296a2"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/rectangleRenderer.wgsl.lil",
+      "sha256": "91603670f1fc7747158c51eb15382de7c702534a52ebb335374f1cab4820f350"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/renderStrategy/baseRenderStrategy.lil",
+      "sha256": "e29fcc2bde9926e39a7702ff0655c11da82d55c354903f9e6febebc3a840fc0b"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/renderStrategy/fullFileRenderStrategy.lil",
+      "sha256": "2b9a6184d78520cc22bdfc534205469aaba4acaaa91a3183721ce0272ef73b0c"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/renderStrategy/fullFileRenderStrategy.wgsl.lil",
+      "sha256": "b24d01a1596e132382d53e89e3c5e09ce33a786db0229a50157ffc5763b46f69"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/renderStrategy/viewportRenderStrategy.lil",
+      "sha256": "d407220ddb2ed7de6d5ac4157a9554848e3516b5c8f1385c46a9f388e34a2242"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/taskQueue.lil",
+      "sha256": "87cf37fbc47f29bea800f9ff3a692d8085e261660422deaec51201d595789665"
+    },
+    {
+      "path": "src/vs/editor/browser/gpu/viewGpuContext.lil",
+      "sha256": "7f7ef1384bdf4462253df2ef6c8cd1307ba236212a27163194089a214950ed6e"
+    },
+    {
+      "path": "src/vs/editor/browser/observableCodeEditor.lil",
+      "sha256": "c4a6c71f45a60d180e71de1e86f75722806d7d70d4b0178f5da224807a3029fa"
+    },
+    {
+      "path": "src/vs/editor/browser/services/abstractCodeEditorService.lil",
+      "sha256": "aff61a26d9101098c57ab6b16fb636ee0b6b888ef953d88540d1d739a60d621a"
+    },
+    {
+      "path": "src/vs/editor/browser/services/bulkEditService.lil",
+      "sha256": "6f1f7b9db48d5183e07432fbe3850588f087dda60af7327c584ab1562bac6e46"
+    },
+    {
+      "path": "src/vs/editor/browser/services/codeEditorService.lil",
+      "sha256": "d879501d44ee4750d9ec6bf69d5dc891dcc677deca1bbc22a565f2aa1e0e3b07"
+    },
+    {
+      "path": "src/vs/editor/browser/services/contribution.lil",
+      "sha256": "3867aefdc743b5f80f24b18a3bfb2f3403b8c440e4c23ddb8ac0e359ceb561d3"
+    },
+    {
+      "path": "src/vs/editor/browser/services/editorWorkerService.lil",
+      "sha256": "921990e912280af2419bb894ef7ed5a5a8a6c17a9924c6b01bfb928d5b44337a"
+    },
+    {
+      "path": "src/vs/editor/browser/services/inlineCompletionsService.lil",
+      "sha256": "78e7a407dfc065db30feec9f1e9ca465dbdba1f8e43804a53513802faadbdaf8"
+    },
+    {
+      "path": "src/vs/editor/browser/services/markerDecorations.lil",
+      "sha256": "428e577188a5e63ad1fc6408dd66aaed1621420748247cd7fdafb95a81c1b08e"
+    },
+    {
+      "path": "src/vs/editor/browser/services/openerService.lil",
+      "sha256": "49cac0afcb98c5d98b4bd4da1f3be276a8ae00e25ad19552d3df7d914fb13bf3"
+    },
+    {
+      "path": "src/vs/editor/browser/services/renameSymbolTrackerService.lil",
+      "sha256": "9c76062ba2405694ca1be9c088b24e110bfafa6313d9f0864ff5a3440bd33989"
+    },
+    {
+      "path": "src/vs/editor/browser/stableEditorScroll.lil",
+      "sha256": "60fb9f10d7ee3b39bcffb572d141d75e699d56b0f08ae8841148810023d91305"
+    },
+    {
+      "path": "src/vs/editor/browser/triggerInlineEditCommandsRegistry.lil",
+      "sha256": "c8a0eef3385a94a12fcf84f0add2e2e131dfba7b061a59bb9f50cf2c18cbd891"
+    },
+    {
+      "path": "src/vs/editor/browser/view/domLineBreaksComputer.lil",
+      "sha256": "7b1bea6495cd048af312154ac7556cf5df68808e1f4ade0be173d4ebcbbd8574"
+    },
+    {
+      "path": "src/vs/editor/browser/view/dynamicViewOverlay.lil",
+      "sha256": "7c7fb90c2c14fbb42c0bd449ce5514685a3f14fcdacbd768ee866e7fb59374c7"
+    },
+    {
+      "path": "src/vs/editor/browser/view/renderingContext.lil",
+      "sha256": "4f854ccdbe2bfcc46dd6c746a74a03178f64505c8262c7ec5381692a43cca88b"
+    },
+    {
+      "path": "src/vs/editor/browser/view/viewController.lil",
+      "sha256": "4192c7e59b562dff14b4a89a9275e6668cae393fb88d50adc8cfad8893c659bc"
+    },
+    {
+      "path": "src/vs/editor/browser/view/viewLayer.lil",
+      "sha256": "a48bdf66955bd2dc7cdb5b84654d2dad73d1d7dc76382aadfcc71d7b3cffcc87"
+    },
+    {
+      "path": "src/vs/editor/browser/view/viewOverlays.lil",
+      "sha256": "483f42dfcb3b8dcb9777c3793fc6ba26e84d6c63bbcf3839dd22c2f8e97cc78c"
+    },
+    {
+      "path": "src/vs/editor/browser/view/viewPart.lil",
+      "sha256": "e0529593183baaa0528239390f5eab94c4c193c4a555da6e20f9c92d72259c2a"
+    },
+    {
+      "path": "src/vs/editor/browser/view/viewUserInputEvents.lil",
+      "sha256": "8a0b05033cca0fe715e348fee0cfdf2fc99b2b5691d1e5d918c71372e05b4c56"
+    },
+    {
+      "path": "src/vs/editor/browser/view.lil",
+      "sha256": "09c77ca8292c5f4c6fea92e62f2935d4c3dfb1db377db083dd313852d5555ab6"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/blockDecorations/blockDecorations.lil",
+      "sha256": "47f24b739c73b0188ee4b48761ddae4f65104f49b8b6ccb935c3324e2a5bb496"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/contentWidgets/contentWidgets.lil",
+      "sha256": "cbc7e8ba9ce1965816fadd1a96015a870e524a5f5d36e92be4598a1afb8a4c0b"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/currentLineHighlight/currentLineHighlight.lil",
+      "sha256": "51ccec1bd54c968a4dda09bf4c8fca922c05f70c4c8df4c174d024d7f935a5f2"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/decorations/decorations.lil",
+      "sha256": "47637b02be495a3d50400a1290cb9bb74dbcd7b6839d18d88472f75cc4e5cd7e"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/editorScrollbar/editorScrollbar.lil",
+      "sha256": "3d8894084934d415a7562d4d6fd3cce2f480da3034574078e25221cfe3651bdc"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/glyphMargin/glyphMargin.lil",
+      "sha256": "a6c81abdbdf9ae7294ef96355c62111f208cdbec27c1a97b7f72a731d40fa003"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/gpuMark/gpuMark.lil",
+      "sha256": "0dba410222486798d3f41f4ee18c3d16ca46e517713fe64ddac646da62c8660a"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/indentGuides/indentGuides.lil",
+      "sha256": "7774bf661e096510c132be8b4f73bea429cc6c231ce501362a48af5b5b4d4351"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/lineNumbers/lineNumbers.lil",
+      "sha256": "1f419aa2b4326350870861e6e68bc962fc7a764fe2a0e253d728602785564eca"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/linesDecorations/linesDecorations.lil",
+      "sha256": "63baf79c1eecab9b03f826bd837a0b450179412d3ebe3d49811f8fab29177c49"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/margin/margin.lil",
+      "sha256": "04fadaa3e1dd69a0f8f61586a8e8a2a84e2ff37e69774732c622c9097e436364"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/marginDecorations/marginDecorations.lil",
+      "sha256": "9692655caa3b2b39f389a6d54987b8e140d4c4f37dbeb341b798bfcd1ed1b12a"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/minimap/minimap.lil",
+      "sha256": "697cb0bd4b288a3ad5b3d0ee4dfaaac2e12f30e0e3a4bbf85a660e6978c14cc0"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/minimap/minimapCharRenderer.lil",
+      "sha256": "cacd7d1e2d228f848f58b269d89581beb17ffec16a8d65e4c08866a1abd31a5d"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/minimap/minimapCharRendererFactory.lil",
+      "sha256": "1b17403e0dd0aadae777e9ec0f684b2c05ad36240222e2a95a42d9d8ee85274d"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/minimap/minimapCharSheet.lil",
+      "sha256": "ad51caa3bb1f684623b1259fe199c890448e641ee7eac69f43502eaaf7aeeee2"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/minimap/minimapPreBaked.lil",
+      "sha256": "8f3419ae1c0cdc30b215b9be7c4b394eaca0dd25076c5b515ca5cfabcc5536ce"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/overlayWidgets/overlayWidgets.lil",
+      "sha256": "233d6d9db720a42e6b667e5c79801531bcce45dfbceba9ee222c6eab00f3c26d"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/overviewRuler/decorationsOverviewRuler.lil",
+      "sha256": "ef4b3e58866f2bf5ab3b77e842093b5f10bc8d93d76d82886487040947072d5c"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/overviewRuler/overviewRuler.lil",
+      "sha256": "ee3ac0f80282285310a03a9921dca93b37492a891291bb19c3a01eb48ffd3ef5"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/rulers/rulers.lil",
+      "sha256": "d04e397d0ddea5e68cf8a0bdda03b6be90aa31576ab0326d5d9d6b87e0943065"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/rulersGpu/rulersGpu.lil",
+      "sha256": "f6660e5d698b40bcb19821b78be5688bd1b57ac3727ddb74c8d73d9405c58558"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/scrollDecoration/scrollDecoration.lil",
+      "sha256": "ca0706b97731dd9e57b4651bb3b0c662ae0befc804a72d4fccfc293ac67dc802"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/selections/selections.lil",
+      "sha256": "c337e4fdf3fcf662ac0971255c3f3e05535a80b8e2870c6d90775f79d8b30dff"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewCursors/viewCursor.lil",
+      "sha256": "0debb0e3ee0b2f3e1dd56854093343c3c8c798c096033e6835551d7dcae45808"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewCursors/viewCursors.lil",
+      "sha256": "318468ec43742c87cecb686a2b64db97562a9af5806cde8e72f1cc6b3385dc8b"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewLines/domReadingContext.lil",
+      "sha256": "56166a266f50a54e4bc0282173b7723f1faae73f18413702e4b889ea64a95c9a"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewLines/rangeUtil.lil",
+      "sha256": "49f233deba7af6678a1adcd706036f09a878a7f92823c532acb5b92148ad30f6"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewLines/viewLine.lil",
+      "sha256": "0cbf430290f77ea2d86bd7c877a319855274b864ba117ae04888d3d97d421e3a"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewLines/viewLineOptions.lil",
+      "sha256": "0ac7b9236fc1c792ccc69222edf36011b2334d5c0370c727ea0b7122fc4bf280"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewLines/viewLines.lil",
+      "sha256": "4962ce98d983ba73bf4ed2682f2b20ade8a448e6f57ecd037eee01ae1c5288af"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewLinesGpu/viewLinesGpu.lil",
+      "sha256": "172021cb56c7f49cc0d91561c83eae02b09c0cf6b57f9d6e4cab610f61715c39"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/viewZones/viewZones.lil",
+      "sha256": "e35d3bc008b72a3d829185a4cd2b3f8e8b6ccd7d64654121908f2053b386bf93"
+    },
+    {
+      "path": "src/vs/editor/browser/viewParts/whitespace/whitespace.lil",
+      "sha256": "43bf61417f5c6050e419afce7675147f967a0edc75e037a81a93f333ee8f17d8"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/codeEditor/codeEditorContributions.lil",
+      "sha256": "ba99189794054176c42f5c6125856b37f51e7bec373c7c7fc3a56eeb01dcb206"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/codeEditor/codeEditorWidget.lil",
+      "sha256": "dfa2c071dee16efc432ce8c46c64db53d2dd1bbb3655ab70252af7c58aa657b1"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/codeEditor/embeddedCodeEditorWidget.lil",
+      "sha256": "1dfc60e3d1db24abdbb8ceee78185446ca453f63e3afa99e494ac30557e0e0a0"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/commands.lil",
+      "sha256": "0430cc47f6138d1a7b96e30ed7a0f1b01090a8655e87c6241b8785e2a7941f21"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/components/accessibleDiffViewer.lil",
+      "sha256": "bb4dadee4e09bdaa66f1a4b0b55d32aa17afa1c6f4b8ee3c88cb1636f1c4b9b0"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/components/diffEditorDecorations.lil",
+      "sha256": "60b57521d002f562beda54d8a9202851c3b241e270b523a7cb5d437df3556df8"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/components/diffEditorEditors.lil",
+      "sha256": "5f60be692de61bd8797dedf00566819de63ccd9a35adac75a9e0bbcd58195453"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/components/diffEditorSash.lil",
+      "sha256": "745aebe95b261337247066f9661ea955f0a1589d22e3bf0b0fafcacb5ffb9cd1"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/components/diffEditorViewZones/copySelection.lil",
+      "sha256": "fbb23f3e7733c698da977135c25ffba07f95e9d5ac443d8df17b4ce7d14fa6cb"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/components/diffEditorViewZones/diffEditorViewZones.lil",
+      "sha256": "eab13077581b5bc37d306f9deaaa9381f75c871a0dae56bf93cde455201152e7"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/components/diffEditorViewZones/inlineDiffDeletedCodeMargin.lil",
+      "sha256": "03748e2f8e4bb670766cdfae6917b07a9040eb914ac53fbdb12f96bdec3bb4af"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/components/diffEditorViewZones/renderLines.lil",
+      "sha256": "39e3704dbe6cc7e6d442b64b49368f4599846c1c2b5a9f85387d6b6d2eb7aa80"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/delegatingEditorImpl.lil",
+      "sha256": "ad423a3b48fc878e7eb3dc77efb015a53d5c557dea2feaf1a83a958f46e7b8d6"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/diffEditor.contribution.lil",
+      "sha256": "7b2f9a2c32298ac30c138bc56d28d9e44ab8b49d677def2d9ac5fa8504757dee"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/diffEditorOptions.lil",
+      "sha256": "55604994e4a754490e632c56eafe4b2328d15cec121b672a51a6e76546b5c681"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/diffEditorViewModel.lil",
+      "sha256": "f84bc763273e60b4daf057edcb287c126c27b511647fbce26671bd2216996ef2"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/diffEditorWidget.lil",
+      "sha256": "1dc22fef07a962fc38fb7985e6cda07e25d6230486e133fa37438193bda485f9"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/diffProviderFactoryService.lil",
+      "sha256": "38c6758383452c9239077c91f26c8a46286a2e5eae3a6b450f6ddaa162055d32"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/features/gutterFeature.lil",
+      "sha256": "e3a9dd8c2f2eb7372e2e2fe4bf2c2d6be38b03a37583d189a10a4fa35c9a1a48"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/features/hideUnchangedRegionsFeature.lil",
+      "sha256": "36bc39e84a4cf09ccacdd7148ad356622c9c006dc1625473e4251f215c9756f0"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/features/movedBlocksLinesFeature.lil",
+      "sha256": "9a09336efbdb252fa3abd62c8444df8dd302c4e9f70d9b8d15ccfb51e57aa581"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/features/overviewRulerFeature.lil",
+      "sha256": "3c17022f4ef1f46924a779bd3a0dc532c552625ed471d4145d31c48f113d11f6"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/features/revertButtonsFeature.lil",
+      "sha256": "1e5d7ccb73e197fa5f5bef765ab6e1841904c9e0448afc61e5816ba5863345b2"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/registrations.contribution.lil",
+      "sha256": "720fcc8a1816c7a66d69f8d2242cd64d9b204e8bec75f0565e3fca6d00039303"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/utils/editorGutter.lil",
+      "sha256": "0038b3f60adecff43208995cbe8196ffd9f1462f4cea0ce98caf7341f1bd4f47"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/diffEditor/utils.lil",
+      "sha256": "4b051df11d32df0c269dc72a22f505b1df8f85eb2c056c9ab8211283ef0184a5"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/markdownRenderer/browser/editorMarkdownCodeBlockRenderer.lil",
+      "sha256": "e59f8ea0b1d56c63db326c87c73a423877e88e4069bbdb7e9106ce41d9322c76"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/colors.lil",
+      "sha256": "c13aa16ed0f07dce5d74765a4418930cadfe8c01294c2419d704e4255ea3a1aa"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/diffEditorItemTemplate.lil",
+      "sha256": "547d409d896c991b2df1f1296f8c6b550da7e6b986e47dee0f7da5f7d5a4e60a"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/model.lil",
+      "sha256": "3191e27eeed118b7d06916e927f25d2a0b3c5865a480c0ba6add033b57e8ad4a"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/multiDiffEditorViewModel.lil",
+      "sha256": "6ce4396e3cfb1245d4897cd1b663ec67c063d6436f97ece4d9a51bff1fb63546"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/multiDiffEditorWidget.lil",
+      "sha256": "b02ef0c52fc0997f9c431cf51fdc0ec8d31b2bb40962711a6bd7365d6b2cf567"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/multiDiffEditorWidgetImpl.lil",
+      "sha256": "a9e1cde8deda50e7d5649e590fe215d9247d9b9e8976add77315af7f04239c63"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/objectPool.lil",
+      "sha256": "0c5aa9c39b79abc574aac7a8e2be05ef201b293a95b7d1955a4d0e500e988e34"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/utils.lil",
+      "sha256": "f1d86d3be3d3956569d0cf70c56bd62a60b0b214d17c7e52daa5394914550a91"
+    },
+    {
+      "path": "src/vs/editor/browser/widget/multiDiffEditor/workbenchUIElementFactory.lil",
+      "sha256": "2bcebaa5390731f061d15cc37e408ee8c09cbdbc88981eaad7ea93a1bbd896aa"
+    },
+    {
+      "path": "src/vs/editor/common/commands/replaceCommand.lil",
+      "sha256": "ced04a9bbc4820edf4ba6add7cd5d47ba8f90cb5c5fe89a9b2fa17c677f80c96"
+    },
+    {
+      "path": "src/vs/editor/common/commands/shiftCommand.lil",
+      "sha256": "558e7378c91bc497f3e7d3fbcda87036013d59470b4c7cec1c92d58b27af8953"
+    },
+    {
+      "path": "src/vs/editor/common/commands/surroundSelectionCommand.lil",
+      "sha256": "11edd023d5d20b61d5ef09279a818af02fd512f4937bddbf114d5ac74e5df2c9"
+    },
+    {
+      "path": "src/vs/editor/common/commands/trimTrailingWhitespaceCommand.lil",
+      "sha256": "6700099bf196d70f9967a4d2c9d081b099c0c4f5e5824c85a11852ba8242834c"
+    },
+    {
+      "path": "src/vs/editor/common/config/diffEditor.lil",
+      "sha256": "c5f9af05db01ee715ebbe02082ce62723dd66da1d4cc8ee1f2d68825a73e414d"
+    },
+    {
+      "path": "src/vs/editor/common/config/editorConfiguration.lil",
+      "sha256": "52987c85ced8d088d195d4e6aeb95d2c670aad17bc79c61a9b92fee6deec6dd0"
+    },
+    {
+      "path": "src/vs/editor/common/config/editorConfigurationSchema.lil",
+      "sha256": "4f7da92d01a37e22a2fce666ef458c2506dcd7af98d4c07a677bbe4cc01e88d9"
+    },
+    {
+      "path": "src/vs/editor/common/config/editorOptions.lil",
+      "sha256": "4f0df80b97878f1bc88eb42c9c4d8ca0469e7e293436d95de947e8ba18934df1"
+    },
+    {
+      "path": "src/vs/editor/common/config/editorZoom.lil",
+      "sha256": "8023aa046e469e129177747ffeb657ab17022b24dab7c94ac86b8a3ade830380"
+    },
+    {
+      "path": "src/vs/editor/common/config/fontInfo.lil",
+      "sha256": "0dc80e0e1bc065d2d76e6022324424b9017b2a0ab2f2f5294b17cf151b9a6174"
+    },
+    {
+      "path": "src/vs/editor/common/config/fontInfoFromSettings.lil",
+      "sha256": "ab6219ebe212544fde6d8c561ef63bffa4f5c4e19b9ffade51de77b8b7a4678f"
+    },
+    {
+      "path": "src/vs/editor/common/coordinatesConverter.lil",
+      "sha256": "85b735a94ae0446899aba2370ebdb55043b7e80adeaf085cd6ae39b384c8a113"
+    },
+    {
+      "path": "src/vs/editor/common/core/2d/dimension.lil",
+      "sha256": "d3323d278b4bdd588ca3c4087717920641dc3ae40a225ca15f1460c6b7f5245f"
+    },
+    {
+      "path": "src/vs/editor/common/core/2d/point.lil",
+      "sha256": "9dfc4033118e1ab8a96f6ace478df0c5d8394e715e49c1f3f4f259e9e7d2faf7"
+    },
+    {
+      "path": "src/vs/editor/common/core/2d/rect.lil",
+      "sha256": "c466ddacdd458b404e47abbbd4028bfbc04bc7dc5ed1121630765facabc1170a"
+    },
+    {
+      "path": "src/vs/editor/common/core/2d/size.lil",
+      "sha256": "35b3c887d6006fc864fbe5ec583657a6b7729cba644f2604da1a40de9df61bc5"
+    },
+    {
+      "path": "src/vs/editor/common/core/characterClassifier.lil",
+      "sha256": "f1b001e8cf505580aefa0d9bfe4737d3df68ac5be19c49b17259b700134eb058"
+    },
+    {
+      "path": "src/vs/editor/common/core/cursorColumns.lil",
+      "sha256": "c35bfca5a2c0e18d9d2ee29ab88451f45f464426abe06249e823f684916fcadd"
+    },
+    {
+      "path": "src/vs/editor/common/core/editOperation.lil",
+      "sha256": "6f8d6b6ab5ce5bd459349f60626f220d6b2d3bb9b1183deb93442665128d4586"
+    },
+    {
+      "path": "src/vs/editor/common/core/editorColorRegistry.lil",
+      "sha256": "08f0b16e2f28d20136ab2a9b3ee72e2e3462419492b55efcf6fa65540dfeaf93"
+    },
+    {
+      "path": "src/vs/editor/common/core/edits/edit.lil",
+      "sha256": "d732ef243646cf41aa5e649e9fa50481b04eb652658327636d3218b4c65b39c3"
+    },
+    {
+      "path": "src/vs/editor/common/core/edits/lineEdit.lil",
+      "sha256": "313578b47f7e310e83bbd64964b947abccfba41c5ec7ecb6f84b00c2b25b3ce0"
+    },
+    {
+      "path": "src/vs/editor/common/core/edits/stringEdit.lil",
+      "sha256": "9d418d4cb3d668a099712ad207d888270d7c13cf53c4c4a133308a2c624a0e8e"
+    },
+    {
+      "path": "src/vs/editor/common/core/edits/textEdit.lil",
+      "sha256": "dd30f0e44dacf6cbe480854ce1d64b085c02b6ce86bf84bee36fe8d4d156ffcf"
+    },
+    {
+      "path": "src/vs/editor/common/core/misc/eolCounter.lil",
+      "sha256": "8b3d7340310df5c7d33111986e05f3abc6b57cea0028ebb46a39ac6b65572c41"
+    },
+    {
+      "path": "src/vs/editor/common/core/misc/indentation.lil",
+      "sha256": "30326e5e7768676537b5152a1e3ddbc0996ab9462444059760b43cf50d7e4c0e"
+    },
+    {
+      "path": "src/vs/editor/common/core/misc/rgba.lil",
+      "sha256": "d9fa9768c3cfa54c1f0287332d45f3353608c019a68e57a266e9328c6a522daf"
+    },
+    {
+      "path": "src/vs/editor/common/core/misc/textModelDefaults.lil",
+      "sha256": "ecc5bbfd3abaebbd36ebae664a407740d281e76e7d11c2420e711ca1f5473a73"
+    },
+    {
+      "path": "src/vs/editor/common/core/position.lil",
+      "sha256": "c478b5bdb197e7303e1b27b2306da679ba86bc50ffd835a73efca4a3328c3623"
+    },
+    {
+      "path": "src/vs/editor/common/core/range.lil",
+      "sha256": "093ec5c63ca8a6c8190b3bf1f16a3b87d47e14c739f93b70d7adbd648d34c462"
+    },
+    {
+      "path": "src/vs/editor/common/core/ranges/columnRange.lil",
+      "sha256": "820b88715447efbef40e2414f70858e52ddf83a4e5d0f0979883c898c5da2bc4"
+    },
+    {
+      "path": "src/vs/editor/common/core/ranges/lineRange.lil",
+      "sha256": "428d5a3b273443e982f6d9c04874290b3ff6c09b3dc903e6cf2c3efe660d3eec"
+    },
+    {
+      "path": "src/vs/editor/common/core/ranges/offsetRange.lil",
+      "sha256": "07544cc84da8d0e459a38c6319ce5c2ac83e22de74292cb7b5c670848519e009"
+    },
+    {
+      "path": "src/vs/editor/common/core/ranges/rangeSingleLine.lil",
+      "sha256": "bc652aeb695ca4ea4ffb9642e5325ae8df006dc1636b5db464073a8a80e58bfa"
+    },
+    {
+      "path": "src/vs/editor/common/core/selection.lil",
+      "sha256": "3fdfc7cfb4ecd831b300d37c4be3b26eb0d0e6d845522b415bc3e1a786dcd15b"
+    },
+    {
+      "path": "src/vs/editor/common/core/stringBuilder.lil",
+      "sha256": "d9ed6f2170ba7a84c445d43737d61b5172bc2e1da5311782df20b31bfbdf2e3f"
+    },
+    {
+      "path": "src/vs/editor/common/core/text/abstractText.lil",
+      "sha256": "e0a0b8385f2be4451fca92ef5627de458c366dba8341281a00c863ebb5ec4804"
+    },
+    {
+      "path": "src/vs/editor/common/core/text/getPositionOffsetTransformerFromTextModel.lil",
+      "sha256": "e5396cf4abb136eaabbfefabcf8e8d33618beda1c2de5e5e6deda74792aaba1d"
+    },
+    {
+      "path": "src/vs/editor/common/core/text/positionToOffset.lil",
+      "sha256": "b58c5f988b5176428dceafb6fac304c6878d9a277668a4eaf1cef0b75d7f7240"
+    },
+    {
+      "path": "src/vs/editor/common/core/text/positionToOffsetImpl.lil",
+      "sha256": "cf6699750f462c3a438a73a6ce00bd76da244a3a4c3221d3db4681433407322f"
+    },
+    {
+      "path": "src/vs/editor/common/core/text/textLength.lil",
+      "sha256": "cc19a4b91e55c88968fd29b4db461dba5cd88e02b345fd0cfb3331479b1e44ac"
+    },
+    {
+      "path": "src/vs/editor/common/core/textChange.lil",
+      "sha256": "ef149abd24be2c0a0e7ad6a6443df18f64f8f98e668a7be15935ec4596002141"
+    },
+    {
+      "path": "src/vs/editor/common/core/wordCharacterClassifier.lil",
+      "sha256": "25d21bb87f10ed46f604acf3de59ab59b254fe74624f52b212822eacea91b490"
+    },
+    {
+      "path": "src/vs/editor/common/core/wordHelper.lil",
+      "sha256": "e1d1ec7ee2c2fa34a7c176e5397991d1526e24718ee3fb703455456f9bd414e7"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursor.lil",
+      "sha256": "e1e92270d1a3e94d5bac5a6df60dbd62c098c5b9a08c059e9d1c9bfd241c6240"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorAtomicMoveOperations.lil",
+      "sha256": "133beed0b0e4de72a53447f7eca2786985214d045366afc6f239e7428c5a2171"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorCollection.lil",
+      "sha256": "8ca84b7c94abaae8241b534b8ef266d3e67787c939515d40173aaa1ffe09ef53"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorColumnSelection.lil",
+      "sha256": "7b4a4423865cf7dbd059d00078bd2a53dcc1142fa468bbd28671cf2d08814a30"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorContext.lil",
+      "sha256": "d15eaa1340385f20d17e3be27aa74221b290c9c22764894059004bd7ade49173"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorDeleteOperations.lil",
+      "sha256": "9de80893a874e6e8ee8a98ee77116ca166c819f3547b5ed58a75ddfcb5ec92d1"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorMoveCommands.lil",
+      "sha256": "3319137aafa7e394faba963ed2704a82dd1554b1ef25a103a10e55111e566c19"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorMoveOperations.lil",
+      "sha256": "beabef3184e686e0d2dd6602fb30b15cb8081f9877c4528ff41dd8961f084e59"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorTypeEditOperations.lil",
+      "sha256": "b0fe4d4611d09370ce130a39154e0834416ffd79f2bfe25236730c0977b3a96f"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorTypeOperations.lil",
+      "sha256": "98ba5d7bae41a283f633f102b8937f6990648e13173c37691c38a5c90e1d334b"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/cursorWordOperations.lil",
+      "sha256": "fb9030d6e4adeee9e6f00fbd9afe7244db87dee6812ec3e099c8222de825ef05"
+    },
+    {
+      "path": "src/vs/editor/common/cursor/oneCursor.lil",
+      "sha256": "c4cf0cbb7c28a56ec4a404e592e5866c52598bc75a3a1ae86ce2f0ba2153b732"
+    },
+    {
+      "path": "src/vs/editor/common/cursorCommon.lil",
+      "sha256": "cf52737457d851bee9f2bc53189cd04686443791a9240f8e8dd7ba8ba4b92a7b"
+    },
+    {
+      "path": "src/vs/editor/common/cursorEvents.lil",
+      "sha256": "181853097db3603d2ac0b000e4babd39670b909cc66b9adf5997ec85d09eb6c6"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/algorithms/diffAlgorithm.lil",
+      "sha256": "b1a9cd51d1bfbc47e05608c71d9ed07589349e4686decea2afa36971ddc726c7"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/algorithms/dynamicProgrammingDiffing.lil",
+      "sha256": "76195df49553896f0fda27e72ec97d774f2e749bce69ca0893c5e94e37baccaf"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/algorithms/myersDiffAlgorithm.lil",
+      "sha256": "c6b6bfee9bc8eabfbb4fc079a9ed664855643ebe932466ec8777546c869be808"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/computeMovedLines.lil",
+      "sha256": "0f5849f1ca75877bccef90e75f207f8e7a3beda4c8c47c292d46ec7b0d7cc861"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/defaultLinesDiffComputer.lil",
+      "sha256": "88786c0d65271c863e3f7ced951ac3ca00ff6b1425bf42953dedc1fae7eeb4fb"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/heuristicSequenceOptimizations.lil",
+      "sha256": "2e705b4b8e26eec640fcd0bbd8bfd188ac59245d23dc9e1beb45161c7957400a"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/lineSequence.lil",
+      "sha256": "539632d159055ba1c0bb303e083e0c2c79ec1b7d975193a54f03d4855cad33a5"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/linesSliceCharSequence.lil",
+      "sha256": "01cf3e96428906fea33a9581923e5f9feed278bddb5332355f1178718d6bd6cb"
+    },
+    {
+      "path": "src/vs/editor/common/diff/defaultLinesDiffComputer/utils.lil",
+      "sha256": "c1b971ab0a75b1ce2db641c93b6f420c3a5fce0361e25ec426e6e7557e54c229"
+    },
+    {
+      "path": "src/vs/editor/common/diff/documentDiffProvider.lil",
+      "sha256": "ff952100952c8213812e8ff89fab712a546c03ee2d6aaa419206abd6e7e9674c"
+    },
+    {
+      "path": "src/vs/editor/common/diff/externalLinesDiffComputer.lil",
+      "sha256": "ac9c36cee5fe6c4510139f49e60abbbbad83ce38d57399dae3bdcfaf26e31c56"
+    },
+    {
+      "path": "src/vs/editor/common/diff/legacyLinesDiffComputer.lil",
+      "sha256": "92bda42349c63b940eb9a9db138af846788020940e9a81e9a871568e6ecaf930"
+    },
+    {
+      "path": "src/vs/editor/common/diff/linesDiffComputer.lil",
+      "sha256": "e1ba7cb847a6cd84f5de9b071bde6719566e628920474306e422469d48746112"
+    },
+    {
+      "path": "src/vs/editor/common/diff/linesDiffComputers.lil",
+      "sha256": "19b23926f13a3f6db499a05716389f5e320fa4dc43eb974b2b17add11817827b"
+    },
+    {
+      "path": "src/vs/editor/common/diff/rangeMapping.lil",
+      "sha256": "5ccea7314eda200e6d262cb0de1ea939ececde9102a36a831d15b99a650feb52"
+    },
+    {
+      "path": "src/vs/editor/common/editorAction.lil",
+      "sha256": "4af5d2860df10e147e900ed2fe3a070149a4ca82e1d2c48020e89eb89fbccadd"
+    },
+    {
+      "path": "src/vs/editor/common/editorCommon.lil",
+      "sha256": "979c9352b5563d5850208a0d7aace868b5720d5db6a9caede1b9025063aae0d2"
+    },
+    {
+      "path": "src/vs/editor/common/editorContextKeys.lil",
+      "sha256": "1a9baa2840ed3c33185be260095985d48789deda8130219516f43a93ffaef1ac"
+    },
+    {
+      "path": "src/vs/editor/common/editorFeatures.lil",
+      "sha256": "9ea9619dd57dc30d830dcead8a9fcec5d92b85f62dbf97576531402b7a606ee0"
+    },
+    {
+      "path": "src/vs/editor/common/editorTheme.lil",
+      "sha256": "8333c3688ddf7cfeb1999abeb52482ef25a3b36c717b0414e4dc272f2c338450"
+    },
+    {
+      "path": "src/vs/editor/common/encodedTokenAttributes.lil",
+      "sha256": "62cb00fd93a8a32f1eb667f3c4a4c482373baf7c395d1ae98420f683ae06bf36"
+    },
+    {
+      "path": "src/vs/editor/common/inputMode.lil",
+      "sha256": "1480dea6a62bb141e09a2cdd307264ea6c1db22c1cbf0d44f5bf61b1aceeacff"
+    },
+    {
+      "path": "src/vs/editor/common/languageFeatureRegistry.lil",
+      "sha256": "de9db036ac2aeee6151968e557e4a4b2dec90b392cf8ba8320533b140d314e4b"
+    },
+    {
+      "path": "src/vs/editor/common/languageSelector.lil",
+      "sha256": "70c28939802ef6781400416fb111518cabbcb16deb4f818603fa5c970586c10b"
+    },
+    {
+      "path": "src/vs/editor/common/languages/autoIndent.lil",
+      "sha256": "f1f8ee9a4afb2e000fe06c294e774721b649813f5de5dfb5619f635e8d257015"
+    },
+    {
+      "path": "src/vs/editor/common/languages/defaultDocumentColorsComputer.lil",
+      "sha256": "bad0536c70226870636b02dc389b540de97cf6e71cfb9d1525310cf8d59b4095"
+    },
+    {
+      "path": "src/vs/editor/common/languages/enterAction.lil",
+      "sha256": "49f15782dc832ea43f7545ecb613995c266d25351e7072fb712c9756038dc3dc"
+    },
+    {
+      "path": "src/vs/editor/common/languages/language.lil",
+      "sha256": "deccbb78eb2d0bbc61aaec0b0334a22da0eb2e2559a245c62e0c7bc0b57c25b0"
+    },
+    {
+      "path": "src/vs/editor/common/languages/languageConfiguration.lil",
+      "sha256": "75995ed0047d74922d966c11ef071ef22afdad91b496b5cb00422f190e3e66af"
+    },
+    {
+      "path": "src/vs/editor/common/languages/languageConfigurationRegistry.lil",
+      "sha256": "552d69054605526a7dfd5573e4bd428b84fb690217edfa7a125b093dc2dda9ef"
+    },
+    {
+      "path": "src/vs/editor/common/languages/linkComputer.lil",
+      "sha256": "d7de258f141d95bd73e38885a5a4893e946a43bd8d81b075073f975da298188d"
+    },
+    {
+      "path": "src/vs/editor/common/languages/modesRegistry.lil",
+      "sha256": "d48a404320db51370ecb9b7f57438b4fda8579288865ab5c67deb65f12c2b357"
+    },
+    {
+      "path": "src/vs/editor/common/languages/nullTokenize.lil",
+      "sha256": "3f33f20ba902b79aa255b7e569cd59dcb8af6f9b97ae5d53beadbc8b3fad14c2"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/characterPair.lil",
+      "sha256": "e18dc28ea84d935c85e13ae30c3fa2e20f6718f261c2a27fba1ade9a0c8a718c"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/electricCharacter.lil",
+      "sha256": "9aa0a66a0bd94b1ddb55d5ff3173e8137bf6e4ffa4c87c13a7dff3a4f41f42ab"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/indentRules.lil",
+      "sha256": "7e9711623397a5e995a73fcdb10015682c46a7aeffe2a931d8ea98fabaaba3b8"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/indentationLineProcessor.lil",
+      "sha256": "61228824c9513708816cba19851926632f5e3c9ad506dfd737b547ef190dde18"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/inplaceReplaceSupport.lil",
+      "sha256": "d7675fc65758773bf57500352b55c5f82ffc0001a8bf0a1519200b5884ba53ca"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/languageBracketsConfiguration.lil",
+      "sha256": "3508f936d68f3901de1551a3f7a4e490915f12a56a999350fcbe8f5961d66647"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/onEnter.lil",
+      "sha256": "5c5fde8ec644fada019403e7220eee20940fd60ce12252022d35c229153779c2"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/richEditBrackets.lil",
+      "sha256": "21cbf7220203da69b27988ca6ca9e10f20cdcb053c0e897416cb69d86eb070a1"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports/tokenization.lil",
+      "sha256": "29cea1a3ae96ee37c0c6b0b136bc9bd7c30cbb977bfa6b6e8d5d4f19e23e1597"
+    },
+    {
+      "path": "src/vs/editor/common/languages/supports.lil",
+      "sha256": "04f514aa124ed73b7efa8c47d8df916a26be35fb503d01e13bdd23f22e99c951"
+    },
+    {
+      "path": "src/vs/editor/common/languages/textToHtmlTokenizer.lil",
+      "sha256": "39aeba4c07665ac9968ddb2c74dc996aa4929bee944987d12b20510a8d6a5cfb"
+    },
+    {
+      "path": "src/vs/editor/common/languages.lil",
+      "sha256": "90cc031c950bfa21c9bd1f65979960d7ceb9b4fb1f6009a5176f6786aed95d64"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsImpl.lil",
+      "sha256": "1234744d17919a3fe78d6aea0bbfcb05ed9167bd73d9e30bf3a517f2d6b3604b"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/ast.lil",
+      "sha256": "f666d051a09f4672d30ad045f249f627cca438638d5f3ba47f37145c9323f4d1"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/beforeEditPositionMapper.lil",
+      "sha256": "aebad1adee849e0dd9a4b0ec795a17ab21dbdce9eb9f2b28b44f24d2626baee5"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/bracketPairsTree.lil",
+      "sha256": "9dac7ddec6c0bd52f13036b14148b3680cfb183a99f702698c82b66530afe9dd"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/brackets.lil",
+      "sha256": "ef8be02cb2ea178051931621dbb5d7b7e72f24ba4a715f0d14dd84f64ee8aea4"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/combineTextEditInfos.lil",
+      "sha256": "ab0bde27cc296788f9ace5d474ed6d827f7d1ab3d3e1d44ad7343696a7cebfaa"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/concat23Trees.lil",
+      "sha256": "3d75b37e7668843bbbca74c1386c7abe8497458b7f8f5e5b3ade71f6578632b6"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/length.lil",
+      "sha256": "961247ba63b4e73e618a8f259bcff5038f1e2aaf9c5582a1c15d7fb7e4586065"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/nodeReader.lil",
+      "sha256": "86ca29a5837bba4e435b72b68f72cb89fd77b49cf019b1bfc3af716e77454c7a"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/parser.lil",
+      "sha256": "c98a7c61f1569d5cf471c0963a2b49687cc683b454634fc86c9f7440c08957a2"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/smallImmutableSet.lil",
+      "sha256": "6a748da0e04e5d7da07dd66318231e84e8eeebab04f6ad621d52b3d5f4bc1318"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/bracketPairsTree/tokenizer.lil",
+      "sha256": "6cda4cdc872deb53e8b4cdeba65e01428f9f3388cf6268117d564926d509511b"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/colorizedBracketPairsDecorationProvider.lil",
+      "sha256": "e61d9e5efc6c1837ca25db834cd082f17d453c29db44d3c49e8737753db39da9"
+    },
+    {
+      "path": "src/vs/editor/common/model/bracketPairsTextModelPart/fixBrackets.lil",
+      "sha256": "cfc94448d4c4577833bf0424588d096ab99c40acbb420854ecb5c0d5d0e69b02"
+    },
+    {
+      "path": "src/vs/editor/common/model/decorationProvider.lil",
+      "sha256": "e561094242418a2f8f308dda8eeb14333136a0376a5bd2e5a3ea4d4745f395b5"
+    },
+    {
+      "path": "src/vs/editor/common/model/editStack.lil",
+      "sha256": "8a83d17964489a345c334497015467c5e87485e166e00e11723b5544c7e5814a"
+    },
+    {
+      "path": "src/vs/editor/common/model/fixedArray.lil",
+      "sha256": "9dfadd32d6c34ceb36906ef1c6f1e9e1e1f48cd15566935cff7c0b7f07198680"
+    },
+    {
+      "path": "src/vs/editor/common/model/guidesTextModelPart.lil",
+      "sha256": "89f5c247e1575553e3dbc40484c4d155821b8dc980c6b9a05f71452dfacac073"
+    },
+    {
+      "path": "src/vs/editor/common/model/indentationGuesser.lil",
+      "sha256": "fcdbaf9a02c45481227060a9680b71f61a97b9bbe0b1055c555ab78211a3da7e"
+    },
+    {
+      "path": "src/vs/editor/common/model/intervalTree.lil",
+      "sha256": "c67a7c5bb0847e7937ca95d5a567f55da7e77a7607e65d8cc600ebd7ffa22e59"
+    },
+    {
+      "path": "src/vs/editor/common/model/mirrorTextModel.lil",
+      "sha256": "4d016369412967c88a95d00ba88403b5a7a484760af1b0a57d9982e19216a450"
+    },
+    {
+      "path": "src/vs/editor/common/model/pieceTreeTextBuffer/pieceTreeBase.lil",
+      "sha256": "edefcb9e375c2a67f0114001ec0410fb213d9bd7320ba9c7336499264c1f97b1"
+    },
+    {
+      "path": "src/vs/editor/common/model/pieceTreeTextBuffer/pieceTreeTextBuffer.lil",
+      "sha256": "89caf14159ab965580032bca0f35b07d1d4c3ebdf1574e1df7eb2e1241b04dfb"
+    },
+    {
+      "path": "src/vs/editor/common/model/pieceTreeTextBuffer/pieceTreeTextBufferBuilder.lil",
+      "sha256": "8757bd69db8f40910c9b2183601bab4bba8d330d25ed23a30a84264b11c163af"
+    },
+    {
+      "path": "src/vs/editor/common/model/pieceTreeTextBuffer/rbTreeBase.lil",
+      "sha256": "dc30ec4a31c4cf0d8ce2734ec14ac385f19782581ad4076930ec7725804c5e90"
+    },
+    {
+      "path": "src/vs/editor/common/model/prefixSumComputer.lil",
+      "sha256": "c7d00cc571ac2139d2748e9860b0bc36f43ef88bceeb8113b7c8d4cbf28b4178"
+    },
+    {
+      "path": "src/vs/editor/common/model/textModel.lil",
+      "sha256": "4467c0117ab7150f6d7d760c61e36b16a671bf67e085d67f38f7e30b400a99a0"
+    },
+    {
+      "path": "src/vs/editor/common/model/textModelPart.lil",
+      "sha256": "753a4dae2c75e96613673e1e69e5216b2f6cfe5b0a8469ac1fcaeb4892093736"
+    },
+    {
+      "path": "src/vs/editor/common/model/textModelSearch.lil",
+      "sha256": "c492d42665243b5ddcdd8932bfc45685e13c47d23a3ef38bcf8e80e576801191"
+    },
+    {
+      "path": "src/vs/editor/common/model/textModelStringEdit.lil",
+      "sha256": "398f29e0d949faa037e766d86f7089dca9455513c46d30ea510a13e900af36e5"
+    },
+    {
+      "path": "src/vs/editor/common/model/textModelText.lil",
+      "sha256": "9daf8fc890efba8b035f625c6e57202da47d57f1a024006cfcda16c40757f067"
+    },
+    {
+      "path": "src/vs/editor/common/model/textModelTokens.lil",
+      "sha256": "0da7c056fa044d3fb39f0d417d38e19d2f98671a4224d212f4cd361a58bdbd15"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/abstractSyntaxTokenBackend.lil",
+      "sha256": "3733a05380e74f623b0beb3e1bf3ef9774b9ee9761f153eeb15ac88d739601da"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/annotations.lil",
+      "sha256": "583e37f3746a2c26056d97a3aba6a4b5cca7fa152864be2c65d9dd2c6774ac54"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/tokenizationFontDecorationsProvider.lil",
+      "sha256": "90f31c28e3e7c10560afa4efcc89f1f87f3fe783ad0d5b4f688bfd25bdb25a24"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/tokenizationTextModelPart.lil",
+      "sha256": "34fe67a8254de81d95c12d90fbe8432ecab22b64003602024f72f2c4c5db57b0"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/tokenizerSyntaxTokenBackend.lil",
+      "sha256": "d4f0542bdfa1ff2360ec3f1c5dd83814b83db15bee9cd343f742b8664b649fab"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/treeSitter/cursorUtils.lil",
+      "sha256": "6c553764aa6b215d9b2865fe977547bb4d1f418706fa7aa8847667bcc124ae3f"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/treeSitter/tokenStore.lil",
+      "sha256": "a35ca511412a7f0dcc2d08f905df7387c89c2ed012fe24c3876551d35cdc8561"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/treeSitter/treeSitterSyntaxTokenBackend.lil",
+      "sha256": "08870bf2f43ef701cffb25d4210fe0096a61f88b2a4efc63370e2a1dde400480"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/treeSitter/treeSitterTokenizationImpl.lil",
+      "sha256": "c19bd7e95e5e9c49122ac5977ba5a5ebe22e7f81f69ec86a400ac0506c937afa"
+    },
+    {
+      "path": "src/vs/editor/common/model/tokens/treeSitter/treeSitterTree.lil",
+      "sha256": "98b9478b4b55c0354f8a5e3e3a209966f98634307d0c6d9caebcfc741f715c2e"
+    },
+    {
+      "path": "src/vs/editor/common/model/utils.lil",
+      "sha256": "c8fc443e0bd103421368ccb508f0cd504aadc884c532593572808d20d99f7adf"
+    },
+    {
+      "path": "src/vs/editor/common/model.lil",
+      "sha256": "5b17762e4722b9d4a18436aaef644d4c68339e6e718b243b62632c2e2113f280"
+    },
+    {
+      "path": "src/vs/editor/common/modelLineProjectionData.lil",
+      "sha256": "9ebb1e522ec9f33973c52410ea311e1e9e78a80b9a5007a69def953f4c257fa2"
+    },
+    {
+      "path": "src/vs/editor/common/services/completionsEnablement.lil",
+      "sha256": "c13aff26af06d249f55c1d67de9e30754e63a82428e79052a2d087983b671be0"
+    },
+    {
+      "path": "src/vs/editor/common/services/editorBaseApi.lil",
+      "sha256": "88a98a7261cb55ac0d904b848071ce8b3151385b62319c08139286f0cb81393e"
+    },
+    {
+      "path": "src/vs/editor/common/services/editorWebWorker.lil",
+      "sha256": "addcd4714222c2206af2c8ff036b6ee70116a0c047ba5128f829eac7062da8af"
+    },
+    {
+      "path": "src/vs/editor/common/services/editorWebWorkerMain.lil",
+      "sha256": "2534598647d81ccc0955e3f8874dc8d6570362d217e416883abf6cb497c1de4d"
+    },
+    {
+      "path": "src/vs/editor/common/services/editorWorker.lil",
+      "sha256": "115c0f66c50337e0b963bec1cf12c8685854cca8611883f945d6f1aace274742"
+    },
+    {
+      "path": "src/vs/editor/common/services/editorWorkerHost.lil",
+      "sha256": "1c9861b31e505335c3816edfb037b648fbf0dbbb1a55cce991496860349ccdb0"
+    },
+    {
+      "path": "src/vs/editor/common/services/findSectionHeaders.lil",
+      "sha256": "85d561b6cc4917370ab71975fa472c271f8ff7c54cef9d294831401b177675c5"
+    },
+    {
+      "path": "src/vs/editor/common/services/getIconClasses.lil",
+      "sha256": "2386e77dbde039daa5d32747d410afbf77ad856c8bd5c8d677f06d49db19d1a9"
+    },
+    {
+      "path": "src/vs/editor/common/services/languageFeatureDebounce.lil",
+      "sha256": "e8fbbac65b2af8ffc29fbfbc09ca8e856332eadab9bf0eeefaae91f145972c80"
+    },
+    {
+      "path": "src/vs/editor/common/services/languageFeatures.lil",
+      "sha256": "0dce20eba5ee9c9690e18a3e3a3febde444fdcb745fab1f3cc77be62d027018f"
+    },
+    {
+      "path": "src/vs/editor/common/services/languageFeaturesService.lil",
+      "sha256": "79e3dc7dcc69465aa52f1f89cb2c01956ce423704bee1cabd0da9a5886e742f8"
+    },
+    {
+      "path": "src/vs/editor/common/services/languageService.lil",
+      "sha256": "ddcebd2d14a6e80b9ef4b1d10dc1c8e7a9f2009fe8f5556dcf54e48ed873ac84"
+    },
+    {
+      "path": "src/vs/editor/common/services/languagesAssociations.lil",
+      "sha256": "5a8ece2846541c2aa9a1819ce58454668a671d8219b995c80cc231f788dac7c0"
+    },
+    {
+      "path": "src/vs/editor/common/services/languagesRegistry.lil",
+      "sha256": "1219eebc1ebedd3fba46132c865c9d72f143c27c82d543bb20e45fcdad4f382f"
+    },
+    {
+      "path": "src/vs/editor/common/services/markerDecorations.lil",
+      "sha256": "d6a8c985f1b627c733c95ae46b5ba7772b7014060ce9732bbf9fbcfeca35ef82"
+    },
+    {
+      "path": "src/vs/editor/common/services/markerDecorationsService.lil",
+      "sha256": "f6ec7c7d793e6dd5fef0aec2d3456f405037aa823b3e248fab2cb5de5ac6c667"
+    },
+    {
+      "path": "src/vs/editor/common/services/model.lil",
+      "sha256": "449694bbbae2f42bbf1b75b6100603cbc7b81db53caa69a85f8788a8a9610a9a"
+    },
+    {
+      "path": "src/vs/editor/common/services/modelService.lil",
+      "sha256": "052235e47fa827f2002850a481aec4f13d9aa061cd18fdb65bc95c0bfff82233"
+    },
+    {
+      "path": "src/vs/editor/common/services/resolverService.lil",
+      "sha256": "ed927069ba485861b8640dc5c6f31461a691d18ed2c76efb46f48065735fc307"
+    },
+    {
+      "path": "src/vs/editor/common/services/semanticTokensDto.lil",
+      "sha256": "cc543016577f2fe02fd3e700ffc0249c6334b4109f571056497945efc3d672ce"
+    },
+    {
+      "path": "src/vs/editor/common/services/semanticTokensProviderStyling.lil",
+      "sha256": "ac83e0736c2e50b5043213f64fd766aea8bfec7562361bc12e9b252198dbe6b5"
+    },
+    {
+      "path": "src/vs/editor/common/services/semanticTokensStyling.lil",
+      "sha256": "aaccf63ced246af53cf4b583916f3ffc4feb354bf6d394c2cc80f95ba9752958"
+    },
+    {
+      "path": "src/vs/editor/common/services/semanticTokensStylingService.lil",
+      "sha256": "3269028272eef4b4ce78e0b55b20728515ecc9e1b2761f84e1437f0499d66134"
+    },
+    {
+      "path": "src/vs/editor/common/services/textModelSync/textModelSync.impl.lil",
+      "sha256": "36e6bdef55fa0e48f426cab5a500de4d792ae84fec630ab960e1f379460508b6"
+    },
+    {
+      "path": "src/vs/editor/common/services/textModelSync/textModelSync.protocol.lil",
+      "sha256": "57b112aa40a949ae355a361879df24f08e5b26ae1a2d7f9971bec113fa6e9353"
+    },
+    {
+      "path": "src/vs/editor/common/services/textResourceConfiguration.lil",
+      "sha256": "daaf569ee09c959c6ebf0176aedde74f86ee8cc3d1ecf3d695988ebd1ee26fee"
+    },
+    {
+      "path": "src/vs/editor/common/services/treeSitter/treeSitterLibraryService.lil",
+      "sha256": "431b95f7b5afdd6c38ee757c717f889cabf8659a6d66045170b138f934135188"
+    },
+    {
+      "path": "src/vs/editor/common/services/treeSitter/treeSitterThemeService.lil",
+      "sha256": "bfa49970b63670dc87e6621493972fc7b1cfc790942523361a7c57c0b0a3b2e7"
+    },
+    {
+      "path": "src/vs/editor/common/services/treeViewsDnd.lil",
+      "sha256": "49c5d16ecb4ece93adaac89214e7115f426c721d4c9c1ac63b2b12c4282d1d16"
+    },
+    {
+      "path": "src/vs/editor/common/services/treeViewsDndService.lil",
+      "sha256": "35af5607b3e83135ed8ab6528d17633e07e2b29670ae4a1331cc60b724f559e8"
+    },
+    {
+      "path": "src/vs/editor/common/services/unicodeTextModelHighlighter.lil",
+      "sha256": "e75bddef4f1e6434d0ae5abdd4578520b4c763e9b07790ad776f18e7f7ca7daf"
+    },
+    {
+      "path": "src/vs/editor/common/standalone/standaloneEnums.lil",
+      "sha256": "db8778135381deb401721768ef20ccc8dfad4d044b115a2be489b724dd732531"
+    },
+    {
+      "path": "src/vs/editor/common/standaloneStrings.lil",
+      "sha256": "50f780ef7f195439b1633ca96d4129ededac840fee306e8ad3cd2bfe963ac8cc"
+    },
+    {
+      "path": "src/vs/editor/common/textModelBracketPairs.lil",
+      "sha256": "ec765f03a52a6a83a1ec15569313f389562b56154206151ee0f47dc4ddce5a61"
+    },
+    {
+      "path": "src/vs/editor/common/textModelEditSource.lil",
+      "sha256": "abb9a2496c3f09b97ebcfdd8b3354ebc05274f28a7d71410bbd99e87699aa56c"
+    },
+    {
+      "path": "src/vs/editor/common/textModelEvents.lil",
+      "sha256": "f59982bb2f5805d7c4d7a0fd4b7d62cb24ba655648dc912b77f4a211b43cdfa1"
+    },
+    {
+      "path": "src/vs/editor/common/textModelGuides.lil",
+      "sha256": "aace388f9ebb15412d5e65562f003e9f35dc727e8c4c64b4819114b82902aff0"
+    },
+    {
+      "path": "src/vs/editor/common/tokenizationRegistry.lil",
+      "sha256": "40bdde0a30867155e7e1d024cb6581978823f8060a7cebd100837858baaa66d1"
+    },
+    {
+      "path": "src/vs/editor/common/tokenizationTextModelPart.lil",
+      "sha256": "40a0555cf506afba73f603dbd8db6605f8938f2d565cd1f227dc3822cee28624"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/common.lil",
+      "sha256": "85c91b049a2c9eebf1abf7847ea3e25d43f8c3c5f03493525e0d4c4e49042a8d"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/contiguousMultilineTokens.lil",
+      "sha256": "1dc145694fc96963ed7113c8ead9ae7f85472ce4485a29423a5bd5b45afedbed"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/contiguousMultilineTokensBuilder.lil",
+      "sha256": "77b601ce71eee19f68aa7af35484b91a80d4796970df6fd78a276835f55429a5"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/contiguousTokensEditing.lil",
+      "sha256": "50c0dc7878280541b2de392cbea30223defe7cc1a8376f3d1f3739908dba9bad"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/contiguousTokensStore.lil",
+      "sha256": "42874fffbd2cf14e0c615655de1ac7319604cbea90f68228c1dae1f2dddcff9f"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/lineTokens.lil",
+      "sha256": "7b1c377961a78efff54bca2ca05204af630da0e981220014be10c2ce5a2f67bd"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/sparseMultilineTokens.lil",
+      "sha256": "a0a3d97075ae5eba015c870f22cf6765916ab3ac02b372b97d9ef4a391a49c38"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/sparseTokensStore.lil",
+      "sha256": "8dcaa5f377d50a2c171e0ed75d3dd61c920e7487ca8bf6884237d9683332b3e2"
+    },
+    {
+      "path": "src/vs/editor/common/tokens/tokenWithTextArray.lil",
+      "sha256": "1cb5136ebad170cb276d76934532d41800ad89732bc5f541e97b8713d4fad746"
+    },
+    {
+      "path": "src/vs/editor/common/viewEventHandler.lil",
+      "sha256": "9c1daf0c407857766db01fc08153c830845ba402f520223f2e84d477417e13f0"
+    },
+    {
+      "path": "src/vs/editor/common/viewEvents.lil",
+      "sha256": "7d6df6f62161edc54df474a9f0673c0b7def469d9c21c3db4ae682bf4e4681b0"
+    },
+    {
+      "path": "src/vs/editor/common/viewLayout/lineDecorations.lil",
+      "sha256": "2934fcab04d13eb791b8ce809f3a0d7692a26d0872414fe3b4e00729364d9059"
+    },
+    {
+      "path": "src/vs/editor/common/viewLayout/lineHeights.lil",
+      "sha256": "495568d34cb520b2e881e7bc7f3843f4cd7021c2a4cf100d9fd975749ae7a01c"
+    },
+    {
+      "path": "src/vs/editor/common/viewLayout/linePart.lil",
+      "sha256": "f7fbe2dc384f1b87f0995b067e4b7325ffdebf3d067327eeaeaad11cb6e1e44e"
+    },
+    {
+      "path": "src/vs/editor/common/viewLayout/linesLayout.lil",
+      "sha256": "7fb4b03f25e8a2249502efa929f29002bd140703fc0e876b5b7b65a91bfa0c41"
+    },
+    {
+      "path": "src/vs/editor/common/viewLayout/viewLayout.lil",
+      "sha256": "47f9660bc6d3d114a6795d4942c52c5183e685e2dc27e0d4aa6d98849057762c"
+    },
+    {
+      "path": "src/vs/editor/common/viewLayout/viewLineRenderer.lil",
+      "sha256": "79f0af6afa06e0f2b9a5b30350eb8f15aafc632f7398c98808d013fcdff3b69a"
+    },
+    {
+      "path": "src/vs/editor/common/viewLayout/viewLinesViewportData.lil",
+      "sha256": "1ff81b88bf21e4afff75491f281ff925cbe0fcb5c2fc8fdfeb2a788003706902"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/glyphLanesModel.lil",
+      "sha256": "e9d741b2baa7738cd14c7c052391fd8cbb4308311d9beb35a084d1d9988c6543"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/inlineDecorations.lil",
+      "sha256": "4b6c2e0469e422d93bf426c3a9bb8a0dde1ee540360b1b6d1f6eb55f896ee247"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/minimapTokensColorTracker.lil",
+      "sha256": "b97b6207ade92a5cd86c1252c3ae51c54f05cd8cbd98b62b271880065de4db34"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/modelLineProjection.lil",
+      "sha256": "738c5d948c40a513003e8e8dfea744bc38e3ad9562700a90b02d807c1978116c"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/monospaceLineBreaksComputer.lil",
+      "sha256": "db8127011cb24a3f17147f27bd589be255a507c675903a1f1c3584cc1e83d4ba"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/overviewZoneManager.lil",
+      "sha256": "04c1bd89119b89bc6e7bb8565b0e7cd060792b3d89efa6be6e1ad72ececf3f31"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/screenReaderSimpleModel.lil",
+      "sha256": "a96c4fa9e69256d7904b28ff68c06cd6fd26890031616963f5cf0b1f08997f05"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/viewContext.lil",
+      "sha256": "f8c72cbc09e929ac0d703a15e0858df29c5268a03ed279b01bce9b910753475e"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/viewModelDecoration.lil",
+      "sha256": "e220d131d673ad1df5a62a9bdee74c9a3b1e3e3fa554898c261ebf9bb325ea50"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/viewModelDecorations.lil",
+      "sha256": "351ed4add33c0cfe0c9129c94d009d4ee1f3d4d33a796c239b7de2dce93c8eca"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/viewModelImpl.lil",
+      "sha256": "226f3a73e7ab09106a2ebc26978385231b401bfb644609565177457f974fbabb"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel/viewModelLines.lil",
+      "sha256": "3e5cda38747c12f7ce22ec19e88b34e066b142b83cfaa546262c92c90b5c298f"
+    },
+    {
+      "path": "src/vs/editor/common/viewModel.lil",
+      "sha256": "4384f6929c828f5abbacdb6eadb47ef8cfd37d7689371087b59118e35cf43aef"
+    },
+    {
+      "path": "src/vs/editor/common/viewModelEventDispatcher.lil",
+      "sha256": "9e5809097ab008ad047bc7376d7587c570c28fb94cbe15aec6b68c7e251cb73d"
+    },
+    {
+      "path": "src/vs/editor/contrib/anchorSelect/browser/anchorSelect.lil",
+      "sha256": "4de4e0f1cf99d58534bb23ddaf8cfd11eb57ce4f0052e09ff3b8c713c824f568"
+    },
+    {
+      "path": "src/vs/editor/contrib/bracketMatching/browser/bracketMatching.lil",
+      "sha256": "7840afa177799c34db569ff3cd19f5cc131271783e8be1f0b4e4ac5ee5df30b8"
+    },
+    {
+      "path": "src/vs/editor/contrib/caretOperations/browser/caretOperations.lil",
+      "sha256": "a15c19e850517173055dc5c47507f46d469afefca9692e4db5224cdff7fcb663"
+    },
+    {
+      "path": "src/vs/editor/contrib/caretOperations/browser/moveCaretCommand.lil",
+      "sha256": "a15c19e850517173055dc5c47507f46d469afefca9692e4db5224cdff7fcb663"
+    },
+    {
+      "path": "src/vs/editor/contrib/caretOperations/browser/transpose.lil",
+      "sha256": "a15c19e850517173055dc5c47507f46d469afefca9692e4db5224cdff7fcb663"
+    },
+    {
+      "path": "src/vs/editor/contrib/clipboard/browser/clipboard.lil",
+      "sha256": "b146fad707eb08160277de099f6b464ee4915689b64111e5201dd2986aa2688c"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/browser/codeAction.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/browser/codeActionCommands.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/browser/codeActionContributions.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/browser/codeActionController.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/browser/codeActionKeybindingResolver.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/browser/codeActionMenu.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/browser/codeActionModel.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/browser/lightBulbWidget.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codeAction/common/types.lil",
+      "sha256": "a14c6ab84acb11afb64fa99c9b164f56b5fa4d266b28e20e704067ff6098b09b"
+    },
+    {
+      "path": "src/vs/editor/contrib/codelens/browser/codeLensCache.lil",
+      "sha256": "590e30f3b54b4f0a93d008b49d8c1078aed7c6181860a1689a0969cfdc018766"
+    },
+    {
+      "path": "src/vs/editor/contrib/codelens/browser/codelens.lil",
+      "sha256": "590e30f3b54b4f0a93d008b49d8c1078aed7c6181860a1689a0969cfdc018766"
+    },
+    {
+      "path": "src/vs/editor/contrib/codelens/browser/codelensController.lil",
+      "sha256": "590e30f3b54b4f0a93d008b49d8c1078aed7c6181860a1689a0969cfdc018766"
+    },
+    {
+      "path": "src/vs/editor/contrib/codelens/browser/codelensWidget.lil",
+      "sha256": "590e30f3b54b4f0a93d008b49d8c1078aed7c6181860a1689a0969cfdc018766"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/color.lil",
+      "sha256": "9a45b8a3ea53fea97984f0af6b757e6fb00a1d784f6068be963254dfd6290be8"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorDetector.lil",
+      "sha256": "6401fd2aaa16385e0cf4b0ed6144231364a8e34cd785ef9b14575b688c6ca066"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerContribution.lil",
+      "sha256": "a08e1285272821265d184e500bf1ca0ed94f3ef4f58e754c30fe23692afc65eb"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerModel.lil",
+      "sha256": "81ee2c787aba4c1664cb91301e1cf0769535867b68cb90513cb2a3c2de26e51e"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerParticipantUtils.lil",
+      "sha256": "ff41585f9066a7314315d22cc56981fe375706e8d3ac91f710cbfdff06714eba"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerParts/colorPickerBody.lil",
+      "sha256": "c034227d5117b71111ca93d9fdd3f84be08b2d2d32158bbbed663aada179a435"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerParts/colorPickerCloseButton.lil",
+      "sha256": "1b0d866e19379aa9506930b477355ba8c289bd5ec57b5f36023a8a83aea1c6bc"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerParts/colorPickerHeader.lil",
+      "sha256": "7a390a449485313ca89de301de23b646da15412e7f8fe4bff97da8924924be2a"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerParts/colorPickerInsertButton.lil",
+      "sha256": "7ad52adfdef26d4db11927d2b1d3fa8424efcb9276cc514fe2d9a8a18226819f"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerParts/colorPickerSaturationBox.lil",
+      "sha256": "8f265674c5ad887683c40ed25e521fa46d68596b83899170682a49ea3065a11b"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerParts/colorPickerStrip.lil",
+      "sha256": "20a4b1f84062c02b9d2406fd2ab084f1c54b8e3a9f6ba5e8c5e4da5b5b797f82"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/colorPickerWidget.lil",
+      "sha256": "961ec807255e9c27155c71136b127ff2780a1bb9c8fc296759038ae562984526"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/defaultDocumentColorProvider.lil",
+      "sha256": "b37346f58a9839d4b555ea4f7511e0f358dd5eb25919a40319c32012463d4797"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/hoverColorPicker/hoverColorPicker.lil",
+      "sha256": "401a7f42e41c10adbae619d5790a2098a790ca12b5eafb7d75b32a179f1416b2"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/hoverColorPicker/hoverColorPickerContribution.lil",
+      "sha256": "88c4e8c91afb0358eff7b0d9ad66095c38d9628195c12cf1fe6f89ba0a41842d"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/hoverColorPicker/hoverColorPickerParticipant.lil",
+      "sha256": "850d65b950b483a2d9702011329964e700a32475884066ac04bf922af2dd5fcf"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/standaloneColorPicker/standaloneColorPickerActions.lil",
+      "sha256": "3f5feb13336885103d9157a4cc134c1058a8fc7293e3e1c1eb68fc84ff7af134"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/standaloneColorPicker/standaloneColorPickerController.lil",
+      "sha256": "6a4fddb91c1b7c1b7cbe0eb81410625498c7fbe6dfe8cc54ac48d21efc22f47c"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/standaloneColorPicker/standaloneColorPickerParticipant.lil",
+      "sha256": "306395a342961dcd27a7f10c6b6bf8165a6eeb3abcd242b1b82e183c9257a993"
+    },
+    {
+      "path": "src/vs/editor/contrib/colorPicker/browser/standaloneColorPicker/standaloneColorPickerWidget.lil",
+      "sha256": "0105ba85bf107cc66dc344fd5ce73ba464070da363fa55c976ef6bb7f27f81dd"
+    },
+    {
+      "path": "src/vs/editor/contrib/comment/browser/blockCommentCommand.lil",
+      "sha256": "c44b92deb1b64e594299046b63ac7f6d76e2a1f30820210583f73cc9310c372e"
+    },
+    {
+      "path": "src/vs/editor/contrib/comment/browser/comment.lil",
+      "sha256": "c44b92deb1b64e594299046b63ac7f6d76e2a1f30820210583f73cc9310c372e"
+    },
+    {
+      "path": "src/vs/editor/contrib/comment/browser/lineCommentCommand.lil",
+      "sha256": "c44b92deb1b64e594299046b63ac7f6d76e2a1f30820210583f73cc9310c372e"
+    },
+    {
+      "path": "src/vs/editor/contrib/contextmenu/browser/contextmenu.lil",
+      "sha256": "052ac9d23bb6cbaa3b7d49d262a545a956df09cbb4ee095881ba7ca206ea8c8b"
+    },
+    {
+      "path": "src/vs/editor/contrib/cursorUndo/browser/cursorUndo.lil",
+      "sha256": "4736ad7ccd1da379470f1e66a82b7d5a38c8a0b0b34f4fb49993e068c5e6830b"
+    },
+    {
+      "path": "src/vs/editor/contrib/diffEditorBreadcrumbs/browser/contribution.lil",
+      "sha256": "22ba057942420197a8ef89edc3500279112fdf991360e559174f37717af61fac"
+    },
+    {
+      "path": "src/vs/editor/contrib/dnd/browser/dnd.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/dnd/browser/dragAndDropCommand.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/documentSymbols/browser/documentSymbols.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/documentSymbols/browser/outlineModel.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/dropOrPasteInto/browser/copyPasteContribution.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/dropOrPasteInto/browser/copyPasteController.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/dropOrPasteInto/browser/defaultProviders.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/dropOrPasteInto/browser/dropIntoEditorContribution.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/dropOrPasteInto/browser/dropIntoEditorController.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/dropOrPasteInto/browser/edit.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/dropOrPasteInto/browser/postEditWidget.lil",
+      "sha256": "f146a9274eaca2911f87f331869530657f9bcc7bd42b8a5b1c78d9886ccbf46d"
+    },
+    {
+      "path": "src/vs/editor/contrib/editorState/browser/editorState.lil",
+      "sha256": "442c8cab477b3e9b6f0e67d8c66624ce5bef6d63ac6f3f340b06b49becf037a8"
+    },
+    {
+      "path": "src/vs/editor/contrib/editorState/browser/keybindingCancellation.lil",
+      "sha256": "442c8cab477b3e9b6f0e67d8c66624ce5bef6d63ac6f3f340b06b49becf037a8"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/findController.lil",
+      "sha256": "c708edb82a01a4c84e8ef1e8818d9a736b686b667d11781d7a7349d3129b4231"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/findDecorations.lil",
+      "sha256": "f6d26ef8b76077306373f2a4c1daa9f7d6ab2277f089cbaa53588e1ab6e8a285"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/findModel.lil",
+      "sha256": "ebf3c29c05c4d96c3dfeebc0d0ccaa1175a0295d52ab22be0f2d78991473eb33"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/findOptionsWidget.lil",
+      "sha256": "fc5b1857eeeb49fb862f74d410852bf19ac1b12f19493b1e787f9cdccd636437"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/findState.lil",
+      "sha256": "925f075032293ed95177065de2ce19aa3fd21db27e6e304334e3ea4af27c8b96"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/findWidget.lil",
+      "sha256": "fa30fed7ae08424477415c4c27c5fddf8034d2801f6079ab8e4bb42b4d4b2ff7"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/findWidgetSearchHistory.lil",
+      "sha256": "1f48247217b99990adc60e3b9c4644d0001f735e2a4b0121b3ede7b99da4fa25"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/replaceAllCommand.lil",
+      "sha256": "e8cb66e650152c1d7dbf9fe3a3c94673b9538dc5d1f8f4f42d7efd0f23d3eea5"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/replacePattern.lil",
+      "sha256": "3980b6ef7e58cded948c2919b15ec20312ac0bdc6866f51741859ffde42f74eb"
+    },
+    {
+      "path": "src/vs/editor/contrib/find/browser/replaceWidgetHistory.lil",
+      "sha256": "b7e68650cee29d6f1537cf155e194272d7dc2fdcf067166e86275055ad7070d3"
+    },
+    {
+      "path": "src/vs/editor/contrib/floatingMenu/browser/floatingMenu.contribution.lil",
+      "sha256": "16b3a71260667587d1d73274142c22a7bbea2eef68b6c3c32fbe07e884c54322"
+    },
+    {
+      "path": "src/vs/editor/contrib/floatingMenu/browser/floatingMenu.lil",
+      "sha256": "16b3a71260667587d1d73274142c22a7bbea2eef68b6c3c32fbe07e884c54322"
+    },
+    {
+      "path": "src/vs/editor/contrib/folding/browser/folding.lil",
+      "sha256": "48111d38b8131a90252b6534043286a1c31b33c8efad842f498225f6f429bddd"
+    },
+    {
+      "path": "src/vs/editor/contrib/folding/browser/foldingDecorations.lil",
+      "sha256": "3fa44499913ab6c2faa4abce97d4ca6b8c0e9715008faa5799afcca12851a94f"
+    },
+    {
+      "path": "src/vs/editor/contrib/folding/browser/foldingModel.lil",
+      "sha256": "6f37b5d417dde6dd72211244aac003957731c5d6e143b9b4db2d00d8c50ce900"
+    },
+    {
+      "path": "src/vs/editor/contrib/folding/browser/foldingRanges.lil",
+      "sha256": "7cf59d324c67955ab236df3a66c82e5d9f3a680e2ed5b1394e5702523d33163d"
+    },
+    {
+      "path": "src/vs/editor/contrib/folding/browser/hiddenRangeModel.lil",
+      "sha256": "f01f111d9efc8f9f3c7485925a247f6ebda9c0d680ad4b9cfe2ba71b2d46e9bc"
+    },
+    {
+      "path": "src/vs/editor/contrib/folding/browser/indentRangeProvider.lil",
+      "sha256": "b93b7ab21b1b6196749008642fa89eafc16d089899d329d9d271985471975cbd"
+    },
+    {
+      "path": "src/vs/editor/contrib/folding/browser/syntaxRangeProvider.lil",
+      "sha256": "02aa992c20efb2a8230eef363b900e1805bbfd7a8113fbec63d9ae66f50136b9"
+    },
+    {
+      "path": "src/vs/editor/contrib/fontZoom/browser/fontZoom.lil",
+      "sha256": "170968d622dbc2294fe56ae7effa43a5a23887bbd0959ec9a5aa3db91e8f1661"
+    },
+    {
+      "path": "src/vs/editor/contrib/format/browser/format.lil",
+      "sha256": "21e7e270a165f60733fb400a5a8b07c347afeed3d8ed4089ae90c13486115d56"
+    },
+    {
+      "path": "src/vs/editor/contrib/format/browser/formatActions.lil",
+      "sha256": "21e7e270a165f60733fb400a5a8b07c347afeed3d8ed4089ae90c13486115d56"
+    },
+    {
+      "path": "src/vs/editor/contrib/format/browser/formattingEdit.lil",
+      "sha256": "21e7e270a165f60733fb400a5a8b07c347afeed3d8ed4089ae90c13486115d56"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoError/browser/gotoError.lil",
+      "sha256": "effa69bcc54402bfb355df42443afb33d4f0dd422bd9048ec6fd5c673f4ffa6e"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoError/browser/gotoErrorWidget.lil",
+      "sha256": "effa69bcc54402bfb355df42443afb33d4f0dd422bd9048ec6fd5c673f4ffa6e"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoError/browser/markerNavigationService.lil",
+      "sha256": "effa69bcc54402bfb355df42443afb33d4f0dd422bd9048ec6fd5c673f4ffa6e"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoError/browser/markerSelectionStatus.lil",
+      "sha256": "effa69bcc54402bfb355df42443afb33d4f0dd422bd9048ec6fd5c673f4ffa6e"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/goToCommands.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/goToSymbol.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/link/clickLinkGesture.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/link/goToDefinitionAtPosition.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/peek/referencesController.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/peek/referencesTree.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/peek/referencesWidget.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/referencesModel.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gotoSymbol/browser/symbolNavigation.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/gpu/browser/gpuActions.lil",
+      "sha256": "2b95ff4736b955b5698cf6f96a7f59fbc25e6be13de911dbae41d3c8d4c8e8dd"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/contentHoverComputer.lil",
+      "sha256": "56e655dd607de69fe3d44a17491110ab0dadef3a49b15ef1b114c6b2bf55c2c8"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/contentHoverController.lil",
+      "sha256": "a0a6a009916d5649e3ffaf4b797d23f7bf8708879c313ea85a4c46349a82aee5"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/contentHoverRendered.lil",
+      "sha256": "385845294b5bd15ca63f68189a7e7578a4c4ee2dddb3c172f14ad98ce5845b5e"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/contentHoverStatusBar.lil",
+      "sha256": "e898a8c1c4240a39ca4ecbcaec4ec0bb187938ba6681ca2b1d4e74dfc2cb663a"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/contentHoverTypes.lil",
+      "sha256": "b6f84c3fdd8a4f83e86fe076fea7b56a00917465881cbde7ef6503d9ea56e104"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/contentHoverWidget.lil",
+      "sha256": "e56034817fc0740b8c2cdf5696e204cbe1ca2a4f321ceda6b1ff9a94806d7ac2"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/contentHoverWidgetWrapper.lil",
+      "sha256": "c2f56104a612da14f94698810022ba775c710dbc38c85a6f97e60779159fb05d"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/getHover.lil",
+      "sha256": "bc8fdb0fb4adecbc3e1889e483985efc893625f17a8551c3623159ff0209cc20"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/glyphHoverComputer.lil",
+      "sha256": "9b76869991bc26e0d35b88a20f365a7667573419be37151ce747a6ed7a5b11b0"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/glyphHoverController.lil",
+      "sha256": "0ce504072d5205d123015eb8954429f632ad04b60704cc32d9eab13dc328f6b1"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/glyphHoverWidget.lil",
+      "sha256": "f0c349d83a6af9e946bf9af5b55a0c0c6f105c2c7a4c38bd6635afee36442480"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/hoverAccessibleViews.lil",
+      "sha256": "56fdaaec3178c0e423f04502f2a3996192f6437795e057dd320970d9c8cfcbc3"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/hoverActionIds.lil",
+      "sha256": "4a5b8a901be9b1229de9890d173f185bf02dfe0b19e5f5a82e6f6676818945ab"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/hoverActions.lil",
+      "sha256": "4ccd5b1d5b1f70ac9165e34f94f8339013c4857d4c3c98d8ec9ccd5341549693"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/hoverContribution.lil",
+      "sha256": "62073fe62fda6cc9ae1c3dc25894905523fd601a25afeff3204bcd40caf47e1f"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/hoverCopyButton.lil",
+      "sha256": "73399fe892a5efb55dcfe305db12cd78cf3745c88e6e2acbc75c07ddeea6ef3c"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/hoverOperation.lil",
+      "sha256": "af0fe3520268daf7438eeac3f229c201d17be823d2c70fde2a0503e6bb8393f8"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/hoverTypes.lil",
+      "sha256": "501270d21ef50712490ae096a4e3bd0115cb933c98e53397b828efc960a831c7"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/hoverUtils.lil",
+      "sha256": "2430d288e8984720be25197fba7eab5ca83515a494fee9e750f1f56ecdf14e14"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/markdownHoverParticipant.lil",
+      "sha256": "b9b719a1116fb8e3e2e67911b3ec4a74a624a852dff493e94db5d4d7918ed1e8"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/markerHoverParticipant.lil",
+      "sha256": "cdadd0041c8de04ff507f9650f7d450839387dc0a58f16ac04f9d54763cbbbb4"
+    },
+    {
+      "path": "src/vs/editor/contrib/hover/browser/resizableContentWidget.lil",
+      "sha256": "732c56cb463bcd4d80ea7a6bb0e8ff8ad069e65b42e7224784832c3c2acab551"
+    },
+    {
+      "path": "src/vs/editor/contrib/inPlaceReplace/browser/inPlaceReplace.lil",
+      "sha256": "7aa9727f39aa954e63e76a82d77cdfb89304b602c0d8a3774e40be2e2fe47ae1"
+    },
+    {
+      "path": "src/vs/editor/contrib/inPlaceReplace/browser/inPlaceReplaceCommand.lil",
+      "sha256": "7aa9727f39aa954e63e76a82d77cdfb89304b602c0d8a3774e40be2e2fe47ae1"
+    },
+    {
+      "path": "src/vs/editor/contrib/indentation/browser/indentation.lil",
+      "sha256": "6d8b665fe41bc17b65cab080cb65db37591ae1eb243c651ce28c9a09496aa272"
+    },
+    {
+      "path": "src/vs/editor/contrib/indentation/common/indentUtils.lil",
+      "sha256": "6d8b665fe41bc17b65cab080cb65db37591ae1eb243c651ce28c9a09496aa272"
+    },
+    {
+      "path": "src/vs/editor/contrib/indentation/common/indentation.lil",
+      "sha256": "6d8b665fe41bc17b65cab080cb65db37591ae1eb243c651ce28c9a09496aa272"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlayHints/browser/inlayHints.lil",
+      "sha256": "50d129ebf9fd62af3e674a05fe7daa0fa4bbc843e3edef9fe10eee3224212f10"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlayHints/browser/inlayHintsContribution.lil",
+      "sha256": "50d129ebf9fd62af3e674a05fe7daa0fa4bbc843e3edef9fe10eee3224212f10"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlayHints/browser/inlayHintsController.lil",
+      "sha256": "50d129ebf9fd62af3e674a05fe7daa0fa4bbc843e3edef9fe10eee3224212f10"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlayHints/browser/inlayHintsHover.lil",
+      "sha256": "50d129ebf9fd62af3e674a05fe7daa0fa4bbc843e3edef9fe10eee3224212f10"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlayHints/browser/inlayHintsLocations.lil",
+      "sha256": "50d129ebf9fd62af3e674a05fe7daa0fa4bbc843e3edef9fe10eee3224212f10"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/controller/commandIds.lil",
+      "sha256": "203040b4c6237da5a0db7b0074fad94181d36bfeeb5a682c7aa3dd4af2959733"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/controller/commands.lil",
+      "sha256": "4a7ea09b765728b6b793a68d6897042ea8a17c3cd93cf74c9bb70ebda8ea1e90"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/controller/common.lil",
+      "sha256": "2e2f00a2a49583b4779f6c0ed17abf8b6f764c9e38f191b6385f7f7ff271d0bd"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/controller/inlineCompletionContextKeys.lil",
+      "sha256": "3c2eacdfa576c2af60c059db709656e132d2aeaa8128f17c935c29c2466b425b"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/controller/inlineCompletionsController.lil",
+      "sha256": "cdcea8db4720585c629ca6b5e8c701c5113c1d15fe93e888f0648b0f006c00fd"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/hintsWidget/hoverParticipant.lil",
+      "sha256": "71a79bd6ccc536fc1791f2c2754c2f445edec372af67d8ac878a2348abf8ef78"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/hintsWidget/inlineCompletionsHintsWidget.lil",
+      "sha256": "2c1f5bc9c4807220b72c9593054855afb722a08664501b4319a257dd19bf5732"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/inlineCompletions.contribution.lil",
+      "sha256": "114e844491be99673de6f8d342d1abf7ee4b109d22e65c9189e3797739b0c473"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/inlineCompletionsAccessibleView.lil",
+      "sha256": "0ec85d1ff0100b34da88bc60110451aba5067848f2176afd72896d89fb287dbb"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/InlineSuggestAlternativeAction.lil",
+      "sha256": "5b04f0cfe78c16f9bb9f2d3b544067199c17ed5294d0cbc19f9a04886805c5c3"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/changeRecorder.lil",
+      "sha256": "914eec7752eedb182dd7843080cf472e36904fa179792c646c8db5eccd9b393e"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/computeGhostText.lil",
+      "sha256": "7d3c30a654197fc7d9915ee677dae682884776d3a3dd638c29487d254fa63029"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/editKind.lil",
+      "sha256": "e6d8ffcf94490da8ec5f3600ed3b1906a59225e75615ce7b7ad6da9791c22dbd"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/ghostText.lil",
+      "sha256": "3bc881f72a0a90b67932d18ae8a5cc7722cbeeadb0090f79042d9e00a9de5bff"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/graph.lil",
+      "sha256": "8123ce1a13696e57f7458c6abd6a08e8a5a0258b7041da63a4523ab40be3d3f5"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/inlineCompletionIsVisible.lil",
+      "sha256": "73e8cd8f7ebce0fd39f7fba13855ee2b510a7288dad0548da85ea38fc3d277c7"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/inlineCompletionsModel.lil",
+      "sha256": "829319a2ba485412727945f079c6f9d00bd803df1a8819b5e4d9605eece93509"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/inlineCompletionsSource.lil",
+      "sha256": "829319a2ba485412727945f079c6f9d00bd803df1a8819b5e4d9605eece93509"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/inlineSuggestionItem.lil",
+      "sha256": "829319a2ba485412727945f079c6f9d00bd803df1a8819b5e4d9605eece93509"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/provideInlineCompletions.lil",
+      "sha256": "829319a2ba485412727945f079c6f9d00bd803df1a8819b5e4d9605eece93509"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/renameSymbolProcessor.lil",
+      "sha256": "e2ef527ca441034f5e4e3a5cec3172958e1c337f8568b61099b92583e07dcab8"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/singleTextEditHelpers.lil",
+      "sha256": "7d3c30a654197fc7d9915ee677dae682884776d3a3dd638c29487d254fa63029"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/suggestWidgetAdapter.lil",
+      "sha256": "b6bc1be4b78ed2157a3ca5590753e54017787d8fe2c4459d42602276416fdbdd"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/textModelValueReference.lil",
+      "sha256": "e39cd697a55b5d516b51758baca6dcb1ec81fa2a5b88f946ee5a45f78f6cf141"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/model/typingSpeed.lil",
+      "sha256": "0db2db97732b0dc594ed5487c2585e764cd69b5dfab48d871baed3ac88b52db3"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/structuredLogger.lil",
+      "sha256": "3ff66472a78709fc5dd8ab0946a8872886b2bea60453c531be9f22702e09f54a"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/telemetry.lil",
+      "sha256": "49b53d0f29fe44dd22f92389862e2ae5c6c0e2b1ca87eb560cea0e38334d34b4"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/utils.lil",
+      "sha256": "458b14498eab76033b12d5038881bbdbcf96f476904fdb15b10e25dd19ed3663"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/ghostText/ghostTextView.lil",
+      "sha256": "ea50d60a274941a6d8e74d2079f358b4b552048ff1c6f65648ac7eea55886748"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/components/gutterIndicatorMenu.lil",
+      "sha256": "e70386c81b3e274f685cfe4fffc8de30fc3a4f6de8c4d81ed567c7f77128e628"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/components/gutterIndicatorView.lil",
+      "sha256": "5c9207073eaa5bbc5f2845b93e694a06dbe2cfc7a8269e252b556992ee0f7d7d"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditWithChanges.lil",
+      "sha256": "46e5b77589f2f94b533b9888350ba4cc3e2ad31d4bb507788ea4260d5f9c957c"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsModel.lil",
+      "sha256": "1d85b5bbf9940c451be269d89f11e6f27d97f8668e1212cd3ec6b2c4a66878bb"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsNewUsers.lil",
+      "sha256": "38b440c44331c1f8db7b96873e0159bd1ce0f4ca0bd0db1ad141e38e8799f7ac"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsView.lil",
+      "sha256": "7dd7c66699c67968b9769dc915fe62ef66a81fdb85e083b5c0faa30317a8ec0f"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViewInterface.lil",
+      "sha256": "f72927e5773c48ab03654be62bbf7563e7bdff6a500db3c1bcb23ab8bef9a87d"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViewProducer.lil",
+      "sha256": "dd16fd35a2ce30cc6224b33d4d54777502123079b8c88dd854148a841a18c05e"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/debugVisualization.lil",
+      "sha256": "1f3c0789f151d66d65ca2674f79eed60c926f3cd85d1a0105437241cd758cb24"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/inlineEditsCollapsedView.lil",
+      "sha256": "821aca6e1c137a1d82f230e4070e96042619ece01e4487115745f7632f9e6003"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/inlineEditsCustomView.lil",
+      "sha256": "fa71f71b9d79583b761fbc9d6656c15e1a3b14794ba699d1999c67d465827565"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/inlineEditsDeletionView.lil",
+      "sha256": "a826ac3bd5f4454aec623e0a9770b56c0b0dc9d9d460b8c67e873aefa23f01b5"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/inlineEditsInsertionView.lil",
+      "sha256": "e5ca664b61f657f958747f47a64a9a923f1a004bcf4ef98fc7d2df25158570cf"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/inlineEditsLineReplacementView.lil",
+      "sha256": "ffe80af5313cefc64e26bcc1572d6119170e1b64caf635d0afd1a7b719dffd71"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/inlineEditsSideBySideView.lil",
+      "sha256": "37a5e7c6bb9cffb7d61112511cc5962af3376738fcd507929ad456753e4f2d55"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/inlineEditsWordReplacementView.lil",
+      "sha256": "2b7bc1cc5f0735cd408193354b818b1ff65e6890aca50b4a6ea46f201b66d995"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/jumpToView.lil",
+      "sha256": "a762cd1391bba9a1d085dce73c62ea14f518fac5f674683d172bbbcd7b191c52"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/longDistanceHint/inlineEditsLongDistanceHint.lil",
+      "sha256": "a2d29f775b834f1466c49bbbf80dffaadadae8b1287d858934def53f01ad74f1"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/longDistanceHint/longDistancePreviewEditor.lil",
+      "sha256": "fc3b666be97ef2901f7bf96d58493e04fa145d49aefc9c87219aca214686fc8b"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/longDistanceHint/longDistnaceWidgetPlacement.lil",
+      "sha256": "9a97015375b9d24e51694d41616be74d58695dc3ba6890763d50181a9f744410"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/originalEditorInlineDiffView.lil",
+      "sha256": "e2fc9a1b97d4acbafdcacb495a0930c9babec6eeea2af03b32a0a524e3044fc4"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/theme.lil",
+      "sha256": "cb67569cb65e5a001659ce327c7cd7947ed231297a5817ae740668a99c8c05d8"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/utils/flexBoxLayout.lil",
+      "sha256": "4f852bfa3dab00c6411eca0a45e3a5fbfd570bcdbb4839f5afbdd413e4b83370"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/utils/towersLayout.lil",
+      "sha256": "95434127e5046504416a8d2432f325892dc10407abefe1a38a8f88098f17cafb"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/utils/utils.lil",
+      "sha256": "458b14498eab76033b12d5038881bbdbcf96f476904fdb15b10e25dd19ed3663"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineCompletions/browser/view/inlineSuggestionsView.lil",
+      "sha256": "f27b77156c1af86314ad30c7ba8b91a854528082ed5acfbd072ad6f201ae008e"
+    },
+    {
+      "path": "src/vs/editor/contrib/inlineProgress/browser/inlineProgress.lil",
+      "sha256": "3bebff592638f2f46935413f78ff9d1e09ab28f62f18df84b313399db20df8d5"
+    },
+    {
+      "path": "src/vs/editor/contrib/insertFinalNewLine/browser/insertFinalNewLine.lil",
+      "sha256": "50d880f63fdf8b96ee2670a65709d5d2677a23d546fb1afb40111865e849515e"
+    },
+    {
+      "path": "src/vs/editor/contrib/insertFinalNewLine/browser/insertFinalNewLineCommand.lil",
+      "sha256": "50d880f63fdf8b96ee2670a65709d5d2677a23d546fb1afb40111865e849515e"
+    },
+    {
+      "path": "src/vs/editor/contrib/lineSelection/browser/lineSelection.lil",
+      "sha256": "e442f1d8e08f918dc94f388dbb2b78cc6a6bcbc2a8e1fe9a80031443a1511493"
+    },
+    {
+      "path": "src/vs/editor/contrib/linesOperations/browser/copyLinesCommand.lil",
+      "sha256": "7e9b9b4ac0c825c246bcdedc696f55b231e67e249a77687da525122d5713cf95"
+    },
+    {
+      "path": "src/vs/editor/contrib/linesOperations/browser/linesOperations.lil",
+      "sha256": "7e9b9b4ac0c825c246bcdedc696f55b231e67e249a77687da525122d5713cf95"
+    },
+    {
+      "path": "src/vs/editor/contrib/linesOperations/browser/moveLinesCommand.lil",
+      "sha256": "7e9b9b4ac0c825c246bcdedc696f55b231e67e249a77687da525122d5713cf95"
+    },
+    {
+      "path": "src/vs/editor/contrib/linesOperations/browser/sortLinesCommand.lil",
+      "sha256": "7e9b9b4ac0c825c246bcdedc696f55b231e67e249a77687da525122d5713cf95"
+    },
+    {
+      "path": "src/vs/editor/contrib/linkedEditing/browser/linkedEditing.lil",
+      "sha256": "2dca8a84b39694b2cff65a0ffd819240cac743ce655f175c7931a3d74353a888"
+    },
+    {
+      "path": "src/vs/editor/contrib/links/browser/getLinks.lil",
+      "sha256": "ba7a511a26a609b79de1b8a6799141dc261c79052061be0a837204c8ad917d0a"
+    },
+    {
+      "path": "src/vs/editor/contrib/links/browser/links.lil",
+      "sha256": "ba7a511a26a609b79de1b8a6799141dc261c79052061be0a837204c8ad917d0a"
+    },
+    {
+      "path": "src/vs/editor/contrib/longLinesHelper/browser/longLinesHelper.lil",
+      "sha256": "4b183f5a6677312a9910141c2ea07151963b2f2b964e708b735ed2000df3f1a7"
+    },
+    {
+      "path": "src/vs/editor/contrib/message/browser/messageController.lil",
+      "sha256": "1acd873205215bba6890cf44d7406168f52bf1baba7766b7178120664a9bb889"
+    },
+    {
+      "path": "src/vs/editor/contrib/middleScroll/browser/middleScroll.contribution.lil",
+      "sha256": "c3fc80448abb43976decf71a52ea42d1ff8af3c559b71b7c92e52e9c5dbf217e"
+    },
+    {
+      "path": "src/vs/editor/contrib/middleScroll/browser/middleScrollController.lil",
+      "sha256": "c3fc80448abb43976decf71a52ea42d1ff8af3c559b71b7c92e52e9c5dbf217e"
+    },
+    {
+      "path": "src/vs/editor/contrib/multicursor/browser/multicursor.lil",
+      "sha256": "100ac6374f1e59b09109e333c2464b271acbc0ffd91840646786f01f25f8d14c"
+    },
+    {
+      "path": "src/vs/editor/contrib/parameterHints/browser/parameterHints.lil",
+      "sha256": "89e2800644676e46ad7cffbd246ee20362718eae13fb685759694e1a56bb4507"
+    },
+    {
+      "path": "src/vs/editor/contrib/parameterHints/browser/parameterHintsModel.lil",
+      "sha256": "8629d7999fab14fabdc0bcab5ea322b1f28427e783caa0099d4d5393cf517130"
+    },
+    {
+      "path": "src/vs/editor/contrib/parameterHints/browser/parameterHintsWidget.lil",
+      "sha256": "32b4a9dae9a2298b463339126cfad070d3fcc6a391b193f6ac68797c4f7736c9"
+    },
+    {
+      "path": "src/vs/editor/contrib/parameterHints/browser/provideSignatureHelp.lil",
+      "sha256": "2c75db7f3951de5fedeb09a14d6055338d379cdf4413de5569a96b9c4f7951d6"
+    },
+    {
+      "path": "src/vs/editor/contrib/peekView/browser/peekView.lil",
+      "sha256": "acb505822073d69dad9f5e2b0a011cb0622a6fe33d017857ddc66acb3ff547cf"
+    },
+    {
+      "path": "src/vs/editor/contrib/placeholderText/browser/placeholderText.contribution.lil",
+      "sha256": "c9902593073975e0eef6ceb7d1fc51856d37e1d9434ac7178a60610cae540e53"
+    },
+    {
+      "path": "src/vs/editor/contrib/placeholderText/browser/placeholderTextContribution.lil",
+      "sha256": "c9902593073975e0eef6ceb7d1fc51856d37e1d9434ac7178a60610cae540e53"
+    },
+    {
+      "path": "src/vs/editor/contrib/quickAccess/browser/commandsQuickAccess.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/quickAccess/browser/editorNavigationQuickAccess.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/quickAccess/browser/gotoLineQuickAccess.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/quickAccess/browser/gotoSymbolQuickAccess.lil",
+      "sha256": "349d6865020a986236e014029abfc4f674280c6b8259a18fa39fa51119e9af28"
+    },
+    {
+      "path": "src/vs/editor/contrib/readOnlyMessage/browser/contribution.lil",
+      "sha256": "22ba057942420197a8ef89edc3500279112fdf991360e559174f37717af61fac"
+    },
+    {
+      "path": "src/vs/editor/contrib/rename/browser/rename.lil",
+      "sha256": "579129a8507150eca1341dd4a0f26fc0f2a52f056d639023137487b625ae9d7d"
+    },
+    {
+      "path": "src/vs/editor/contrib/rename/browser/renameWidget.lil",
+      "sha256": "579129a8507150eca1341dd4a0f26fc0f2a52f056d639023137487b625ae9d7d"
+    },
+    {
+      "path": "src/vs/editor/contrib/sectionHeaders/browser/sectionHeaders.lil",
+      "sha256": "efc914333b12a67e8639fa8ac138e756359033b483fe3fc281c288e39d609613"
+    },
+    {
+      "path": "src/vs/editor/contrib/semanticTokens/browser/documentSemanticTokens.lil",
+      "sha256": "11dc67398a63d1a4a9b0f8f52313cf0340ac1eb1641ff5ed25d63997ad05c0d9"
+    },
+    {
+      "path": "src/vs/editor/contrib/semanticTokens/browser/viewportSemanticTokens.lil",
+      "sha256": "11dc67398a63d1a4a9b0f8f52313cf0340ac1eb1641ff5ed25d63997ad05c0d9"
+    },
+    {
+      "path": "src/vs/editor/contrib/semanticTokens/common/getSemanticTokens.lil",
+      "sha256": "11dc67398a63d1a4a9b0f8f52313cf0340ac1eb1641ff5ed25d63997ad05c0d9"
+    },
+    {
+      "path": "src/vs/editor/contrib/semanticTokens/common/semanticTokensConfig.lil",
+      "sha256": "11dc67398a63d1a4a9b0f8f52313cf0340ac1eb1641ff5ed25d63997ad05c0d9"
+    },
+    {
+      "path": "src/vs/editor/contrib/smartSelect/browser/bracketSelections.lil",
+      "sha256": "66045a5a2a830b191a98132165d0cf0e6778a61a7fe8d5ec1add6df51fff6b54"
+    },
+    {
+      "path": "src/vs/editor/contrib/smartSelect/browser/smartSelect.lil",
+      "sha256": "66045a5a2a830b191a98132165d0cf0e6778a61a7fe8d5ec1add6df51fff6b54"
+    },
+    {
+      "path": "src/vs/editor/contrib/smartSelect/browser/wordSelections.lil",
+      "sha256": "66045a5a2a830b191a98132165d0cf0e6778a61a7fe8d5ec1add6df51fff6b54"
+    },
+    {
+      "path": "src/vs/editor/contrib/snippet/browser/snippetController2.lil",
+      "sha256": "5a527cd1a17de39d6a73acd5b1da9fefacd0870c2788bb86aeea65395dfb0b13"
+    },
+    {
+      "path": "src/vs/editor/contrib/snippet/browser/snippetParser.lil",
+      "sha256": "0dbebe0b0fcb6ea9bfb5a54cd9ac395fb6d6207ba2b78ff8724d984ba0f6a8f3"
+    },
+    {
+      "path": "src/vs/editor/contrib/snippet/browser/snippetSession.lil",
+      "sha256": "917734b93e341c8aa19b8d1b01ad7bdc742d1847c53bb1cbb3969667d9b0c4b9"
+    },
+    {
+      "path": "src/vs/editor/contrib/snippet/browser/snippetVariables.lil",
+      "sha256": "b56ac953878f15f2eae498d63d12055f74d16a755bc53f3ed98aafa4b452b13a"
+    },
+    {
+      "path": "src/vs/editor/contrib/stickyScroll/browser/stickyScrollActions.lil",
+      "sha256": "f55a5984cb354ad5ac8e36d0ad8740a0d7954321a2bd7f2d0b1a5f75068d5370"
+    },
+    {
+      "path": "src/vs/editor/contrib/stickyScroll/browser/stickyScrollContribution.lil",
+      "sha256": "f55a5984cb354ad5ac8e36d0ad8740a0d7954321a2bd7f2d0b1a5f75068d5370"
+    },
+    {
+      "path": "src/vs/editor/contrib/stickyScroll/browser/stickyScrollController.lil",
+      "sha256": "f55a5984cb354ad5ac8e36d0ad8740a0d7954321a2bd7f2d0b1a5f75068d5370"
+    },
+    {
+      "path": "src/vs/editor/contrib/stickyScroll/browser/stickyScrollElement.lil",
+      "sha256": "f55a5984cb354ad5ac8e36d0ad8740a0d7954321a2bd7f2d0b1a5f75068d5370"
+    },
+    {
+      "path": "src/vs/editor/contrib/stickyScroll/browser/stickyScrollModelProvider.lil",
+      "sha256": "f55a5984cb354ad5ac8e36d0ad8740a0d7954321a2bd7f2d0b1a5f75068d5370"
+    },
+    {
+      "path": "src/vs/editor/contrib/stickyScroll/browser/stickyScrollProvider.lil",
+      "sha256": "f55a5984cb354ad5ac8e36d0ad8740a0d7954321a2bd7f2d0b1a5f75068d5370"
+    },
+    {
+      "path": "src/vs/editor/contrib/stickyScroll/browser/stickyScrollWidget.lil",
+      "sha256": "f55a5984cb354ad5ac8e36d0ad8740a0d7954321a2bd7f2d0b1a5f75068d5370"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/completionModel.lil",
+      "sha256": "a53d0d5b7e5cef6346a9aa428191f212088391760a140d27b717a7bbf0249e72"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggest.lil",
+      "sha256": "6b0cc3ed9d4514ed405f4b6b6488152d6d19ff9806e624556e0e69128ffad858"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestAlternatives.lil",
+      "sha256": "02c010afad34205638a10707dd96b4d2884361a7a30230f793e54b5a6e70b583"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestCommitCharacters.lil",
+      "sha256": "e49d4632550c18b433ac83e94dbb4d5fe7d96cff39192c67f5dcbbc9d5569416"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestController.lil",
+      "sha256": "1ccba35baba07cbd3abeb51af0b7f6f253d5f3b739d0eea5ded6c9603543c00b"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestInlineCompletions.lil",
+      "sha256": "c4c59512607cf4151daaafa0e8605bede6fe060d028d32d994eb5de079a8fb46"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestMemory.lil",
+      "sha256": "8239645b3870e0c216cd9fabfda2dfce539d49df865a40b95ac8927006071296"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestModel.lil",
+      "sha256": "c161487491c55e7922e437dad8d542bfbc12d87d40a581ffe751f0cf3de7f8c8"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestOvertypingCapturer.lil",
+      "sha256": "7236ae235e1e93f745ed817338273ae4fff348c4fddd6c15123d68aabf31584f"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestWidget.lil",
+      "sha256": "cafeda0b163a718f82d50797602876c127916858c573f91c0d4453e68e0d4b20"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestWidgetDetails.lil",
+      "sha256": "5af11e413875ba564dd24614bdd98ec9d6605ed5130916c9f2baa03a28d073f2"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestWidgetRenderer.lil",
+      "sha256": "680b9bd0e5845d872966091db7399d5eb7ba203171d6bb168a9884d8ff17da7d"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/suggestWidgetStatus.lil",
+      "sha256": "e7289c147011584df0d7d61e4fe8bf767495fd962b76ab94f7170eb606f3d728"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/wordContextKey.lil",
+      "sha256": "6028a443629a5167012010711c7a6daebb94dbcc3743213b0464a08404bc9622"
+    },
+    {
+      "path": "src/vs/editor/contrib/suggest/browser/wordDistance.lil",
+      "sha256": "ebde24d566ee35fe9a6beecd1b9f6ec13b8e5bca4d010964532d16956b1d4326"
+    },
+    {
+      "path": "src/vs/editor/contrib/symbolIcons/browser/symbolIcons.lil",
+      "sha256": "90e0082170aa11756aef5f2ad95ecbbc9c1c7581d577c2b19752d1480e7750e6"
+    },
+    {
+      "path": "src/vs/editor/contrib/toggleTabFocusMode/browser/toggleTabFocusMode.lil",
+      "sha256": "29b9f270e41befda09b4f22ed6ef77943641a167bb1c2b65ae1f2176037441e2"
+    },
+    {
+      "path": "src/vs/editor/contrib/tokenization/browser/tokenization.lil",
+      "sha256": "fd3dceb99c2ec4b9264b1376781e4573b5e252748f3bebc94a042799f0be6ae1"
+    },
+    {
+      "path": "src/vs/editor/contrib/unicodeHighlighter/browser/bannerController.lil",
+      "sha256": "9bce5580200e105b7a82e1c90cfe7c17d82ec9ea0bb944a7c5246ce532fd38ca"
+    },
+    {
+      "path": "src/vs/editor/contrib/unicodeHighlighter/browser/unicodeHighlighter.lil",
+      "sha256": "9bce5580200e105b7a82e1c90cfe7c17d82ec9ea0bb944a7c5246ce532fd38ca"
+    },
+    {
+      "path": "src/vs/editor/contrib/unusualLineTerminators/browser/unusualLineTerminators.lil",
+      "sha256": "9bce5580200e105b7a82e1c90cfe7c17d82ec9ea0bb944a7c5246ce532fd38ca"
+    },
+    {
+      "path": "src/vs/editor/contrib/wordHighlighter/browser/highlightDecorations.lil",
+      "sha256": "f6dc0bd626cc964bdfc9f2fe56081011129c8c01ee242e08e75b05963a84dad9"
+    },
+    {
+      "path": "src/vs/editor/contrib/wordHighlighter/browser/textualHighlightProvider.lil",
+      "sha256": "f6dc0bd626cc964bdfc9f2fe56081011129c8c01ee242e08e75b05963a84dad9"
+    },
+    {
+      "path": "src/vs/editor/contrib/wordHighlighter/browser/wordHighlighter.lil",
+      "sha256": "f6dc0bd626cc964bdfc9f2fe56081011129c8c01ee242e08e75b05963a84dad9"
+    },
+    {
+      "path": "src/vs/editor/contrib/wordOperations/browser/wordOperations.lil",
+      "sha256": "01bf5a7bbf31a28276849f4a69be25be5ec4be2b1252fb2c1331466a155e62c5"
+    },
+    {
+      "path": "src/vs/editor/contrib/wordPartOperations/browser/wordPartOperations.lil",
+      "sha256": "01bf5a7bbf31a28276849f4a69be25be5ec4be2b1252fb2c1331466a155e62c5"
+    },
+    {
+      "path": "src/vs/editor/contrib/zoneWidget/browser/zoneWidget.lil",
+      "sha256": "c2406a2226b7e9bd5dbec5aa3313236aa50d12508942f33e0bd9055481c0cfa3"
+    },
+    {
+      "path": "src/vs/editor/editor.all.lil",
+      "sha256": "1a4fc3ed2712ed04430d2d700a612308e1c2d62bdb9afc061a33dd6bc22f68ae"
+    },
+    {
+      "path": "src/vs/editor/editor.api.lil",
+      "sha256": "ee38d0dd4b1a6692ee0e3a6ecd9e4d647e2b97e2a06615a5fca0471dffec7ad3"
+    },
+    {
+      "path": "src/vs/editor/editor.main.lil",
+      "sha256": "6a13aa4443b14a2cd6a5df3fd772a798a0b201979b6784e8056c760175a20232"
+    },
+    {
+      "path": "src/vs/editor/editor.worker.start.lil",
+      "sha256": "890db88798a742323a6e6598ce46bc7a7c345ed0868bc133a81ea6513be99260"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/colorizer.lil",
+      "sha256": "04a841ad91bc77f9eefb7d052da86debbe6ad458093d0c5a6eff0c0060a6517f"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/iPadShowKeyboard/iPadShowKeyboard.lil",
+      "sha256": "86cbe20c0481b2ae48379d7526c4291f3b710a90403a079ce18ef376e36e532c"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/inspectTokens/inspectTokens.lil",
+      "sha256": "8c92ec38f34c494fee1960db25100e647b40f805e3230bcfd40fcaa1ef943e59"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/quickAccess/standaloneCommandsQuickAccess.lil",
+      "sha256": "bf03738c21a04d03c9a4136a828a24267309c9260fed9315c839e672f1472e44"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/quickAccess/standaloneGotoLineQuickAccess.lil",
+      "sha256": "cb6439d63369608e4310d8e71fae0a2a08846a0abf0745a973e692f1ecbaebf8"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/quickAccess/standaloneGotoSymbolQuickAccess.lil",
+      "sha256": "2a21ed6d94f74ab7c7c0bf4f001a865aa6a0754d79b2a4a51250453efd97ad7f"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/quickAccess/standaloneHelpQuickAccess.lil",
+      "sha256": "45914bdec7c3f56cfb806eb2afd372f33cb24c4c3b5de0e5d6f25435f9ac3ad1"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/quickInput/standaloneQuickInputService.lil",
+      "sha256": "2c0c2e199b5d02260ce1a87488cbb822d549253d93457fc798999c67369c0fe3"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/referenceSearch/standaloneReferenceSearch.lil",
+      "sha256": "be1d54cd80dd487485e13fda61073cb75410d85ec7a3219043c49fea8dd1e0c8"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/services/standaloneWebWorkerService.lil",
+      "sha256": "ec7cf640ef96e2c9e981f7407446f62643a98e1c976a2188a932d46520f5b989"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneCodeEditor.lil",
+      "sha256": "eecb2ab56890cbcf91ce84904b981e019e7265c37768f5e6dc685fff524af54e"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneCodeEditorService.lil",
+      "sha256": "3acfa17f1648692be03614154582de8144234fd473bd0b855ce0a683abdd2e82"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneEditor.lil",
+      "sha256": "4b4c6b77c5a3485c9f9ef0ed1b2c2e9683309e752e021890e35d9024b4db502d"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneLanguages.lil",
+      "sha256": "6de0a79f813afce0d0b6b0d70bfcee6f452ff57278e89b371278ceb50d01169a"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneLayoutService.lil",
+      "sha256": "bb7dd5bc2d1a685fd16b14b878ec46ec855f44d6c44e365df598b42cdb21eb0b"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneServices.lil",
+      "sha256": "13f2225e331247c5fe93765db3b9b52b97256c505a1c6de753042616eb99f027"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneThemeService.lil",
+      "sha256": "ed3ee89e4a4a69f4d04cba3dba488e618d3cb0a29dcf663eb37308d33e703792"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneTreeSitterLibraryService.lil",
+      "sha256": "f866d5f05a1c4d61092b4e2c99c5ddcf559ea9267b64dc0127960db3124487a7"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/standaloneWebWorker.lil",
+      "sha256": "826231621907eb18b541bb772ba94f19838bd984a840053b5cf3d1bb165dbf3f"
+    },
+    {
+      "path": "src/vs/editor/standalone/browser/toggleHighContrast/toggleHighContrast.lil",
+      "sha256": "81c53a6bbbd6f25b880360645db2e61adf463751dc7b4f858306238b0fbd1fe5"
+    },
+    {
+      "path": "src/vs/editor/standalone/common/monarch/monarchCommon.lil",
+      "sha256": "cd740d8d51f31e790c61ea06b24151a39d82bc9ff640237cc76843defd612bd5"
+    },
+    {
+      "path": "src/vs/editor/standalone/common/monarch/monarchCompile.lil",
+      "sha256": "fab74e9255ad300ae28e2497f47a362e822b4f180ae0ba859f80800f6d03e6c0"
+    },
+    {
+      "path": "src/vs/editor/standalone/common/monarch/monarchLexer.lil",
+      "sha256": "44a871a43167d776d039a436de71651c96c869c16b24d525452aeaf6d60ba3cd"
+    },
+    {
+      "path": "src/vs/editor/standalone/common/monarch/monarchTypes.lil",
+      "sha256": "5f2da48fc1170fe02f5c2326b27a358eaddcaac36676783ee4a2b4588d162c61"
+    },
+    {
+      "path": "src/vs/editor/standalone/common/standaloneTheme.lil",
+      "sha256": "f58dc3c1def6766493ca9e36d4818f7640fb0bb693c573f09528883c2d07f81b"
+    },
+    {
+      "path": "src/vs/editor/standalone/common/themes.lil",
+      "sha256": "ac01f7bc55da32e7c47742a04d874ac6cea80a44bc08a6069fcf1899578f7299"
+    },
+    {
+      "path": "src/vs/language/css/css.worker.lil",
+      "sha256": "849a73a382c998f64f6f46cb2e4488dfea44c2ce36bf6f5a77369f107571c83e"
+    },
+    {
+      "path": "src/vs/language/html/html.worker.lil",
+      "sha256": "54b54f9cf48e1b4348d40f438e74c0238483d447c2a4ca8f300eeb80ee7b2312"
+    },
+    {
+      "path": "src/vs/language/json/json.worker.lil",
+      "sha256": "894a7a36ed8e23dee7e88bd0bcba938c5a48a48ac2ba6dfdca1abed44c41b4cc"
+    },
+    {
+      "path": "src/vs/language/typescript/ts.worker.lil",
+      "sha256": "e3f1ec73cbfbba6f7bb200e158f5ad794771f5354350d959b963df67b3e3beaf"
+    },
+    {
+      "path": "src/vs/nls.lil",
+      "sha256": "20a9ff3b4f6582f4cc9d73dca92f054412b7028a47e22a3932eedc17eebc1fba"
+    },
+    {
+      "path": "src/vs/platform/accessibility/browser/accessibilityService.lil",
+      "sha256": "fbcdffa1845bc65de5ca8d5e89d9cdd3269ed25a4fc6c8c46369a669c9a10c1c"
+    },
+    {
+      "path": "src/vs/platform/accessibility/browser/accessibleViewRegistry.lil",
+      "sha256": "e87227d40fa496bf8a92a7839b5c273dc88af5637da14775c89cdf12a54fb315"
+    },
+    {
+      "path": "src/vs/platform/accessibility/common/accessibility.lil",
+      "sha256": "e07a021ec728dbd31b2633efe838d938bb2a4efd55f96fabb70725f77298d8fe"
+    },
+    {
+      "path": "src/vs/platform/accessibilitySignal/browser/accessibilitySignalService.lil",
+      "sha256": "6a26cabbf30b0f6c0ae0a084d982dbc8f768f3219101967270b15d1a70343966"
+    },
+    {
+      "path": "src/vs/platform/action/common/action.lil",
+      "sha256": "2ba771675eb4cd31faba57bbde5309e5774eacb4a438ba521bd3f60f59bff9a7"
+    },
+    {
+      "path": "src/vs/platform/action/common/actionCommonCategories.lil",
+      "sha256": "d6e47cc890b8fbcd4c98809a4c1bb0662c3cca85620c51b6221f7b1a1820f913"
+    },
+    {
+      "path": "src/vs/platform/actionWidget/browser/actionList.lil",
+      "sha256": "3c8dcc98d0f8583e6e5ee2e0ed00e3f3b37642a48e1fab7041ad78b2cf938640"
+    },
+    {
+      "path": "src/vs/platform/actionWidget/browser/actionWidget.lil",
+      "sha256": "92021af359214df16b17951f359ecc2382d3d525bd027ffd6a33ba91a6757223"
+    },
+    {
+      "path": "src/vs/platform/actionWidget/common/actionWidget.lil",
+      "sha256": "78fdc120a7bfe524059ee041ba626dd76f4db10d56036ce02ac7772cf689a5d9"
+    },
+    {
+      "path": "src/vs/platform/actions/browser/actionViewItemService.lil",
+      "sha256": "0fda00944e32d75557c4244db57ba029967a89859a87f06c97cd3dd810e835fe"
+    },
+    {
+      "path": "src/vs/platform/actions/browser/menuEntryActionViewItem.lil",
+      "sha256": "05b7e7051346a556d4ca5d7b6bd849c1946b2d8d7a65b55ed4a8ab4156b476ca"
+    },
+    {
+      "path": "src/vs/platform/actions/browser/toolbar.lil",
+      "sha256": "da6bccf4a419039063e42ad8a5516fc82b85a3f1a6a6c440147e07c1e6836869"
+    },
+    {
+      "path": "src/vs/platform/actions/common/actions.lil",
+      "sha256": "27f36d7abfd5e951a730d784ded0d9fa4a7d97db8190207b867a36462c871881"
+    },
+    {
+      "path": "src/vs/platform/actions/common/menuService.lil",
+      "sha256": "f5cc69bf1c442a440d04239dfcc5fc4f57b34cf19b7253a5489102de58335df4"
+    },
+    {
+      "path": "src/vs/platform/clipboard/browser/clipboardService.lil",
+      "sha256": "bd1741d8a65c3e8e4070920a6edd019dff4e0e8d078670860c3a29fff8b0bad0"
+    },
+    {
+      "path": "src/vs/platform/clipboard/common/clipboardService.lil",
+      "sha256": "a7c6645398038505b7b7264f81a7ff04329bda9151e4c16156a8fefbb0956f64"
+    },
+    {
+      "path": "src/vs/platform/commands/common/commands.lil",
+      "sha256": "4747d6b0f629842e34fa1b71c87945cc3da8707fecb522dc11c1df38a974a103"
+    },
+    {
+      "path": "src/vs/platform/configuration/common/configuration.lil",
+      "sha256": "2663dc2bfe76afb38cf34721796202997ec1afbfc193e68f76d94170160bea07"
+    },
+    {
+      "path": "src/vs/platform/configuration/common/configurationModels.lil",
+      "sha256": "b180b9e3c8a0026ef6411a596cf4f5d183e415a786da28f1906093435ec4303a"
+    },
+    {
+      "path": "src/vs/platform/configuration/common/configurationRegistry.lil",
+      "sha256": "7ab40726a59cb4db779fdf4c5c79ca9376df8c0527ea62978e0af0d4dfa09659"
+    },
+    {
+      "path": "src/vs/platform/configuration/common/configurations.lil",
+      "sha256": "3981066c5affbedda125aa20da128a403286895aa0ea51d9de927cfb880d9644"
+    },
+    {
+      "path": "src/vs/platform/contextkey/browser/contextKeyService.lil",
+      "sha256": "48c0390ba6dcb9472b6ef61be021969804d38f798165625d8aeaf04ad0c15eef"
+    },
+    {
+      "path": "src/vs/platform/contextkey/common/contextkey.lil",
+      "sha256": "7b2e97437dc896c99f5c9ecfd4d94d4b9cc2a1b18a038a2bc1c7ec1a3829fbcf"
+    },
+    {
+      "path": "src/vs/platform/contextkey/common/contextkeys.lil",
+      "sha256": "a53b27c0f31d59a46bd74e90fe7653932cd87f86b4e35030ec83870290ed24ec"
+    },
+    {
+      "path": "src/vs/platform/contextkey/common/scanner.lil",
+      "sha256": "a033bf366b3720bc006a26d754a8b2ebf2c1a8a2e63e92445dbca94eeec50031"
+    },
+    {
+      "path": "src/vs/platform/contextview/browser/contextMenuHandler.lil",
+      "sha256": "85932b3fa629447290b4bb8f91829ed69818e67dda7fdb52b8d175cfbcbd8906"
+    },
+    {
+      "path": "src/vs/platform/contextview/browser/contextMenuService.lil",
+      "sha256": "b78a48c1d959af8cf11a8b281e4f5a7bd55895dbe84e8941ac47071c76383e4a"
+    },
+    {
+      "path": "src/vs/platform/contextview/browser/contextView.lil",
+      "sha256": "cfa153b8125cbe35ef84843763cfbbea44e8aa960de2ae7b0b35b2e70443923f"
+    },
+    {
+      "path": "src/vs/platform/contextview/browser/contextViewService.lil",
+      "sha256": "b4bb12888028e04639dcf6fd9d3b4db052f452fb3d48ef1afc4f490778bbc0d2"
+    },
+    {
+      "path": "src/vs/platform/dataChannel/browser/forwardingTelemetryService.lil",
+      "sha256": "ab8a985a9d6580c0306faa2d82fec67faa04ac51177439b20026fc4b83ff8ca6"
+    },
+    {
+      "path": "src/vs/platform/dataChannel/common/dataChannel.lil",
+      "sha256": "8a3da627c87c59fff1d6a827c7c9cffc2fdd476d1e804dc2ced5ae2bac80509d"
+    },
+    {
+      "path": "src/vs/platform/defaultAccount/common/defaultAccount.lil",
+      "sha256": "ba402089c5fc4f938eccb3bf31876543fcc8566bbd760cf037415b5febc260e6"
+    },
+    {
+      "path": "src/vs/platform/dialogs/common/dialogs.lil",
+      "sha256": "9830ffb5a2b8321e0b991e368087ab46b10022a485b4d728e7ff2b2acc72cee8"
+    },
+    {
+      "path": "src/vs/platform/dnd/browser/dnd.lil",
+      "sha256": "d6dac36f0475335cf29576f93197b0e180af16a3593c067670e99ef257e51054"
+    },
+    {
+      "path": "src/vs/platform/editor/common/editor.lil",
+      "sha256": "5b87d1a39e7fdf1b5f2a0c8687d8be8196c88e251abc79817b73d96a04d6431d"
+    },
+    {
+      "path": "src/vs/platform/environment/common/environment.lil",
+      "sha256": "0038526f50fa37358b43790cb1f139b6c78f709bfefc5572c9253527ea6b3e20"
+    },
+    {
+      "path": "src/vs/platform/extensions/common/extensions.lil",
+      "sha256": "1ee5ba7ee2252b12c228932560b6f845452ace47df102dbbec37dc8ba89409c9"
+    },
+    {
+      "path": "src/vs/platform/files/common/files.lil",
+      "sha256": "02f7cc758c57cc357da8edf401bdca4bb416dc8c66452c107d648bdb9b56d1b9"
+    },
+    {
+      "path": "src/vs/platform/history/browser/contextScopedHistoryWidget.lil",
+      "sha256": "27f3cf722031b093969878dfc38a1df2f984322b524a8a78ad36b50c8387f292"
+    },
+    {
+      "path": "src/vs/platform/history/browser/historyWidgetKeybindingHint.lil",
+      "sha256": "ea612c65d22bcb39a8fb99929301716eac09d9ddff584c60b3a89997b3f01bcd"
+    },
+    {
+      "path": "src/vs/platform/hover/browser/hover.lil",
+      "sha256": "33b90fa7688ad41e3335bf13ebd03658dfd0dfd2c7ae95ed8a8a40ef9b88dae4"
+    },
+    {
+      "path": "src/vs/platform/hover/browser/hoverService.lil",
+      "sha256": "df3e98ab74a6448fa5cc0b4f5ad306e81e04c3f5f80b0de75e32b73164150594"
+    },
+    {
+      "path": "src/vs/platform/hover/browser/hoverWidget.lil",
+      "sha256": "ec605351d461a4af4a9b56cd5e70dba0c778c884b95ff3fd070aa4b956d66a39"
+    },
+    {
+      "path": "src/vs/platform/hover/browser/updatableHoverWidget.lil",
+      "sha256": "9fd79e6824cd2a962f97b31c5b5c7fca603f65ac6438bd4bf265d841fe4193f1"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/descriptors.lil",
+      "sha256": "80156d4ab3426f356853d997167304d192e68bd6dbf29a6a5b8fd2c021fb4aa4"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/extensions.lil",
+      "sha256": "0abb7b4a8407e1296e710e8c043b43b9602071165b8f470ded9d817f9c6d363b"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/graph.lil",
+      "sha256": "8bb77d322ac9824e9e9b710379c8c6fd6785ad7d334e74cf48185a9ea139da27"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/instantiation.lil",
+      "sha256": "bf728a7e34ffe50f05c96c3371398b2af97b26f42355610d831856b30dfde214"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/instantiationService.lil",
+      "sha256": "e50a9659d43091998d1363cff5f567b5a0018062c2df34f8535925dcacfad26f"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/serviceCollection.lil",
+      "sha256": "c234bd4a97903b8c65d895886a95d721f8fb90115e54389c5c1cd3999728c863"
+    },
+    {
+      "path": "src/vs/platform/jsonschemas/common/jsonContributionRegistry.lil",
+      "sha256": "6797c3c9d6a33311bf61599cf91d639d3bdb60f111124898b88609711470743e"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/abstractKeybindingService.lil",
+      "sha256": "7b50971dd5b0225c08636a065b06659e5acc8b1f4174b9bc047dc3e32947ccff"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/baseResolvedKeybinding.lil",
+      "sha256": "4f6061c50138e96f4fc13f14b3314c4994de4b6b273aba1f6011449b79214256"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/keybinding.lil",
+      "sha256": "0bc19effbf3e600d2333b934c7591fb8b62b9707a0626c53684060a25a161f71"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/keybindingResolver.lil",
+      "sha256": "4eadb2ae1b4f8c7399baf35c1401056820a13dc9f7f3345d138d14a8084157d0"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/keybindingsRegistry.lil",
+      "sha256": "717fa71d647b0368258bd6c97c140a7806dd9311d97170138b09e36c972528f1"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/resolvedKeybindingItem.lil",
+      "sha256": "9f608bb01f20712476f8356fa9bd9bfbe90bfbe2cc422b03d362d516fd19736d"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/usLayoutResolvedKeybinding.lil",
+      "sha256": "aec2b5239ce459b34d13c92dc8a2c15bc810e4c297ff38d02a78a0db1cb177ac"
+    },
+    {
+      "path": "src/vs/platform/label/common/label.lil",
+      "sha256": "9a4dfc5661bba52438e2aa0ab9066c31f0ed4123a1691af27774aa67fbf90ab2"
+    },
+    {
+      "path": "src/vs/platform/layout/browser/layoutService.lil",
+      "sha256": "bfd26239333c724e87a9c1e885f5434573c3f68a6d6b5b3469e3b32c18815bd4"
+    },
+    {
+      "path": "src/vs/platform/list/browser/listService.lil",
+      "sha256": "c08b99a1bdf8e25d672aad5044a71a051c1568a4a58fa8b5188704c8abd9290a"
+    },
+    {
+      "path": "src/vs/platform/log/common/log.lil",
+      "sha256": "484f5b6b4a4cc2de4ae58aec7b36aff2f2c45167592c8af7a5d3ae80a54952d9"
+    },
+    {
+      "path": "src/vs/platform/log/common/logService.lil",
+      "sha256": "9905899515b6e72a49cfc102f070201dd4f019896845ffa3da0318d655f456cc"
+    },
+    {
+      "path": "src/vs/platform/markdown/browser/markdownRenderer.lil",
+      "sha256": "e6d637d1d969c59c41b191db3c1409d1687f2420ab48bfdd35bc76d8a809538e"
+    },
+    {
+      "path": "src/vs/platform/markers/common/markerService.lil",
+      "sha256": "088345d7955ab601594c7e2f2bd39fca1ff35eb1572595ec30f7e05bb453b7ec"
+    },
+    {
+      "path": "src/vs/platform/markers/common/markers.lil",
+      "sha256": "82eac527bb55d855e3e733a1b3e0ec473b0ef9ee99a1725eb5b2081c99fd526d"
+    },
+    {
+      "path": "src/vs/platform/notification/common/notification.lil",
+      "sha256": "a79318be83a092fc590261131117961b4882e4ca58ade9c223af06e63b30a49c"
+    },
+    {
+      "path": "src/vs/platform/observable/common/platformObservableUtils.lil",
+      "sha256": "acd1ff44d602b31f026292e89cf19a02e6d28a7ede9c0ee2e975e5f0eb693b10"
+    },
+    {
+      "path": "src/vs/platform/observable/common/wrapInHotClass.lil",
+      "sha256": "5a9b46073d5e7a6f6b93d9c9492195bdbb4c9974acedfc24c5417ba7e0832aaa"
+    },
+    {
+      "path": "src/vs/platform/observable/common/wrapInReloadableClass.lil",
+      "sha256": "0b6962006de62eb29999817f8d6aca95d61a6bc6782bc981c442a675e22d96b3"
+    },
+    {
+      "path": "src/vs/platform/opener/browser/link.lil",
+      "sha256": "865c10705da72a2c360f9873e48366b2dc15ffa3f3b9e12492aa6e41161c1bce"
+    },
+    {
+      "path": "src/vs/platform/opener/common/opener.lil",
+      "sha256": "4f36c9f235a5748786f505561e702b71fb231543050a6394a04e16d8407e6fb1"
+    },
+    {
+      "path": "src/vs/platform/product/common/product.lil",
+      "sha256": "fd744de6a45e40993493a0a32debba5a8db74d85c352f0734b4d1bb6642c8451"
+    },
+    {
+      "path": "src/vs/platform/progress/common/progress.lil",
+      "sha256": "bf4d9666f927ac20568b37fe0288a67f4bec6cdff4e2449ff257455c7a6b9bef"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/commandsQuickAccess.lil",
+      "sha256": "c42cf1d07d052df5c32d75dc5762367399e97eaee315976e26467a33ab417dc3"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/helpQuickAccess.lil",
+      "sha256": "2fc5a23bcad31912213cbc53f5ccca2f7f106a008c100f235b187edf6d102c12"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/pickerQuickAccess.lil",
+      "sha256": "cdc7c573db9fa5526f5cc849187e925fd155f95729de28b27eb5871d56fc2c2e"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/quickAccess.lil",
+      "sha256": "8ba3b496385053eb6039f70a059e999f6c62de3d72c78a143539217b4646193e"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/quickInput.lil",
+      "sha256": "a4dff6c05e3f4a27b28c18756755447f67c4748f17a53422ebb83cca7b41141d"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/quickInputActions.lil",
+      "sha256": "b2333d57aa4cdf38cc0abecc675c9471fdd3fcd2734a66da92b292753fe8aa60"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/quickInputBox.lil",
+      "sha256": "b522fadf3acd50d7a440545cd32c1d95a29bf6236d9bdb3052276df66f304198"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/quickInputController.lil",
+      "sha256": "a4b5f2b5339dcfd7c62c9cd789034e396fc6497a2dfd69176eeb15680039a250"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/quickInputList.lil",
+      "sha256": "5807a3c5634686a2e3143db2f877d6de8834bd8adb1b1b8d953148f1f27b7921"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/quickInputService.lil",
+      "sha256": "e6ecd89b438444e00e1ce2b5b9ca3bb5b4e05942777a14385bd6d816d303d41e"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/quickInputUtils.lil",
+      "sha256": "5434de8dcb0254a5c76cfb8b836f4b9bd9a410f0943b9689450585832343913c"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/tree/quickInputDelegate.lil",
+      "sha256": "9835eea455722f8fbce041be6920e9b59c3bf56718920ce59f42edfb1c5d921c"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/tree/quickInputTree.lil",
+      "sha256": "10d0913c98958f86278e0f08a1d4a948e744ed6342ca0bc81cc4e87672df2356"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/tree/quickInputTreeAccessibilityProvider.lil",
+      "sha256": "6d2be03a081d6e15e96cbe5e83e62ed32683cc768387f5be7862d70b55c38e35"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/tree/quickInputTreeController.lil",
+      "sha256": "82dd1eb6b58145e55cc4a0b6cef8fd9b4e55ebf14d1cd08b9df7050911b2a0a0"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/tree/quickInputTreeFilter.lil",
+      "sha256": "52117409338619082aa2e523fd487025510a75c5bc133700f1698dfd7d8d83df"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/tree/quickInputTreeRenderer.lil",
+      "sha256": "73db5cdfca67a70668b1375a9a009bc4a624a4bfca0be49c43b5d75f572dd4cb"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/tree/quickInputTreeSorter.lil",
+      "sha256": "b87a277926bec77352f11cdd57013d631f04846e8368a6cdb0d1c515962791aa"
+    },
+    {
+      "path": "src/vs/platform/quickinput/browser/tree/quickTree.lil",
+      "sha256": "9e2cf5a21aeddb9919571c3ac4e165c54e348cd006f2c6c88541f8600b1bc7ea"
+    },
+    {
+      "path": "src/vs/platform/quickinput/common/quickAccess.lil",
+      "sha256": "34d2309770a9f2e15347fc6d16493bcd3547180fa6a7339be354f3ddf1a34586"
+    },
+    {
+      "path": "src/vs/platform/quickinput/common/quickInput.lil",
+      "sha256": "717bc0b0286c99cd2ac694cf467074577473a91c113287a168af741410fec931"
+    },
+    {
+      "path": "src/vs/platform/registry/common/platform.lil",
+      "sha256": "36118e090789866e433ae05d429a6cfd094733170b1caff326bbb1f75f7e7d16"
+    },
+    {
+      "path": "src/vs/platform/storage/common/storage.lil",
+      "sha256": "f767e8a356c6d33889735417893d663ee9186e54c94ba6beaa6206a365a8fe68"
+    },
+    {
+      "path": "src/vs/platform/telemetry/common/gdprTypings.lil",
+      "sha256": "fa3c0d255cdb6dec724aa25cb3aa2b6794179711c2f51b0cedfd9171cd03558e"
+    },
+    {
+      "path": "src/vs/platform/telemetry/common/telemetry.lil",
+      "sha256": "3ae131f0738e32898ff3067b3b40090ee06c4184649d17298f99097243b2bbc9"
+    },
+    {
+      "path": "src/vs/platform/theme/browser/defaultStyles.lil",
+      "sha256": "4957a75a6ebdf8c68583e92bb0f6c9ba046fe8cb6c194df61c422f8ebb372cba"
+    },
+    {
+      "path": "src/vs/platform/theme/browser/iconsStyleSheet.lil",
+      "sha256": "c85012a35cd107f8e70a1fd34dd4712662be2be72f708f73d9dfb35f09ef8316"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colorRegistry.lil",
+      "sha256": "3a64a725c0a4adbd134e6c5e1c50180211291bd874bb9923014717fc78031817"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colorUtils.lil",
+      "sha256": "319da1c1b002cfdbfe999e39d2ac576e65ad54df32c87fe9835ef4b2d189f661"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/baseColors.lil",
+      "sha256": "0de72e078e3c4cd9cecdaa024a67fc014344e5c673cc815a44fbcf2f3ad16000"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/chartsColors.lil",
+      "sha256": "875de337e7d74509be52eff1070e2d52e0ab6b5f55fa79fb19187d6d895f03fe"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/editorColors.lil",
+      "sha256": "46d6baf3b788af6f7a479b83383a20b7aac0ef976fbe4c16c40d947decded6fb"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/inputColors.lil",
+      "sha256": "d79bd85f69ba31e99aaf288ea5908a4b79f56abcf5cd972bec51af57ca504ed3"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/listColors.lil",
+      "sha256": "0da8ca958d6d98eb18a2a05940cc2aba1048ae7f8b3084b872a0685d52ec35c3"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/menuColors.lil",
+      "sha256": "bdbc2bedaef6603a29c3bbf4b75393ffba83751ff765a1643493ba003abd2961"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/minimapColors.lil",
+      "sha256": "4189ac764109facb45ab7f9de4f1bf728fe862d1dcbb4c0e2d98aa49d2d8d0d0"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/miscColors.lil",
+      "sha256": "c7b6eecf477cfff63a8f14bfb82aa3790954d2ef7b142451a2a122549ed81993"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/quickpickColors.lil",
+      "sha256": "eb00258e3a2d4327729af0b9bb7277563b0325633b2d92a03be08ecc2f1c2751"
+    },
+    {
+      "path": "src/vs/platform/theme/common/colors/searchColors.lil",
+      "sha256": "66f98274f66a9b107c44438e221681643e7ae2b71957b6482e6a6bf244c0e142"
+    },
+    {
+      "path": "src/vs/platform/theme/common/iconRegistry.lil",
+      "sha256": "67c50931381ac1b973d752ec5603db15832f01f2a28920c920503c0032e8f53f"
+    },
+    {
+      "path": "src/vs/platform/theme/common/theme.lil",
+      "sha256": "9416feae140f2390abd8712e2f53c8f67425ade94761ff033af3553c2802e86d"
+    },
+    {
+      "path": "src/vs/platform/theme/common/themeService.lil",
+      "sha256": "8764474867583504026b86da3831fba57b4843b5e48eab8fcc601cbfb6e62f00"
+    },
+    {
+      "path": "src/vs/platform/undoRedo/common/undoRedo.lil",
+      "sha256": "dca1b4453e57387a5f88cda46bdc488a7aea69cf91b9afc3f18cf3bb893048ff"
+    },
+    {
+      "path": "src/vs/platform/undoRedo/common/undoRedoService.lil",
+      "sha256": "29e242f6fb30b9be8e7b4b9734bf84c9c438cc7bb93f290c7019c8144aab4227"
+    },
+    {
+      "path": "src/vs/platform/userInteraction/browser/userInteractionService.lil",
+      "sha256": "e74172d3cd20f249fd3a032b4be40f1fe837a36196e69bb830bdb066118937a2"
+    },
+    {
+      "path": "src/vs/platform/userInteraction/browser/userInteractionServiceImpl.lil",
+      "sha256": "085c46a221a7962fe93dcff355170b4cea6b8703df6d2d58dbc49c8c890c904e"
+    },
+    {
+      "path": "src/vs/platform/webWorker/browser/webWorkerDescriptor.lil",
+      "sha256": "b6f7e73601d4125dd8944d4bef80ab050a2dec142a2f42ccf2c7dd75b31ad490"
+    },
+    {
+      "path": "src/vs/platform/webWorker/browser/webWorkerService.lil",
+      "sha256": "ab3ea6ad7f29a97b6536fd6ac8d5bdf82460b9a89a2b9e9a7b55edcdcf0f9bda"
+    },
+    {
+      "path": "src/vs/platform/webWorker/browser/webWorkerServiceImpl.lil",
+      "sha256": "283ff035fd00117bb686b69f0f251290d1e78bf35495847efc16f30dc0c2ed63"
+    },
+    {
+      "path": "src/vs/platform/window/common/window.lil",
+      "sha256": "c3de9b2cba223ee5a835f99462ee002534e262ba838886e8b7704f7d0aa5cc4a"
+    },
+    {
+      "path": "src/vs/platform/workspace/common/workspace.lil",
+      "sha256": "1aa86473447125c3647d09b96e7b6569cec84b55d28ecb258acd75803eb8cd46"
+    },
+    {
+      "path": "src/vs/platform/workspace/common/workspaceTrust.lil",
+      "sha256": "dd3cedd1e5f80bedc6a33507f5394dffbcf1b4731e7bf98683801969f53dbb21"
+    },
+    {
+      "path": "src/workers/boot.mjs",
+      "sha256": "aa9ca417e493aefb6305fd08cda7fc1cb404f0ded81587093cb1a4024123e1a6"
+    },
+    {
+      "path": "src/workers/css.entry.lil",
+      "sha256": "149cf0bcc377ca11fc23d42b7f536d252a5607ef14aa1a49c2f3fff250f2929c"
+    },
+    {
+      "path": "src/workers/css.worker.lil",
+      "sha256": "8f8ac14f52549bf07d0f59cb7f6680dd8ce6f00ad0c6e6ef3e94f371f548872a"
+    },
+    {
+      "path": "src/workers/editor.entry.lil",
+      "sha256": "88a97a4c13fbef4914b53af778bb60b9d043ce348eca8407ce4171c904b78690"
+    },
+    {
+      "path": "src/workers/editor.worker.lil",
+      "sha256": "7c13ed172d6bc220aa89b4e497a31cc8f27e7717c603fe5f3d913e0d272cae37"
+    },
+    {
+      "path": "src/workers/html.entry.lil",
+      "sha256": "5302e67cdfbf11b8906561977af9bf17624b48d9ca7b51f6bb51692cdc079438"
+    },
+    {
+      "path": "src/workers/html.worker.lil",
+      "sha256": "13ac1c30a5217c40d424eef1ab6828ad475f2abba198064a35a73ef93a0382ce"
+    },
+    {
+      "path": "src/workers/json.entry.lil",
+      "sha256": "3c0795635915a4d25c79ff05b565349e42260758678ec2eee20c9020b9e993f3"
+    },
+    {
+      "path": "src/workers/json.worker.lil",
+      "sha256": "0c5e679c88d72f78037b75149ccbe81ec30dbfdd7024f32861eec6a5c744ef1a"
+    },
+    {
+      "path": "src/workers/ts.worker.lil",
+      "sha256": "681a27a4556e2fcde6cde37aa75f126df53948ab6e104b808d14947254c1ca62"
+    },
+    {
+      "path": "config/css-worker.toml",
+      "sha256": "d71eee383209ff2adffe6c9f622d62a60e11f0715284e4689657fcb0d6de2ec7"
+    },
+    {
+      "path": "config/editor-worker.toml",
+      "sha256": "e7ae939104b0c51c2852b8398e1b230fa59960ef978c2124b2e9c9ce9299aeb5"
+    },
+    {
+      "path": "config/html-worker.toml",
+      "sha256": "c5f1c9602d7fc2ba4a3b2053ceb57b1a2ec56154b9e8ce022518834083d250a5"
+    },
+    {
+      "path": "config/json-worker.toml",
+      "sha256": "90dbdaa58554fb02b091e0adca133361d83df5da85489d25fb7a10b09986f494"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "dist/.lilscript/css-worker.json",
+      "bytes": 14186,
+      "sha256": "cfe8f3f3b42e798a683ba73162fad80bfc80ac2f76a56415667e4b08a4e622ee"
+    },
+    {
+      "path": "dist/.lilscript/editor-worker.json",
+      "bytes": 13858,
+      "sha256": "36c97d4f9877a4e95b33289a371f95f12573112d139c527f1aea25cb2920ed38"
+    },
+    {
+      "path": "dist/.lilscript/html-worker.json",
+      "bytes": 14193,
+      "sha256": "3099c09bb5f8a74e13058f93d5add30b4ee694b67de05d32018e496b27f468b1"
+    },
+    {
+      "path": "dist/.lilscript/json-worker.json",
+      "bytes": 14240,
+      "sha256": "204721625b077d39cd20d22b30e73b5bc8177187fde485fa87417928f81fd01e"
+    },
+    {
+      "path": "dist/.lilscript/public.json",
+      "bytes": 39833,
+      "sha256": "bc9ccedfee7f57d919e6b41f914196fcc3532012f5a7ff280014d4bb368a391e"
+    },
+    {
+      "path": "dist/lilscript.manifest.json",
+      "bytes": 16429,
+      "sha256": "b14f5c621857076fe14b5c43e634003b8fbccf5eeb97975c9e8cc236526ff83f"
+    },
+    {
+      "path": "dist/monaco.cjs",
+      "bytes": 240732,
+      "sha256": "494859611b8bf01cbded874956f1dda628033d49e3a72d244b5595eed0bf47a2"
+    },
+    {
+      "path": "dist/monaco.css",
+      "bytes": 518302,
+      "sha256": "2e75e24767c2b594f6c797a73d1e6ef872b0cb79aa47bbfb7dce05eb2578082b"
+    },
+    {
+      "path": "dist/monaco.esm.js",
+      "bytes": 240231,
+      "sha256": "a4df8a58c29e75f5dcbbf2d0c4591e8c95234c580e0bbc5e1e9f326e2940f22b"
+    },
+    {
+      "path": "dist/monaco.raw.js",
+      "bytes": 187758,
+      "sha256": "3e72fff8364615112812ed88ed23d493a8aebca394f7869c5f3b9535577413f4"
+    },
+    {
+      "path": "dist/workers/css.worker.js",
+      "bytes": 51337,
+      "sha256": "605d258674321594990e23246cda77f98fc5e596005f92ff97e978b6b7ab3319"
+    },
+    {
+      "path": "dist/workers/editor.worker.js",
+      "bytes": 50985,
+      "sha256": "8ec638ae199208264924bd120c2db376f00cf9a2f427ea2080071fd510946cae"
+    },
+    {
+      "path": "dist/workers/html.worker.js",
+      "bytes": 51246,
+      "sha256": "1584f3e8ad536fdd7e4cc4c22995517ac2a24767e0315fea6bb77b8bfa1bfe43"
+    },
+    {
+      "path": "dist/workers/json.worker.js",
+      "bytes": 51360,
+      "sha256": "88224cdf38c45db902c768fb9d6418bb71c339b2fc06c7e391181de6d1feb150"
+    },
+    {
+      "path": "dist/workers/ts.worker.js",
+      "bytes": 7031833,
+      "sha256": "e2125361f4d70ce526a5f38142c6ce46902b672ac40c1bfaff08a6028196fc94"
+    }
+  ],
+  "scope": "Checked repository package; independent of npm publication. Main-entry objective comparisons have separate artifacts and timings."
+}

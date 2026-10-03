@@ -1,0 +1,38 @@
+# Compiler-owned delivery; no JavaScript post-minifier or export rewriting.
+[policy]
+version = 3
+[javascript]
+priority = "size-first"
+# Assumes unpatched platform builtins; disable when consumers replace them.
+assume_pristine_builtins = true
+# Remove debugLog instrumentation; ordinary print and host console effects remain.
+strip_debug = true
+compression = ["identifier-mangling", "property-mangling", "string-pooling", "string-array-packing"]
+
+# Preserved effort setting. 13 favors size; 14/15 allow more expensive marginal searches.
+[effort]
+level = 15
+
+# Optimize the delivered files for this codec, independently of raw/gzip objectives.
+[objective]
+codecs = "brotli"
+[mangle]
+identifiers = true
+properties = true
+
+
+[target.javascript]
+format = "iife"
+[delivery]
+mode = "single"
+directory = "."
+host_modules = "embed"
+entry_names = "workers/json.worker.js"
+[delivery.entries]
+worker = "../src/workers/json.entry.lil"
+
+[policy.resources]
+logical_work = 2000000000
+
+[execution]
+jobs = 1

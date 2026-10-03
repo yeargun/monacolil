@@ -1,0 +1,768 @@
+{
+  "version": 5,
+  "outputs": [
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "index",
+          "file": "monaco.esm.js",
+          "dynamic": false,
+          "closure": [
+            "monaco.esm.js"
+          ],
+          "row": 54430,
+          "raw_row": 240231
+        }
+      ],
+      "files": [
+        {
+          "file": "monaco.esm.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "package.lil",
+            "entry.lil",
+            "editor/standalone.lil",
+            "js-host.lil",
+            "editor/text-model.lil",
+            "editor/piece-tree-buffer.lil",
+            "editor/piece-tree.lil",
+            "base/position.lil",
+            "base/range.lil",
+            "editor/rb-tree.lil",
+            "base/uri.lil",
+            "base/lifecycle.lil",
+            "editor/interval-tree.lil",
+            "editor/edit-stack.lil",
+            "editor/search.lil",
+            "editor/word.lil",
+            "editor/view.lil",
+            "base/selection.lil",
+            "editor/monarch.lil",
+            "languages/registry.lil",
+            "languages/popular.lil",
+            "contrib/engine.lil",
+            "editor/markers.lil",
+            "editor/commands.lil",
+            "contrib/runtime.lil",
+            "languages/providers.lil",
+            "languages/remaining.lil",
+            "base/keycodes.lil",
+            "editor/monaco-api.lil",
+            "module-36",
+            "module-37",
+            "module-38",
+            "module-39",
+            "module-40",
+            "module-41",
+            "module-42",
+            "module-43",
+            "module-44",
+            "module-45",
+            "module-46",
+            "module-47",
+            "module-48"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 240231,
+          "codec_bytes": 54430,
+          "sha256": "a4df8a58c29e75f5dcbbf2d0c4591e8c95234c580e0bbc5e1e9f326e2940f22b"
+        }
+      ],
+      "side_effects": [
+        "monaco.esm.js"
+      ],
+      "codec_total": 54430,
+      "rows_total": 54430,
+      "setters": 0,
+      "output": "public/primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        97,
+        225,
+        255,
+        231,
+        141,
+        95,
+        134,
+        79,
+        121,
+        228,
+        2,
+        228,
+        138,
+        10,
+        132,
+        176,
+        161,
+        146,
+        24,
+        192,
+        124,
+        242,
+        15,
+        61,
+        227,
+        70,
+        252,
+        42,
+        244,
+        12,
+        191,
+        119
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "cjs",
+      "entries": [
+        {
+          "name": "index",
+          "file": "monaco.cjs",
+          "dynamic": false,
+          "closure": [
+            "monaco.cjs"
+          ],
+          "row": 54561,
+          "raw_row": 240732
+        }
+      ],
+      "files": [
+        {
+          "file": "monaco.cjs",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "package.lil",
+            "entry.lil",
+            "editor/standalone.lil",
+            "js-host.lil",
+            "editor/text-model.lil",
+            "editor/piece-tree-buffer.lil",
+            "editor/piece-tree.lil",
+            "base/position.lil",
+            "base/range.lil",
+            "editor/rb-tree.lil",
+            "base/uri.lil",
+            "base/lifecycle.lil",
+            "editor/interval-tree.lil",
+            "editor/edit-stack.lil",
+            "editor/search.lil",
+            "editor/word.lil",
+            "editor/view.lil",
+            "base/selection.lil",
+            "editor/monarch.lil",
+            "languages/registry.lil",
+            "languages/popular.lil",
+            "contrib/engine.lil",
+            "editor/markers.lil",
+            "editor/commands.lil",
+            "contrib/runtime.lil",
+            "languages/providers.lil",
+            "languages/remaining.lil",
+            "base/keycodes.lil",
+            "editor/monaco-api.lil",
+            "module-36",
+            "module-37",
+            "module-38",
+            "module-39",
+            "module-40",
+            "module-41",
+            "module-42",
+            "module-43",
+            "module-44",
+            "module-45",
+            "module-46",
+            "module-47",
+            "module-48"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 240732,
+          "codec_bytes": 54561,
+          "sha256": "494859611b8bf01cbded874956f1dda628033d49e3a72d244b5595eed0bf47a2"
+        }
+      ],
+      "side_effects": [
+        "monaco.cjs"
+      ],
+      "codec_total": 54561,
+      "rows_total": 54561,
+      "setters": 0,
+      "output": "public/cjs",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        141,
+        47,
+        33,
+        12,
+        4,
+        52,
+        168,
+        13,
+        153,
+        103,
+        89,
+        154,
+        97,
+        248,
+        181,
+        200,
+        197,
+        10,
+        213,
+        98,
+        110,
+        49,
+        148,
+        13,
+        11,
+        255,
+        46,
+        41,
+        234,
+        254,
+        92,
+        91
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "raw",
+          "file": "monaco.raw.js",
+          "dynamic": false,
+          "closure": [
+            "monaco.raw.js"
+          ],
+          "row": 44654,
+          "raw_row": 187758
+        }
+      ],
+      "files": [
+        {
+          "file": "monaco.raw.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "raw"
+          ],
+          "modules": [
+            "entry.lil",
+            "editor/standalone.lil",
+            "js-host.lil",
+            "editor/text-model.lil",
+            "editor/piece-tree-buffer.lil",
+            "editor/piece-tree.lil",
+            "base/position.lil",
+            "base/range.lil",
+            "editor/rb-tree.lil",
+            "base/uri.lil",
+            "base/lifecycle.lil",
+            "editor/interval-tree.lil",
+            "editor/edit-stack.lil",
+            "editor/search.lil",
+            "editor/word.lil",
+            "editor/view.lil",
+            "base/selection.lil",
+            "editor/monarch.lil",
+            "languages/registry.lil",
+            "languages/popular.lil",
+            "contrib/engine.lil",
+            "editor/myers.lil",
+            "editor/markers.lil",
+            "editor/commands.lil",
+            "contrib/runtime.lil",
+            "languages/providers.lil",
+            "layers/core-types.lil",
+            "languages/remaining.lil",
+            "contrib/popular.lil",
+            "base/keycodes.lil",
+            "editor/monarch-lexer.lil",
+            "editor/prefix-sum.lil",
+            "base/nls.lil",
+            "editor/standalone-enums.lil",
+            "editor/monaco-api.lil",
+            "module-36",
+            "module-38"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 187758,
+          "codec_bytes": 44654,
+          "sha256": "3e72fff8364615112812ed88ed23d493a8aebca394f7869c5f3b9535577413f4"
+        }
+      ],
+      "side_effects": [
+        "monaco.raw.js"
+      ],
+      "codec_total": 44654,
+      "rows_total": 44654,
+      "setters": 0,
+      "output": "public/raw-core",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        29,
+        64,
+        4,
+        4,
+        166,
+        242,
+        154,
+        204,
+        71,
+        48,
+        208,
+        189,
+        42,
+        128,
+        234,
+        84,
+        131,
+        96,
+        233,
+        163,
+        221,
+        226,
+        97,
+        251,
+        63,
+        226,
+        120,
+        125,
+        8,
+        10,
+        100,
+        159
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "iife",
+      "entries": [
+        {
+          "name": "worker",
+          "file": "workers/editor.worker.js",
+          "dynamic": false,
+          "closure": [
+            "workers/editor.worker.js"
+          ],
+          "row": 12228,
+          "raw_row": 50985
+        }
+      ],
+      "files": [
+        {
+          "file": "workers/editor.worker.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "worker"
+          ],
+          "modules": [
+            "editor.entry.lil",
+            "editor.worker.lil",
+            "module-3",
+            "module-4",
+            "module-5"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 50985,
+          "codec_bytes": 12228,
+          "sha256": "8ec638ae199208264924bd120c2db376f00cf9a2f427ea2080071fd510946cae"
+        }
+      ],
+      "side_effects": [
+        "workers/editor.worker.js"
+      ],
+      "codec_total": 12228,
+      "rows_total": 12228,
+      "setters": 0,
+      "output": "editor-worker/primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        112,
+        74,
+        131,
+        162,
+        90,
+        177,
+        160,
+        79,
+        47,
+        238,
+        8,
+        180,
+        71,
+        112,
+        236,
+        138,
+        177,
+        202,
+        107,
+        148,
+        245,
+        94,
+        8,
+        70,
+        220,
+        159,
+        187,
+        208,
+        255,
+        5,
+        2,
+        138
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "iife",
+      "entries": [
+        {
+          "name": "worker",
+          "file": "workers/json.worker.js",
+          "dynamic": false,
+          "closure": [
+            "workers/json.worker.js"
+          ],
+          "row": 12361,
+          "raw_row": 51360
+        }
+      ],
+      "files": [
+        {
+          "file": "workers/json.worker.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "worker"
+          ],
+          "modules": [
+            "json.entry.lil",
+            "json.worker.lil",
+            "../contrib/language-data.lil",
+            "module-4",
+            "module-5",
+            "module-6"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 51360,
+          "codec_bytes": 12361,
+          "sha256": "88224cdf38c45db902c768fb9d6418bb71c339b2fc06c7e391181de6d1feb150"
+        }
+      ],
+      "side_effects": [
+        "workers/json.worker.js"
+      ],
+      "codec_total": 12361,
+      "rows_total": 12361,
+      "setters": 0,
+      "output": "json-worker/primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        144,
+        212,
+        13,
+        52,
+        171,
+        166,
+        225,
+        138,
+        87,
+        238,
+        223,
+        98,
+        128,
+        14,
+        123,
+        185,
+        221,
+        34,
+        121,
+        30,
+        20,
+        25,
+        254,
+        55,
+        97,
+        45,
+        120,
+        176,
+        119,
+        42,
+        90,
+        98
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "iife",
+      "entries": [
+        {
+          "name": "worker",
+          "file": "workers/css.worker.js",
+          "dynamic": false,
+          "closure": [
+            "workers/css.worker.js"
+          ],
+          "row": 12341,
+          "raw_row": 51337
+        }
+      ],
+      "files": [
+        {
+          "file": "workers/css.worker.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "worker"
+          ],
+          "modules": [
+            "css.entry.lil",
+            "css.worker.lil",
+            "module-4",
+            "module-5",
+            "module-6"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 51337,
+          "codec_bytes": 12341,
+          "sha256": "605d258674321594990e23246cda77f98fc5e596005f92ff97e978b6b7ab3319"
+        }
+      ],
+      "side_effects": [
+        "workers/css.worker.js"
+      ],
+      "codec_total": 12341,
+      "rows_total": 12341,
+      "setters": 0,
+      "output": "css-worker/primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        76,
+        185,
+        63,
+        53,
+        156,
+        34,
+        9,
+        6,
+        132,
+        103,
+        67,
+        30,
+        73,
+        191,
+        167,
+        225,
+        77,
+        190,
+        69,
+        149,
+        106,
+        115,
+        141,
+        58,
+        239,
+        184,
+        9,
+        34,
+        184,
+        222,
+        169,
+        171
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "iife",
+      "entries": [
+        {
+          "name": "worker",
+          "file": "workers/html.worker.js",
+          "dynamic": false,
+          "closure": [
+            "workers/html.worker.js"
+          ],
+          "row": 12335,
+          "raw_row": 51246
+        }
+      ],
+      "files": [
+        {
+          "file": "workers/html.worker.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "worker"
+          ],
+          "modules": [
+            "html.entry.lil",
+            "html.worker.lil",
+            "module-4",
+            "module-5",
+            "module-6"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 51246,
+          "codec_bytes": 12335,
+          "sha256": "1584f3e8ad536fdd7e4cc4c22995517ac2a24767e0315fea6bb77b8bfa1bfe43"
+        }
+      ],
+      "side_effects": [
+        "workers/html.worker.js"
+      ],
+      "codec_total": 12335,
+      "rows_total": 12335,
+      "setters": 0,
+      "output": "html-worker/primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        168,
+        130,
+        89,
+        220,
+        5,
+        25,
+        4,
+        83,
+        10,
+        5,
+        28,
+        213,
+        188,
+        252,
+        70,
+        92,
+        254,
+        159,
+        229,
+        178,
+        221,
+        152,
+        80,
+        69,
+        73,
+        227,
+        225,
+        196,
+        61,
+        145,
+        16,
+        126
+      ]
+    }
+  ],
+  "aliases": {},
+  "providers": [
+    {
+      "package": "monaco-editor",
+      "version": "0.56.0",
+      "source": "min/vs/assets/ts.worker-BWKtMYOk.js",
+      "destination": "workers/ts.worker.js",
+      "sha256": "e2125361f4d70ce526a5f38142c6ce46902b672ac40c1bfaff08a6028196fc94",
+      "raw": 7031833
+    }
+  ],
+  "source_sha256": "895e1db22ea1c87763c8f3040c8d3b45c772d76fb65e70edd6dd14a5223c429f"
+}

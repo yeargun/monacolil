@@ -1,0 +1,661 @@
+{
+  "version": 3,
+  "codec": "brotli",
+  "outputs": [
+    {
+      "mode": "single",
+      "format": "iife",
+      "entries": [
+        {
+          "name": "worker",
+          "file": "workers/editor.worker.js",
+          "dynamic": false,
+          "closure": [
+            "workers/editor.worker.js"
+          ],
+          "row": 12228,
+          "raw_row": 50985
+        }
+      ],
+      "files": [
+        {
+          "file": "workers/editor.worker.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "worker"
+          ],
+          "modules": [
+            "editor.entry.lil",
+            "editor.worker.lil",
+            "module-3",
+            "module-4",
+            "module-5"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 50985,
+          "codec_bytes": 12228,
+          "sha256": "8ec638ae199208264924bd120c2db376f00cf9a2f427ea2080071fd510946cae"
+        }
+      ],
+      "side_effects": [
+        "workers/editor.worker.js"
+      ],
+      "codec_total": 12228,
+      "rows_total": 12228,
+      "setters": 0,
+      "output": "primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        112,
+        74,
+        131,
+        162,
+        90,
+        177,
+        160,
+        79,
+        47,
+        238,
+        8,
+        180,
+        71,
+        112,
+        236,
+        138,
+        177,
+        202,
+        107,
+        148,
+        245,
+        94,
+        8,
+        70,
+        220,
+        159,
+        187,
+        208,
+        255,
+        5,
+        2,
+        138
+      ]
+    }
+  ],
+  "source_sha256": "567d61d0e0890b4f5d6888682d2aa5edad3bee69fd3ae89d736f4b43fa3c0b7e",
+  "inputs": {
+    "root": 0,
+    "entries": [
+      {
+        "name": "worker",
+        "module": 0
+      }
+    ],
+    "modules": [
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/workers/editor.entry.lil",
+        "bytes": 242,
+        "sha256": "88a97a4c13fbef4914b53af778bb60b9d043ce348eca8407ce4171c904b78690",
+        "dependencies": [
+          1
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/workers/editor.worker.lil",
+        "bytes": 372,
+        "sha256": "7c13ed172d6bc220aa89b4e497a31cc8f27e7717c603fe5f3d913e0d272cae37",
+        "dependencies": [
+          2
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/js-host.lil",
+        "bytes": 7560,
+        "sha256": "2c960812bf197f91390a42d28316e81c8d8dad9e112b95e0253be8814e2b8b50",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      }
+    ],
+    "host_modules": [
+      {
+        "specifier": "../js-host-paint.ts",
+        "stem": "js-host-paint",
+        "delivered_bytes": 21558,
+        "sha256": "04bd222ac778e4f7ab3a1fad6a98c4c48daa53cadc892b90a192622a645f58e9",
+        "exports": [
+          [
+            "hostPaintEditor",
+            "hostPaintEditor"
+          ],
+          [
+            "hostCoordsToPosition",
+            "hostCoordsToPosition"
+          ],
+          [
+            "eventIsComposing",
+            "eventIsComposing"
+          ],
+          [
+            "eventDeltaY",
+            "eventDeltaY"
+          ],
+          [
+            "hostStyleFindWidget",
+            "hostStyleFindWidget"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "../js-host.ts",
+        "stem": "js-host",
+        "delivered_bytes": 21690,
+        "sha256": "4688818ea3799022dedc1b1e0f430cd62bfd241a97b8d3a5cc16e4c45fbc7789",
+        "exports": [
+          [
+            "stringSlice",
+            "stringSlice"
+          ],
+          [
+            "stringReplace",
+            "stringReplace"
+          ],
+          [
+            "stringSplit",
+            "stringSplit"
+          ],
+          [
+            "stringFromCharCode1",
+            "stringFromCharCode1"
+          ],
+          [
+            "newRegexp",
+            "newRegexp"
+          ],
+          [
+            "regexTest",
+            "regexTest"
+          ],
+          [
+            "regexExec",
+            "regexExec"
+          ],
+          [
+            "regexLastIndex",
+            "regexLastIndex"
+          ],
+          [
+            "regexSetLastIndex",
+            "regexSetLastIndex"
+          ],
+          [
+            "dateNow",
+            "dateNow"
+          ],
+          [
+            "mathRandom",
+            "mathRandom"
+          ],
+          [
+            "scheduleTimeoutMs",
+            "scheduleTimeoutMs"
+          ],
+          [
+            "clearTimeoutId",
+            "clearTimeoutId"
+          ],
+          [
+            "requestAnimationFrameOrNull",
+            "requestAnimationFrameOrNull"
+          ],
+          [
+            "createElement",
+            "createElement"
+          ],
+          [
+            "domCreateElement",
+            "domCreateElement"
+          ],
+          [
+            "createTextNode",
+            "createTextNode"
+          ],
+          [
+            "appendChild",
+            "appendChild"
+          ],
+          [
+            "removeChild",
+            "removeChild"
+          ],
+          [
+            "setTextContent",
+            "setTextContent"
+          ],
+          [
+            "getTextContent",
+            "getTextContent"
+          ],
+          [
+            "setInnerHTML",
+            "setInnerHTML"
+          ],
+          [
+            "getInnerHTML",
+            "getInnerHTML"
+          ],
+          [
+            "setClassName",
+            "setClassName"
+          ],
+          [
+            "setStyle",
+            "setStyle"
+          ],
+          [
+            "setAttribute",
+            "setAttribute"
+          ],
+          [
+            "addEventListener",
+            "addEventListener"
+          ],
+          [
+            "removeEventListener",
+            "removeEventListener"
+          ],
+          [
+            "focusElement",
+            "focusElement"
+          ],
+          [
+            "getClientWidth",
+            "getClientWidth"
+          ],
+          [
+            "getClientHeight",
+            "getClientHeight"
+          ],
+          [
+            "getScrollTop",
+            "getScrollTop"
+          ],
+          [
+            "setScrollTop",
+            "setScrollTop"
+          ],
+          [
+            "getScrollHeight",
+            "getScrollHeight"
+          ],
+          [
+            "preventDefault",
+            "preventDefault"
+          ],
+          [
+            "stopPropagation",
+            "stopPropagation"
+          ],
+          [
+            "eventKey",
+            "eventKey"
+          ],
+          [
+            "eventCode",
+            "eventCode"
+          ],
+          [
+            "eventKeyCode",
+            "eventKeyCode"
+          ],
+          [
+            "eventCtrlKey",
+            "eventCtrlKey"
+          ],
+          [
+            "eventShiftKey",
+            "eventShiftKey"
+          ],
+          [
+            "eventAltKey",
+            "eventAltKey"
+          ],
+          [
+            "eventInputValue",
+            "eventInputValue"
+          ],
+          [
+            "inputSetValue",
+            "inputSetValue"
+          ],
+          [
+            "inputGetValue",
+            "inputGetValue"
+          ],
+          [
+            "canvasGetContext2d",
+            "canvasGetContext2d"
+          ],
+          [
+            "canvasSetSize",
+            "canvasSetSize"
+          ],
+          [
+            "canvasFillRect",
+            "canvasFillRect"
+          ],
+          [
+            "clearChildren",
+            "clearChildren"
+          ],
+          [
+            "setTabIndex",
+            "setTabIndex"
+          ],
+          [
+            "getClipboardText",
+            "getClipboardText"
+          ],
+          [
+            "setClipboardText",
+            "setClipboardText"
+          ],
+          [
+            "clipboardRead",
+            "clipboardRead"
+          ],
+          [
+            "clipboardWrite",
+            "clipboardWrite"
+          ],
+          [
+            "clipboardReadEvent",
+            "clipboardReadEvent"
+          ],
+          [
+            "clipboardWriteEvent",
+            "clipboardWriteEvent"
+          ],
+          [
+            "eventClientX",
+            "eventClientX"
+          ],
+          [
+            "eventClientY",
+            "eventClientY"
+          ],
+          [
+            "eventButton",
+            "eventButton"
+          ],
+          [
+            "eventDetail",
+            "eventDetail"
+          ],
+          [
+            "rectLeft",
+            "rectLeft"
+          ],
+          [
+            "rectTop",
+            "rectTop"
+          ],
+          [
+            "getScrollLeft",
+            "getScrollLeft"
+          ],
+          [
+            "setScrollLeft",
+            "setScrollLeft"
+          ],
+          [
+            "blurElement",
+            "blurElement"
+          ],
+          [
+            "setPlaceholder",
+            "setPlaceholder"
+          ],
+          [
+            "setDisplay",
+            "setDisplay"
+          ],
+          [
+            "classListAdd",
+            "classListAdd"
+          ],
+          [
+            "classListRemove",
+            "classListRemove"
+          ],
+          [
+            "hostCall",
+            "hostCall"
+          ],
+          [
+            "hostThen",
+            "hostThen"
+          ],
+          [
+            "jsArrayLen",
+            "jsArrayLen"
+          ],
+          [
+            "jsArrayAt",
+            "jsArrayAt"
+          ],
+          [
+            "jsPropString",
+            "jsPropString"
+          ],
+          [
+            "jsPropInt",
+            "jsPropInt"
+          ],
+          [
+            "emptyBuf",
+            "emptyBuf"
+          ],
+          [
+            "beginIdList",
+            "beginIdList"
+          ],
+          [
+            "pushId",
+            "pushId"
+          ],
+          [
+            "takeIdList",
+            "takeIdList"
+          ],
+          [
+            "concat2",
+            "concat2"
+          ],
+          [
+            "pushNewBuffer",
+            "pushNewBuffer"
+          ],
+          [
+            "makeNodePos",
+            "makeNodePos"
+          ],
+          [
+            "nodeAtStash",
+            "nodeAtStash"
+          ],
+          [
+            "nodeAt2Stash",
+            "nodeAt2Stash"
+          ],
+          [
+            "stashNode",
+            "stashNode"
+          ],
+          [
+            "stashRem",
+            "stashRem"
+          ],
+          [
+            "stashStart",
+            "stashStart"
+          ],
+          [
+            "hostGetOffsetAt",
+            "hostGetOffsetAt"
+          ],
+          [
+            "hostGetPositionAt",
+            "hostGetPositionAt"
+          ],
+          [
+            "rbDeleteTree",
+            "rbDeleteTree"
+          ],
+          [
+            "hostComputeLineDiff",
+            "hostComputeLineDiff"
+          ],
+          [
+            "hostWorkbenchCommand",
+            "hostWorkbenchCommand"
+          ],
+          [
+            "jsUndefined",
+            "jsUndefined"
+          ],
+          [
+            "windowSelf",
+            "windowSelf"
+          ],
+          [
+            "throwError",
+            "throwError"
+          ],
+          [
+            "hostPaintEditor",
+            "__lil_host_export_0"
+          ],
+          [
+            "hostCoordsToPosition",
+            "__lil_host_export_1"
+          ],
+          [
+            "hostStyleFindWidget",
+            "__lil_host_export_2"
+          ],
+          [
+            "eventIsComposing",
+            "__lil_host_export_3"
+          ],
+          [
+            "eventDeltaY",
+            "__lil_host_export_4"
+          ]
+        ],
+        "imports": [
+          [
+            0,
+            []
+          ],
+          [
+            0,
+            [
+              [
+                "hostPaintEditor",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "hostCoordsToPosition",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "hostStyleFindWidget",
+                "__lil_host_export_2"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "eventIsComposing",
+                "__lil_host_export_3"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "eventDeltaY",
+                "__lil_host_export_4"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "./boot.mjs",
+        "stem": "boot",
+        "delivered_bytes": 366,
+        "sha256": "7ada398cd66b89e60536bd670630a865bf2b97ec1391b6e1299aeb8873928cab",
+        "exports": [
+          [
+            "installWorker",
+            "installWorker"
+          ]
+        ],
+        "imports": []
+      }
+    ],
+    "host_reserved": [
+      "Array",
+      "Boolean",
+      "CustomEvent",
+      "Date",
+      "Error",
+      "Math",
+      "Number",
+      "Promise",
+      "RegExp",
+      "Set",
+      "String",
+      "WeakMap",
+      "clearTimeout",
+      "console",
+      "document",
+      "globalThis",
+      "navigator",
+      "self",
+      "setTimeout",
+      "undefined",
+      "window"
+    ]
+  }
+}

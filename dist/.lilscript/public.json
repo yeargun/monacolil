@@ -1,0 +1,1635 @@
+{
+  "version": 5,
+  "source_sha256": "c7d01403f05376a553c0fedaad76185eae5d7a390b764cd5e15a38751a2b03f3",
+  "inputs": {
+    "root": 0,
+    "entries": [
+      {
+        "name": "index",
+        "module": 0
+      },
+      {
+        "name": "raw",
+        "module": 1
+      }
+    ],
+    "modules": [
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/package.lil",
+        "bytes": 524,
+        "sha256": "1cedd578c7231583bdffc64459bdaf8107d8ae949f4d1690087514d651d1ea1a",
+        "dependencies": [
+          1
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/entry.lil",
+        "bytes": 7095,
+        "sha256": "256b7b8d8cbdced7450df44fd51336ae68f2d0c5726e12809bd150fdc2f7b5f6",
+        "dependencies": [
+          2,
+          27,
+          19,
+          28,
+          29,
+          30,
+          23,
+          10,
+          18,
+          31,
+          32,
+          5,
+          33,
+          7,
+          8,
+          17,
+          12,
+          34,
+          35
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/standalone.lil",
+        "bytes": 31909,
+        "sha256": "795715370fb71be4ab1b0d44d8e843f6668d456fdc5663cf75f1224bee23ad5a",
+        "dependencies": [
+          3,
+          4,
+          13,
+          16,
+          24,
+          25,
+          11,
+          7,
+          8,
+          17,
+          10,
+          19,
+          22,
+          12,
+          14,
+          15,
+          23,
+          26
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/js-host.lil",
+        "bytes": 7560,
+        "sha256": "2c960812bf197f91390a42d28316e81c8d8dad9e112b95e0253be8814e2b8b50",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/text-model.lil",
+        "bytes": 6939,
+        "sha256": "66c56393f0729fb6c6ce5513e52b3375bcd2789cd481cf0a3afbb892dfa20aa3",
+        "dependencies": [
+          5,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/piece-tree-buffer.lil",
+        "bytes": 3372,
+        "sha256": "cae3e39fa8c3d31a28e957bd0b32b999124d474013db7e63e2d62116bc780757",
+        "dependencies": [
+          6,
+          7,
+          8,
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/piece-tree.lil",
+        "bytes": 29820,
+        "sha256": "4442cb4ef113b3ff3002717839c55ab5922b284016ba406db55fae546a91ed22",
+        "dependencies": [
+          7,
+          8,
+          9,
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/base/position.lil",
+        "bytes": 2253,
+        "sha256": "a54765d340279595ee3b47600da0692d0590e6029172dfdc9140cac8c53e54ea",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/base/range.lil",
+        "bytes": 8001,
+        "sha256": "f8a75cf726cc5c960a6a2287384a044013c6a13e7cf6c6cce169b919cdbce238",
+        "dependencies": [
+          7
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/rb-tree.lil",
+        "bytes": 2290,
+        "sha256": "6406b2aad955bb7b8f85ff54ea8c7bbe60721a0dffc5094c252cf979db788574",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/base/uri.lil",
+        "bytes": 2346,
+        "sha256": "526a64c86354587d929994a4db1009f1aeb4ca6148cd87045f52f7a148b255e6",
+        "dependencies": [
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/base/lifecycle.lil",
+        "bytes": 2346,
+        "sha256": "419ffb7b9ca1dd2f7b5eb068e3b349deff4b5b98721c997406dc6ca61a844a9b",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/interval-tree.lil",
+        "bytes": 12209,
+        "sha256": "90fee08dd5d6fae36a50c81bde505bf18ed2ca285765f5d199385d4de5954ff0",
+        "dependencies": [
+          8
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/edit-stack.lil",
+        "bytes": 1684,
+        "sha256": "0c5521678e1df90506e5489be67f11a468c076a63bacb2463a63665a87f73e8a",
+        "dependencies": [
+          8
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/search.lil",
+        "bytes": 1895,
+        "sha256": "4256dca99b1286298a277e256a34d90d9faa175ec231d08c219c279c4e1861af",
+        "dependencies": [
+          6,
+          8,
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/word.lil",
+        "bytes": 1606,
+        "sha256": "a225c6bd45e426ef0c8a8f05229a5a1950cb69663d5f477f0f0e66a32274b0c3",
+        "dependencies": [
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/view.lil",
+        "bytes": 22884,
+        "sha256": "eabdb66c40ca1740235d583defdf12be6a76609f9697492e0f89c51455f1d6b3",
+        "dependencies": [
+          3,
+          4,
+          12,
+          17,
+          7,
+          8,
+          18,
+          19,
+          21,
+          23,
+          23
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/base/selection.lil",
+        "bytes": 3712,
+        "sha256": "638af0a9685f1bd143360e1ef866e27f4093f4aad6923d2aa15485093e60cda6",
+        "dependencies": [
+          7,
+          8
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/monarch.lil",
+        "bytes": 6829,
+        "sha256": "b960b6fca9fd6344ef162608dfca317f63e2aaf67b95601cdfcbac2ccdde4250",
+        "dependencies": [
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/languages/registry.lil",
+        "bytes": 2257,
+        "sha256": "53d5a593e3e1acbc8a663bcaaa7dd442e345dc699502a4324325db9cd54bd402",
+        "dependencies": [
+          18,
+          20,
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/languages/popular.lil",
+        "bytes": 9325,
+        "sha256": "33ad28b5f25655b3a962dbd91b1c231e3be31c019c310e5a43ea75178ba4a334",
+        "dependencies": [
+          18
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/contrib/engine.lil",
+        "bytes": 9892,
+        "sha256": "d21cdbec6c7f426147adff0a5b2357348f8ae4271b3cc10f19fd93fcb3bf5f38",
+        "dependencies": [
+          14,
+          8,
+          7,
+          4,
+          19,
+          3,
+          15,
+          22
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/myers.lil",
+        "bytes": 5675,
+        "sha256": "76f5b1f7a6be6889f62a533f788762e692569cec1b26ee507796ddc03dd80d26",
+        "dependencies": [
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/markers.lil",
+        "bytes": 3793,
+        "sha256": "c1b6401cc1e99d18e37834930c74287dbcdac9bbe10b683f86cbcd371cb3be0f",
+        "dependencies": [
+          4
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/commands.lil",
+        "bytes": 30946,
+        "sha256": "09abe2c8447153f2255faade42a39ba3d3224ad7e6bca27b87bdf138dc6190ca",
+        "dependencies": [
+          3,
+          16,
+          4,
+          13,
+          17,
+          8,
+          7,
+          15
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/contrib/runtime.lil",
+        "bytes": 25514,
+        "sha256": "146191ecff82a9c0c1e34f89acb1375983cafb997fc0eedccf73ee5373baf8df",
+        "dependencies": [
+          3,
+          16,
+          7,
+          8,
+          14,
+          4,
+          24,
+          21,
+          15,
+          26,
+          23
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/languages/providers.lil",
+        "bytes": 3986,
+        "sha256": "9a107ae948fb4dadd1f33e4925216767eb02da3060583987497f800aec4ab5c5",
+        "dependencies": [
+          3,
+          7,
+          8,
+          21
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/layers/core-types.lil",
+        "bytes": 1411,
+        "sha256": "ffc6530c597e97a3c008a9d2ef5db658432e08fe6fbd9e074850788f42f2aa06",
+        "dependencies": [
+          7,
+          8,
+          17
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/languages/remaining.lil",
+        "bytes": 33404,
+        "sha256": "eb059f36a81d6a522f46f24b8885de70f9813330300baa2cb956b4ac435457ad",
+        "dependencies": [
+          18,
+          19,
+          3
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/contrib/popular.lil",
+        "bytes": 2283,
+        "sha256": "f395d067a07a5b508967a95f8cb894289f7c9ca006c500daaf8190f7c6bbf64f",
+        "dependencies": [
+          2,
+          14,
+          8,
+          7,
+          24,
+          21,
+          21
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/base/keycodes.lil",
+        "bytes": 1744,
+        "sha256": "12f0102df552ba7ff90b76c57414458dee42c76ee87dd8e07e6fadd48a22b6d8",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/monarch-lexer.lil",
+        "bytes": 390,
+        "sha256": "c6fc6bc1a74f25c3c4c1a79e0e0db30169653875188257ef6e9d4d2076fab0e3",
+        "dependencies": [
+          18
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/prefix-sum.lil",
+        "bytes": 3951,
+        "sha256": "e331c7b122c07dabcb52424af151b7a86cd88344fa37899061b81d231bc79908",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/base/nls.lil",
+        "bytes": 142,
+        "sha256": "4e56d76ee4d194fe9a18da0c30b0057ae6441e2707a87fef17bf2abefb695646",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/standalone-enums.lil",
+        "bytes": 21047,
+        "sha256": "fe3a8545c1472f46d5d9c2ef0121dfcaec6a84841634b9c746b56c2bc48b7284",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-rebuild-reports/2026-10-03-site-refresh/ports/monacolil/src/editor/monaco-api.lil",
+        "bytes": 27260,
+        "sha256": "3dbc574b1f5b720f3fcec9419ead98740ef20a04639514fa4c050e5580e43beb",
+        "dependencies": [
+          3,
+          2,
+          7,
+          8,
+          17,
+          10,
+          15,
+          23,
+          11,
+          30,
+          13,
+          12
+        ],
+        "dynamic_dependencies": []
+      }
+    ],
+    "host_modules": [
+      {
+        "specifier": "./js-host-paint.ts",
+        "stem": "js-host-paint",
+        "delivered_bytes": 21558,
+        "sha256": "04bd222ac778e4f7ab3a1fad6a98c4c48daa53cadc892b90a192622a645f58e9",
+        "exports": [
+          [
+            "hostPaintEditor",
+            "hostPaintEditor"
+          ],
+          [
+            "hostCoordsToPosition",
+            "hostCoordsToPosition"
+          ],
+          [
+            "eventIsComposing",
+            "eventIsComposing"
+          ],
+          [
+            "eventDeltaY",
+            "eventDeltaY"
+          ],
+          [
+            "hostStyleFindWidget",
+            "hostStyleFindWidget"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./js-host.ts",
+        "stem": "js-host",
+        "delivered_bytes": 21690,
+        "sha256": "4688818ea3799022dedc1b1e0f430cd62bfd241a97b8d3a5cc16e4c45fbc7789",
+        "exports": [
+          [
+            "stringSlice",
+            "stringSlice"
+          ],
+          [
+            "stringReplace",
+            "stringReplace"
+          ],
+          [
+            "stringSplit",
+            "stringSplit"
+          ],
+          [
+            "stringFromCharCode1",
+            "stringFromCharCode1"
+          ],
+          [
+            "newRegexp",
+            "newRegexp"
+          ],
+          [
+            "regexTest",
+            "regexTest"
+          ],
+          [
+            "regexExec",
+            "regexExec"
+          ],
+          [
+            "regexLastIndex",
+            "regexLastIndex"
+          ],
+          [
+            "regexSetLastIndex",
+            "regexSetLastIndex"
+          ],
+          [
+            "dateNow",
+            "dateNow"
+          ],
+          [
+            "mathRandom",
+            "mathRandom"
+          ],
+          [
+            "scheduleTimeoutMs",
+            "scheduleTimeoutMs"
+          ],
+          [
+            "clearTimeoutId",
+            "clearTimeoutId"
+          ],
+          [
+            "requestAnimationFrameOrNull",
+            "requestAnimationFrameOrNull"
+          ],
+          [
+            "createElement",
+            "createElement"
+          ],
+          [
+            "domCreateElement",
+            "domCreateElement"
+          ],
+          [
+            "createTextNode",
+            "createTextNode"
+          ],
+          [
+            "appendChild",
+            "appendChild"
+          ],
+          [
+            "removeChild",
+            "removeChild"
+          ],
+          [
+            "setTextContent",
+            "setTextContent"
+          ],
+          [
+            "getTextContent",
+            "getTextContent"
+          ],
+          [
+            "setInnerHTML",
+            "setInnerHTML"
+          ],
+          [
+            "getInnerHTML",
+            "getInnerHTML"
+          ],
+          [
+            "setClassName",
+            "setClassName"
+          ],
+          [
+            "setStyle",
+            "setStyle"
+          ],
+          [
+            "setAttribute",
+            "setAttribute"
+          ],
+          [
+            "addEventListener",
+            "addEventListener"
+          ],
+          [
+            "removeEventListener",
+            "removeEventListener"
+          ],
+          [
+            "focusElement",
+            "focusElement"
+          ],
+          [
+            "getClientWidth",
+            "getClientWidth"
+          ],
+          [
+            "getClientHeight",
+            "getClientHeight"
+          ],
+          [
+            "getScrollTop",
+            "getScrollTop"
+          ],
+          [
+            "setScrollTop",
+            "setScrollTop"
+          ],
+          [
+            "getScrollHeight",
+            "getScrollHeight"
+          ],
+          [
+            "preventDefault",
+            "preventDefault"
+          ],
+          [
+            "stopPropagation",
+            "stopPropagation"
+          ],
+          [
+            "eventKey",
+            "eventKey"
+          ],
+          [
+            "eventCode",
+            "eventCode"
+          ],
+          [
+            "eventKeyCode",
+            "eventKeyCode"
+          ],
+          [
+            "eventCtrlKey",
+            "eventCtrlKey"
+          ],
+          [
+            "eventShiftKey",
+            "eventShiftKey"
+          ],
+          [
+            "eventAltKey",
+            "eventAltKey"
+          ],
+          [
+            "eventInputValue",
+            "eventInputValue"
+          ],
+          [
+            "inputSetValue",
+            "inputSetValue"
+          ],
+          [
+            "inputGetValue",
+            "inputGetValue"
+          ],
+          [
+            "canvasGetContext2d",
+            "canvasGetContext2d"
+          ],
+          [
+            "canvasSetSize",
+            "canvasSetSize"
+          ],
+          [
+            "canvasFillRect",
+            "canvasFillRect"
+          ],
+          [
+            "clearChildren",
+            "clearChildren"
+          ],
+          [
+            "setTabIndex",
+            "setTabIndex"
+          ],
+          [
+            "getClipboardText",
+            "getClipboardText"
+          ],
+          [
+            "setClipboardText",
+            "setClipboardText"
+          ],
+          [
+            "clipboardRead",
+            "clipboardRead"
+          ],
+          [
+            "clipboardWrite",
+            "clipboardWrite"
+          ],
+          [
+            "clipboardReadEvent",
+            "clipboardReadEvent"
+          ],
+          [
+            "clipboardWriteEvent",
+            "clipboardWriteEvent"
+          ],
+          [
+            "eventClientX",
+            "eventClientX"
+          ],
+          [
+            "eventClientY",
+            "eventClientY"
+          ],
+          [
+            "eventButton",
+            "eventButton"
+          ],
+          [
+            "eventDetail",
+            "eventDetail"
+          ],
+          [
+            "rectLeft",
+            "rectLeft"
+          ],
+          [
+            "rectTop",
+            "rectTop"
+          ],
+          [
+            "getScrollLeft",
+            "getScrollLeft"
+          ],
+          [
+            "setScrollLeft",
+            "setScrollLeft"
+          ],
+          [
+            "blurElement",
+            "blurElement"
+          ],
+          [
+            "setPlaceholder",
+            "setPlaceholder"
+          ],
+          [
+            "setDisplay",
+            "setDisplay"
+          ],
+          [
+            "classListAdd",
+            "classListAdd"
+          ],
+          [
+            "classListRemove",
+            "classListRemove"
+          ],
+          [
+            "hostCall",
+            "hostCall"
+          ],
+          [
+            "hostThen",
+            "hostThen"
+          ],
+          [
+            "jsArrayLen",
+            "jsArrayLen"
+          ],
+          [
+            "jsArrayAt",
+            "jsArrayAt"
+          ],
+          [
+            "jsPropString",
+            "jsPropString"
+          ],
+          [
+            "jsPropInt",
+            "jsPropInt"
+          ],
+          [
+            "emptyBuf",
+            "emptyBuf"
+          ],
+          [
+            "beginIdList",
+            "beginIdList"
+          ],
+          [
+            "pushId",
+            "pushId"
+          ],
+          [
+            "takeIdList",
+            "takeIdList"
+          ],
+          [
+            "concat2",
+            "concat2"
+          ],
+          [
+            "pushNewBuffer",
+            "pushNewBuffer"
+          ],
+          [
+            "makeNodePos",
+            "makeNodePos"
+          ],
+          [
+            "nodeAtStash",
+            "nodeAtStash"
+          ],
+          [
+            "nodeAt2Stash",
+            "nodeAt2Stash"
+          ],
+          [
+            "stashNode",
+            "stashNode"
+          ],
+          [
+            "stashRem",
+            "stashRem"
+          ],
+          [
+            "stashStart",
+            "stashStart"
+          ],
+          [
+            "hostGetOffsetAt",
+            "hostGetOffsetAt"
+          ],
+          [
+            "hostGetPositionAt",
+            "hostGetPositionAt"
+          ],
+          [
+            "rbDeleteTree",
+            "rbDeleteTree"
+          ],
+          [
+            "hostComputeLineDiff",
+            "hostComputeLineDiff"
+          ],
+          [
+            "hostWorkbenchCommand",
+            "hostWorkbenchCommand"
+          ],
+          [
+            "jsUndefined",
+            "jsUndefined"
+          ],
+          [
+            "windowSelf",
+            "windowSelf"
+          ],
+          [
+            "throwError",
+            "throwError"
+          ],
+          [
+            "hostPaintEditor",
+            "__lil_host_export_0"
+          ],
+          [
+            "hostCoordsToPosition",
+            "__lil_host_export_1"
+          ],
+          [
+            "hostStyleFindWidget",
+            "__lil_host_export_2"
+          ],
+          [
+            "eventIsComposing",
+            "__lil_host_export_3"
+          ],
+          [
+            "eventDeltaY",
+            "__lil_host_export_4"
+          ]
+        ],
+        "imports": [
+          [
+            0,
+            []
+          ],
+          [
+            0,
+            [
+              [
+                "hostPaintEditor",
+                "__lil_host_export_0"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "hostCoordsToPosition",
+                "__lil_host_export_1"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "hostStyleFindWidget",
+                "__lil_host_export_2"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "eventIsComposing",
+                "__lil_host_export_3"
+              ]
+            ]
+          ],
+          [
+            0,
+            [
+              [
+                "eventDeltaY",
+                "__lil_host_export_4"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "./ts-language/provider/register.mjs",
+        "stem": "register",
+        "delivered_bytes": 8491,
+        "sha256": "c386b3e8e0aaec8f233f3ad2b2e3457b5a954ea42e93436be52e0f113a4be3af",
+        "exports": [
+          [
+            "createRegister",
+            "createRegister"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./ts-language/provider/languageFeatures.mjs",
+        "stem": "languageFeatures",
+        "delivered_bytes": 30420,
+        "sha256": "85284a5cfa546b450d67a53727775cf8739e6b988b07f2a3b9673087bc95f68e",
+        "exports": [
+          [
+            "createFeatures",
+            "createFeatures"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./ts-language/provider/workerManager.mjs",
+        "stem": "workerManager",
+        "delivered_bytes": 1781,
+        "sha256": "e772e9653c7ec8431113c66e8746c5614455d6dd627b0f18ef5bc786056bc87b",
+        "exports": [
+          [
+            "createWorkerManager",
+            "createWorkerManager"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./ts-language/provider/tsMode.mjs",
+        "stem": "tsMode",
+        "delivered_bytes": 4114,
+        "sha256": "809f47d88943ff23c1f6dee2a29e1029d7dabde66d51c759cf4be7f4414ea3d8",
+        "exports": [
+          [
+            "createMode",
+            "createMode"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./ts-language/provider/typescriptServicesMetadata.mjs",
+        "stem": "typescriptServicesMetadata",
+        "delivered_bytes": 32,
+        "sha256": "f5cedd37a3ada5bceb000b0519ad1224d1936d7536d0c90e28e3b27ce1e61bcc",
+        "exports": [
+          [
+            "typescriptVersion",
+            "typescriptVersion"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./ts-language/provider/lib.index.mjs",
+        "stem": "lib_index",
+        "delivered_bytes": 4191,
+        "sha256": "aa260fafed56c32461185bccbbb38e8e6ce0e931dacab0a3e3fc0298ce5ec4e0",
+        "exports": [
+          [
+            "libFileSet",
+            "libFileSet"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./ts-language/monaco-api-shim.js",
+        "stem": "monaco-api-shim",
+        "delivered_bytes": 1144,
+        "sha256": "edcf8e420aa59c12727873bcb431fab120fff5ec9cc62fb63851691def0e98bd",
+        "exports": [
+          [
+            "languages",
+            "languages"
+          ],
+          [
+            "editor",
+            "editor"
+          ],
+          [
+            "Uri",
+            "Uri"
+          ],
+          [
+            "Emitter",
+            "Emitter"
+          ],
+          [
+            "Range",
+            "Range"
+          ],
+          [
+            "MarkerTag",
+            "MarkerTag"
+          ],
+          [
+            "MarkerSeverity",
+            "MarkerSeverity"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./ts-language/worker-client.js",
+        "stem": "worker-client",
+        "delivered_bytes": 4338,
+        "sha256": "4c10fb76d83f31417f5a7e7259a4d08ac479baeb7d0d4d34a829fda13bf70406",
+        "exports": [
+          [
+            "createWebWorker",
+            "createWebWorker"
+          ]
+        ],
+        "imports": []
+      },
+      {
+        "specifier": "./ts-language/provider/index.mjs",
+        "stem": "index",
+        "delivered_bytes": 638,
+        "sha256": "500ef8d5e968a5659c5d0c39d71d4948caa42d8f3e50e5794963020ad34acd1d",
+        "exports": [
+          [
+            "createProvider",
+            "createProvider"
+          ]
+        ],
+        "imports": [
+          [
+            2,
+            [
+              [
+                "createRegister",
+                "createRegister"
+              ]
+            ]
+          ],
+          [
+            3,
+            [
+              [
+                "createFeatures",
+                "createFeatures"
+              ]
+            ]
+          ],
+          [
+            4,
+            [
+              [
+                "createWorkerManager",
+                "createWorkerManager"
+              ]
+            ]
+          ],
+          [
+            5,
+            [
+              [
+                "createMode",
+                "createMode"
+              ]
+            ]
+          ],
+          [
+            6,
+            [
+              [
+                "typescriptVersion",
+                "typescriptVersion"
+              ]
+            ]
+          ],
+          [
+            7,
+            [
+              [
+                "libFileSet",
+                "libFileSet"
+              ]
+            ]
+          ],
+          [
+            8,
+            [
+              [
+                "languages",
+                "languages"
+              ],
+              [
+                "Emitter",
+                "Emitter"
+              ],
+              [
+                "Uri",
+                "Uri"
+              ],
+              [
+                "editor",
+                "editor"
+              ],
+              [
+                "MarkerTag",
+                "MarkerTag"
+              ],
+              [
+                "MarkerSeverity",
+                "MarkerSeverity"
+              ],
+              [
+                "Range",
+                "Range"
+              ]
+            ]
+          ],
+          [
+            9,
+            [
+              [
+                "createWebWorker",
+                "createWebWorker"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "./ts-language/attach-factory.mjs",
+        "stem": "attach-factory",
+        "delivered_bytes": 7185,
+        "sha256": "0b26b5a50415f6bb3acf93014ba997c18724207f3505c7e1c67d367e67c3c8af",
+        "exports": [
+          [
+            "createAttach",
+            "createAttach"
+          ]
+        ],
+        "imports": [
+          [
+            9,
+            [
+              [
+                "createWebWorker",
+                "createWebWorker"
+              ]
+            ]
+          ]
+        ]
+      },
+      {
+        "specifier": "./package-factory.mjs",
+        "stem": "package-factory",
+        "delivered_bytes": 856,
+        "sha256": "4432dc174ba8f7e4dae252eaaee05e6b0c09600c180ef1d019dd0f95937ce798",
+        "exports": [
+          [
+            "createPackage",
+            "createPackage"
+          ]
+        ],
+        "imports": [
+          [
+            10,
+            [
+              [
+                "createProvider",
+                "createProvider"
+              ]
+            ]
+          ],
+          [
+            11,
+            [
+              [
+                "createAttach",
+                "createAttach"
+              ]
+            ]
+          ]
+        ]
+      }
+    ],
+    "host_reserved": [
+      "Array",
+      "Boolean",
+      "CustomEvent",
+      "Date",
+      "Error",
+      "Map",
+      "Math",
+      "Number",
+      "Object",
+      "Promise",
+      "Proxy",
+      "RegExp",
+      "Set",
+      "String",
+      "URL",
+      "WeakMap",
+      "Worker",
+      "clearTimeout",
+      "console",
+      "document",
+      "globalThis",
+      "navigator",
+      "queueMicrotask",
+      "setTimeout",
+      "undefined",
+      "window"
+    ]
+  },
+  "outputs": [
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "index",
+          "file": "monaco.esm.js",
+          "dynamic": false,
+          "closure": [
+            "monaco.esm.js"
+          ],
+          "row": 54430,
+          "raw_row": 240231
+        }
+      ],
+      "files": [
+        {
+          "file": "monaco.esm.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "package.lil",
+            "entry.lil",
+            "editor/standalone.lil",
+            "js-host.lil",
+            "editor/text-model.lil",
+            "editor/piece-tree-buffer.lil",
+            "editor/piece-tree.lil",
+            "base/position.lil",
+            "base/range.lil",
+            "editor/rb-tree.lil",
+            "base/uri.lil",
+            "base/lifecycle.lil",
+            "editor/interval-tree.lil",
+            "editor/edit-stack.lil",
+            "editor/search.lil",
+            "editor/word.lil",
+            "editor/view.lil",
+            "base/selection.lil",
+            "editor/monarch.lil",
+            "languages/registry.lil",
+            "languages/popular.lil",
+            "contrib/engine.lil",
+            "editor/markers.lil",
+            "editor/commands.lil",
+            "contrib/runtime.lil",
+            "languages/providers.lil",
+            "languages/remaining.lil",
+            "base/keycodes.lil",
+            "editor/monaco-api.lil",
+            "module-36",
+            "module-37",
+            "module-38",
+            "module-39",
+            "module-40",
+            "module-41",
+            "module-42",
+            "module-43",
+            "module-44",
+            "module-45",
+            "module-46",
+            "module-47",
+            "module-48"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 240231,
+          "codec_bytes": 54430,
+          "sha256": "a4df8a58c29e75f5dcbbf2d0c4591e8c95234c580e0bbc5e1e9f326e2940f22b"
+        }
+      ],
+      "side_effects": [
+        "monaco.esm.js"
+      ],
+      "codec_total": 54430,
+      "rows_total": 54430,
+      "setters": 0,
+      "output": "primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        97,
+        225,
+        255,
+        231,
+        141,
+        95,
+        134,
+        79,
+        121,
+        228,
+        2,
+        228,
+        138,
+        10,
+        132,
+        176,
+        161,
+        146,
+        24,
+        192,
+        124,
+        242,
+        15,
+        61,
+        227,
+        70,
+        252,
+        42,
+        244,
+        12,
+        191,
+        119
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "cjs",
+      "entries": [
+        {
+          "name": "index",
+          "file": "monaco.cjs",
+          "dynamic": false,
+          "closure": [
+            "monaco.cjs"
+          ],
+          "row": 54561,
+          "raw_row": 240732
+        }
+      ],
+      "files": [
+        {
+          "file": "monaco.cjs",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "package.lil",
+            "entry.lil",
+            "editor/standalone.lil",
+            "js-host.lil",
+            "editor/text-model.lil",
+            "editor/piece-tree-buffer.lil",
+            "editor/piece-tree.lil",
+            "base/position.lil",
+            "base/range.lil",
+            "editor/rb-tree.lil",
+            "base/uri.lil",
+            "base/lifecycle.lil",
+            "editor/interval-tree.lil",
+            "editor/edit-stack.lil",
+            "editor/search.lil",
+            "editor/word.lil",
+            "editor/view.lil",
+            "base/selection.lil",
+            "editor/monarch.lil",
+            "languages/registry.lil",
+            "languages/popular.lil",
+            "contrib/engine.lil",
+            "editor/markers.lil",
+            "editor/commands.lil",
+            "contrib/runtime.lil",
+            "languages/providers.lil",
+            "languages/remaining.lil",
+            "base/keycodes.lil",
+            "editor/monaco-api.lil",
+            "module-36",
+            "module-37",
+            "module-38",
+            "module-39",
+            "module-40",
+            "module-41",
+            "module-42",
+            "module-43",
+            "module-44",
+            "module-45",
+            "module-46",
+            "module-47",
+            "module-48"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 240732,
+          "codec_bytes": 54561,
+          "sha256": "494859611b8bf01cbded874956f1dda628033d49e3a72d244b5595eed0bf47a2"
+        }
+      ],
+      "side_effects": [
+        "monaco.cjs"
+      ],
+      "codec_total": 54561,
+      "rows_total": 54561,
+      "setters": 0,
+      "output": "cjs",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        141,
+        47,
+        33,
+        12,
+        4,
+        52,
+        168,
+        13,
+        153,
+        103,
+        89,
+        154,
+        97,
+        248,
+        181,
+        200,
+        197,
+        10,
+        213,
+        98,
+        110,
+        49,
+        148,
+        13,
+        11,
+        255,
+        46,
+        41,
+        234,
+        254,
+        92,
+        91
+      ]
+    },
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "raw",
+          "file": "monaco.raw.js",
+          "dynamic": false,
+          "closure": [
+            "monaco.raw.js"
+          ],
+          "row": 44654,
+          "raw_row": 187758
+        }
+      ],
+      "files": [
+        {
+          "file": "monaco.raw.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "raw"
+          ],
+          "modules": [
+            "entry.lil",
+            "editor/standalone.lil",
+            "js-host.lil",
+            "editor/text-model.lil",
+            "editor/piece-tree-buffer.lil",
+            "editor/piece-tree.lil",
+            "base/position.lil",
+            "base/range.lil",
+            "editor/rb-tree.lil",
+            "base/uri.lil",
+            "base/lifecycle.lil",
+            "editor/interval-tree.lil",
+            "editor/edit-stack.lil",
+            "editor/search.lil",
+            "editor/word.lil",
+            "editor/view.lil",
+            "base/selection.lil",
+            "editor/monarch.lil",
+            "languages/registry.lil",
+            "languages/popular.lil",
+            "contrib/engine.lil",
+            "editor/myers.lil",
+            "editor/markers.lil",
+            "editor/commands.lil",
+            "contrib/runtime.lil",
+            "languages/providers.lil",
+            "layers/core-types.lil",
+            "languages/remaining.lil",
+            "contrib/popular.lil",
+            "base/keycodes.lil",
+            "editor/monarch-lexer.lil",
+            "editor/prefix-sum.lil",
+            "base/nls.lil",
+            "editor/standalone-enums.lil",
+            "editor/monaco-api.lil",
+            "module-36",
+            "module-38"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 187758,
+          "codec_bytes": 44654,
+          "sha256": "3e72fff8364615112812ed88ed23d493a8aebca394f7869c5f3b9535577413f4"
+        }
+      ],
+      "side_effects": [
+        "monaco.raw.js"
+      ],
+      "codec_total": 44654,
+      "rows_total": 44654,
+      "setters": 0,
+      "output": "raw-core",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        29,
+        64,
+        4,
+        4,
+        166,
+        242,
+        154,
+        204,
+        71,
+        48,
+        208,
+        189,
+        42,
+        128,
+        234,
+        84,
+        131,
+        96,
+        233,
+        163,
+        221,
+        226,
+        97,
+        251,
+        63,
+        226,
+        120,
+        125,
+        8,
+        10,
+        100,
+        159
+      ]
+    }
+  ]
+}

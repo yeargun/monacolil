@@ -1,0 +1,5 @@
+import extern "../js-host.ts";
+import extern {installWorker} from "./boot.mjs";
+extern void installWorker(func(string,string,string)->string handler);
+import {handleEditorWorker} from "./editor.worker.lil";
+installWorker(handleEditorWorker);
